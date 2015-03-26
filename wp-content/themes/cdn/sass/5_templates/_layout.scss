@@ -1,0 +1,16 @@
+/* 
+ * templates/layout
+ * 
+ * @package sasskit
+ */
+
+
+.wrap {
+  width: 100%;
+  margin: auto;
+
+  @include at-least(large) {
+    width: $max_width;
+  }
+
+}

@@ -1,0 +1,30 @@
+/* 
+ * Typography
+ * 
+ * @package sasskit
+ */
+
+
+
+
+ // Navigation
+// -------------------------
+
+$navbar_background:                 $black !default;
+$navbar_border:                     darken($navbar_background, 12%) !default;
+$navbar_height:                     $base_line_height !default;
+
+$navbar_collapse_width:             979px !default;
+$navbar_collapse_desktop_width:     $navbar_collapse_width + 1;
+
+$navbar_height:                     40px !default;
+$navbar_backgroundHighlight:        #ffffff !default;
+
+$navbar_text:                       #777 !default;
+$navbar_link_color:                 #777 !default;
+$navbar_link_color_hover:           $gray_dark !default;
+$navbar_link_color_active:          $gray !default;
+$navbar_link_background_hover:      transparent !default;
+$navbar_link_background_active:     darken($navbar_background, 5%) !default;
+
+$navbar_brand_color:                $navbar-link_color !default;

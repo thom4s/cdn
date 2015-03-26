@@ -1,0 +1,97 @@
+/* 
+ * Colors
+ * 
+ * @package sasskit
+ */
+
+
+
+/* 
+ * BASIC COLORS
+ */
+
+$black:                             #000 !default;
+$gray_darker:                       #222 !default;
+$gray_dark:                         #333 !default;
+$gray:                              #555 !default;
+$gray_light:                        #999 !default;
+$gray_lighter:                      #eee !default;
+$white:                             #fff !default;
+
+$color_text:                        $gray_dark !default;
+$color_link:                        $gray !default;
+$color_link_hover:                  $gray_dark;
+$color_quote:                       $gray_light;
+$color_body_background:             $white;
+
+
+/* 
+ * PROJECT COLORS
+ *
+ * Change what you want.
+ * The infos are use for style guide too, so be precise.
+ * Add items as you want.
+ */
+
+$colors_map: (
+  text: (
+    tone: gray, // Change that if you want
+    hexa: #474747, // Change that too 
+  ), 
+  quotes: (
+    tone: red,
+    hexa: #F19F35,
+  ), 
+  links: (
+    tone: else,
+    hexa: #57BC8A,
+  ),
+  links_hover: (
+    tone: else, 
+    hexa: #570C8A,
+  ),
+  buttons: (
+    tone: else,    
+    hexa: #036564,
+  ),
+  body_background: (
+    tone: else,
+    hexa: #fff,
+  ),
+) !default;
+
+
+
+
+
+/* 
+ * DON'T TOUCH THAT, FOOL !
+ */
+
+@each $color in $colors_map {
+  $i: index($colors_map, $color);
+
+  $_type: nth($color, 1);
+  $_values: nth($color, 2);
+
+  .color-#{$i} .color-square { 
+    background-color: map-get($_values, hexa);
+  }
+
+  .color-#{$i} .color-tone:before {
+    content: '#{map-get($_values, tone)}';
+  }
+
+  .color-#{$i} .color-name:before {
+    content: '#{map-get($_values, hexa)}';
+  }
+
+  .color-#{$i} .color-use:before {
+    content: '#{$_type}';
+  }
+
+  .color_#{$_type} {
+    color: map-get($_values, tone);
+  } 
+}
+

@@ -1,0 +1,12 @@
+// Forms
+// -------------------------
+
+$input_border_radius:               0 !default;
+$form_actions_background:           $gray !default;
+
+$input_disabled_background:         $gray_lighter !default;
+$input_border:                      1px solid $black !default;
+$input_background:                  $white !default;
+$input_height:                      $base_line_height * 1.5;
+
+$placeholder_text:                  $gray_light !default;

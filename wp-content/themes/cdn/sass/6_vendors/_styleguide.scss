@@ -1,0 +1,164 @@
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        font-family: Helvetica, sans-serif;
+        line-height: auto;
+      }
+
+      .section {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        width: 100%;
+        display: block;
+        float: left;
+        clear: both;
+        margin: 0 0 100px 0;
+      }
+      .section.title {
+        margin: 50px 0 100px 0;
+        text-align: center;
+      }      
+      .section.half {
+        width: 45%;
+      }
+      .section.half:nth-child(odd) {
+        float: left; 
+        clear: both;
+      }
+      .section.half:nth-child(even) {
+        float: right; 
+        clear: none;
+      }
+        .section-name {
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #666;
+          display: block;
+          clear: both;
+          margin: 0 0 10px 0;
+        }
+
+
+      /* TITLES */
+      .guide-project-name {
+        display: block;
+        font-size: 3em;
+        line-height: 1.345em;
+        text-transform: uppercase;
+      }
+        .guide-date {
+          display: block;
+          clear: both;
+          color: $gray_light;
+        }
+        .guide-title {
+          display: block;
+          color: $gray_light;
+        }
+
+
+      /* TAGLINES */
+      .taglines p {
+        font-size: 2em;
+      }
+
+
+      /* TYPOS */
+      .typo {
+        h1, h2, h3, h4, h5, h6 { margin: 0; }
+        blockquote {
+          display: block;
+          clear: both; }
+        
+        & > div {
+          margin-bottom: 40px;
+        }
+      }
+        .typo-name {
+          font-size: 0.8em !important;
+          text-transform: uppercase;
+          color: $gray_light;
+          margin: 0;
+        }
+
+        .headings {
+
+          & > div {
+            margin-bottom: 20px;
+          }
+        }
+
+      /* COLORS */
+      .colors {
+        
+        .color {
+          @include box-sizing;
+          width: 50%;
+          height: 100px;
+          margin: 0 0 20px;
+          float: left;
+        }
+
+        .color-square {
+          @include box-sizing;
+          border: 1px solid $gray_light;
+          width: 100px;
+          height: 100px;
+          float: left;
+          margin: 0 10px 0 0;
+        }
+
+        .color-id {
+          float: left;
+          font-size: 0.9em;
+        }
+          .color-tone {
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+          .color-use {
+          }
+
+      }
+
+
+      /* MOODS */
+      ul.mood-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        float: left;
+      
+        li {
+          margin: 0 10px 0 0;
+          padding: 0;
+          display: inline-block;
+          float: left;
+          font-size: 2em;
+          font-weight: bold;
+        }
+      }
+
+
+
+      /* GRID */ 
+      .grid {
+        font-size: 0.8em;
+        color: $gray;
+        .row {
+          margin-bottom: 20px;
+          border: 1px dotted $gray_light;
+        }
+      }
+
+      .grided {
+        background-color: $gray_lighter;
+        border: none;
+        margin-bottom: 10px;
+      }
+
+
+

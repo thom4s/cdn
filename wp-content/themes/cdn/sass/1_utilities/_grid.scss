@@ -1,0 +1,110 @@
+/* 
+ * Grid system
+ * 
+ * @package sasskit
+ */
+
+
+
+/* 
+ * GRID VARIABLES SETTING
+ */
+
+$max_width:                         980px; // To Be Modify
+$cols:                              12 !default; // To Be Modify
+$gutter:                            2% !default; // To Be Modify
+        
+$mobile_first:                      true !default; // To Be Modify
+$minimal_breakpoint:                320px !default; // To Be Modify
+$medium_breakpoint:                 760px !default; // To Be Modify
+$large_breakpoint:                  980px !default; // To Be Modify
+$wide_breakpoint:                   1200px !default; // To Be Modify
+
+
+
+
+
+/* 
+ * DON'T TOUCHE THIS !
+ */
+
+$one_col: (100% - ($gutter * ($cols - 1))) / $cols;
+
+@mixin cols($num) {
+    @include box-sizing();
+    width: ($one_col * $num) + ($gutter * ($num - 1));
+}
+ 
+@mixin sub_cols($num_child, $num_parent) {
+    $parent_size: ($one_col * $num_parent) + ($gutter * ($num_parent - 1));
+    $child_size: ($one_col * $num_child) + ($gutter * ($num_child - 1));
+    margin-left: ($gutter / $parent_size) * 100%;
+    width: ($child_size / $parent_size) * 100%;
+}
+
+@mixin parse-columns($suffix: ''){
+    .row {
+        @for $i from 1 through $cols {
+            .#{$suffix}-#{$i}col {
+                @include cols($i);
+                float: left;
+                margin-left: $gutter;
+
+                @for $j from 1 through ($i - 1) {
+                    .#{$suffix}-#{$j}col {
+                        @include sub_cols($j, $i);
+                    }
+                }
+            }
+            .#{$suffix}-#{$i}col-push { left: $i / $cols * 100%; }
+            .#{$suffix}-#{$i}col-pull { right: $i / $cols * 100%; }
+        }
+        .#{$suffix}-hide { display: none; }
+        .#{$suffix}-show { display: block; }
+        .#{$suffix}-first { margin-left: 0 !important; }
+        .#{$suffix}-last { float: right !important; }
+    }
+}
+
+.row {
+    @include clearfix;
+
+    > :first-child, 
+    .row > :first-child { 
+        margin-left: 0 !important;
+    }
+}
+
+
+
+/* 
+ * GRID GENERATOR
+ */
+
+@if $mobile_first {
+    @include at-least(minimal) {
+        @include parse-columns('s');
+    }
+    @include at-least(medium) {
+        @include parse-columns('m');
+    }
+    @include at-least(large) {
+        @include parse-columns('l');
+    }
+    @include at-least(wide) {
+        @include parse-columns('w');
+    }
+}
+@else {
+    @include parse-columns('w');
+
+    @include up-to(wide) {
+        @include parse-columns('l');
+    }
+    @include up-to(large) {
+        @include parse-columns('m');
+    }
+    @include up-to(medium) {
+        @include parse-columns('s');
+    }
+}

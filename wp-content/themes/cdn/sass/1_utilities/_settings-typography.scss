@@ -1,0 +1,200 @@
+/* 
+ * Typography
+ * 
+ * @package sasskit
+ */
+
+
+/* 
+ * TYPOGRAPHY VARIABLES SETTINGS 
+ */
+
+// Font Families
+
+$font_family_sans:        					Arial, Helvetica, sans-serif !default;
+$font_family_serif:       					Georgia, Times New Roman, serif !default;
+$font_family_mono:        					Menlo, Consolas, monospace !default;		
+$font_family_paragraph:             $paragraphs, $font_family_serif;
+$font_family_title:                 $titles, $font_family_sans;
+$font_family_nav:                   $nav, $font_family_serif;
+$font_family_alt:                   $alt, $font_family_serif;
+$font_family_quote:                 $quote, $font_family_serif;
+
+// Set of Font sizes
+$font_size_large:                   $font_size_base * 1.25 !default;
+$font_size_small:                   $font_size_base * 0.85 !default;
+$font_size_mini:                    $font_size_base * 0.75 !default;
+
+// Line height
+$line_height_ratio:									1.375 !default;
+$base_line_height:        					$font_size_base * $line_height_ratio !default; 
+
+
+
+
+/* 
+ * TYPOGRAPHY MAP.
+ * CHANGE IF NEEDED (headings with different family ex.)
+ */
+
+$typos_map: (
+  p: (
+    use: "This is the body copy. ",
+    font-family: $font_family_paragraph,
+    font-size: 16px,
+    line-height: $base_line_height,
+ ), 
+  blockquote: (
+    use: "A quote very ",
+    font-family: $font_family_quote,
+    font-size: 20px,
+    line-height: $base_line_height,
+  ),
+  ul: (
+    use: "u lists",
+    font-family: $font_family_title,
+    font-size: 1em,
+    line-height: $base_line_height,
+  ),
+  h1: (
+    use: "Headings 1",
+    font-family: $font_family_title,
+    font-size: 3em,
+    line-height: 0.8em,
+  ),
+  h2: (
+    use: "Headings 2",
+    font-family: $font_family_title,
+    font-size: 2em,
+    line-height: 0.8em,   
+  ),
+  h3: (
+    use: "Headings 3",
+    font-family: $font_family_title,
+    font-size: 1.6em,
+    line-height: 0.8em,
+  ),
+  h4: (
+    use: "Headings 4",
+    font-family: $font_family_title,
+    font-size: 1em,
+    line-height: 0.8em,
+  ),
+  h5: (
+    use: "Headings 5",
+    font-family: $font_family_title,
+    font-size: 1em,
+    line-height: 0.8em,
+  ),
+  h6: (
+    use: "Headings 6",
+    font-family: $font_family_title,
+    font-size: 16px,
+    line-height: 0.8em,
+  ),    
+) !default;
+
+
+
+/* 
+ * OTHER SETTINGS THAT NEED TO BE CHECKED
+ */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $color_text;
+	font-family: $font_family_paragraph;
+	font-size: $font_size_base;
+	line-height: $base_line_height;
+}
+p {
+	margin-bottom: $base_line_height;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 $base_line_height;
+}
+address {
+	margin: 0 0 $base_line_height;
+}
+pre {
+	background: #eee;
+	font-family: $font_family_mono;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+code, kbd, tt, var {
+	font: 15px $font_family_mono;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+
+
+
+
+
+/*
+ * DON'T TOUCH THAT !
+ */
+
+@each $typo in $typos_map {
+  $i: index($typos_map, $typo);
+
+  $_type: nth($typo, 1);
+  $_values: nth($typo, 2);
+
+  #{$_type} {
+    font-family: #{map-get($_values, font-family)};
+    font-size: #{map-get($_values, font-size)};
+    @if map-get($_values, line-height) {
+      line-height: #{map-get($_values, line-height)};
+    }
+
+    &:before {
+      content: '#{map-get($_values, use)}';
+    }
+
+    & + span:before {
+      content: '#{map-get($_values, font-family)} / #{map-get($_values, font-size)} / #{map-get($_values, line-height)}';
+    }
+  }
+}
