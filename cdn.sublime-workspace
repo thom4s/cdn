@@ -416,6 +416,15 @@
 	},
 	"file_history":
 	[
+		"/Users/thomas/Sites/PROJECTS/cdn/.gitignore",
+		"/Users/thomas/Sites/PROJECTS/cdn/node_modules/gulp-ruby-sass/readme.md",
+		"/Users/thomas/Sites/PROJECTS/cdn/gulpfile.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/style.css",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/main.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/node_modules/gulp-ruby-sass/index.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/node_modules/gulp/index.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/js/scripts.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/node_modules/gulp/README.md",
 		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/1_utilities/_config.scss",
 		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/1_utilities/_settings-colors.scss",
 		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/1_utilities/_settings-typography.scss",
@@ -534,16 +543,7 @@
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/header.php",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_bxslider.scss",
 		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/attachment-metas.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/post-metas.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/part-postslide.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/setup/_grid.scss",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/page-magazine.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/boxes.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/related-posts.php",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/scss/_magazine-parts.scss",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/salvatorre.js",
-		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/js/bxslider.js",
-		"/Users/thomas/Sites/halfempty-mapdemo-8f77fe0/index.php"
+		"/Users/thomas/Sites/lavant-seine/wp-content/themes/lavantseine/inc/post-metas.php"
 	],
 	"find":
 	{
@@ -551,9 +551,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/Users/thomas/Sites/PROJECTS/cdn/node_modules",
 			"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/plugins/wp-google-maps-pro",
 			"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/plugins/wp-google-maps-pro 5.47",
 			"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/plugins/wp-google-maps-pro",
@@ -618,6 +619,16 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"replace",
+			"msg.replac",
+			"paths",
+			"paths.",
+			"path",
+			"removePath",
+			"msg",
+			"remove",
+			"removePa",
+			"escape",
 			"400px",
 			"suppr_accents",
 			"wpgmza_checkbox",
@@ -735,17 +746,7 @@
 			"auto",
 			"autosave",
 			"auto_save",
-			"_media_tag",
-			"<?",
-			"data",
-			"$filter",
-			"!function_exists(",
-			"staging.lavant-seine.com",
-			"blog",
-			"log",
-			"awpqsf_id_btn",
-			"backup",
-			"backups"
+			"_media_tag"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -826,7 +827,7 @@
 		"cols":
 		[
 			0.0,
-			0.704287515763,
+			0.535733681757,
 			1.0
 		],
 		"rows":
