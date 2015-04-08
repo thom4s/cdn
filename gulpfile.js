@@ -17,7 +17,7 @@ var mainjs = app_folder + 'js/scripts.js';
 var vendorsjs = app_folder + 'js/lib/*.js';
 var alljs = [vendorsjs, mainjs];
 
-var scssfiles = app_folder + 'sass/*.scss';
+var scssfiles = app_folder + 'sass/**/*.scss';
 var sassfolder = app_folder + 'sass/';
 
 
