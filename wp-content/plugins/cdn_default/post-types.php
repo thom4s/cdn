@@ -62,3 +62,6 @@ function event_post_type() {
 
 // Hook into the 'init' action
 add_action( 'init', 'event_post_type', 0 );
+
+
+

@@ -1,38 +1,77 @@
-/* 
+/*
  * Typography
- * 
+ *
  * @package sasskit
  */
 
 
-/* 
- * TYPOGRAPHY VARIABLES SETTINGS 
+html {
+  font-size: 62.5%; /* sets the base font to 10px for easier math */
+}
+
+@mixin fontsize($size: "16") {
+  font-size: #{$size}px;
+  font-size: #{$size} / 10 rem;
+}
+
+
+/*
+ * Essentials
+ */
+$font_size_base:                  16 !default;
+$line_height_ratio:               1.375 !default;
+$base_line_height_:               $font_size_base * $line_height_ratio !default;
+$base_line_height:                #{$font_size_base * $line_height_ratio}px !default;
+
+body {
+  @include fontsize($font_size_base);  /* sets the default sizing to make sure nothing is actually 10px */
+}
+
+
+
+
+/* For responsive, adjust root font size only. And go. */
+
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+
+
+/*
+ * TYPOGRAPHY VARIABLES SETTINGS
  */
 
 // Font Families
+$source:                            'Source Sans Pro';
+$roboto:                            'Roboto Slab';
 
-$font_family_sans:        					Arial, Helvetica, sans-serif !default;
-$font_family_serif:       					Georgia, Times New Roman, serif !default;
-$font_family_mono:        					Menlo, Consolas, monospace !default;		
-$font_family_paragraph:             $paragraphs, $font_family_serif;
-$font_family_title:                 $titles, $font_family_sans;
-$font_family_nav:                   $nav, $font_family_serif;
-$font_family_alt:                   $alt, $font_family_serif;
-$font_family_quote:                 $quote, $font_family_serif;
+// Default Fonts
+$font_family_sans:                  Arial, Helvetica, sans-serif !default;
+$font_family_serif:                 Georgia, Times New Roman, serif !default;
+$font_family_mono:                  Menlo, Consolas, monospace !default;
+
+// Typo Attributions
+$font_family_paragraph:             $source, $font_family_serif;
+$font_family_title:                 $source, $font_family_sans;
+$font_family_nav:                   $source, $font_family_serif;
+$font_family_alt:                   $source, $font_family_serif;
+$font_family_quote:                 $roboto, $font_family_serif;
+$font_family_meta:                  $roboto, $font_family_serif;
 
 // Set of Font sizes
 $font_size_large:                   $font_size_base * 1.25 !default;
 $font_size_small:                   $font_size_base * 0.85 !default;
 $font_size_mini:                    $font_size_base * 0.75 !default;
 
-// Line height
-$line_height_ratio:									1.375 !default;
-$base_line_height:        					$font_size_base * $line_height_ratio !default; 
 
 
 
 
-/* 
+
+/*
  * TYPOGRAPHY MAP.
  * CHANGE IF NEEDED (headings with different family ex.)
  */
@@ -41,62 +80,62 @@ $typos_map: (
   p: (
     use: "This is the body copy. ",
     font-family: $font_family_paragraph,
-    font-size: 16px,
+    font-size: 1.6rem,
     line-height: $base_line_height,
- ), 
+ ),
   blockquote: (
     use: "A quote very ",
     font-family: $font_family_quote,
-    font-size: 20px,
+    font-size: 2rem,
     line-height: $base_line_height,
   ),
   ul: (
     use: "u lists",
     font-family: $font_family_title,
-    font-size: 1em,
+    font-size: 1.6rem,
     line-height: $base_line_height,
   ),
   h1: (
     use: "Headings 1",
     font-family: $font_family_title,
-    font-size: 3em,
-    line-height: 0.8em,
+    font-size: 3rem,
+    line-height: 0.8rem,
   ),
   h2: (
     use: "Headings 2",
     font-family: $font_family_title,
-    font-size: 2em,
-    line-height: 0.8em,   
+    font-size: 2rem,
+    line-height: 0.8rem,
   ),
   h3: (
     use: "Headings 3",
     font-family: $font_family_title,
-    font-size: 1.6em,
-    line-height: 0.8em,
+    font-size: 1.6rem,
+    line-height: 0.8rem,
   ),
   h4: (
     use: "Headings 4",
     font-family: $font_family_title,
-    font-size: 1em,
-    line-height: 0.8em,
+    font-size: 1rem,
+    line-height: 0.8rem,
   ),
   h5: (
     use: "Headings 5",
     font-family: $font_family_title,
-    font-size: 1em,
-    line-height: 0.8em,
+    font-size: 1rem,
+    line-height: 0.8rem,
   ),
   h6: (
     use: "Headings 6",
     font-family: $font_family_title,
-    font-size: 16px,
-    line-height: 0.8em,
-  ),    
+    font-size: 1.6rem,
+    line-height: 0.8rem,
+  ),
 ) !default;
 
 
 
-/* 
+/*
  * OTHER SETTINGS THAT NEED TO BE CHECKED
  */
 
@@ -105,67 +144,66 @@ button,
 input,
 select,
 textarea {
-	color: $color_text;
-	font-family: $font_family_paragraph;
-	font-size: $font_size_base;
-	line-height: $base_line_height;
+  color: $color_text;
+  font-family: $font_family_paragraph;
+  line-height: $base_line_height;
 }
 p {
-	margin-bottom: $base_line_height;
+  margin-bottom: $base_line_height;
 }
 b, strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 dfn, cite, em, i {
-	font-style: italic;
+  font-style: italic;
 }
 blockquote {
-	margin: 0 $base_line_height;
+  margin: 0 $base_line_height;
 }
 address {
-	margin: 0 0 $base_line_height;
+  margin: 0 0 $base_line_height;
 }
 pre {
-	background: #eee;
-	font-family: $font_family_mono;
-	font-size: 15px;
-	font-size: 1.5rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
+  background: #eee;
+  font-family: $font_family_mono;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
 }
 code, kbd, tt, var {
-	font: 15px $font_family_mono;
+  font: 15px $font_family_mono;
 }
 abbr, acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
+  border-bottom: 1px dotted #666;
+  cursor: help;
 }
 mark, ins {
-	background: #fff9c0;
-	text-decoration: none;
+  background: #fff9c0;
+  text-decoration: none;
 }
 sup,
 sub {
-	font-size: 75%;
-	height: 0;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 sup {
-	bottom: 1ex;
+  bottom: 1ex;
 }
 sub {
-	top: .5ex;
+  top: .5ex;
 }
 small {
-	font-size: 75%;
+  font-size: 75%;
 }
 big {
-	font-size: 125%;
+  font-size: 125%;
 }
 
 
@@ -188,12 +226,15 @@ big {
     @if map-get($_values, line-height) {
       line-height: #{map-get($_values, line-height)};
     }
+    @if map-get($_values, color) {
+      color: #{map-get($_values, color)};
+    }
 
-    &:before {
+    & > .use:before {
       content: '#{map-get($_values, use)}';
     }
 
-    & + span:before {
+    & + .info:before {
       content: '#{map-get($_values, font-family)} / #{map-get($_values, font-size)} / #{map-get($_values, line-height)}';
     }
   }
