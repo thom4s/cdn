@@ -18,7 +18,7 @@ $mobile_first:                      false !default;
 $minimal_breakpoint:                320px !default; 
 $medium_breakpoint:                 760px !default; 
 $large_breakpoint:                  1080px !default; 
-$wide_breakpoint:                   1200px !default; 
+$wide_breakpoint:                   1500px !default; 
 
 
 /* 
@@ -34,8 +34,8 @@ $wide_breakpoint:                   1200px !default;
   width: $max_width;
   margin: auto;
 
-  @include at-least(large) {
-    width: $max_width;
+  @include up-to(large) {
+    width: 100%;
   }
 
 }

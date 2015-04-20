@@ -40,7 +40,7 @@ body {
 
 @media screen and (min-width: 1280px) {
   html {
-    font-size: 100%;
+    font-size: 75%;
   }
 }
 
@@ -212,6 +212,14 @@ big {
   font-size: 125%;
 }
 
+
+/*
+ * CLASSES
+ */
+ 
+.meta {
+  font-family: $font_family_meta;
+}
 
 
 

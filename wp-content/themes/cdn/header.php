@@ -22,7 +22,6 @@
 
 	<div class="wrap row">
 
-
 		<?php
 		if ( is_home() ) {
 		    // This is the blog posts index
@@ -33,5 +32,4 @@
 		}
 		?>
 
-
-		<div id="content" class="site-content l-12col l-last">
+		<div id="content" class="site-content w-12col l-12col l-last">
