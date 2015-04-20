@@ -5,12 +5,10 @@
  */
 
 
-.wrap {
-  width: 100%;
-  margin: auto;
-
-  @include at-least(large) {
-    width: $max_width;
-  }
-
+.site {
+  background-color: #E1E3E4;
 }
+
+  .site-content {
+    background-color: #fff;
+  }

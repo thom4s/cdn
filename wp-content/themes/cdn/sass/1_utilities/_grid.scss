@@ -10,18 +10,35 @@
  * GRID VARIABLES SETTING
  */
 
-$max_width:                         1024px; // To Be Modify
-$cols:                              16 !default; // To Be Modify
-$gutter:                            2% !default; // To Be Modify
+$max_width:                         1024px; 
+$cols:                              16 !default; 
+$gutter:                            2% !default; 
         
-$mobile_first:                      true !default; // To Be Modify
-$minimal_breakpoint:                320px !default; // To Be Modify
-$medium_breakpoint:                 760px !default; // To Be Modify
-$large_breakpoint:                  980px !default; // To Be Modify
-$wide_breakpoint:                   1200px !default; // To Be Modify
+$mobile_first:                      false !default; 
+$minimal_breakpoint:                320px !default; 
+$medium_breakpoint:                 760px !default; 
+$large_breakpoint:                  1080px !default; 
+$wide_breakpoint:                   1200px !default; 
 
 
+/* 
+ * CLASSES
+ */
 
+.plain {
+    width: 100%;
+    margin: auto;
+}
+
+.wrap {
+  width: $max_width;
+  margin: auto;
+
+  @include at-least(large) {
+    width: $max_width;
+  }
+
+}
 
 
 /* 

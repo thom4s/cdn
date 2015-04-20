@@ -8,14 +8,18 @@
  */
 ?>
 
-	</div><!-- #content -->
+  	</div><!-- #content -->
+  </div><!-- .main-col -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'cdn' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'cdn' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'cdn' ), 'cdn', '<a href="http://thomasflorentin.net" rel="designer">Thomas Florentin</a>' ); ?>
+	<footer id="colophon" class="site-footer plain" role="contentinfo">
+		<div class="site-contacts wrap">
+	     Suivez nous
 		</div><!-- .site-info -->
+
+    <div class="site-info wrap">
+      Le CDN
+    </div><!-- .site-info -->
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
