@@ -1,6 +1,2 @@
-wp-admin/*
-wp-includes/*
-.sass-cache/*
-
-# Ignorer les objets et les archives
-*.[oa]
+cdn.sublime-project
+cdn.sublime-worspace

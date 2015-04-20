@@ -1,0 +1,100 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'gulp-postcss' ]
+2 info using npm@2.1.11
+3 info using node@v0.10.20
+4 silly cache add args [ 'gulp-postcss', null ]
+5 verbose cache add spec gulp-postcss
+6 silly cache add parsed spec { raw: 'gulp-postcss',
+6 silly cache add   scope: null,
+6 silly cache add   name: 'gulp-postcss',
+6 silly cache add   rawSpec: '',
+6 silly cache add   spec: '*',
+6 silly cache add   type: 'range' }
+7 verbose addNamed gulp-postcss@*
+8 silly addNamed semver.valid null
+9 silly addNamed semver.validRange *
+10 silly addNameRange { name: 'gulp-postcss', range: '*', hasData: false }
+11 silly mapToRegistry name gulp-postcss
+12 silly mapToRegistry using default registry
+13 silly mapToRegistry registry https://registry.npmjs.org/
+14 silly mapToRegistry uri https://registry.npmjs.org/gulp-postcss
+15 verbose addNameRange registry:https://registry.npmjs.org/gulp-postcss not in flight; fetching
+16 verbose get https://registry.npmjs.org/gulp-postcss not expired, no request
+17 silly addNameRange number 2 { name: 'gulp-postcss', range: '*', hasData: true }
+18 silly addNameRange versions [ 'gulp-postcss',
+18 silly addNameRange   [ '0.0.1',
+18 silly addNameRange     '0.0.2',
+18 silly addNameRange     '1.0.0',
+18 silly addNameRange     '1.0.1',
+18 silly addNameRange     '1.0.2',
+18 silly addNameRange     '2.0.0',
+18 silly addNameRange     '2.0.1',
+18 silly addNameRange     '3.0.0',
+18 silly addNameRange     '4.0.0',
+18 silly addNameRange     '4.0.1',
+18 silly addNameRange     '4.0.2',
+18 silly addNameRange     '4.0.3',
+18 silly addNameRange     '5.0.0' ] ]
+19 verbose addNamed gulp-postcss@5.0.0
+20 silly addNamed semver.valid 5.0.0
+21 silly addNamed semver.validRange 5.0.0
+22 silly cache afterAdd gulp-postcss@5.0.0
+23 verbose afterAdd /Users/thomas/.npm/gulp-postcss/5.0.0/package/package.json not in flight; writing
+24 verbose afterAdd /Users/thomas/.npm/gulp-postcss/5.0.0/package/package.json written
+25 silly install resolved [ { name: 'gulp-postcss',
+25 silly install resolved     version: '5.0.0',
+25 silly install resolved     description: 'PostCSS gulp plugin',
+25 silly install resolved     main: 'index.js',
+25 silly install resolved     scripts: { test: 'mocha test.js' },
+25 silly install resolved     repository: { type: 'git', url: 'https://github.com/w0rm/gulp-postcss.git' },
+25 silly install resolved     keywords: [ 'gulpplugin', 'postcss', 'css' ],
+25 silly install resolved     author: { name: 'Andrey Kuzmin', email: 'unsoundscapes@gmail.com' },
+25 silly install resolved     license: 'MIT',
+25 silly install resolved     bugs: { url: 'https://github.com/w0rm/gulp-postcss/issues' },
+25 silly install resolved     homepage: 'https://github.com/w0rm/gulp-postcss',
+25 silly install resolved     dependencies:
+25 silly install resolved      { 'gulp-util': '^3.0.4',
+25 silly install resolved        postcss: '^4.1.0',
+25 silly install resolved        'vinyl-sourcemaps-apply': '^0.1.4' },
+25 silly install resolved     devDependencies:
+25 silly install resolved      { 'es6-promise': '^2.0.1',
+25 silly install resolved        'gulp-sourcemaps': '^1.5.1',
+25 silly install resolved        mocha: '^2.2.1' },
+25 silly install resolved     gitHead: '62fd4e9cb8b56b192cb2414d36ae600423f494bd',
+25 silly install resolved     _id: 'gulp-postcss@5.0.0',
+25 silly install resolved     _shasum: '8d4adb05a2dd1ff4a4d0ba434bfb8a5d9a700f18',
+25 silly install resolved     _from: 'gulp-postcss@*',
+25 silly install resolved     _npmVersion: '2.0.0',
+25 silly install resolved     _npmUser: { name: 'unsoundscapes', email: 'unsoundscapes@gmail.com' },
+25 silly install resolved     maintainers: [ [Object] ],
+25 silly install resolved     dist:
+25 silly install resolved      { shasum: '8d4adb05a2dd1ff4a4d0ba434bfb8a5d9a700f18',
+25 silly install resolved        tarball: 'http://registry.npmjs.org/gulp-postcss/-/gulp-postcss-5.0.0.tgz' },
+25 silly install resolved     directories: {},
+25 silly install resolved     _resolved: 'https://registry.npmjs.org/gulp-postcss/-/gulp-postcss-5.0.0.tgz',
+25 silly install resolved     readme: 'ERROR: No README data found!' } ]
+26 info install gulp-postcss@5.0.0 into /Users/thomas/Sites/PROJECTS/cdn
+27 info installOne gulp-postcss@5.0.0
+28 verbose installOne of gulp-postcss to /Users/thomas/Sites/PROJECTS/cdn not in flight; installing
+29 warn locking Error: EACCES, open '/Users/thomas/.npm/_locks/gulp-postcss-376bed17310bda41.lock'
+29 warn locking  /Users/thomas/.npm/_locks/gulp-postcss-376bed17310bda41.lock failed { [Error: EACCES, open '/Users/thomas/.npm/_locks/gulp-postcss-376bed17310bda41.lock']
+29 warn locking   errno: 3,
+29 warn locking   code: 'EACCES',
+29 warn locking   path: '/Users/thomas/.npm/_locks/gulp-postcss-376bed17310bda41.lock' }
+30 verbose stack Error: Attempt to unlock /Users/thomas/Sites/PROJECTS/cdn/node_modules/gulp-postcss, which hasn't been locked
+30 verbose stack     at unlock (/usr/local/lib/node_modules/npm/lib/utils/locker.js:66:11)
+30 verbose stack     at cb (/usr/local/lib/node_modules/npm/lib/install.js:929:5)
+30 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:933:20
+30 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/locker.js:40:9
+30 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+30 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
+30 verbose stack     at Object.oncomplete (fs.js:107:15)
+31 verbose cwd /Users/thomas/Sites/PROJECTS/cdn
+32 error Darwin 10.8.0
+33 error argv "node" "/usr/local/bin/npm" "install" "gulp-postcss"
+34 error node v0.10.20
+35 error npm  v2.1.11
+36 error Attempt to unlock /Users/thomas/Sites/PROJECTS/cdn/node_modules/gulp-postcss, which hasn't been locked
+37 error If you need help, you may report this error at:
+37 error     <http://github.com/npm/npm/issues>
+38 verbose exit [ 1, true ]

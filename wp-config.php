@@ -77,7 +77,19 @@ $table_prefix  = 'wp_';
  * de thèmes se servent de WP_DEBUG dans leur environnement de 
  * développement.
  */ 
-define('WP_DEBUG', false); 
+define('WP_DEBUG', true); 
+
+
+/* Multi Site & Domain Mapping */
+define ('WP_ALLOW_MULTISITE', true);
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', false);
+define('DOMAIN_CURRENT_SITE', 'cdn.dev');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
+
+define( 'SUNRISE', 'on' );
 
 /* C'est tout, ne touchez pas à ce qui suit ! Bon blogging ! */
 
