@@ -69,14 +69,6 @@ function event_register_meta_boxes( $meta_boxes )
                     'media_buttons' => false,
                 ),
             ),
-            // HIDDEN
-            array(
-                'id'   => "{$prefix}hidden",
-                'type' => 'hidden',
-                // Hidden field must have predefined value
-                'std'  => __( 'Hidden value', 'meta-box' ),
-            ),
-
         )
     );
 
@@ -100,6 +92,17 @@ function event_register_meta_boxes( $meta_boxes )
                 'name'  => __( 'Durée', 'meta-box' ),
                 'id'    => "{$prefix}duration",
                 'type'  => 'text',
+            ),
+            // TYPE d'événement
+            array(
+                'name'    => __( 'Type événement', 'meta-box' ),
+                'id'      => "{$prefix}event_type",
+                'type'    => 'taxonomy',
+                'options' => array(
+                    'taxonomy' => 'event_type',
+                    'type'     => 'checkbox_list',
+                    'args'     => array()
+                ),
             ),
             // SALLE
             array(
@@ -140,25 +143,26 @@ function event_register_meta_boxes( $meta_boxes )
             // Dates
             array(
                 'name'       => __( 'Dates du spectacle (en texte)', 'meta-box' ),
-                'id'         => $prefix . 'event_dates',
+                'id'         => "{$prefix}event_date",
                 'type'       => 'text',
             ),
 
             // Code Spectacle
             array(
                 'name'       => __( 'Code du spectacle', 'meta-box' ),
-                'id'         => $prefix . 'event_booking_id',
+                'id'         => "{$prefix}event_booking_id",
                 'type'       => 'number',
             ),
 
+            // Séances
             array(
-                'id'     => 'date',
+                'id'     =>  $prefix . 'dates',
                 'name'   => __( 'Séances', 'meta-box' ),
                 'type'   => 'group', 
                 'clone'  => true,   
                 'fields' => array(
 
-                    // Date
+                    // Date de la séance
                     array(
                         'name'       => __( 'Date', 'meta-box' ),
                         'id'         => $prefix . 'datetime',
@@ -168,7 +172,7 @@ function event_register_meta_boxes( $meta_boxes )
                             'showTimepicker' => true,
                         ),
                     ),
-                    // Code(s) séances
+                    // Code résa de la séance
                     array(
                         'name'       => __( 'Code de la séance', 'meta-box' ),
                         'id'         => $prefix . 'date_booking_id',
@@ -201,7 +205,7 @@ function event_register_meta_boxes( $meta_boxes )
         )
     );
 
-    // Presse
+    // Fichiers
     $meta_boxes[] = array(
         'id'         => 'files',
         'title'      => __( 'Fichiers', 'meta-box' ),
