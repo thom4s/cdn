@@ -1,16 +1,9 @@
 <?php
-/**
- * Plugin Name: CDN Post types.
- * Plugin URI: http://
- * Description: Déclaration WP des custom post-types (events) et taxonomies
- * Version: 1.0.0
- * Author: Thomas Florentin
- * Author URI: http://thomasflorentin.net
- * Text Domain: cdn-pt
- * License: A short license name. Example: GPL2
+
+/* Register Custom Post Type
+ ***************************
  */
 
-// Register Custom Post Type
 function event_post_type() {
 
   $labels = array(
@@ -59,9 +52,12 @@ function event_post_type() {
   register_post_type( 'event', $args );
 
 }
-
-// Hook into the 'init' action
 add_action( 'init', 'event_post_type', 0 );
+
+
+
+
+
 
 
 
