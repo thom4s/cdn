@@ -18,9 +18,14 @@ $gray_light:                        #999 !default;
 $gray_lighter:                      #eee !default;
 $white:                             #fff !default;
 
+$orange:                            #ffdc2e; 
+$magenta:                           #ea148c;
+$brown_dark:                        #393131;
+$brown_light:                       #766a6a;
+
 $color_text:                        $gray_dark !default;
 $color_link:                        $gray !default;
-$color_link_hover:                  $gray_dark;
+$color_link_hover:                  $magenta;
 $color_quote:                       $gray_light;
 $color_body_background:             $white;
 

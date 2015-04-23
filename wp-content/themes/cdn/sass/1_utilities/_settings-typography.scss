@@ -221,7 +221,11 @@ big {
   font-family: $font_family_meta;
 }
 
-
+.main-navigation {
+  font-family: $font_family_nav;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
 
 /*
