@@ -23,10 +23,12 @@ if ( ! defined( 'CDN_POST_TYPES_DIR' ) )
 
 
 // REQUIRES POST-TYPES & TAXONOMIES & METAS
+  // EVENTS
 require_once CDN_POST_TYPES_DIR . 'event-post-type.php';
 require_once CDN_POST_TYPES_DIR . 'event-taxonomies.php';
 require_once CDN_POST_TYPES_DIR . 'event-metas.php';
-
+  // POSTS
+require_once CDN_POST_TYPES_DIR . 'post-metas.php';
 
 
 // DISABLE ADMIN BAR

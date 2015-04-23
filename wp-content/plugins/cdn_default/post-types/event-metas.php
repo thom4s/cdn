@@ -1,12 +1,15 @@
 <?php
-
-/*
- * Register Meta Boxes for event
+/**
+ * Registering Events meta boxes
+ *
  * Require from post-types.php
- *******************************
+ *
+ * For more information, please visit:
+ * @link http://metabox.io/docs/registering-meta-boxes/
  */
 
-add_filter( 'rwmb_meta_boxes', 'your_prefix_register_meta_boxes' );
+
+add_filter( 'rwmb_meta_boxes', 'event_register_meta_boxes' );
 /**
  * Register meta boxes
  *
@@ -16,7 +19,7 @@ add_filter( 'rwmb_meta_boxes', 'your_prefix_register_meta_boxes' );
  *
  * @return array
  */
-function your_prefix_register_meta_boxes( $meta_boxes )
+function event_register_meta_boxes( $meta_boxes )
 {
     /**
      * prefix of meta keys (optional)
