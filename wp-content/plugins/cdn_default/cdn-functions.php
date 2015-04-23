@@ -31,6 +31,9 @@ require_once CDN_POST_TYPES_DIR . 'event-metas.php';
 require_once CDN_POST_TYPES_DIR . 'post-metas.php';
 
 
+add_theme_support( 'post-thumbnails' );
+
+
 // DISABLE ADMIN BAR
 add_filter('show_admin_bar', '__return_false');
 
