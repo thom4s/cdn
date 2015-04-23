@@ -3,12 +3,6 @@
  * @package cdn
  */
 
-
-		// $group_value = rwmb_meta( 'group_id' );
-    // $value = isset( $dates[$sub_field_key] ) ? $dates[$sub_field_key] : false;
-    // echo $value; // Display sub-field value
-
-
 		// GET ALL META DATAS
     $prefix = 'event_meta_';
 

@@ -79,23 +79,41 @@ function defaults_register_meta_boxes( $meta_boxes )
   );
 
 
-  // Bandeau titre
+  // Haut de page 
   $meta_boxes[] = array(
     'title'  => __( 'Bandeau titre', 'meta-box' ),
     'id'         => 'title-bg',
     'title'      => __( 'Bandeau Titre', 'meta-box' ),
     'post_types' => array( 'post', 'page' ),
-    'context'    => 'side',
+    'context'    => 'normal',
     'autosave'   => true,
     'fields' => array(
 
       // Checkbox
       array(
-        'name'        => __( '', 'meta-box' ),
+        'name'        => __( 'Activer la couleur du Haut de page', 'meta-box' ),
         'id'          => "{$prefix}title-bg",
         'type'        => 'checkbox',
       ),
+      
+      // Sous titre
+      array(
+        'name'        => __( 'Sous titre de la page', 'meta-box' ),
+        'id'          => "{$prefix}subtitle",
+        'type'        => 'text',
+      ),
 
+      // INTRODUCTION
+      array(
+          'name' => __( 'Introduction', 'meta-box' ),
+          'id'   => "{$prefix}intro",
+          'type' => 'wysiwyg',
+          'options' => array(
+              'textarea_rows' => 4,
+              'teeny'         => true,
+              'media_buttons' => false,
+          ),
+      ),
     )
   );
 
