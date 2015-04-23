@@ -78,6 +78,28 @@ function defaults_register_meta_boxes( $meta_boxes )
     )
   );
 
+
+  // Bandeau titre
+  $meta_boxes[] = array(
+    'title'  => __( 'Bandeau titre', 'meta-box' ),
+    'id'         => 'title-bg',
+    'title'      => __( 'Bandeau Titre', 'meta-box' ),
+    'post_types' => array( 'post', 'page' ),
+    'context'    => 'side',
+    'autosave'   => true,
+    'fields' => array(
+
+      // Checkbox
+      array(
+        'name'        => __( '', 'meta-box' ),
+        'id'          => "{$prefix}title-bg",
+        'type'        => 'checkbox',
+      ),
+
+    )
+  );
+
+
   return $meta_boxes;
 }
 
