@@ -40,7 +40,7 @@ add_filter('show_admin_bar', '__return_false');
 // TO BE CODED
 function my_home_query( $query ) {
     if ( $query->is_home() && $query->is_main_query() ) {
-        $query->set( 'cat', '123' );
+        // $query->set( 'cat', '123' );
     }
 }
 add_action( 'pre_get_posts', 'my_home_query' );
