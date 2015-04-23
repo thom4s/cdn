@@ -4,8 +4,18 @@
  * @package sasskit
  */
 
-.home {
+.site-title {
+  width: 20px;
+  font-weight: 100;
+  color: #000;
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.home {
 
   .site-branding {
     position: relative;
@@ -23,13 +33,8 @@
         position: absolute;
         top: 0;
         left: 0;
-
-        font-weight: 100;
         color: #fff;
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
+        @include fontsize(40);
+        line-height: 30px;
       }
 }
