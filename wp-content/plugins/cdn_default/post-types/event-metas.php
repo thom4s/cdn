@@ -130,45 +130,53 @@ function event_register_meta_boxes( $meta_boxes )
         )
     );
 
-    // DATES + Codes réservation
+
+    // DATES ET RESERVATIONS
     $meta_boxes[] = array(
-        'id'         => 'dates',
-        'title'      => __( 'Dates et codes de réservation', 'meta-box' ),
+        'title'  => __( 'Dates et Réservations', 'meta-box' ),
         'post_types' => array( 'event' ),
-        'context'    => 'side',
-        'priority'   => 'low',
-        'autosave'   => true,        
         'fields' => array(
-            // DATETIME
+
+            // Dates
             array(
-                'name'       => __( 'Dates', 'meta-box' ),
-                'id'         => $prefix . 'datetime',
-                'type'       => 'datetime',
-                // jQuery datetime picker options.
-                // For date options, see here http://api.jqueryui.com/datepicker
-                // For time options, see here http://trentrichardson.com/examples/timepicker/
-                'js_options' => array(
-                    'stepMinute'     => 15,
-                    'showTimepicker' => true,
-                ),
-                'desc'  => __( 'Cliquez sur le + pour ajouter une séance', 'meta-box' ),
-                'clone'     => true,
+                'name'       => __( 'Dates du spectacle (en texte)', 'meta-box' ),
+                'id'         => $prefix . 'event_dates',
+                'type'       => 'text',
             ),
+
             // Code Spectacle
             array(
                 'name'       => __( 'Code du spectacle', 'meta-box' ),
                 'id'         => $prefix . 'event_booking_id',
                 'type'       => 'number',
             ),
-            // Code(s) séances
+
             array(
-                'name'       => __( 'Code de la / des séance(s)', 'meta-box' ),
-                'id'         => $prefix . 'event_booking_id',
-                'type'       => 'number',
-                'desc'  => __( 'Un code par séance. Cliquez sur le + pour ajouter un code', 'meta-box' ),
-                'clone'      => true
+                'id'     => 'date',
+                'name'   => __( 'Séances', 'meta-box' ),
+                'type'   => 'group', 
+                'clone'  => true,   
+                'fields' => array(
+
+                    // Date
+                    array(
+                        'name'       => __( 'Date', 'meta-box' ),
+                        'id'         => $prefix . 'datetime',
+                        'type'       => 'datetime',
+                        'js_options' => array(
+                            'stepMinute'     => 15,
+                            'showTimepicker' => true,
+                        ),
+                    ),
+                    // Code(s) séances
+                    array(
+                        'name'       => __( 'Code de la séance', 'meta-box' ),
+                        'id'         => $prefix . 'date_booking_id',
+                        'type'       => 'number',
+                    ),
+                ),
             ),
-        )
+        ),
     );
 
     // Presse
