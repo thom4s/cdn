@@ -82,6 +82,10 @@
 				}; ?>
 			</ul>
 		
+			<ul>
+				<li><a href="#distribution">Voir la Distribution</a></li>
+				<li><a href="#presse">Lire la presse</a></li>			
+			</ul>
 
 		</div><!-- .entry-meta -->
 
@@ -108,11 +112,11 @@
 
 	<footer class="entry-footer">
 		
-		<h2>Distribution</h2>
+		<h2 id="distribution">Distribution</h2>
 				<?php echo $distribution; ?>
 
 
-		<h2>La presse</h2>
+		<h2 id="presse">La presse</h2>
 			<?php echo $press; ?>
 
 
