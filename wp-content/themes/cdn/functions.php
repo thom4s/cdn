@@ -120,8 +120,8 @@ function cdn_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="buttons-group widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h6 class="widget-title">',
-		'after_title'   => '</h6>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );	
 }
 add_action( 'widgets_init', 'cdn_widgets_init' );

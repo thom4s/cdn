@@ -122,9 +122,13 @@ $typos_map: (
   ),
   h4: (
     use: "Buttons titles",
-    font-family: $font_family_title,
+    font-family: $font_family_meta,
     font-size: 1.6rem,
-    line-height: $base_line_height,
+    line-height: 40px,
+    height: 40px,
+    margin: 0,
+    padding: 0 0 0 40px,
+    text-transform: uppercase,
   ),
   h5: (
     use: "Headings 5",
@@ -248,7 +252,22 @@ big {
     @if map-get($_values, color) {
       color: #{map-get($_values, color)};
     }
-
+    @if map-get($_values, height) {
+      height: #{map-get($_values, height)};
+    }
+    @if map-get($_values, margin) {
+      margin: #{map-get($_values, margin)};
+    }
+    @if map-get($_values, padding) {
+      padding: #{map-get($_values, padding)};
+    }
+    @if map-get($_values, text-transform) {
+      text-transform: #{map-get($_values, text-transform)};
+    }
+    @if map-get($_values, font-weight) {
+      font-weight: #{map-get($_values, font-weight)};
+    }
+        
     & > .use:before {
       content: '#{map-get($_values, use)}';
     }

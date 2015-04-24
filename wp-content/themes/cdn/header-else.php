@@ -22,13 +22,18 @@
 
 
     <?php if( is_singular( 'event' ) ){ ?>
-        
-        <ul class="buttons-group">
-          <h5>Pratique</h5>
-          <li class="btn"><a href="http://www.forumsirius.fr/orion/sartrouville.phtml?spec=<?php echo $event_booking_id; ?>">Réservez pour ce spectacle</a></li>
-          <li class="btn"><a href="/saison">Retournez au calendrier</a></li>
-          <li class="btn"><a href="">Le spectacle suivant</a></li>
-        </ul>
+ 
+      <div class="bloc-outer">
+        <div class="buttons-group">
+          <h4>Pratique</h4>
+          <ul>
+            <li class="btn"><a href="http://www.forumsirius.fr/orion/sartrouville.phtml?spec=<?php echo $event_booking_id; ?>">Réservez pour ce spectacle</a></li>
+            <li class="btn"><a href="/saison">Retournez au calendrier</a></li>
+            <li class="btn"><a href="">Le spectacle suivant</a></li>
+          </ul>
+        </div>
+      </div><!-- .bloc-outer -->
+
 
     <?php } ?>
 
