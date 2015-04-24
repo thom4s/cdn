@@ -12,13 +12,33 @@
   </div><!-- .main-col -->
 
 	<footer id="colophon" class="site-footer plain" role="contentinfo">
-		<div class="site-contacts wrap">
-	     Suivez nous
-		</div><!-- .site-info -->
 
-    <div class="site-info wrap">
-      Le CDN
-    </div><!-- .site-info -->
+		<div class="footer-contacts">
+      <div class="footer-contacts-inner wrap row">
+
+        <?php dynamic_sidebar( 'upper-footer' ); ?>
+
+      </div>
+		</div><!-- .site-contacts -->
+
+
+    <div class="footer-infos">
+      <div class="footer-info-inner wrap row">
+
+        <div class="footer-infos-first">
+          <?php dynamic_sidebar( 'footer-1' ); ?>
+        </div> 
+
+        <div class="footer-infos-second">
+          <?php dynamic_sidebar( 'footer-2' ); ?>
+        </div> 
+
+        <div class="footer-infos-third">
+          <?php dynamic_sidebar( 'footer-3' ); ?>
+        </div> 
+
+      </div><!-- .footer-infos-inner -->
+    </div><!-- .footer-infos -->
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->

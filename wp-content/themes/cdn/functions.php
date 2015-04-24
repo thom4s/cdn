@@ -41,13 +41,6 @@ function cdn_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	//add_theme_support( 'post-thumbnails' );
-
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'cdn' ),
@@ -61,13 +54,14 @@ function cdn_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
-	) );
+
+	// Add Image Size for This Theme // TO DO 
+	add_action( 'after_setup_theme', 'baw_theme_setup' );
+	function baw_theme_setup() {
+	  add_image_size( 'home-featured', 1200, 500, true ); // 1200px wide / 500px height / cropped
+	  add_image_size( 'homepage-thumb', 894, 450, true ); 
+	}
+
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'cdn_custom_background_args', array(
@@ -93,6 +87,42 @@ function cdn_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 1er colonne', 'cdn' ),
+		'id'            => 'footer-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h6 class="widget-title">',
+		'after_title'   => '</h6>',
+	) );	
+	register_sidebar( array(
+		'name'          => __( 'Footer 2eme colonne', 'cdn' ),
+		'id'            => 'footer-2',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h6 class="widget-title">',
+		'after_title'   => '</h6>',
+	) );	
+	register_sidebar( array(
+		'name'          => __( 'Footer 3eme colonne', 'cdn' ),
+		'id'            => 'footer-3',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h6 class="widget-title">',
+		'after_title'   => '</h6>',
+	) );	
+	register_sidebar( array(
+		'name'          => __( 'Footer supérieur', 'cdn' ),
+		'id'            => 'upper-footer',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="buttons-group widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h6 class="widget-title">',
+		'after_title'   => '</h6>',
+	) );	
 }
 add_action( 'widgets_init', 'cdn_widgets_init' );
 

@@ -39,6 +39,9 @@ add_filter('show_admin_bar', '__return_false');
 
 
 
+
+
+
 // MODIFY QUERY FOR HOM PAGE 
 // TO BE CODED
 function my_home_query( $query ) {

@@ -15,7 +15,7 @@ $max_width_large:                   1200px;
 $cols:                              16 !default; 
 $gutter:                            2% !default; 
         
-$mobile_first:                      false !default; 
+$mobile_first:                      true !default; 
 $minimal_breakpoint:                320px !default; 
 $medium_breakpoint:                 760px !default; 
 $large_breakpoint:                  1024px !default; 
@@ -77,8 +77,8 @@ $one_col: (100% - ($gutter * ($cols - 1))) / $cols;
                     }
                 }
             }
-            %#{$suffix}-#{$i}col-push { left: $i / $cols * 100%; }
-            %#{$suffix}-#{$i}col-pull { right: $i / $cols * 100%; }
+            %#{$suffix}-#{$i}col-push { left: $i / $cols * 100%; position: relative; right: auto; }
+            %#{$suffix}-#{$i}col-pull { right: $i / $cols * 100%; position: relative; left: auto; }
         }
         %#{$suffix}-hide { display: none; }
         %#{$suffix}-show { display: block; }
