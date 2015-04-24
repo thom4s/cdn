@@ -5,6 +5,7 @@
 
 		// GET ALL META DATAS
     $prefix = 'event_meta_';
+    $prefix_default = 'defaults_meta_';
 
     // Dates & Reservations
     $event_date =	rwmb_meta( $prefix . 'event_date' );
@@ -41,7 +42,6 @@
     // Presse
     $press =	rwmb_meta( $prefix . 'press' );
 
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -75,7 +75,7 @@
 								'</a></li>';
 				}; ?>
 			</ul>
-		
+
 			<ul>
 				<li><a href="#distribution">Voir la Distribution</a></li>
 				<li><a href="#presse">Lire la presse</a></li>			
@@ -96,9 +96,9 @@
 	<div class="related-content">
 		<h2>Aller plus loin</h2>
 
-		<div class="related-bloc">ça</div>
-		<div class="related-bloc">et ça</div>
-
+    <div class="row">
+      <?php get_template_part('part','related-content'); ?>
+    </div>
 	</div><!-- .entry-content -->
 
 

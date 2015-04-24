@@ -598,7 +598,7 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .site-header, .row .footer-infos-first {
+  .row .related-post, .row .site-header, .row .footer-infos-first {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -607,7 +607,7 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .site-header .footer-contacts aside, .footer-contacts .row .site-header aside, .row .footer-infos-first .footer-contacts aside, .footer-contacts .row .footer-infos-first aside, .row .site-header .footer-infos-third, .row .footer-infos-first .footer-infos-third {
+  .row .related-post .footer-contacts aside, .footer-contacts .row .related-post aside, .row .site-header .footer-contacts aside, .footer-contacts .row .site-header aside, .row .footer-infos-first .footer-contacts aside, .footer-contacts .row .footer-infos-first aside, .row .related-post .footer-infos-third, .row .site-header .footer-infos-third, .row .footer-infos-first .footer-infos-third {
     margin-left: 8.51064%;
     width: 72.87234%;
   }
@@ -624,7 +624,7 @@ th {
     margin-left: 4.69208%;
     width: 40.17595%;
   }
-  .row .footer-infos-second .site-header, .row .footer-infos-second .footer-infos-first {
+  .row .footer-infos-second .related-post, .row .footer-infos-second .site-header, .row .footer-infos-second .footer-infos-first {
     margin-left: 4.69208%;
     width: 55.13196%;
   }
@@ -641,7 +641,7 @@ th {
     margin-left: 2.68456%;
     width: 22.98658%;
   }
-  .row .site-content .site-header, .row .site-content .footer-infos-first {
+  .row .site-content .related-post, .row .site-content .site-header, .row .site-content .footer-infos-first {
     margin-left: 2.68456%;
     width: 31.54362%;
   }
@@ -1207,7 +1207,24 @@ a:active {
  * @package sasskit
  */
 .bloc-outer {
+  float: left;
+}
+.bloc-outer.no-bg {
+  background-color: none;
+}
+.bloc-outer.practical {
+  background-color: #444;
+}
+.bloc-outer.fun {
   background-color: #ea148c;
+}
+
+.related-post a {
+  color: inherit;
+  text-decoration: none;
+}
+.related-post:hover {
+  background-color: #ddd;
 }
 
 /* 
@@ -1223,6 +1240,7 @@ a:active {
   background-repeat: no-repeat;
   padding-left: 35px;
   margin-top: 44px;
+  margin-bottom: 44px;
 }
 .search-form-outer:before, .search-form-outer:after {
   content: " ";
@@ -1270,6 +1288,7 @@ a:active {
   border-radius: 0;
   background: none;
   color: #000;
+  font-weight: 700;
   padding: 0;
   display: list-item;
   list-style-type: circle;

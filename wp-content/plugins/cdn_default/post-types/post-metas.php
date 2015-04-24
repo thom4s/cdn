@@ -24,57 +24,64 @@ function defaults_register_meta_boxes( $meta_boxes )
 
   // LINKED TO ...
   $meta_boxes[] = array(
-    'title'  => __( 'Combinaisons', 'meta-box' ),
+    'title'      => __( 'Allez plus loin...', 'meta-box' ),
     'id'         => 'linkedposts',
-    'title'      => __( 'Générique', 'meta-box' ),
     'post_types' => array( 'post', 'page', 'event' ),
     'context'    => 'side',
-    'autosave'   => true,
     'fields' => array(
 
-      // EVENT
       array(
-        'name'        => __( 'Evénement', 'meta-box' ),
-        'id'          => "{$prefix}event_linked",
-        'type'        => 'post',
-        'post_type'   => 'event',
-        'field_type'  => 'select_advanced',
-        'placeholder' => __( 'Select an Item', 'meta-box' ),
-        'query_args'  => array(
-          'post_status'    => 'publish',
-          'posts_per_page' => - 1,
-        ),
-        'multiple'    => false,
-      ),
+        'id'     =>  $prefix . 'linkedposts',
+        'name'   => __( '', 'meta-box' ),
+        'type'   => 'group', 
+        'clone'  => true,   
+        'fields' => array(
 
-      // IMPORTANCE
-      array(
-        'name'        => __( 'Importance', 'meta-box' ),
-        'id'          => "{$prefix}importance",
-        'type'        => 'select',
-        'options'     => array(
-          'low'     => __( 'Basse', 'meta-box' ),
-          'normal'  => __( 'Normal', 'meta-box' ),
-          'high'    => __( 'Haute', 'meta-box' ),
-        ),
-        'multiple'    => false,
-        'placeholder' => __( 'Select an Item', 'meta-box' ),
-      ),
+          // EVENT
+          array(
+            'name'        => __( 'Choisir une page/actu/événement.', 'meta-box' ),
+            'id'          => "{$prefix}linkedpost-id",
+            'type'        => 'post',
+            'post_type'   => array('event', 'post', 'page'),
+            'field_type'  => 'select_advanced',
+            'placeholder' => __( 'Select an Item', 'meta-box' ),
+            'query_args'  => array(
+              'post_status'    => 'publish',
+              'posts_per_page' => - 1,
+            ),
+            'multiple'    => false,
+          ),
 
-      // STYLE
-      array(
-        'name'        => __( 'Style', 'meta-box' ),
-        'id'          => "{$prefix}select",
-        'type'        => 'select',
-        'options'     => array(
-          'value1' => __( 'Style 1', 'meta-box' ),
-          'value2' => __( 'Style 2', 'meta-box' ),
-        ),
-        // Select multiple values, optional. Default is false.
-        'multiple'    => false,
-        'placeholder' => __( 'Select an Item', 'meta-box' ),
-      ),
+          // IMPORTANCE
+          array(
+            'name'          => __( 'Cet élément est...', 'meta-box' ),
+            'id'            => "{$prefix}importance",
+            'type'          => 'select',
+            'options'       => array(
+              'practical'   => __( 'Pratique', 'meta-box' ),
+              'event-aside' => __( 'Un événement soutien', 'meta-box' ),
+              'normal'      => __( 'Normal', 'meta-box' ),
+              'fun'         => __( 'Fun', 'meta-box' ),
+            ),
+            'multiple'    => false,
+            'placeholder' => __( 'Select an Item', 'meta-box' ),
+          ),
 
+          // STYLE
+          array(
+            'name'        => __( 'Et son style...', 'meta-box' ),
+            'id'          => "{$prefix}select",
+            'type'        => 'select',
+            'options'     => array(
+              'value1' => __( 'Style 1', 'meta-box' ),
+              'value2' => __( 'Style 2', 'meta-box' ),
+            ),
+            // Select multiple values, optional. Default is false.
+            'multiple'    => false,
+            'placeholder' => __( 'Select an Item', 'meta-box' ),
+          ),
+        ),
+      ),
     )
   );
 

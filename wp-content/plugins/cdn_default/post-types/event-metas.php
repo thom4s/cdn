@@ -142,14 +142,14 @@ function event_register_meta_boxes( $meta_boxes )
 
             // Dates
             array(
-                'name'       => __( 'Dates du spectacle (en texte)', 'meta-box' ),
+                'name'       => __( 'Dates de l\'événement (en texte)', 'meta-box' ),
                 'id'         => "{$prefix}event_date",
                 'type'       => 'text',
             ),
 
             // Code Spectacle
             array(
-                'name'       => __( 'Code du spectacle', 'meta-box' ),
+                'name'       => __( 'Code de l\'événement', 'meta-box' ),
                 'id'         => "{$prefix}event_booking_id",
                 'type'       => 'number',
             ),
@@ -157,7 +157,7 @@ function event_register_meta_boxes( $meta_boxes )
             // Séances
             array(
                 'id'     =>  $prefix . 'dates',
-                'name'   => __( 'Séances', 'meta-box' ),
+                'name'   => __( 'Séances (pour les événements', 'meta-box' ),
                 'type'   => 'group', 
                 'clone'  => true,   
                 'fields' => array(

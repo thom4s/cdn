@@ -5,5 +5,29 @@
  */
 
 .bloc-outer {
-  background-color: $magenta;
+  float: left;
+
+  &.no-bg {
+    background-color: none;
+  }
+  &.practical {
+    background-color: #444;
+  }
+  &.fun {
+    background-color: $magenta;
+  }  
+}
+
+
+.related-post {
+  @extend %l-4col;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: #ddd;
+  }
 }

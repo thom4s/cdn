@@ -22,7 +22,7 @@
 
     <?php if( is_singular( 'event' ) ){ ?>
  
-      <div class="bloc-outer">
+      <div class="bloc-outer practical">
         <div class="buttons-group">
           <h4>Pratique</h4>
           <ul>
