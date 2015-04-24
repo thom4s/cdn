@@ -23,7 +23,7 @@
 	<div class="wrap row">
 
 		<?php
-		if ( is_home() ) {
+		if ( is_front_page() ) {
 		    // This is the blog posts index
 		    get_template_part( 'header', 'home' );
 		} else {

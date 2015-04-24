@@ -6,6 +6,9 @@
 
 .bloc-outer {
   float: left;
+  margin-bottom: $base_line_height;
+  background-color: #fff;
+  padding: 1%;
 
   &.no-bg {
     background-color: none;
@@ -18,13 +21,14 @@
   }  
 }
 
-
 .related-post {
   @extend %l-4col;
 
-  a {
-    color: inherit;
-    text-decoration: none;
+  &:first-child {
+    @extend %l-8col;
+  }
+  &:nth-child(3){
+    @extend %l-first;
   }
 
   &:hover {

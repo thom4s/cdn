@@ -5,6 +5,11 @@
  */
 
 
+.home .site-content {
+  background: none;
+  margin-top: $base_line_height;
+}
+
 .featured-title {
   position: absolute;
   bottom: 20px;
