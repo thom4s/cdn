@@ -10,16 +10,17 @@
 @import "6_vendors/normalize "; 
 
 @import "1_utilities/config";
+@import "1_utilities/mixins";
+@import "1_utilities/placeholders";
+@import "1_utilities/grid"; 
+
 @import "1_utilities/settings-colors";
 @import "1_utilities/settings-typography";
 @import "1_utilities/settings-navigation";
 @import "1_utilities/settings-forms";
 @import "1_utilities/settings-tables";
 
-@import "1_utilities/mixins";
-@import "1_utilities/placeholders";
 @import "1_utilities/print";
-@import "1_utilities/grid"; 
 
 @import "2_elements/buttons";
 @import "2_elements/links";

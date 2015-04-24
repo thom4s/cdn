@@ -4,6 +4,12 @@
  * @package sasskit
  */
 
+
+.site-header {
+  @extend %l-4col;
+  @extend %l-first;
+}
+
 .site-title {
   width: 20px;
   font-weight: 100;

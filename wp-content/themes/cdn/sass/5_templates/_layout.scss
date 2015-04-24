@@ -10,5 +10,9 @@
 }
 
   .site-content {
+    @extend %w-12col;
+    @extend %l-12col;
+    @extend %w-last;
+
     background-color: #fff;
   }

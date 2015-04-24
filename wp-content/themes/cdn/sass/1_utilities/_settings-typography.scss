@@ -32,7 +32,7 @@ body {
 
 /* For responsive, adjust root font size only. And go. */
 
-@media screen and (min-width: medium_breakpoint) {
+@media screen and (max-width: $medium_breakpoint) {
   html {
     font-size: 50%;
   }
