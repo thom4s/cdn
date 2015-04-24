@@ -3,6 +3,9 @@
  * @package cdn
  */
 
+    setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
+    $today = time();
+
 		// GET ALL META DATAS
     $prefix = 'event_meta_';
     $prefix_default = 'defaults_meta_';
@@ -48,41 +51,69 @@
 
 	<header class="entry-header">
 		
-		<div>
+		<div class="entry-medias">
 			<?php the_post_thumbnail( ); ?> 
+    </div>
 
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			
-			<?php foreach ( $authors as $author ) { echo $author; } ?>
-			
-			<?php echo $intro; ?>
-		</div>
+    <div class="row">
 
-		<div class="entry-meta">
-			<?php	if($is_creation) : echo 'Création'; endif; ?><br>
+      <div class="entry-titles">
+        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        
+        <?php foreach ( $authors as $author ) { echo '<span class="meta entry-authors">' . $author . '</span>'; } ?>
+        
+        <?php echo $intro; ?>
+      </div>
 
-			<?php foreach ( $event_types as $type ) { echo $type->name; } ?> | <?php foreach ( $age as $a ) { echo $a->name; } ?><br>
+      <div class="entry-metas">
+        <div class="entry-metas-group">
+          <?php if($is_creation) : echo 'Création'; endif; ?><br>
 
-			<?php foreach ( $salle as $s ) { echo $s->name; } ?> | <?php echo $duration; ?><br>
+          <?php foreach ( $event_types as $type ) { echo $type->name; } ?> | <?php foreach ( $age as $a ) { echo $a->name; } ?><br>
 
-<br>
+          <?php foreach ( $salle as $s ) { echo $s->name; } ?> | <?php echo $duration; ?>
+        </div><!-- .entry-metas-group -->
 
-			<ul>
-				<?php foreach ($dates_infos as $date) {
-					echo 	'<li>'.
-								'<a href="http://www.forumsirius.fr/orion/sartrouville.phtml?seance='. $date["event_meta_date_booking_id"] .'" title="Réservez pour la séance du spectacle " alt="Réservez pour la séance du spectacle ">'.
-							 	$date['event_meta_datetime'].
-								'</a></li>';
-				}; ?>
-			</ul>
+        <div class="entry-metas-group">
+          <ul class="event-dates">
+            <?php foreach ($dates_infos as $date) {
 
-			<ul>
-				<li><a href="#distribution">Voir la Distribution</a></li>
-				<li><a href="#presse">Lire la presse</a></li>			
-			</ul>
+              $date_booking_id = $date["event_meta_date_booking_id"];
+              $date_string = $date["event_meta_datetime"];
+              $date_raw = strtotime($date_string);
+              $date_formated = date('D d M Y : H\hi', $date_raw);
+              
+              echo  '<li>';
 
-		</div><!-- .entry-meta -->
+              if( $today > $date_raw ) {
+                // date passée
+                echo  '<span class="passed_date">'. $date_formated .'</span>';
 
+              } else {
+                // date à venir
+                echo  '<a href="http://www.forumsirius.fr/orion/sartrouville.phtml?seance='. 
+                      $date_booking_id .
+                      '" title="Réservez pour la séance du spectacle " alt="Réservez pour la séance du spectacle ">'.
+                      $date_formated.
+                      '</a>';
+              }
+
+              echo '</li>';
+
+            }; ?>
+          </ul>
+        </div><!-- .entry-metas-group -->
+
+
+ 
+
+        <ul>
+          <li><a href="#distribution">Voir la Distribution</a></li>
+          <li><a href="#presse">Lire la presse</a></li>     
+        </ul>
+
+      </div><!-- .entry-meta -->
+    </div><!-- .row -->
 	</header><!-- .entry-header -->
 
 

@@ -154,7 +154,7 @@ function event_register_meta_boxes( $meta_boxes )
                 'type'       => 'number',
             ),
 
-            // Séances
+            // Séances (Groupe(s))
             array(
                 'id'     =>  $prefix . 'dates',
                 'name'   => __( 'Séances (pour les événements', 'meta-box' ),

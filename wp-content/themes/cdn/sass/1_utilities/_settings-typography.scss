@@ -88,6 +88,7 @@ $typos_map: (
     font-family: $font_family_paragraph,
     font-size: 1.6rem,
     line-height: $base_line_height,
+    margin: 0 0 $base_line_height 0,
  ),
   blockquote: (
     use: "A quote very ",
@@ -107,12 +108,14 @@ $typos_map: (
     font-size: 6.3rem,
     line-height: 5rem,
     font-weight: 100,
+    margin: 0,
   ),
   h2: (
     use: "titles dotted",
-    font-family: $font_family_title,
+    font-family: $font_family_meta,
     font-size: 1.6rem,
     line-height: $base_line_height,
+    margin: 0 0 11px 0,
   ),
   h3: (
     use: "Bloc titles",

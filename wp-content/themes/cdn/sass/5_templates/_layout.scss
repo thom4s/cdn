@@ -16,3 +16,63 @@
 
     background-color: #fff;
   }
+
+    .entry-titles {
+      @extend %l-7col;
+      @extend %l-1col-push;
+
+      .entry-title { margin: 22px 0; }
+      .entry-authors { font-weight: 100; display: inline-block; clear: both; }
+      p { font-weight: 900; } 
+    }
+      
+    .entry-metas {
+      @extend %l-3col;
+      @extend %l-last;
+
+      color: $magenta;
+      margin-top: 22px;
+      text-align: right;
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .entry-content {
+      @extend %l-8col;
+      @extend %l-1col-push;
+      @extend %l-first;
+
+      @include clearfix();      
+    }
+
+
+    .related-content {
+      @include clearfix();
+      margin-bottom: $base_line_height;
+    }
+
+    .entry-footer {
+      p {
+        @extend %l-8col;
+        @extend %l-1col-push;
+        @extend %l-first;
+      }
+
+    }
+
+h2 {
+  @extend %l-1col-push;
+  @extend %l-first;
+
+  @include clearfix;
+}
+
+

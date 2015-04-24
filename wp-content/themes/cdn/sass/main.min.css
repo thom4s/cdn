@@ -584,12 +584,12 @@ th {
  * GRID GENERATOR
  */
 @media (min-width: 1024px) {
-  .row .footer-infos-second {
+  .row .footer-infos-second, .row .entry-titles, .row .entry-content, .row .entry-footer p, .entry-footer .row p, .row h2 {
     left: 6.25%;
     position: relative;
     right: auto;
   }
-  .row .footer-contacts aside, .footer-contacts .row aside, .row .footer-infos-third {
+  .row .footer-contacts aside, .footer-contacts .row aside, .row .footer-infos-third, .row .entry-metas {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -607,11 +607,11 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .related-post .footer-contacts aside, .footer-contacts .row .related-post aside, .row .site-header .footer-contacts aside, .footer-contacts .row .site-header aside, .row .footer-infos-first .footer-contacts aside, .footer-contacts .row .footer-infos-first aside, .row .related-post .footer-infos-third, .row .site-header .footer-infos-third, .row .footer-infos-first .footer-infos-third {
+  .row .related-post .footer-contacts aside, .footer-contacts .row .related-post aside, .row .site-header .footer-contacts aside, .footer-contacts .row .site-header aside, .row .footer-infos-first .footer-contacts aside, .footer-contacts .row .footer-infos-first aside, .row .related-post .footer-infos-third, .row .site-header .footer-infos-third, .row .footer-infos-first .footer-infos-third, .row .related-post .entry-metas, .row .site-header .entry-metas, .row .footer-infos-first .entry-metas {
     margin-left: 8.51064%;
     width: 72.87234%;
   }
-  .row .footer-infos-second {
+  .row .footer-infos-second, .row .entry-titles {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -620,13 +620,34 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .footer-infos-second .footer-contacts aside, .footer-contacts .row .footer-infos-second aside, .row .footer-infos-second .footer-infos-third {
+  .row .footer-infos-second .footer-contacts aside, .footer-contacts .row .footer-infos-second aside, .row .entry-titles .footer-contacts aside, .footer-contacts .row .entry-titles aside, .row .footer-infos-second .footer-infos-third, .row .entry-titles .footer-infos-third, .row .footer-infos-second .entry-metas, .row .entry-titles .entry-metas {
     margin-left: 4.69208%;
     width: 40.17595%;
   }
-  .row .footer-infos-second .related-post, .row .footer-infos-second .site-header, .row .footer-infos-second .footer-infos-first {
+  .row .footer-infos-second .related-post, .row .entry-titles .related-post, .row .footer-infos-second .site-header, .row .entry-titles .site-header, .row .footer-infos-second .footer-infos-first, .row .entry-titles .footer-infos-first {
     margin-left: 4.69208%;
     width: 55.13196%;
+  }
+  .row .entry-content, .row .entry-footer p, .entry-footer .row p {
+    /* Acceptable values are border, content, and padding - content is the default W3C model */
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 49%;
+    float: left;
+    margin-left: 2%;
+  }
+  .row .entry-content .footer-contacts aside, .footer-contacts .row .entry-content aside, .row .entry-footer p .footer-contacts aside, .footer-contacts .row .entry-footer p aside, .entry-footer .row p .footer-contacts aside, .footer-contacts .entry-footer .row p aside, .row .entry-content .footer-infos-third, .row .entry-footer p .footer-infos-third, .entry-footer .row p .footer-infos-third, .row .entry-content .entry-metas, .row .entry-footer p .entry-metas, .entry-footer .row p .entry-metas {
+    margin-left: 4.08163%;
+    width: 34.94898%;
+  }
+  .row .entry-content .related-post, .row .entry-footer p .related-post, .entry-footer .row p .related-post, .row .entry-content .site-header, .row .entry-footer p .site-header, .entry-footer .row p .site-header, .row .entry-content .footer-infos-first, .row .entry-footer p .footer-infos-first, .entry-footer .row p .footer-infos-first {
+    margin-left: 4.08163%;
+    width: 47.95918%;
+  }
+  .row .entry-content .footer-infos-second, .row .entry-footer p .footer-infos-second, .entry-footer .row p .footer-infos-second, .row .entry-content .entry-titles, .row .entry-footer p .entry-titles, .entry-footer .row p .entry-titles {
+    margin-left: 4.08163%;
+    width: 86.9898%;
   }
   .row .site-content {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
@@ -637,7 +658,7 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .site-content .footer-contacts aside, .footer-contacts .row .site-content aside, .row .site-content .footer-infos-third {
+  .row .site-content .footer-contacts aside, .footer-contacts .row .site-content aside, .row .site-content .footer-infos-third, .row .site-content .entry-metas {
     margin-left: 2.68456%;
     width: 22.98658%;
   }
@@ -645,14 +666,18 @@ th {
     margin-left: 2.68456%;
     width: 31.54362%;
   }
-  .row .site-content .footer-infos-second {
+  .row .site-content .footer-infos-second, .row .site-content .entry-titles {
     margin-left: 2.68456%;
     width: 57.21477%;
   }
-  .row .site-header {
+  .row .site-content .entry-content, .row .site-content .entry-footer p, .entry-footer .row .site-content p {
+    margin-left: 2.68456%;
+    width: 65.77181%;
+  }
+  .row .site-header, .row .entry-content, .row .entry-footer p, .entry-footer .row p, .row h2 {
     margin-left: 0 !important;
   }
-  .row .footer-infos-third {
+  .row .footer-infos-third, .row .entry-metas {
     float: right !important;
   }
 }
@@ -949,6 +974,7 @@ p {
   font-family: Source Sans Pro, Georgia, Times New Roman, serif;
   font-size: 1.6rem;
   line-height: 22px;
+  margin: 0 0 22px 0;
 }
 p > .use:before {
   content: "This is the body copy. ";
@@ -985,6 +1011,7 @@ h1 {
   font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
   font-size: 6.3rem;
   line-height: 5rem;
+  margin: 0;
   font-weight: 100;
 }
 h1 > .use:before {
@@ -995,15 +1022,16 @@ h1 + .info:before {
 }
 
 h2 {
-  font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
+  font-family: Roboto Slab, Georgia, Times New Roman, serif;
   font-size: 1.6rem;
   line-height: 22px;
+  margin: 0 0 11px 0;
 }
 h2 > .use:before {
   content: "titles dotted";
 }
 h2 + .info:before {
-  content: "Source Sans Pro, Arial, Helvetica, sans-serif / 1.6rem / 22px";
+  content: "Roboto Slab, Georgia, Times New Roman, serif / 1.6rem / 22px";
 }
 
 h3 {
@@ -1188,17 +1216,14 @@ h4 {
  * @package sasskit
  */
 a {
-  color: royalblue;
-}
-
-a:visited {
-  color: purple;
+  color: inherit;
+  text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: midnightblue;
+  color: #ea148c;
 }
 
 /* 
@@ -1551,6 +1576,7 @@ th {
   font-size: 45px;
   font-size: 45 / 10 rem;
   line-height: 4rem;
+  margin: 22px 0 44px 0;
 }
 .site-title a {
   color: inherit;
@@ -1634,14 +1660,102 @@ th {
   background-color: #fff;
 }
 
+.entry-titles .entry-title {
+  margin: 22px 0;
+}
+.entry-titles .entry-authors {
+  font-weight: 100;
+  display: inline-block;
+  clear: both;
+}
+.entry-titles p {
+  font-weight: 900;
+}
+
+.entry-metas {
+  color: #ea148c;
+  margin-top: 22px;
+  text-align: right;
+}
+.entry-metas ul {
+  margin: 0;
+  padding: 0;
+}
+.entry-metas li {
+  margin: 0;
+  padding: 0;
+}
+
+.entry-content {
+  clear: both;
+}
+.entry-content:before, .entry-content:after {
+  content: " ";
+  display: table;
+}
+.entry-content:after {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin-top: -1px;
+  visibility: hidden;
+}
+.entry-content {
+  *zoom: 1;
+}
+
+.related-content {
+  clear: both;
+  margin-bottom: 22px;
+}
+.related-content:before, .related-content:after {
+  content: " ";
+  display: table;
+}
+.related-content:after {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin-top: -1px;
+  visibility: hidden;
+}
+.related-content {
+  *zoom: 1;
+}
+
+h2 {
+  clear: both;
+}
+h2:before, h2:after {
+  content: " ";
+  display: table;
+}
+h2:after {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin-top: -1px;
+  visibility: hidden;
+}
+h2 {
+  *zoom: 1;
+}
+
 /* 
- * templates/test
+ * templates/event
  * 
  * @package sasskit
  */
-.design-element {
-  border-bottom: 1px solid;
-  text-transform: uppercase;
+.entry-metas-group {
+  margin-bottom: 22px;
+}
+
+.event-dates {
+  color: #000;
+}
+
+.passed_date {
+  color: #999;
 }
 
 /* 
