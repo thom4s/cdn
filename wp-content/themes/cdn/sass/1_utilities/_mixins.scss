@@ -417,14 +417,20 @@ $rem-with-px-fallback: true !default;
 // Placeholder text
 
 @mixin placeholder($color: $placeholderText) {
-  &:-moz-placeholder {
-    color: $color;
-  }
-  &:-ms-input-placeholder {
-    color: $color;
-  }
   &::-webkit-input-placeholder {
-    color: $color;
+   color: $color;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: $color;  
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: $color;  
+  }
+
+  &:-ms-input-placeholder {  
+     color: $color;  
   }
 }
 

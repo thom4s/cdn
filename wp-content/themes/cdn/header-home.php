@@ -21,4 +21,9 @@
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
 
+    <?php get_search_form( ); ?>
+
+
   </header><!-- #masthead -->
+
+  

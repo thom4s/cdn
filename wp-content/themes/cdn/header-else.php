@@ -15,10 +15,9 @@
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
 
-    <div class="search-bar">
-      <input type="text">
-      <input type="submit" value="Rechercher">
-    </div>
+
+    <?php get_search_form( ); ?>
+
 
 
     <?php if( is_singular( 'event' ) ){ ?>
@@ -34,8 +33,8 @@
         </div>
       </div><!-- .bloc-outer -->
 
+    <?php } ?><!-- endif event -->
 
-    <?php } ?>
 
 
     <?php if( is_singular( 'page' ) ){ ?>
@@ -44,7 +43,7 @@
         
       </div>
 
-    <?php } ?>
+    <?php } ?><!-- endif page -->
 
 
 
