@@ -21,7 +21,6 @@
       </div>
 		</div><!-- .site-contacts -->
 
-
     <div class="footer-infos">
       <div class="footer-info-inner wrap row">
 

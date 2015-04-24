@@ -130,7 +130,10 @@ add_action( 'widgets_init', 'cdn_widgets_init' );
  * Enqueue scripts and styles.
  */
 function cdn_scripts() {
-	wp_enqueue_style( 'cdn-style', get_template_directory_uri() . '/sass/main.min.css');
+
+  wp_deregister_script('jquery');
+
+  wp_enqueue_style( 'cdn-style', get_template_directory_uri() . '/sass/main.min.css');
 
 	wp_enqueue_script( 'cdn-scripts', get_template_directory_uri() . '/js/all.min.js', array(), '20140501', true );
 }

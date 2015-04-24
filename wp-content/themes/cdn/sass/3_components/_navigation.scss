@@ -52,16 +52,15 @@
 		  @include fontsize(18);		
 		}
 
-.main-navigation li:hover > a {
-}
-.main-navigation ul ul :hover > a {
-}
-.main-navigation ul ul a:hover {
-}
 .main-navigation ul li:hover > ul {
-	display: block;
 }
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a {
 	color: $color_link_hover;
+}
+
+.current_page_ancestor {
+	.sub-menu {
+		display: block;
+	}
 }
