@@ -1010,8 +1010,8 @@ ul + .info:before {
 
 h1 {
   font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
-  font-size: 6.3rem;
-  line-height: 5rem;
+  font-size: 7.3rem;
+  line-height: 7rem;
   margin: 0;
   font-weight: 100;
 }
@@ -1019,7 +1019,7 @@ h1 > .use:before {
   content: "Site title / Page titles";
 }
 h1 + .info:before {
-  content: "Source Sans Pro, Arial, Helvetica, sans-serif / 6.3rem / 5rem";
+  content: "Source Sans Pro, Arial, Helvetica, sans-serif / 7.3rem / 7rem";
 }
 
 h2 {
@@ -1614,9 +1614,9 @@ th {
   width: 20px;
   font-weight: 100;
   color: #000;
-  font-size: 45px;
-  font-size: 45 / 10 rem;
-  line-height: 4rem;
+  font-size: 35px;
+  font-size: 35 / 10 rem;
+  line-height: 3rem;
   margin: 22px 0 44px 0;
 }
 .site-title a, .site-title-home a {
@@ -1683,6 +1683,9 @@ th {
   background-color: #fff;
 }
 
+.entry-header {
+  float: left;
+}
 .entry-header.img-last {
   padding-top: 44px;
 }
@@ -1801,6 +1804,9 @@ h2 {
   top: 0;
   left: 0;
   color: #fff;
+  font-size: 45px;
+  font-size: 45 / 10 rem;
+  line-height: 4rem;
 }
 
 .home-featured {

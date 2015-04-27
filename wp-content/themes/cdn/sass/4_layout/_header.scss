@@ -18,15 +18,14 @@
   width: 20px;
   font-weight: 100;
   color: #000;
-  @include fontsize(45);
-  line-height: 4rem;
+  @include fontsize(35);
+  line-height: 3rem;
   margin: 22px 0 44px 0;
 
   a {
     color: inherit;
     text-decoration: none;
   }
-
 
 }
 
