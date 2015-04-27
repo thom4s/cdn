@@ -58,31 +58,41 @@ function defaults_register_meta_boxes( $meta_boxes )
           // IMPORTANCE
           array(
             'name'          => __( 'Cet élément est...', 'meta-box' ),
-            'id'            => "{$prefix}importance",
+            'id'            => "{$prefix}bloc_bg",
             'type'          => 'select',
             'options'       => array(
-              'practical'   => __( 'Pratique', 'meta-box' ),
-              'event-aside' => __( 'Un événement soutien', 'meta-box' ),
-              'normal'      => __( 'Normal', 'meta-box' ),
-              'fun'         => __( 'Fun', 'meta-box' ),
+              'bg-white'      => __( 'Par défault (blanc)', 'meta-box' ),
+              'bg-practical'  => __( 'Pratique', 'meta-box' ),
+              'bg-fun'        => __( 'Fun', 'meta-box' ),
             ),
+            'std'         => 'bg-white',
             'multiple'    => false,
             'placeholder' => __( 'Select an Item', 'meta-box' ),
           ),
 
           // STYLE
           array(
-            'name'        => __( 'Et son style...', 'meta-box' ),
-            'id'          => "{$prefix}select",
+            'name'        => __( 'Sur x colonnes : ', 'meta-box' ),
+            'id'          => "{$prefix}bloc_col",
             'type'        => 'select',
             'options'     => array(
-              'value1' => __( 'Style 1', 'meta-box' ),
-              'value2' => __( 'Style 2', 'meta-box' ),
+              'bloc-1col' => __( 'Sur 1 colonne', 'meta-box' ),
+              'bloc-2col' => __( 'Sur 2 colonnes', 'meta-box' ),
             ),
+            'std'         => '1col-bloc',
             // Select multiple values, optional. Default is false.
             'multiple'    => false,
             'placeholder' => __( 'Select an Item', 'meta-box' ),
           ),
+
+          // STYLE
+          array(
+            'name'        => __( 'Activer le lien du bloc ?', 'meta-box' ),
+            'id'          => "{$prefix}has_link",
+            'type'        => 'checkbox',
+            'std'         => 1,
+          ),
+
         ),
       ),
     )
@@ -179,31 +189,41 @@ function defaults_register_meta_boxes( $meta_boxes )
           // IMPORTANCE
           array(
             'name'          => __( 'Cet élément est...', 'meta-box' ),
-            'id'            => "{$prefix}importance",
+            'id'            => "{$prefix}bloc_bg",
             'type'          => 'select',
             'options'       => array(
-              'practical'   => __( 'Pratique', 'meta-box' ),
-              'event-aside' => __( 'Un événement soutien', 'meta-box' ),
-              'normal'      => __( 'Normal', 'meta-box' ),
-              'fun'         => __( 'Fun', 'meta-box' ),
+              'bg-white'      => __( 'Par défault (blanc)', 'meta-box' ),
+              'bg-practical'  => __( 'Pratique', 'meta-box' ),
+              'bg-fun'        => __( 'Fun', 'meta-box' ),
             ),
+            'std'         => 'bg-white',
             'multiple'    => false,
             'placeholder' => __( 'Select an Item', 'meta-box' ),
           ),
 
           // STYLE
           array(
-            'name'        => __( 'Et son style...', 'meta-box' ),
-            'id'          => "{$prefix}select",
+            'name'        => __( 'Sur x colonnes : ', 'meta-box' ),
+            'id'          => "{$prefix}bloc_col",
             'type'        => 'select',
             'options'     => array(
-              'value1' => __( 'Style 1', 'meta-box' ),
-              'value2' => __( 'Style 2', 'meta-box' ),
+              'bloc-1col' => __( 'Sur 1 colonne', 'meta-box' ),
+              'bloc-2col' => __( 'Sur 2 colonnes', 'meta-box' ),
             ),
+            'std'         => '1col-bloc',
             // Select multiple values, optional. Default is false.
             'multiple'    => false,
             'placeholder' => __( 'Select an Item', 'meta-box' ),
           ),
+
+          // STYLE
+          array(
+            'name'        => __( 'Activer le lien du bloc ?', 'meta-box' ),
+            'id'          => "{$prefix}has_link",
+            'type'        => 'checkbox',
+            'std'         => 1,
+          ),
+
         ),
       ),
 

@@ -5,42 +5,69 @@
  */
 
 .bloc-outer {
+  @include box-sizing();
   float: left;
   margin-bottom: $base_line_height;
-  background-color: #fff;
   padding: 1%;
 
+  // COLS FOR BLOCS
+  &.bloc-2col {
+    @extend %l-8col;
+
+    .bloc-img,
+    .bloc-content {
+      width: 49%;
+      float: left;
+    }
+
+    .bloc-content {
+      margin-left: 2%;
+    }
+
+    a {
+      display: block;
+      float: left;
+    }
+  }
+  &.bloc-1col {
+    @extend %l-4col;
+  }
+
+  // BACKGROUNDS FOR BLOCS
   &.no-bg {
     background-color: none;
   }
-  &.practical {
+  &.bg-practical {
     background-color: $practical-color;
     color: #fff;
   }
-  &.fun {
+  &.bg-fun {
     background-color: $fun-color;
   }
-  &.white {
+  &.bg-white {
     background-color: #fff;
   }   
-}
-
-.related-post {
-  @extend %l-4col;
 
   &:hover {
   }
-}
 
-.home {
-
-  .related-post {
-    &:first-child {
-      @extend %l-8col;
-    }
-    &:nth-child(3){
-      @extend %l-first;
-    }   
+  .meta {
+    font-weight: 900;
   }
 
+  p,
+  ul {
+    @include fontsize(15);
+  }
+
+
+
 }
+
+.related-post {
+
+
+
+
+}
+

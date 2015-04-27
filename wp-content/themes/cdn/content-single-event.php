@@ -52,7 +52,7 @@
 	<header class="entry-header">
 		
 		<div class="entry-medias">
-			<?php the_post_thumbnail( ); ?> 
+			<?php the_post_thumbnail( 'event-media' ); ?> 
     </div>
 
     <div class="row">

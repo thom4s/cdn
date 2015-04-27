@@ -5,6 +5,34 @@
  */
 
 
+
+
+  .site-branding-home {
+    position: relative;
+    height: 500px;
+  }
+    .site-title-home {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+    }
+    .home-featured {
+      height: 100%;
+      overflow: hidden;
+
+      img {
+        width: 1200px;
+        max-width: none;
+        margin-left: -88px;
+
+        @include at-least(wide) {
+          margin-left: 0;
+        }
+
+      }
+    }
+
 .home .site-content {
   background: none;
   margin-top: $base_line_height;

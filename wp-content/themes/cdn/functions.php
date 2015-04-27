@@ -54,14 +54,11 @@ function cdn_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
-
-	// Add Image Size for This Theme // TO DO 
-	add_action( 'after_setup_theme', 'baw_theme_setup' );
-	function baw_theme_setup() {
-	  add_image_size( 'home-featured', 1200, 500, true ); // 1200px wide / 500px height / cropped
-	  add_image_size( 'homepage-thumb', 894, 450, true ); 
-	}
-
+	// Add mage Size
+	add_image_size( 'home-featured', 1200, 500, true ); // 1200px wide / 500px height / cropped
+	add_image_size( 'event-media', 894, 500, true ); 
+	add_image_size( 'bloc-thumb-2col', 9999, 300 ); 
+	add_image_size( 'bloc-thumb', 225 ); 
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'cdn_custom_background_args', array(

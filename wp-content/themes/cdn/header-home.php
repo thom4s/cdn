@@ -14,10 +14,12 @@
       $event_dates = rwmb_meta(  $prefix_event . 'event_date', array(), $featured_event_id );
 ?>
 
-  <header class="site-branding plain">
-    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+  <header class="site-branding-home plain">
+    <h1 class="site-title-home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
     <div class="home-featured plain">
-      <?php echo get_the_post_thumbnail( $featured_event_id, '', '' ); ?>
+      
+      <?php echo get_the_post_thumbnail( $featured_event_id, 'home-featured', '' ); ?>
+
       <a href="<?php echo $event_url; ?>">
         <div class="featured-title">
           <div class="meta"><?php echo $event_dates; ?></div>

@@ -4,7 +4,6 @@
     $prefix = 'event_meta_';
     $event_booking_id = rwmb_meta( $prefix . 'event_booking_id' );
 
-
 ?>
 
   <header id="masthead" class="site-header" role="banner">
@@ -22,7 +21,7 @@
 
     <?php if( is_singular( 'event' ) ){ ?>
  
-      <div class="bloc-outer practical">
+      <div class="bloc-outer bg-practical">
         <div class="buttons-group">
           <h4>Pratique</h4>
           <ul>
