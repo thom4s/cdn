@@ -58,7 +58,7 @@ function cdn_setup() {
 	add_image_size( 'home-featured', 1200, 500, true ); // 1200px wide / 500px height / cropped
 	add_image_size( 'event-media', 894, 500, true ); 
 	add_image_size( 'bloc-thumb-2col', 9999, 300 ); 
-	add_image_size( 'bloc-thumb', 225 ); 
+	add_image_size( 'bloc-thumb', 235 ); 
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'cdn_custom_background_args', array(

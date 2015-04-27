@@ -64,10 +64,16 @@
 
 }
 
-.related-post {
 
-
-
-
+#grid[data-columns]::before {
+  content: '3 .column.size-1of3';
 }
 
+/* These are the classes that are going to be applied: */
+.column { float: left; }
+.size-1of3 { @extend %l-4col; }
+
+
+.grid-item {
+  float: none;
+}

@@ -19,9 +19,17 @@ jQuery(function($) {
 
       $(this).parent().find($subMenu).toggle();
     });
-    
 
- 
+
+
+  $('.bxslider').bxSlider({
+    video: true,
+    useCSS: false
+  });
+
+
+
+
 
 
   });

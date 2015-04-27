@@ -598,7 +598,7 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .bloc-outer.bloc-1col, .row .site-header, .row .footer-infos-first {
+  .row .bloc-outer.bloc-1col, .row .size-1of3, .row .site-header, .row .footer-infos-first {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -607,7 +607,7 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .bloc-outer.bloc-1col .footer-contacts aside, .footer-contacts .row .bloc-outer.bloc-1col aside, .row .site-header .footer-contacts aside, .footer-contacts .row .site-header aside, .row .footer-infos-first .footer-contacts aside, .footer-contacts .row .footer-infos-first aside, .row .bloc-outer.bloc-1col .footer-infos-third, .row .site-header .footer-infos-third, .row .footer-infos-first .footer-infos-third, .row .bloc-outer.bloc-1col .entry-metas, .row .site-header .entry-metas, .row .footer-infos-first .entry-metas {
+  .row .bloc-outer.bloc-1col .footer-contacts aside, .footer-contacts .row .bloc-outer.bloc-1col aside, .row .size-1of3 .footer-contacts aside, .footer-contacts .row .size-1of3 aside, .row .site-header .footer-contacts aside, .footer-contacts .row .site-header aside, .row .footer-infos-first .footer-contacts aside, .footer-contacts .row .footer-infos-first aside, .row .bloc-outer.bloc-1col .footer-infos-third, .row .size-1of3 .footer-infos-third, .row .site-header .footer-infos-third, .row .footer-infos-first .footer-infos-third, .row .bloc-outer.bloc-1col .entry-metas, .row .size-1of3 .entry-metas, .row .site-header .entry-metas, .row .footer-infos-first .entry-metas {
     margin-left: 8.51064%;
     width: 72.87234%;
   }
@@ -624,7 +624,7 @@ th {
     margin-left: 4.69208%;
     width: 40.17595%;
   }
-  .row .footer-infos-second .bloc-outer.bloc-1col, .row .entry-titles .bloc-outer.bloc-1col, .row .footer-infos-second .site-header, .row .entry-titles .site-header, .row .footer-infos-second .footer-infos-first, .row .entry-titles .footer-infos-first {
+  .row .footer-infos-second .bloc-outer.bloc-1col, .row .entry-titles .bloc-outer.bloc-1col, .row .footer-infos-second .size-1of3, .row .entry-titles .size-1of3, .row .footer-infos-second .site-header, .row .entry-titles .site-header, .row .footer-infos-second .footer-infos-first, .row .entry-titles .footer-infos-first {
     margin-left: 4.69208%;
     width: 55.13196%;
   }
@@ -641,7 +641,7 @@ th {
     margin-left: 4.08163%;
     width: 34.94898%;
   }
-  .row .bloc-outer.bloc-2col .bloc-outer.bloc-1col, .row .entry-content .bloc-outer.bloc-1col, .row .entry-footer p .bloc-outer.bloc-1col, .entry-footer .row p .bloc-outer.bloc-1col, .row .entry-header .entry-header-inner .bloc-outer.bloc-1col, .entry-header .row .entry-header-inner .bloc-outer.bloc-1col, .row .bloc-outer.bloc-2col .site-header, .row .entry-content .site-header, .row .entry-footer p .site-header, .entry-footer .row p .site-header, .row .entry-header .entry-header-inner .site-header, .entry-header .row .entry-header-inner .site-header, .row .bloc-outer.bloc-2col .footer-infos-first, .row .entry-content .footer-infos-first, .row .entry-footer p .footer-infos-first, .entry-footer .row p .footer-infos-first, .row .entry-header .entry-header-inner .footer-infos-first, .entry-header .row .entry-header-inner .footer-infos-first {
+  .row .bloc-outer.bloc-2col .bloc-outer.bloc-1col, .row .entry-content .bloc-outer.bloc-1col, .row .entry-footer p .bloc-outer.bloc-1col, .entry-footer .row p .bloc-outer.bloc-1col, .row .entry-header .entry-header-inner .bloc-outer.bloc-1col, .entry-header .row .entry-header-inner .bloc-outer.bloc-1col, .row .bloc-outer.bloc-2col .size-1of3, .row .entry-content .size-1of3, .row .entry-footer p .size-1of3, .entry-footer .row p .size-1of3, .row .entry-header .entry-header-inner .size-1of3, .entry-header .row .entry-header-inner .size-1of3, .row .bloc-outer.bloc-2col .site-header, .row .entry-content .site-header, .row .entry-footer p .site-header, .entry-footer .row p .site-header, .row .entry-header .entry-header-inner .site-header, .entry-header .row .entry-header-inner .site-header, .row .bloc-outer.bloc-2col .footer-infos-first, .row .entry-content .footer-infos-first, .row .entry-footer p .footer-infos-first, .entry-footer .row p .footer-infos-first, .row .entry-header .entry-header-inner .footer-infos-first, .entry-header .row .entry-header-inner .footer-infos-first {
     margin-left: 4.08163%;
     width: 47.95918%;
   }
@@ -662,7 +662,7 @@ th {
     margin-left: 2.68456%;
     width: 22.98658%;
   }
-  .row .site-content .bloc-outer.bloc-1col, .row .site-content .site-header, .row .site-content .footer-infos-first {
+  .row .site-content .bloc-outer.bloc-1col, .row .site-content .size-1of3, .row .site-content .site-header, .row .site-content .footer-infos-first {
     margin-left: 2.68456%;
     width: 31.54362%;
   }
@@ -1274,6 +1274,19 @@ a:active {
 .bloc-outer ul {
   font-size: 15px;
   font-size: 15 / 10 rem;
+}
+
+#grid[data-columns]::before {
+  content: '3 .column.size-1of3';
+}
+
+/* These are the classes that are going to be applied: */
+.column {
+  float: left;
+}
+
+.grid-item {
+  float: none;
 }
 
 /* 
