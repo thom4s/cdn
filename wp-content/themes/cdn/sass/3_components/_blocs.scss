@@ -28,13 +28,19 @@
 .related-post {
   @extend %l-4col;
 
-  &:first-child {
-    @extend %l-8col;
-  }
-  &:nth-child(3){
-    @extend %l-first;
-  }
-
   &:hover {
   }
+}
+
+.home {
+
+  .related-post {
+    &:first-child {
+      @extend %l-8col;
+    }
+    &:nth-child(3){
+      @extend %l-first;
+    }   
+  }
+
 }
