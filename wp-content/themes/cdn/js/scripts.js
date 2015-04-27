@@ -22,12 +22,13 @@ jQuery(function($) {
 
 
 
-  $('.bxslider').bxSlider({
+  $('.bxslider-video').bxSlider({
     video: true,
-    useCSS: false
+    useCSS: false,
+    pager: false,
+    controls: true,
+    auto: false,
   });
-
-
 
 
 

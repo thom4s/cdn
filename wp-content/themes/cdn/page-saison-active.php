@@ -12,7 +12,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 	    <div class="row">
-	      <?php get_template_part('part','related-content'); ?>
+	      <?php get_template_part('loop','related-content'); ?>
 	    </div>
 
 		</main><!-- #main -->

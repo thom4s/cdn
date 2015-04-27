@@ -20,18 +20,20 @@
 
       $linked_post = get_post($linked_post_id);
       $post_title = $linked_post->post_title;
-      $post_excerpt = $linked_post->post_excerpt;
       $post_url = $linked_post->guid;
       $post_type = $linked_post->post_type;
 
       if($post_type == 'event'){
-         $post_meta = rwmb_meta(  $prefix_event . 'event_date', array(), $linked_post_id );
+        $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $linked_post_id );
+        $post_meta = rwmb_meta(  $prefix_event . 'event_date', array(), $linked_post_id );
       }
       if($post_type == 'post'){
         $post_meta = get_the_terms( $linked_post_id, 'category' );
+        $post_excerpt = $linked_post->post_excerpt;
       }  
       if($post_type == 'page'){
         $post_meta = get_the_terms( $linked_post_id, 'category' );
+        $post_excerpt = $linked_post->post_excerpt;
       }  
 
       include(locate_template('bloc.php'));

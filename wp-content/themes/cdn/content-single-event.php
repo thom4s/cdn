@@ -51,7 +51,7 @@
 
 	<header class="entry-header">
 		
-		<div class="entry-medias bxslider">
+		<div class="entry-medias bxslider-video">
 			<li><?php the_post_thumbnail( 'event-media' ); ?> </li>
       <li>    <iframe src="http://player.vimeo.com/video/17914974" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> </li>
       <li><?php the_post_thumbnail( 'event-media' ); ?> </li>
@@ -130,7 +130,7 @@
 		<h2>Aller plus loin</h2>
 
     <div id="grid" class="row" data-columns>
-      <?php get_template_part('part','related-content'); ?>
+      <?php get_template_part('loop','related-content'); ?>
     </div>
 	</div><!-- .entry-content -->
 
