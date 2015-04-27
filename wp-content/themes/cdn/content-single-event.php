@@ -34,6 +34,10 @@
     // Presse
     $press =	rwmb_meta( $prefix . 'press' );
 
+    // Slideshow
+    $slides =  rwmb_meta( $prefix . 'imgadv', 'type=image_advanced' );
+    $videos =  rwmb_meta( $prefix . 'video', 'type=oembed' );
+
     // Fichiers
     $pedago =	rwmb_meta( $prefix . 'pedago', 'type=file' );
     $presskit =	rwmb_meta( $prefix . 'presskit', 'type=file' );
@@ -52,13 +56,15 @@
 	<header class="entry-header">
 		
 		<div class="entry-medias bxslider-video">
-			<li><?php the_post_thumbnail( 'event-media' ); ?> </li>
-      <li>    <iframe src="http://player.vimeo.com/video/17914974" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> </li>
-      <li><?php the_post_thumbnail( 'event-media' ); ?> </li>
+      <?php foreach ($slides as $slide) { ?>
+          <li><img src="<?php echo $slide['full_url']; ?>"></li>
+      <?php } ?>
+      <?php foreach ($videos as $video) { ?>
+          <li><iframe src="<?php echo $video; ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></li>
+      <?php } ?>
     </div>
 
     <div class="row">
-
       <div class="entry-titles">
         <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         

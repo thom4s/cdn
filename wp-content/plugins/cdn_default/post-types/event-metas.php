@@ -257,5 +257,38 @@ function event_register_meta_boxes( $meta_boxes )
         )
     );
 
+
+
+    // Fichiers
+    $meta_boxes[] = array(
+        'id'         => 'medias',
+        'title'      => __( 'Images et Vidéos du diaporama', 'meta-box' ),
+        'post_types' => array( 'event' ),
+        'context'    => 'normal',
+        'fields' => array(
+
+            // Images
+            array(
+                'name'             => __( 'Images du diaporama', 'meta-box' ),
+                'id'               => "{$prefix}imgadv",
+                'type'             => 'image_advanced',
+                'max_file_uploads' => 4,
+            ),
+
+            // Vidéo
+            array(
+                'name'             => __( 'Vidéo(s) du diaporama', 'meta-box' ),
+                'id'               => "{$prefix}video",
+                'type'             => 'oembed',
+                'clone'            => true,
+            ),
+
+        )
+
+
+    );
+
+
+
     return $meta_boxes;    
 }
