@@ -17,11 +17,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header <?php if($has_bg){ echo 'bg'; } ?> ">
+		<div class="entry-header-inner">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<h4><?php echo $subtitle; ?></h4>
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<h5><?php echo $subtitle; ?></h5>
+			<p class="post-excerpt"><?php echo $introduction; ?></p>
 
-		<p class="post-excerpt"><?php echo $introduction; ?></p>
+		</div><!-- .entry-header-inner -->
 
 		<?php the_post_thumbnail( ); ?> 
 
@@ -38,6 +40,6 @@
 
 
 	<div class="related-content">
-		<h2>Aller plus loing</h2>
+		<h2>Aller plus loin</h2>
 	</div>
 </article><!-- #post-## -->

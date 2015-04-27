@@ -584,7 +584,7 @@ th {
  * GRID GENERATOR
  */
 @media (min-width: 1024px) {
-  .row .footer-infos-second, .row .entry-titles, .row .entry-content, .row .entry-footer p, .entry-footer .row p, .row h2 {
+  .row .footer-infos-second, .row .entry-titles, .row .entry-content, .row .entry-footer p, .entry-footer .row p, .row h2, .row .entry-header .entry-header-inner, .entry-header .row .entry-header-inner {
     left: 6.25%;
     position: relative;
     right: auto;
@@ -628,7 +628,7 @@ th {
     margin-left: 4.69208%;
     width: 55.13196%;
   }
-  .row .related-post:first-child, .row .entry-content, .row .entry-footer p, .entry-footer .row p {
+  .row .related-post:first-child, .row .entry-content, .row .entry-footer p, .entry-footer .row p, .row .entry-header .entry-header-inner, .entry-header .row .entry-header-inner {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -637,15 +637,15 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .related-post:first-child .footer-contacts aside, .footer-contacts .row .related-post:first-child aside, .row .entry-content .footer-contacts aside, .footer-contacts .row .entry-content aside, .row .entry-footer p .footer-contacts aside, .footer-contacts .row .entry-footer p aside, .entry-footer .row p .footer-contacts aside, .footer-contacts .entry-footer .row p aside, .row .related-post:first-child .footer-infos-third, .row .entry-content .footer-infos-third, .row .entry-footer p .footer-infos-third, .entry-footer .row p .footer-infos-third, .row .related-post:first-child .entry-metas, .row .entry-content .entry-metas, .row .entry-footer p .entry-metas, .entry-footer .row p .entry-metas {
+  .row .related-post:first-child .footer-contacts aside, .footer-contacts .row .related-post:first-child aside, .row .entry-content .footer-contacts aside, .footer-contacts .row .entry-content aside, .row .entry-footer p .footer-contacts aside, .footer-contacts .row .entry-footer p aside, .entry-footer .row p .footer-contacts aside, .footer-contacts .entry-footer .row p aside, .row .entry-header .entry-header-inner .footer-contacts aside, .footer-contacts .row .entry-header .entry-header-inner aside, .entry-header .row .entry-header-inner .footer-contacts aside, .footer-contacts .entry-header .row .entry-header-inner aside, .row .related-post:first-child .footer-infos-third, .row .entry-content .footer-infos-third, .row .entry-footer p .footer-infos-third, .entry-footer .row p .footer-infos-third, .row .entry-header .entry-header-inner .footer-infos-third, .entry-header .row .entry-header-inner .footer-infos-third, .row .related-post:first-child .entry-metas, .row .entry-content .entry-metas, .row .entry-footer p .entry-metas, .entry-footer .row p .entry-metas, .row .entry-header .entry-header-inner .entry-metas, .entry-header .row .entry-header-inner .entry-metas {
     margin-left: 4.08163%;
     width: 34.94898%;
   }
-  .row .related-post:first-child .related-post, .row .entry-content .related-post, .row .entry-footer p .related-post, .entry-footer .row p .related-post, .row .related-post:first-child .site-header, .row .entry-content .site-header, .row .entry-footer p .site-header, .entry-footer .row p .site-header, .row .related-post:first-child .footer-infos-first, .row .entry-content .footer-infos-first, .row .entry-footer p .footer-infos-first, .entry-footer .row p .footer-infos-first {
+  .row .related-post:first-child .related-post, .row .entry-content .related-post, .row .entry-footer p .related-post, .entry-footer .row p .related-post, .row .entry-header .entry-header-inner .related-post, .entry-header .row .entry-header-inner .related-post, .row .related-post:first-child .site-header, .row .entry-content .site-header, .row .entry-footer p .site-header, .entry-footer .row p .site-header, .row .entry-header .entry-header-inner .site-header, .entry-header .row .entry-header-inner .site-header, .row .related-post:first-child .footer-infos-first, .row .entry-content .footer-infos-first, .row .entry-footer p .footer-infos-first, .entry-footer .row p .footer-infos-first, .row .entry-header .entry-header-inner .footer-infos-first, .entry-header .row .entry-header-inner .footer-infos-first {
     margin-left: 4.08163%;
     width: 47.95918%;
   }
-  .row .related-post:first-child .footer-infos-second, .row .entry-content .footer-infos-second, .row .entry-footer p .footer-infos-second, .entry-footer .row p .footer-infos-second, .row .related-post:first-child .entry-titles, .row .entry-content .entry-titles, .row .entry-footer p .entry-titles, .entry-footer .row p .entry-titles {
+  .row .related-post:first-child .footer-infos-second, .row .entry-content .footer-infos-second, .row .entry-footer p .footer-infos-second, .entry-footer .row p .footer-infos-second, .row .entry-header .entry-header-inner .footer-infos-second, .entry-header .row .entry-header-inner .footer-infos-second, .row .related-post:first-child .entry-titles, .row .entry-content .entry-titles, .row .entry-footer p .entry-titles, .entry-footer .row p .entry-titles, .row .entry-header .entry-header-inner .entry-titles, .entry-header .row .entry-header-inner .entry-titles {
     margin-left: 4.08163%;
     width: 86.9898%;
   }
@@ -670,11 +670,11 @@ th {
     margin-left: 2.68456%;
     width: 57.21477%;
   }
-  .row .site-content .related-post:first-child, .row .site-content .entry-content, .row .site-content .entry-footer p, .entry-footer .row .site-content p {
+  .row .site-content .related-post:first-child, .row .site-content .entry-content, .row .site-content .entry-footer p, .entry-footer .row .site-content p, .row .site-content .entry-header .entry-header-inner, .entry-header .row .site-content .entry-header-inner {
     margin-left: 2.68456%;
     width: 65.77181%;
   }
-  .row .related-post:nth-child(3), .row .site-header, .row .entry-content, .row .entry-footer p, .entry-footer .row p, .row h2 {
+  .row .related-post:nth-child(3), .row .site-header, .row .entry-content, .row .entry-footer p, .entry-footer .row p, .row h2, .row .entry-header .entry-header-inner, .entry-header .row .entry-header-inner {
     margin-left: 0 !important;
   }
   .row .footer-infos-third, .row .entry-metas {
@@ -959,6 +959,7 @@ big {
  */
 .meta {
   font-family: "Roboto Slab", Georgia, Times New Roman, serif;
+  color: #DF4949;
 }
 
 .main-navigation {
@@ -1063,15 +1064,15 @@ h4 + .info:before {
 }
 
 h5 {
-  font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  font-family: Roboto Slab, Georgia, Times New Roman, serif;
+  font-size: 1.6rem;
   line-height: 22px;
 }
 h5 > .use:before {
   content: "Headings 5";
 }
 h5 + .info:before {
-  content: "Source Sans Pro, Arial, Helvetica, sans-serif / 1rem / 22px";
+  content: "Roboto Slab, Georgia, Times New Roman, serif / 1.6rem / 22px";
 }
 
 h6 {
@@ -1200,7 +1201,7 @@ h6 + .info:before {
 }
 .buttons-group a:hover,
 .buttons-group a:visited:hover {
-  color: #ea148c;
+  color: #DF4949;
 }
 
 h4 {
@@ -1223,7 +1224,7 @@ a {
 a:hover,
 a:focus,
 a:active {
-  color: #ea148c;
+  color: #DF4949;
 }
 
 /* 
@@ -1241,14 +1242,14 @@ a:active {
   background-color: none;
 }
 .bloc-outer.practical {
-  background-color: #444;
+  background-color: #34495E;
+  color: #fff;
 }
 .bloc-outer.fun {
-  background-color: #ea148c;
+  background-color: #EFC94C;
 }
-
-.related-post:hover {
-  background-color: #ddd;
+.bloc-outer.white {
+  background-color: #fff;
 }
 
 /* 
@@ -1318,7 +1319,7 @@ a:active {
   list-style-type: circle;
 }
 .search-form input[type="submit"]:hover {
-  color: #ea148c;
+  color: #DF4949;
 }
 
 button,
@@ -1533,7 +1534,7 @@ th {
   color: #000;
 }
 .main-navigation a:hover {
-  color: #ea148c;
+  color: #DF4949;
 }
 
 .main-navigation ul ul {
@@ -1556,7 +1557,7 @@ th {
 
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a {
-  color: #ea148c;
+  color: #DF4949;
 }
 
 .current_page_ancestor .sub-menu {
@@ -1611,7 +1612,7 @@ th {
 }
 
 .footer-contacts {
-  background-color: #666;
+  background-color: #1A2530;
   margin: 0;
   padding: 20px 0;
   font-size: 16px;
@@ -1625,7 +1626,7 @@ th {
 }
 
 .footer-infos {
-  background-color: #333;
+  background-color: #0F161C;
   margin: 0;
   padding-top: 40px;
   padding-bottom: 100px;
@@ -1672,7 +1673,7 @@ th {
 }
 
 .entry-metas {
-  color: #ea148c;
+  color: #DF4949;
   margin-top: 22px;
   text-align: right;
 }
@@ -1789,5 +1790,15 @@ h2 {
  * 
  * @package sasskit
  */
+.entry-header {
+  margin-bottom: 44px;
+  padding-top: 44px;
+}
+.entry-header .entry-header-inner {
+  float: none;
+}
+.entry-header.bg {
+  background-color: #EFC94C;
+}
 
 

@@ -14,11 +14,15 @@
     background-color: none;
   }
   &.practical {
-    background-color: #444;
+    background-color: $practical-color;
+    color: #fff;
   }
   &.fun {
-    background-color: $magenta;
-  }  
+    background-color: $fun-color;
+  }
+  &.white {
+    background-color: #fff;
+  }   
 }
 
 .related-post {
@@ -32,6 +36,5 @@
   }
 
   &:hover {
-    background-color: #ddd;
   }
 }

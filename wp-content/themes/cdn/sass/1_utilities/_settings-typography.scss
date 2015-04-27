@@ -135,8 +135,8 @@ $typos_map: (
   ),
   h5: (
     use: "Headings 5",
-    font-family: $font_family_title,
-    font-size: 1rem,
+    font-family: $font_family_meta,
+    font-size: 1.6rem,
     line-height: $base_line_height,
   ),
   h6: (
@@ -227,6 +227,7 @@ big {
  
 .meta {
   font-family: $font_family_meta;
+  color: $meta-color;
 }
 
 .main-navigation {
