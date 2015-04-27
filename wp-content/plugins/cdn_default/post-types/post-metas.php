@@ -27,6 +27,9 @@ function defaults_register_meta_boxes( $meta_boxes )
     'title'      => __( 'Allez plus loin...', 'meta-box' ),
     'id'         => 'linkedposts',
     'post_types' => array( 'post', 'page', 'event' ),
+    'exclude' => array(
+      'template' => array( 'page-home.php' ),
+    ),    
     'context'    => 'side',
     'fields' => array(
 
@@ -88,7 +91,6 @@ function defaults_register_meta_boxes( $meta_boxes )
 
   // Haut de page 
   $meta_boxes[] = array(
-    'title'  => __( 'Bandeau titre', 'meta-box' ),
     'id'         => 'title-bg',
     'title'      => __( 'Bandeau Titre', 'meta-box' ),
     'post_types' => array( 'post', 'page' ),
@@ -123,6 +125,91 @@ function defaults_register_meta_boxes( $meta_boxes )
       ),
     )
   );
+
+
+  // Home Page Meta Box
+  $meta_boxes[] = array(
+    'title'  => __( 'Afficher les éléments de la page d\'accueil', 'meta-box' ),
+    'id'         => 'hp-events',
+    'post_types' => array( 'page' ),
+    'include' => array(
+      'template' => array( 'page-home.php' ),
+    ),
+    'context'    => 'normal',
+    'autosave'   => true,
+    'fields' => array(
+
+      // HOME PAGE FEATURED EVENT
+      array(
+        'name'        => __( 'Choisir l\'événement principal : ', 'meta-box' ),
+        'id'          => "{$prefix}hpfeatured-id",
+        'type'        => 'post',
+        'post_type'   => array( 'event' ),
+        'field_type'  => 'select_advanced',
+        'placeholder' => __( 'Select an Item', 'meta-box' ),
+        'query_args'  => array(
+          'post_status'    => 'publish',
+          'posts_per_page' => - 1,
+        ),
+        'multiple'    => false,
+      ),
+
+      array(
+        'id'     =>  $prefix . 'linkedposts',
+        'name'   => __( 'Choisir les événement, pages et actualités à faire apparaitre sous l\'élément principal', 'meta-box' ),
+        'type'   => 'group', 
+        'clone'  => true,   
+        'fields' => array(
+
+          // EVENT
+          array(
+            'name'        => __( 'La page/événement/actualité : ', 'meta-box' ),
+            'id'          => "{$prefix}linkedpost-id",
+            'type'        => 'post',
+            'post_type'   => array('event', 'post', 'page'),
+            'field_type'  => 'select_advanced',
+            'placeholder' => __( 'Select an Item', 'meta-box' ),
+            'query_args'  => array(
+              'post_status'    => 'publish',
+              'posts_per_page' => - 1,
+            ),
+            'multiple'    => false,
+          ),
+
+          // IMPORTANCE
+          array(
+            'name'          => __( 'Cet élément est...', 'meta-box' ),
+            'id'            => "{$prefix}importance",
+            'type'          => 'select',
+            'options'       => array(
+              'practical'   => __( 'Pratique', 'meta-box' ),
+              'event-aside' => __( 'Un événement soutien', 'meta-box' ),
+              'normal'      => __( 'Normal', 'meta-box' ),
+              'fun'         => __( 'Fun', 'meta-box' ),
+            ),
+            'multiple'    => false,
+            'placeholder' => __( 'Select an Item', 'meta-box' ),
+          ),
+
+          // STYLE
+          array(
+            'name'        => __( 'Et son style...', 'meta-box' ),
+            'id'          => "{$prefix}select",
+            'type'        => 'select',
+            'options'     => array(
+              'value1' => __( 'Style 1', 'meta-box' ),
+              'value2' => __( 'Style 2', 'meta-box' ),
+            ),
+            // Select multiple values, optional. Default is false.
+            'multiple'    => false,
+            'placeholder' => __( 'Select an Item', 'meta-box' ),
+          ),
+        ),
+      ),
+
+    )
+  );
+
 
 
   return $meta_boxes;
