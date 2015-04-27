@@ -10,7 +10,17 @@
   $linked_post_has_link = true;
 
   // Linked Posts
-  if ($linkedposts = rwmb_meta(  $prefix_default . 'linkedposts', get_the_ID() ) ):
+  if ($linkedposts = rwmb_meta(  $prefix_default . 'linkedposts', get_the_ID() ) ): 
+    $first_id = $linkedposts[0];
+    $first_id = $first_id['defaults_meta_linkedpost-id'];
+    if ($first_id !== '') { ?>
+
+
+  <div class="related-content">
+    <h2>Aller plus loin</h2>
+      <div id="grid" class="row" data-columns>
+
+  <?php
     foreach($linkedposts as $linkedpost):
 
       $linked_post_id = $linkedpost['defaults_meta_linkedpost-id'];
@@ -39,6 +49,11 @@
       include(locate_template('bloc.php'));
 
     endforeach;
-    wp_reset_postdata();
+    wp_reset_postdata(); ?>
+
+    </div>
+  </div><!-- .related-content -->
+
+  <?php  } // end if $first_id
   endif;
 

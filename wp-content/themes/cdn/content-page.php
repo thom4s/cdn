@@ -29,17 +29,11 @@
 
 	</header><!-- .entry-header -->
 
-
-
 	<div class="entry-content">
-
 		<?php the_content(); ?>
-
 	</div><!-- .entry-content -->
 
+	<!-- Get Related Content -->
+  <?php get_template_part('loop','related-content'); ?>
 
-
-	<div class="related-content">
-		<h2>Aller plus loin</h2>
-	</div>
 </article><!-- #post-## -->

@@ -112,9 +112,6 @@
           </ul>
         </div><!-- .entry-metas-group -->
 
-
- 
-
         <ul>
           <li><a href="#distribution">Voir la Distribution</a></li>
           <li><a href="#presse">Lire la presse</a></li>     
@@ -124,35 +121,17 @@
     </div><!-- .row -->
 	</header><!-- .entry-header -->
 
-
-
-
 	<div class="entry-content">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
-
-	<div class="related-content">
-		<h2>Aller plus loin</h2>
-
-    <div id="grid" class="row" data-columns>
-      <?php get_template_part('loop','related-content'); ?>
-    </div>
-	</div><!-- .entry-content -->
-
-
-
+  <!-- Get Related Posts-->
+  <?php get_template_part('loop','related-content'); ?>
 
 	<footer class="entry-footer">
-		
 		<h2 id="distribution">Distribution</h2>
 				<?php echo $distribution; ?>
-
-
 		<h2 id="presse">La presse</h2>
 			<?php echo $press; ?>
-
-
 	</footer><!-- .entry-footer -->
-
 </article><!-- #post-## -->
