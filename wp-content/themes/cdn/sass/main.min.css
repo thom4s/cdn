@@ -1011,7 +1011,7 @@ ul + .info:before {
 h1 {
   font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
   font-size: 7.3rem;
-  line-height: 7rem;
+  line-height: 6rem;
   margin: 0;
   font-weight: 100;
 }
@@ -1019,7 +1019,7 @@ h1 > .use:before {
   content: "Site title / Page titles";
 }
 h1 + .info:before {
-  content: "Source Sans Pro, Arial, Helvetica, sans-serif / 7.3rem / 7rem";
+  content: "Source Sans Pro, Arial, Helvetica, sans-serif / 7.3rem / 6rem";
 }
 
 h2 {
@@ -1362,6 +1362,49 @@ a:active {
   padding-left: 20px;
 }
 .search-form input[type="submit"]:hover {
+  color: #DF4949;
+}
+
+.widget_newsletter_submission input[type="email"] {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  border-bottom: 1px dotted #fff;
+  border-radius: 0;
+  background: none;
+  color: #666;
+  padding: 0;
+  color: #fff;
+}
+.widget_newsletter_submission input[type="email"]::-webkit-input-placeholder {
+  color: #999;
+}
+.widget_newsletter_submission input[type="email"]:-moz-placeholder {
+  /* Firefox 18- */
+  color: #999;
+}
+.widget_newsletter_submission input[type="email"]::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #999;
+}
+.widget_newsletter_submission input[type="email"]:-ms-input-placeholder {
+  color: #999;
+}
+.widget_newsletter_submission input[type="submit"] {
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: #fff;
+  font-weight: 400;
+  padding: 0;
+  display: list-item;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+.widget_newsletter_submission input[type="submit"]:hover {
   color: #DF4949;
 }
 

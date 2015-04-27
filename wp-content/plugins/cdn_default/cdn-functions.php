@@ -22,13 +22,15 @@ if ( ! defined( 'CDN_POST_TYPES_DIR' ) )
 
 
 
-// REQUIRES POST-TYPES & TAXONOMIES & METAS
+// REQUIRES POST-TYPES & TAXONOMIES & METAS & WIDGETS
   // EVENTS
 require_once CDN_POST_TYPES_DIR . 'event-post-type.php';
 require_once CDN_POST_TYPES_DIR . 'event-taxonomies.php';
 require_once CDN_POST_TYPES_DIR . 'event-metas.php';
   // POSTS
 require_once CDN_POST_TYPES_DIR . 'post-metas.php';
+  // WIDGETS
+require_once CDN_DEFAULT_DIR . 'newsletter_widget.php';
 
 
 add_theme_support( 'post-thumbnails' );
@@ -36,6 +38,14 @@ add_theme_support( 'post-thumbnails' );
 
 // DISABLE ADMIN BAR
 add_filter('show_admin_bar', '__return_false');
+
+
+
+// Widget
+function tutsplus_register_list_pages_widget() {
+    register_widget( 'Newsletter_Widget' );
+}
+add_action( 'widgets_init', 'tutsplus_register_list_pages_widget' );
 
 
 
