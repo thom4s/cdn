@@ -18,6 +18,12 @@
     background-color: #fff;
   }
 
+    .entry-header {
+      &.img-last {
+        padding-top: 44px;
+      }
+    }
+
     .entry-titles {
       @extend %l-7col;
       @extend %l-1col-push;

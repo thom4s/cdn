@@ -53,5 +53,7 @@
         </a>
       </article><!-- end article--><?php
     endforeach;
+    wp_reset_postdata();
+
   endif;
 

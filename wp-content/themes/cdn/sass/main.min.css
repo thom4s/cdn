@@ -1660,6 +1660,10 @@ th {
   background-color: #fff;
 }
 
+.entry-header.img-last {
+  padding-top: 44px;
+}
+
 .entry-titles .entry-title {
   margin: 22px 0;
 }
@@ -1792,7 +1796,6 @@ h2 {
  */
 .entry-header {
   margin-bottom: 44px;
-  padding-top: 44px;
 }
 .entry-header .entry-header-inner {
   float: none;

@@ -18,11 +18,13 @@
     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
     <div class="home-featured plain">
       <?php echo get_the_post_thumbnail( $featured_event_id, '', '' ); ?>
-      <div class="featured-title">
-        <div class="meta"><?php echo $event_dates; ?></div>
-        <h1 class='home-featured-title'><?php echo $event_title ?></h1>
-        <div class="home-featured-meta meta">Marguerite Duras / Sylvain Maurice</div>
-      </div>
+      <a href="<?php echo $event_url; ?>">
+        <div class="featured-title">
+          <div class="meta"><?php echo $event_dates; ?></div>
+          <h1 class='home-featured-title'><?php echo $event_title ?></h1>
+          <div class="home-featured-meta meta">Marguerite Duras / Sylvain Maurice</div>
+        </div>
+      </a>
     </div>   
   </header><!-- .site-branding -->
 
