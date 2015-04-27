@@ -119,7 +119,16 @@ function cdn_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
-	) );	
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Accueil - Sous le menu', 'cdn' ),
+		'id'            => 'hp-aside',
+		'description'   => '',
+		'before_widget' => '<div class="buttons-group">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>',
+	) );			
 }
 add_action( 'widgets_init', 'cdn_widgets_init' );
 

@@ -8,6 +8,10 @@
 .site-header {
   @extend %l-4col;
   @extend %l-first;
+
+  & > div {
+    width: 100%;
+  }  
 }
 
 .site-title {
@@ -22,6 +26,8 @@
     color: inherit;
     text-decoration: none;
   }
+
+
 }
 
 

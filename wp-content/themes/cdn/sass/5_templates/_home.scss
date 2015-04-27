@@ -12,6 +12,7 @@
     height: 500px;
   }
     .site-title-home {
+      @extend .site-title;
       position: absolute;
       top: 0;
       left: 0;
