@@ -1,4 +1,35 @@
-.prices-item {
-  @extend %l-4col;
+/*
+ * Styles for template prices
+ */
 
+.entry-content-plain-1 {
+  @extend %l-11col;
+  @extend %l-1col-push;
+  @extend %l-first;
+  @include clearfix();      
 }
+
+.price-item {
+
+  margin-bottom: 44px;
+  float: left;
+
+  h6 {
+    margin-top: 0;
+    margin-bottom: 11px;
+  }
+}
+
+  .price-item-main {
+    @extend %l-7col;
+    @extend %l-first;
+
+  }
+  .price-item-aside {
+    @extend %l-4col;
+    @extend %l-last;
+
+    .bloc-buttons {
+      margin-top: 22px;
+    }
+  }

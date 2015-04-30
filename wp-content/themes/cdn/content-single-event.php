@@ -53,7 +53,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header">
+	<header class="entry-header--event">
 		
 		<div class="entry-medias bxslider-video">
       <?php foreach ($slides as $slide) { ?>
@@ -66,15 +66,16 @@
 
     <div class="row">
       <div class="entry-titles">
-        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        <?php the_title( '<h1 class="event-title">', '</h1>' ); ?>
         
-        <?php foreach ( $authors as $author ) { echo '<span class="meta entry-authors">' . $author . '</span>'; } ?>
+        <?php foreach ( $authors as $author ) { echo '<span class="meta event-authors">' . $author . '</span>'; } ?>
         
         <?php echo $intro; ?>
       </div>
 
-      <div class="entry-metas">
-        <div class="entry-metas-group">
+      <div class="event-metas">
+
+        <div class="event-metas-group">
           <?php if($is_creation) : echo 'Création'; endif; ?><br>
 
           <?php foreach ( $event_types as $type ) { echo $type->name; } ?> | <?php foreach ( $age as $a ) { echo $a->name; } ?><br>
@@ -82,7 +83,7 @@
           <?php foreach ( $salle as $s ) { echo $s->name; } ?> | <?php echo $duration; ?>
         </div><!-- .entry-metas-group -->
 
-        <div class="entry-metas-group">
+        <div class="event-metas-group">
           <ul class="event-dates">
             <?php foreach ($dates_infos as $date) {
 
@@ -105,19 +106,20 @@
                       $date_formated.
                       '</a>';
               }
-
               echo '</li>';
-
             }; ?>
           </ul>
         </div><!-- .entry-metas-group -->
 
-        <ul>
-          <li><a href="#distribution">Voir la Distribution</a></li>
-          <li><a href="#presse">Lire la presse</a></li>     
-        </ul>
+        <div class="event-metas-group">
+          <ul class="event-ancres">
+            <li><a href="#distribution">Voir la Distribution</a></li>
+            <li><a href="#presse">Lire la presse</a></li>     
+          </ul>
+        </div><!-- .entry-metas-group -->
 
-      </div><!-- .entry-meta -->
+
+      </div><!-- .event-metas -->
     </div><!-- .row -->
 	</header><!-- .entry-header -->
 

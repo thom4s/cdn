@@ -26,7 +26,38 @@
     color: inherit;
     text-decoration: none;
   }
-
 }
+
+
+.entry-header {
+  @include box-sizing;
+  margin-bottom: 44px;
+  padding-top: 44px;
+  width: 100%;
+  float: left;
+
+  .entry-header-inner {
+      @extend %l-8col;
+      @extend %l-1col-push;
+      @extend %l-first;
+      float: none;   }
+
+  &.bg {
+    background-color: $fun-color; }
+
+  &.img-last { }
+}
+
+  .entry-titles {
+    @extend %l-7col;
+    @extend %l-1col-push;
+    .entry-title { margin: 22px 0; }
+    .entry-authors { font-weight: 100; display: inline-block; clear: both; }
+    p { font-weight: 900; } 
+  }
+    
+
+
+
 
 

@@ -589,12 +589,12 @@ th {
  * GRID GENERATOR
  */
 @media (min-width: 1024px) {
-  .row .footer-infos-second, .row .entry-titles, .row .entry-content, .row .entry-content-plain-1, .row .entry-footer p, .entry-footer .row p, .row h2, .row .entry-header .entry-header-inner, .entry-header .row .entry-header-inner {
+  .row .entry-header .entry-header-inner, .entry-header .row .entry-header-inner, .row .entry-titles, .row .footer-infos-second, .row .entry-content, .row .entry-content h2, .entry-content .row h2, .row .entry-footer p, .entry-footer .row p, .row .entry-content-plain-1 {
     left: 6.25%;
     position: relative;
     right: auto;
   }
-  .row .footer-infos-third, .row .entry-metas {
+  .row .footer-infos-third, .row .event-metas {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -603,7 +603,7 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .bloc-outer.bloc-1col, .row .size-1of3, .row .site-header, .row .footer-contacts aside, .footer-contacts .row aside, .row .footer-infos-first, .row .prices-item {
+  .row .bloc-outer.bloc-1col, .row .size-1of3, .row .site-header, .row .footer-contacts aside, .footer-contacts .row aside, .row .footer-infos-first, .row .acces-item, .row .price-item-aside {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -612,7 +612,7 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .bloc-outer.bloc-1col .footer-infos-third, .row .size-1of3 .footer-infos-third, .row .site-header .footer-infos-third, .row .footer-contacts aside .footer-infos-third, .footer-contacts .row aside .footer-infos-third, .row .footer-infos-first .footer-infos-third, .row .prices-item .footer-infos-third, .row .bloc-outer.bloc-1col .entry-metas, .row .size-1of3 .entry-metas, .row .site-header .entry-metas, .row .footer-contacts aside .entry-metas, .footer-contacts .row aside .entry-metas, .row .footer-infos-first .entry-metas, .row .prices-item .entry-metas {
+  .row .bloc-outer.bloc-1col .footer-infos-third, .row .size-1of3 .footer-infos-third, .row .site-header .footer-infos-third, .row .footer-contacts aside .footer-infos-third, .footer-contacts .row aside .footer-infos-third, .row .footer-infos-first .footer-infos-third, .row .acces-item .footer-infos-third, .row .price-item-aside .footer-infos-third, .row .bloc-outer.bloc-1col .event-metas, .row .size-1of3 .event-metas, .row .site-header .event-metas, .row .footer-contacts aside .event-metas, .footer-contacts .row aside .event-metas, .row .footer-infos-first .event-metas, .row .acces-item .event-metas, .row .price-item-aside .event-metas {
     margin-left: 8.51064%;
     width: 72.87234%;
   }
@@ -625,15 +625,15 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .footer-contacts aside:last-child .footer-infos-third, .footer-contacts .row aside:last-child .footer-infos-third, .row .footer-contacts aside:last-child .entry-metas, .footer-contacts .row aside:last-child .entry-metas {
+  .row .footer-contacts aside:last-child .footer-infos-third, .footer-contacts .row aside:last-child .footer-infos-third, .row .footer-contacts aside:last-child .event-metas, .footer-contacts .row aside:last-child .event-metas {
     margin-left: 6.69456%;
     width: 57.32218%;
   }
-  .row .footer-contacts aside:last-child .bloc-outer.bloc-1col, .footer-contacts .row aside:last-child .bloc-outer.bloc-1col, .row .footer-contacts aside:last-child .size-1of3, .footer-contacts .row aside:last-child .size-1of3, .row .footer-contacts aside:last-child .site-header, .footer-contacts .row aside:last-child .site-header, .row .footer-contacts aside:last-child aside, .footer-contacts .row aside:last-child aside, .row .footer-contacts aside:last-child .footer-infos-first, .footer-contacts .row aside:last-child .footer-infos-first, .row .footer-contacts aside:last-child .prices-item, .footer-contacts .row aside:last-child .prices-item {
+  .row .footer-contacts aside:last-child .bloc-outer.bloc-1col, .footer-contacts .row aside:last-child .bloc-outer.bloc-1col, .row .footer-contacts aside:last-child .size-1of3, .footer-contacts .row aside:last-child .size-1of3, .row .footer-contacts aside:last-child .site-header, .footer-contacts .row aside:last-child .site-header, .row .footer-contacts aside:last-child aside, .footer-contacts .row aside:last-child aside, .row .footer-contacts aside:last-child .footer-infos-first, .footer-contacts .row aside:last-child .footer-infos-first, .row .footer-contacts aside:last-child .acces-item, .footer-contacts .row aside:last-child .acces-item, .row .footer-contacts aside:last-child .price-item-aside, .footer-contacts .row aside:last-child .price-item-aside {
     margin-left: 6.69456%;
     width: 78.66109%;
   }
-  .row .footer-infos-second, .row .entry-titles {
+  .row .entry-titles, .row .footer-infos-second, .row .price-item-main {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -642,19 +642,19 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .footer-infos-second .footer-infos-third, .row .entry-titles .footer-infos-third, .row .footer-infos-second .entry-metas, .row .entry-titles .entry-metas {
+  .row .entry-titles .footer-infos-third, .row .footer-infos-second .footer-infos-third, .row .price-item-main .footer-infos-third, .row .entry-titles .event-metas, .row .footer-infos-second .event-metas, .row .price-item-main .event-metas {
     margin-left: 4.69208%;
     width: 40.17595%;
   }
-  .row .footer-infos-second .bloc-outer.bloc-1col, .row .entry-titles .bloc-outer.bloc-1col, .row .footer-infos-second .size-1of3, .row .entry-titles .size-1of3, .row .footer-infos-second .site-header, .row .entry-titles .site-header, .row .footer-infos-second .footer-contacts aside, .footer-contacts .row .footer-infos-second aside, .row .entry-titles .footer-contacts aside, .footer-contacts .row .entry-titles aside, .row .footer-infos-second .footer-infos-first, .row .entry-titles .footer-infos-first, .row .footer-infos-second .prices-item, .row .entry-titles .prices-item {
+  .row .entry-titles .bloc-outer.bloc-1col, .row .footer-infos-second .bloc-outer.bloc-1col, .row .price-item-main .bloc-outer.bloc-1col, .row .entry-titles .size-1of3, .row .footer-infos-second .size-1of3, .row .price-item-main .size-1of3, .row .entry-titles .site-header, .row .footer-infos-second .site-header, .row .price-item-main .site-header, .row .entry-titles .footer-contacts aside, .footer-contacts .row .entry-titles aside, .row .footer-infos-second .footer-contacts aside, .footer-contacts .row .footer-infos-second aside, .row .price-item-main .footer-contacts aside, .footer-contacts .row .price-item-main aside, .row .entry-titles .footer-infos-first, .row .footer-infos-second .footer-infos-first, .row .price-item-main .footer-infos-first, .row .entry-titles .acces-item, .row .footer-infos-second .acces-item, .row .price-item-main .acces-item, .row .entry-titles .price-item-aside, .row .footer-infos-second .price-item-aside, .row .price-item-main .price-item-aside {
     margin-left: 4.69208%;
     width: 55.13196%;
   }
-  .row .footer-infos-second .footer-contacts aside:last-child, .footer-contacts .row .footer-infos-second aside:last-child, .row .entry-titles .footer-contacts aside:last-child, .footer-contacts .row .entry-titles aside:last-child {
+  .row .entry-titles .footer-contacts aside:last-child, .footer-contacts .row .entry-titles aside:last-child, .row .footer-infos-second .footer-contacts aside:last-child, .footer-contacts .row .footer-infos-second aside:last-child, .row .price-item-main .footer-contacts aside:last-child, .footer-contacts .row .price-item-main aside:last-child {
     margin-left: 4.69208%;
     width: 70.08798%;
   }
-  .row .bloc-outer.bloc-2col, .row .entry-content, .row .entry-footer p, .entry-footer .row p, .row .entry-header .entry-header-inner, .entry-header .row .entry-header-inner {
+  .row .bloc-outer.bloc-2col, .row .entry-header .entry-header-inner, .entry-header .row .entry-header-inner, .row .entry-content, .row .entry-footer p, .entry-footer .row p {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -663,19 +663,19 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .bloc-outer.bloc-2col .footer-infos-third, .row .entry-content .footer-infos-third, .row .entry-footer p .footer-infos-third, .entry-footer .row p .footer-infos-third, .row .entry-header .entry-header-inner .footer-infos-third, .entry-header .row .entry-header-inner .footer-infos-third, .row .bloc-outer.bloc-2col .entry-metas, .row .entry-content .entry-metas, .row .entry-footer p .entry-metas, .entry-footer .row p .entry-metas, .row .entry-header .entry-header-inner .entry-metas, .entry-header .row .entry-header-inner .entry-metas {
+  .row .bloc-outer.bloc-2col .footer-infos-third, .row .entry-header .entry-header-inner .footer-infos-third, .entry-header .row .entry-header-inner .footer-infos-third, .row .entry-content .footer-infos-third, .row .entry-footer p .footer-infos-third, .entry-footer .row p .footer-infos-third, .row .bloc-outer.bloc-2col .event-metas, .row .entry-header .entry-header-inner .event-metas, .entry-header .row .entry-header-inner .event-metas, .row .entry-content .event-metas, .row .entry-footer p .event-metas, .entry-footer .row p .event-metas {
     margin-left: 4.08163%;
     width: 34.94898%;
   }
-  .row .bloc-outer.bloc-2col .bloc-outer.bloc-1col, .row .entry-content .bloc-outer.bloc-1col, .row .entry-footer p .bloc-outer.bloc-1col, .entry-footer .row p .bloc-outer.bloc-1col, .row .entry-header .entry-header-inner .bloc-outer.bloc-1col, .entry-header .row .entry-header-inner .bloc-outer.bloc-1col, .row .bloc-outer.bloc-2col .size-1of3, .row .entry-content .size-1of3, .row .entry-footer p .size-1of3, .entry-footer .row p .size-1of3, .row .entry-header .entry-header-inner .size-1of3, .entry-header .row .entry-header-inner .size-1of3, .row .bloc-outer.bloc-2col .site-header, .row .entry-content .site-header, .row .entry-footer p .site-header, .entry-footer .row p .site-header, .row .entry-header .entry-header-inner .site-header, .entry-header .row .entry-header-inner .site-header, .row .bloc-outer.bloc-2col .footer-contacts aside, .footer-contacts .row .bloc-outer.bloc-2col aside, .row .entry-content .footer-contacts aside, .footer-contacts .row .entry-content aside, .row .entry-footer p .footer-contacts aside, .footer-contacts .row .entry-footer p aside, .entry-footer .row p .footer-contacts aside, .footer-contacts .entry-footer .row p aside, .row .entry-header .entry-header-inner .footer-contacts aside, .footer-contacts .row .entry-header .entry-header-inner aside, .entry-header .row .entry-header-inner .footer-contacts aside, .footer-contacts .entry-header .row .entry-header-inner aside, .row .bloc-outer.bloc-2col .footer-infos-first, .row .entry-content .footer-infos-first, .row .entry-footer p .footer-infos-first, .entry-footer .row p .footer-infos-first, .row .entry-header .entry-header-inner .footer-infos-first, .entry-header .row .entry-header-inner .footer-infos-first, .row .bloc-outer.bloc-2col .prices-item, .row .entry-content .prices-item, .row .entry-footer p .prices-item, .entry-footer .row p .prices-item, .row .entry-header .entry-header-inner .prices-item, .entry-header .row .entry-header-inner .prices-item {
+  .row .bloc-outer.bloc-2col .bloc-outer.bloc-1col, .row .entry-header .entry-header-inner .bloc-outer.bloc-1col, .entry-header .row .entry-header-inner .bloc-outer.bloc-1col, .row .entry-content .bloc-outer.bloc-1col, .row .entry-footer p .bloc-outer.bloc-1col, .entry-footer .row p .bloc-outer.bloc-1col, .row .bloc-outer.bloc-2col .size-1of3, .row .entry-header .entry-header-inner .size-1of3, .entry-header .row .entry-header-inner .size-1of3, .row .entry-content .size-1of3, .row .entry-footer p .size-1of3, .entry-footer .row p .size-1of3, .row .bloc-outer.bloc-2col .site-header, .row .entry-header .entry-header-inner .site-header, .entry-header .row .entry-header-inner .site-header, .row .entry-content .site-header, .row .entry-footer p .site-header, .entry-footer .row p .site-header, .row .bloc-outer.bloc-2col .footer-contacts aside, .footer-contacts .row .bloc-outer.bloc-2col aside, .row .entry-header .entry-header-inner .footer-contacts aside, .footer-contacts .row .entry-header .entry-header-inner aside, .entry-header .row .entry-header-inner .footer-contacts aside, .footer-contacts .entry-header .row .entry-header-inner aside, .row .entry-content .footer-contacts aside, .footer-contacts .row .entry-content aside, .row .entry-footer p .footer-contacts aside, .footer-contacts .row .entry-footer p aside, .entry-footer .row p .footer-contacts aside, .footer-contacts .entry-footer .row p aside, .row .bloc-outer.bloc-2col .footer-infos-first, .row .entry-header .entry-header-inner .footer-infos-first, .entry-header .row .entry-header-inner .footer-infos-first, .row .entry-content .footer-infos-first, .row .entry-footer p .footer-infos-first, .entry-footer .row p .footer-infos-first, .row .bloc-outer.bloc-2col .acces-item, .row .entry-header .entry-header-inner .acces-item, .entry-header .row .entry-header-inner .acces-item, .row .entry-content .acces-item, .row .entry-footer p .acces-item, .entry-footer .row p .acces-item, .row .bloc-outer.bloc-2col .price-item-aside, .row .entry-header .entry-header-inner .price-item-aside, .entry-header .row .entry-header-inner .price-item-aside, .row .entry-content .price-item-aside, .row .entry-footer p .price-item-aside, .entry-footer .row p .price-item-aside {
     margin-left: 4.08163%;
     width: 47.95918%;
   }
-  .row .bloc-outer.bloc-2col .footer-contacts aside:last-child, .footer-contacts .row .bloc-outer.bloc-2col aside:last-child, .row .entry-content .footer-contacts aside:last-child, .footer-contacts .row .entry-content aside:last-child, .row .entry-footer p .footer-contacts aside:last-child, .footer-contacts .row .entry-footer p aside:last-child, .entry-footer .row p .footer-contacts aside:last-child, .footer-contacts .entry-footer .row p aside:last-child, .row .entry-header .entry-header-inner .footer-contacts aside:last-child, .footer-contacts .row .entry-header .entry-header-inner aside:last-child, .entry-header .row .entry-header-inner .footer-contacts aside:last-child, .footer-contacts .entry-header .row .entry-header-inner aside:last-child {
+  .row .bloc-outer.bloc-2col .footer-contacts aside:last-child, .footer-contacts .row .bloc-outer.bloc-2col aside:last-child, .row .entry-header .entry-header-inner .footer-contacts aside:last-child, .footer-contacts .row .entry-header .entry-header-inner aside:last-child, .entry-header .row .entry-header-inner .footer-contacts aside:last-child, .footer-contacts .entry-header .row .entry-header-inner aside:last-child, .row .entry-content .footer-contacts aside:last-child, .footer-contacts .row .entry-content aside:last-child, .row .entry-footer p .footer-contacts aside:last-child, .footer-contacts .row .entry-footer p aside:last-child, .entry-footer .row p .footer-contacts aside:last-child, .footer-contacts .entry-footer .row p aside:last-child {
     margin-left: 4.08163%;
     width: 60.96939%;
   }
-  .row .bloc-outer.bloc-2col .footer-infos-second, .row .entry-content .footer-infos-second, .row .entry-footer p .footer-infos-second, .entry-footer .row p .footer-infos-second, .row .entry-header .entry-header-inner .footer-infos-second, .entry-header .row .entry-header-inner .footer-infos-second, .row .bloc-outer.bloc-2col .entry-titles, .row .entry-content .entry-titles, .row .entry-footer p .entry-titles, .entry-footer .row p .entry-titles, .row .entry-header .entry-header-inner .entry-titles, .entry-header .row .entry-header-inner .entry-titles {
+  .row .bloc-outer.bloc-2col .entry-titles, .row .entry-header .entry-header-inner .entry-titles, .entry-header .row .entry-header-inner .entry-titles, .row .entry-content .entry-titles, .row .entry-footer p .entry-titles, .entry-footer .row p .entry-titles, .row .bloc-outer.bloc-2col .footer-infos-second, .row .entry-header .entry-header-inner .footer-infos-second, .entry-header .row .entry-header-inner .footer-infos-second, .row .entry-content .footer-infos-second, .row .entry-footer p .footer-infos-second, .entry-footer .row p .footer-infos-second, .row .bloc-outer.bloc-2col .price-item-main, .row .entry-header .entry-header-inner .price-item-main, .entry-header .row .entry-header-inner .price-item-main, .row .entry-content .price-item-main, .row .entry-footer p .price-item-main, .entry-footer .row p .price-item-main {
     margin-left: 4.08163%;
     width: 86.9898%;
   }
@@ -688,11 +688,11 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .entry-content-plain-1 .footer-infos-third, .row .entry-content-plain-1 .entry-metas {
+  .row .entry-content-plain-1 .footer-infos-third, .row .entry-content-plain-1 .event-metas {
     margin-left: 2.93578%;
     width: 25.13761%;
   }
-  .row .entry-content-plain-1 .bloc-outer.bloc-1col, .row .entry-content-plain-1 .size-1of3, .row .entry-content-plain-1 .site-header, .row .entry-content-plain-1 .footer-contacts aside, .footer-contacts .row .entry-content-plain-1 aside, .row .entry-content-plain-1 .footer-infos-first, .row .entry-content-plain-1 .prices-item {
+  .row .entry-content-plain-1 .bloc-outer.bloc-1col, .row .entry-content-plain-1 .size-1of3, .row .entry-content-plain-1 .site-header, .row .entry-content-plain-1 .footer-contacts aside, .footer-contacts .row .entry-content-plain-1 aside, .row .entry-content-plain-1 .footer-infos-first, .row .entry-content-plain-1 .acces-item, .row .entry-content-plain-1 .price-item-aside {
     margin-left: 2.93578%;
     width: 34.49541%;
   }
@@ -700,11 +700,11 @@ th {
     margin-left: 2.93578%;
     width: 43.85321%;
   }
-  .row .entry-content-plain-1 .footer-infos-second, .row .entry-content-plain-1 .entry-titles {
+  .row .entry-content-plain-1 .entry-titles, .row .entry-content-plain-1 .footer-infos-second, .row .entry-content-plain-1 .price-item-main {
     margin-left: 2.93578%;
     width: 62.56881%;
   }
-  .row .entry-content-plain-1 .bloc-outer.bloc-2col, .row .entry-content-plain-1 .entry-content, .row .entry-content-plain-1 .entry-footer p, .entry-footer .row .entry-content-plain-1 p, .row .entry-content-plain-1 .entry-header .entry-header-inner, .entry-header .row .entry-content-plain-1 .entry-header-inner {
+  .row .entry-content-plain-1 .bloc-outer.bloc-2col, .row .entry-content-plain-1 .entry-header .entry-header-inner, .entry-header .row .entry-content-plain-1 .entry-header-inner, .row .entry-content-plain-1 .entry-content, .row .entry-content-plain-1 .entry-footer p, .entry-footer .row .entry-content-plain-1 p {
     margin-left: 2.93578%;
     width: 71.92661%;
   }
@@ -717,11 +717,11 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .site-content .footer-infos-third, .row .site-content .entry-metas {
+  .row .site-content .footer-infos-third, .row .site-content .event-metas {
     margin-left: 2.68456%;
     width: 22.98658%;
   }
-  .row .site-content .bloc-outer.bloc-1col, .row .site-content .size-1of3, .row .site-content .site-header, .row .site-content .footer-contacts aside, .footer-contacts .row .site-content aside, .row .site-content .footer-infos-first, .row .site-content .prices-item {
+  .row .site-content .bloc-outer.bloc-1col, .row .site-content .size-1of3, .row .site-content .site-header, .row .site-content .footer-contacts aside, .footer-contacts .row .site-content aside, .row .site-content .footer-infos-first, .row .site-content .acces-item, .row .site-content .price-item-aside {
     margin-left: 2.68456%;
     width: 31.54362%;
   }
@@ -729,11 +729,11 @@ th {
     margin-left: 2.68456%;
     width: 40.10067%;
   }
-  .row .site-content .footer-infos-second, .row .site-content .entry-titles {
+  .row .site-content .entry-titles, .row .site-content .footer-infos-second, .row .site-content .price-item-main {
     margin-left: 2.68456%;
     width: 57.21477%;
   }
-  .row .site-content .bloc-outer.bloc-2col, .row .site-content .entry-content, .row .site-content .entry-footer p, .entry-footer .row .site-content p, .row .site-content .entry-header .entry-header-inner, .entry-header .row .site-content .entry-header-inner {
+  .row .site-content .bloc-outer.bloc-2col, .row .site-content .entry-header .entry-header-inner, .entry-header .row .site-content .entry-header-inner, .row .site-content .entry-content, .row .site-content .entry-footer p, .entry-footer .row .site-content p {
     margin-left: 2.68456%;
     width: 65.77181%;
   }
@@ -741,10 +741,10 @@ th {
     margin-left: 2.68456%;
     width: 91.44295%;
   }
-  .row .site-header, .row .entry-content, .row .entry-content-plain-1, .row .entry-footer p, .entry-footer .row p, .row h2, .row .entry-header .entry-header-inner, .entry-header .row .entry-header-inner {
+  .row .site-header, .row .entry-header .entry-header-inner, .entry-header .row .entry-header-inner, .row .entry-content, .row .entry-content h2, .entry-content .row h2, .row .entry-footer p, .entry-footer .row p, .row .entry-content-plain-1, .row .price-item-main {
     margin-left: 0 !important;
   }
-  .row .footer-contacts aside:last-child, .footer-contacts .row aside:last-child, .row .footer-infos-third, .row .entry-metas {
+  .row .footer-contacts aside:last-child, .footer-contacts .row aside:last-child, .row .footer-infos-third, .row .event-metas, .row .price-item-aside {
     float: right !important;
   }
 }
@@ -1024,7 +1024,7 @@ big {
 /*
  * CLASSES
  */
-.meta {
+.meta, .event-metas, .event-dates, .event-ancres {
   font-family: "Roboto Slab", Georgia, Times New Roman, serif;
   color: #DF4949;
 }
@@ -1253,30 +1253,55 @@ h6 + .info:before {
  * 
  * @package sasskit
  */
-.buttons-group {
+.bloc-buttons {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 20px;
+  float: left;
+  margin-bottom: 22px;
   background-color: none;
   color: #fff;
-  padding-bottom: 20px;
 }
-.buttons-group ul {
-  margin: 0 0 0 50px;
-  padding: 0;
-}
-.buttons-group a,
-.buttons-group a:visited {
-  color: inherit;
-  text-decoration: none;
-}
-.buttons-group a:hover,
-.buttons-group a:visited:hover {
-  color: #DF4949;
-}
-
-h4 {
+.bloc-buttons h4 {
   color: #fff;
   background-image: url("../img/arrow_gray.png");
   background-repeat: no-repeat;
   background-position: 0 0;
+}
+.bloc-buttons ul {
+  margin: 0 0 0 50px;
+  padding: 0;
+  font-size: 15px;
+  font-size: 15 / 10 rem;
+}
+.bloc-buttons a,
+.bloc-buttons a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+.bloc-buttons a:hover,
+.bloc-buttons a:visited:hover {
+  color: #DF4949;
+}
+
+.no-bg {
+  background-color: none;
+}
+
+.bg-practical {
+  background-color: #34495E;
+  color: #fff;
+}
+
+.bg-fun {
+  background-color: #EFC94C;
+}
+
+.bg-white {
+  background-color: #fff;
 }
 
 /* 
@@ -1321,20 +1346,7 @@ a:active {
   display: block;
   float: left;
 }
-.bloc-outer.no-bg {
-  background-color: none;
-}
-.bloc-outer.bg-practical {
-  background-color: #34495E;
-  color: #fff;
-}
-.bloc-outer.bg-fun {
-  background-color: #EFC94C;
-}
-.bloc-outer.bg-white {
-  background-color: #fff;
-}
-.bloc-outer .meta {
+.bloc-outer .meta, .bloc-outer .event-metas, .bloc-outer .event-dates, .bloc-outer .event-ancres {
   font-weight: 900;
 }
 .bloc-outer p,
@@ -1751,6 +1763,35 @@ th {
   text-decoration: none;
 }
 
+.entry-header {
+  /* Acceptable values are border, content, and padding - content is the default W3C model */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin-bottom: 44px;
+  padding-top: 44px;
+  width: 100%;
+  float: left;
+}
+.entry-header .entry-header-inner {
+  float: none;
+}
+.entry-header.bg {
+  background-color: #EFC94C;
+}
+
+.entry-titles .entry-title {
+  margin: 22px 0;
+}
+.entry-titles .entry-authors {
+  font-weight: 100;
+  display: inline-block;
+  clear: both;
+}
+.entry-titles p {
+  font-weight: 900;
+}
+
 /* 
  * Footer
  * 
@@ -1810,36 +1851,6 @@ th {
   background-color: #fff;
 }
 
-.entry-header.img-last {
-  padding-top: 44px;
-}
-
-.entry-titles .entry-title {
-  margin: 22px 0;
-}
-.entry-titles .entry-authors {
-  font-weight: 100;
-  display: inline-block;
-  clear: both;
-}
-.entry-titles p {
-  font-weight: 900;
-}
-
-.entry-metas {
-  color: #DF4949;
-  margin-top: 22px;
-  text-align: right;
-}
-.entry-metas ul {
-  margin: 0;
-  padding: 0;
-}
-.entry-metas li {
-  margin: 0;
-  padding: 0;
-}
-
 .entry-content {
   clear: both;
 }
@@ -1855,6 +1866,23 @@ th {
   visibility: hidden;
 }
 .entry-content {
+  *zoom: 1;
+}
+.entry-content h2 {
+  clear: both;
+}
+.entry-content h2:before, .entry-content h2:after {
+  content: " ";
+  display: table;
+}
+.entry-content h2:after {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin-top: -1px;
+  visibility: hidden;
+}
+.entry-content h2 {
   *zoom: 1;
 }
 
@@ -1877,24 +1905,6 @@ th {
   *zoom: 1;
 }
 
-.entry-content-plain-1 {
-  clear: both;
-}
-.entry-content-plain-1:before, .entry-content-plain-1:after {
-  content: " ";
-  display: table;
-}
-.entry-content-plain-1:after {
-  display: block;
-  clear: both;
-  height: 1px;
-  margin-top: -1px;
-  visibility: hidden;
-}
-.entry-content-plain-1 {
-  *zoom: 1;
-}
-
 .related-content {
   clear: both;
   margin-bottom: 22px;
@@ -1914,40 +1924,63 @@ th {
   *zoom: 1;
 }
 
-h2 {
-  clear: both;
-}
-h2:before, h2:after {
-  content: " ";
-  display: table;
-}
-h2:after {
-  display: block;
-  clear: both;
-  height: 1px;
-  margin-top: -1px;
-  visibility: hidden;
-}
-h2 {
-  *zoom: 1;
-}
-
 /* 
  * templates/event
  * 
  * @package sasskit
  */
-.entry-metas-group {
+.entry-header--event {
+  padding-top: 0;
+  margin-bottom: 44px;
+}
+.entry-header--event p {
+  margin-top: 22px;
+}
+
+.event-title {
+  margin-top: 22px;
+  margin-bottom: 11px;
+}
+
+.event-authors {
+  display: inline-block;
+  clear: both;
+  font-weight: 400;
+}
+
+.event-metas-group {
   margin-bottom: 22px;
   padding-right: 5px;
 }
 
+.event-metas {
+  margin-top: 22px;
+  text-align: right;
+  font-size: 14px;
+  font-size: 14 / 10 rem;
+}
+.event-metas ul {
+  margin: 0;
+  padding: 0;
+}
+.event-metas li {
+  margin: 0;
+  padding: 0;
+}
+
 .event-dates {
+  font-size: 14px;
+  font-size: 14 / 10 rem;
   color: #000;
 }
 
 .passed_date {
   color: #999;
+}
+
+.event-ancres {
+  font-size: 14px;
+  font-size: 14 / 10 rem;
 }
 
 /* 
@@ -2012,15 +2045,41 @@ h2 {
  * 
  * @package sasskit
  */
-.entry-header {
+/*
+ * Styles for template acces
+ */
+/*
+ * Styles for template prices
+ */
+.entry-content-plain-1 {
+  clear: both;
+}
+.entry-content-plain-1:before, .entry-content-plain-1:after {
+  content: " ";
+  display: table;
+}
+.entry-content-plain-1:after {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin-top: -1px;
+  visibility: hidden;
+}
+.entry-content-plain-1 {
+  *zoom: 1;
+}
+
+.price-item {
   margin-bottom: 44px;
-}
-.entry-header .entry-header-inner {
-  float: none;
-}
-.entry-header.bg {
-  background-color: #EFC94C;
   float: left;
+}
+.price-item h6 {
+  margin-top: 0;
+  margin-bottom: 11px;
+}
+
+.price-item-aside .bloc-buttons {
+  margin-top: 22px;
 }
 
 

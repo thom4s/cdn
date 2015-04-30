@@ -14,15 +14,11 @@
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
 
-
     <?php get_search_form( ); ?>
 
-
-
     <?php if( is_singular( 'event' ) ){ ?>
- 
-      <div class="bloc-outer bg-practical">
-        <div class="buttons-group">
+      <div class="bloc-buttons bg-practical">
+        <div class="bloc-buttons-inner">
           <h4>Pratique</h4>
           <ul>
             <li class="btn"><a href="http://www.forumsirius.fr/orion/sartrouville.phtml?spec=<?php echo $event_booking_id; ?>">Réservez pour ce spectacle</a></li>
@@ -30,22 +26,13 @@
             <li class="btn"><a href="">Le spectacle suivant</a></li>
           </ul>
         </div>
-      </div><!-- .bloc-outer -->
-
+      </div><!-- .bloc-buttons -->
     <?php } ?><!-- endif event -->
-
 
 
     <?php if( is_singular( 'page' ) ){ ?>
 
-      <div class="related-content">
-        
-      </div>
-
     <?php } ?><!-- endif page -->
-
-
-
 
   </header><!-- .site-branding -->
 

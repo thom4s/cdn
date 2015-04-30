@@ -38,9 +38,7 @@
     </nav><!-- #site-navigation -->
     <?php get_search_form( ); ?>
 
-    <div class="bloc-outer bg-practical">
-      <?php dynamic_sidebar( 'hp-aside' ); ?>
-    </div><!-- .bloc-outer -->
+    <?php dynamic_sidebar( 'hp-aside' ); ?>
     
   </header><!-- #masthead -->
 

@@ -4,14 +4,50 @@
  * @package sasskit
  */
 
-.entry-metas-group {
-  margin-bottom: 22px;
-  padding-right: 5px;
-}
+.entry-header--event {
+  padding-top: 0;
+  margin-bottom: 44px; 
 
-  .event-dates {
-    color: #000;
-  } 
-    .passed_date {
-      color: #999;
+  p {
+    margin-top: 22px; }
+}
+  
+  .event-title {
+    margin-top: 22px;
+    margin-bottom: 11px; }
+
+  .event-authors {
+    display: inline-block;
+    clear: both;
+    font-weight: 400; }
+
+  .event-metas-group {
+    margin-bottom: 22px;
+    padding-right: 5px; }
+
+    .event-metas {
+      @extend %l-3col;
+      @extend %l-last;
+      @extend .meta;
+
+      margin-top: 22px;
+      text-align: right;
+      @include fontsize(14);
+
+      ul {
+        margin: 0;
+        padding: 0; }
+      li {
+        margin: 0;
+        padding: 0; }
     }
+
+    .event-dates {
+      @extend .meta;
+      @include fontsize(14);
+      color: #000; } 
+    .passed_date { color: #999; }
+
+    .event-ancres {
+      @extend .meta;
+      @include fontsize(14); }

@@ -17,7 +17,7 @@ get_header(); ?>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-      <header class="entry-header bg } ?> ">
+      <header class="entry-header bg">
         <div class="entry-header-inner">
 
           <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

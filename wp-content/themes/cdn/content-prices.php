@@ -41,21 +41,27 @@
 			$bloc_menu = $bloc['menu']; ?>
 
 
-			<div class="">
-
+			<div class="price-item">
 				<h2><?php echo $bloc_title; ?></h2>
+
+				<div class="price-item-main">
+					<?php echo $bloc_main; ?>
+				</div><!-- .price-item-main -->
 				
-				<div><?php echo $bloc_main; ?></div>
-				
-				<div><?php echo $bloc_aside; ?></div>
+				<div class="price-item-aside">
+					<?php echo $bloc_aside; ?>
 
-			</div>
-
-
+					<div class="bloc-buttons bg-practical">
+			      <div class="bloc-buttons-inner">
+			      	<h4>Pratique</h4>
+			      	<?php wp_nav_menu( array( 'menu' => $bloc_menu) ); ?>
+						</div>
+					</div><!-- .bloc-outer -->
+					
+				</div><!-- .price-item-aside -->
+			</div><!-- .price-item -->
 
 		<?php	} // end foreach ?>
 
-
-	</div><!-- .entry-content -->
-
+	</div><!-- .entry-content-plain-1 -->
 </article><!-- #post-## -->

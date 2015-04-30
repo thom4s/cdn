@@ -33,22 +33,7 @@
   }
   &.bloc-1col {
     @extend %l-4col;
-  }
-
-  // BACKGROUNDS FOR BLOCS
-  &.no-bg {
-    background-color: none;
-  }
-  &.bg-practical {
-    background-color: $practical-color;
-    color: #fff;
-  }
-  &.bg-fun {
-    background-color: $fun-color;
-  }
-  &.bg-white {
-    background-color: #fff;
-  }   
+  } 
 
   &:hover {
   }
@@ -61,8 +46,6 @@
   ul {
     @include fontsize(15);
   }
-
-
 
 }
 

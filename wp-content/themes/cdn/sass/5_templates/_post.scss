@@ -5,25 +5,7 @@
  */
 
 .entry-header {
-
-  margin-bottom: 44px;
-
-  & .entry-header-inner {
-      @extend %l-8col;
-      @extend %l-1col-push;
-      @extend %l-first;
-      float: none;
-  }
-
-  &.bg {
-    background-color: $fun-color;
-    float: left;
-  }
-
-
-
 }
 
 .entry-content {
-
 }

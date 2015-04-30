@@ -5,19 +5,28 @@
  */
 
 
-.buttons-group {
 
+.bloc-buttons {
+  @include box-sizing();
+
+  width: 100%;
+  padding-bottom: 20px;
+  float: left;
+  margin-bottom: $base_line_height;
   background-color: none;
   color: #fff;
-  padding-bottom: 20px;
+
+  h4 {
+    color: #fff;
+    background-image: url('../img/arrow_gray.png');
+    background-repeat: no-repeat;
+    background-position: 0 0 ;
+  }
 
   ul {
    margin: 0 0 0 50px;
-   padding: 0;   
-  }
-
-  li {
-    
+   padding: 0;
+   @include fontsize(15);
   }
 
   a,
@@ -30,11 +39,23 @@
     }
   }
 }
+  .bloc-buttons-inner {
 
-h4 {
-  color: #fff;
-  background-image: url('../img/arrow_gray.png');
-  background-repeat: no-repeat;
-  background-position: 0 0 ;
+  }
 
+
+
+// BACKGROUNDS FOR BUTTONS AND BLOCS
+.no-bg {
+  background-color: none;
 }
+.bg-practical {
+  background-color: $practical-color;
+  color: #fff;
+}
+.bg-fun {
+  background-color: $fun-color;
+}
+.bg-white {
+  background-color: #fff;
+}  

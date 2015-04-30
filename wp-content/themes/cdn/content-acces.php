@@ -51,7 +51,7 @@
 			$bloc_main = $bloc['main']; ?>
 
 
-			<div class="prices-item">
+			<div class="acces-item">
 
 				<h2><?php echo $bloc_title; ?></h2>
 				
