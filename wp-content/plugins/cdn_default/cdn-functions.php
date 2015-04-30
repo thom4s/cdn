@@ -52,7 +52,6 @@ add_action( 'widgets_init', 'tutsplus_register_list_pages_widget' );
 
 
 
-
 // MODIFY QUERY FOR HOM PAGE 
 // TO BE CODED
 function my_home_query( $query ) {

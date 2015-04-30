@@ -5,6 +5,14 @@
 
     setlocale(LC_TIME, 'fra_fra');
     $today = time();
+    $pro = false;
+    $public = false;
+
+    if(isset($wp_query->query_vars['pro'])) {
+      $pro = true;
+    } else {
+      $public = true;
+    }
 
 		// GET ALL META DATAS
     $prefix = 'event_meta_';
@@ -55,20 +63,26 @@
 
 	<header class="entry-header--event">
 		
-		<div class="event-slider">
-      <div class="event-slider-inner">
+    <!-- DISPLAY SLIDER IF PUBLIC-->
+    <?php if($public){ ?>
 
-        <div class="bxslider-video">
-          <?php foreach ($slides as $slide) { ?>
-              <li><img src="<?php echo $slide['full_url']; ?>"></li>
-          <?php } ?>
-          <?php foreach ($videos as $video) { ?>
-              <li><iframe src="<?php echo $video; ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></li>
-          <?php } ?>
-        </div>
+      <div class="event-slider">
+        <div class="event-slider-inner">
 
-      </div><!-- .event-slider-inner -->
-    </div><!-- .event-slider -->
+          <div class="bxslider-video">
+            <?php foreach ($slides as $slide) { ?>
+                <li><img src="<?php echo $slide['full_url']; ?>"></li>
+            <?php } ?>
+            <?php foreach ($videos as $video) { ?>
+                <li><iframe src="<?php echo $video; ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></li>
+            <?php } ?>
+          </div>
+
+        </div><!-- .event-slider-inner -->
+      </div><!-- .event-slider -->
+
+    <?php } ?>
+
 
     <div class="row">
       <div class="entry-titles">
@@ -86,9 +100,12 @@
 
           <?php foreach ( $event_types as $type ) { echo $type->name; } ?> | <?php foreach ( $age as $a ) { echo $a->name; } ?><br>
 
-          <?php foreach ( $salle as $s ) { echo $s->name; } ?> | <?php echo $duration; ?>
+          <?php if($public){ ?><?php foreach ( $salle as $s ) { echo $s->name; } ?> | <?php echo $duration; }?>
         </div><!-- .entry-metas-group -->
 
+
+        <!-- DISPLAY DATES IF PUBLIC-->
+        <?php if($public){ ?>
         <div class="event-metas-group">
           <ul class="event-dates">
             <?php foreach ($dates_infos as $date) {
@@ -99,7 +116,6 @@
               $date_string = $date["event_meta_datetime"];
               $date_raw = strtotime($date_string);
               $date_formated = strftime('%a %e %b %g : %kh%M', $date_raw );
-
 
               echo  '<li>';
 
@@ -119,11 +135,13 @@
             }; ?>
           </ul>
         </div><!-- .entry-metas-group -->
+        <?php } ?>
+
 
         <div class="event-metas-group">
           <ul class="event-ancres">
             <li><a href="#distribution">Voir la Distribution</a></li>
-            <li><a href="#presse">Lire la presse</a></li>     
+            <?php if($public){ ?><li><a href="#presse">Lire la presse</a></li><?php } ?>
           </ul>
         </div><!-- .entry-metas-group -->
 
@@ -142,7 +160,7 @@
 	<footer class="entry-footer">
 		<h2 id="distribution">Distribution</h2>
 				<?php echo $distribution; ?>
-		<h2 id="presse">La presse</h2>
-			<?php echo $press; ?>
+		<?php if($public){ ?><h2 id="presse">La presse</h2>
+			<?php echo $press; }?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

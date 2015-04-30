@@ -251,7 +251,7 @@ function event_register_meta_boxes( $meta_boxes )
             array(
                 'name' => __( 'Visuels (zip)', 'meta-box' ),
                 'id'   => "{$prefix}visuals",
-                'type' => 'file',
+                'type' => 'file_advanced',
                 'max_file_uploads'  => '1'
             ), 
         )

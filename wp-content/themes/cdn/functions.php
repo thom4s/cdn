@@ -145,6 +145,22 @@ function cdn_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cdn_scripts' );
 
+
+
+// Add Query Var for Event PRO
+function add_query_vars($aVars) {
+	$aVars[] = "pro"; // represents the name of the product category as shown in the URL
+	return $aVars;
+}
+// hook add_query_vars function into query_vars
+add_filter('query_vars', 'add_query_vars');
+ 
+// hook add_rewrite_rules function into rewrite_rules_array
+add_filter('rewrite_rules_array', 'add_rewrite_rules');
+
+
+
+
 /**
  * Implement the Custom Header feature.
  */

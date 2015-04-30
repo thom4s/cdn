@@ -1,6 +1,6 @@
 
   <article class="grid-item related-post bloc-outer bloc-1col">
-    <a href="<?php the_permalink(); ?>">
+    <a href="<?php the_permalink(); ?>?pro=yes">
       
       <div class="bloc-img">
         <?php the_post_thumbnail( 'bloc-thumb', '' ); ?>
