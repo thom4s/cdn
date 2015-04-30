@@ -3,7 +3,7 @@
  * @package cdn
  */
 
-    setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
+    setlocale(LC_TIME, 'fra_fra');
     $today = time();
 
 		// GET ALL META DATAS
@@ -87,11 +87,14 @@
           <ul class="event-dates">
             <?php foreach ($dates_infos as $date) {
 
+              setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
+
               $date_booking_id = $date["event_meta_date_booking_id"];
               $date_string = $date["event_meta_datetime"];
               $date_raw = strtotime($date_string);
-              $date_formated = date('D d M Y : H\hi', $date_raw);
-              
+              $date_formated = strftime('%a %e %b %g : %kh%M', $date_raw );
+
+
               echo  '<li>';
 
               if( $today > $date_raw ) {
