@@ -1262,10 +1262,6 @@ a:active {
  * 
  * @package sasskit
  */
-#grid {
-  display: none;
-}
-
 .bloc-outer {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -1311,6 +1307,7 @@ a:active {
 
 #grid[data-columns]::before {
   content: '3 .column.size-1of3';
+  display: none;
 }
 
 /* These are the classes that are going to be applied: */
@@ -1948,6 +1945,7 @@ h2 {
 }
 .entry-header.bg {
   background-color: #EFC94C;
+  float: left;
 }
 
 
