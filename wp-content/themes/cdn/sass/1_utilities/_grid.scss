@@ -27,6 +27,8 @@ $wide_breakpoint:                   1400px !default;
  */
 
 .plain {
+    @include box-sizing;
+    display: block;
     width: 100%;
     margin: auto;
 }

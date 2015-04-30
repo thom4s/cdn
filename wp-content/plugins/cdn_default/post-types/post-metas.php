@@ -232,6 +232,132 @@ function defaults_register_meta_boxes( $meta_boxes )
 
 
 
+  // Pour template Tarifs et Abonnements
+  $meta_boxes[] = array(
+    'title'  => __( 'Contenus de la page Tarifs et Abonnements', 'meta-box' ),
+    'id'         => 'blocs-prices',
+    'post_types' => array( 'page' ),
+    'include' => array(
+      'template' => array( 'page-prices.php' ),
+    ),
+    'context'    => 'normal',
+    'autosave'   => true,
+    'fields' => array(
+
+      array(
+        'id'     =>  $prefix . 'price_bloc',
+        'name'   => __( '', 'meta-box' ),
+        'type'   => 'group', 
+        'clone'  => true,   
+        'fields' => array(
+
+          // TITLE
+          array(
+            'name'          => __( 'Titre de la partie', 'meta-box' ),
+            'id'            => "title",
+            'type'          => 'text',
+          ),
+
+          // MAIN
+          array(
+            'name'          => __( 'Le contenu principal', 'meta-box' ),
+            'id'            => "main",
+            'type'          => 'wysiwyg',
+            'options' => array(
+              'textarea_rows' => 6,
+              'teeny'         => false,
+              'media_buttons' => false,
+            ),
+          ),
+
+          // ASIDE
+          array(
+            'name'          => __( 'Le contenu à droite', 'meta-box' ),
+            'id'            => "aside",
+            'type'          => 'wysiwyg',
+            'options' => array(
+              'textarea_rows' => 6,
+              'teeny'         => false,
+              'media_buttons' => false,
+            ),
+          ),
+
+          // MENU
+          array(
+            'name'          => __( 'Le menu à faire apparaitre', 'meta-box' ),
+            'id'            => "menu",
+            'type'          => 'text',
+          ),
+
+        ),
+      ),
+    ),
+  );
+
+
+
+  // Pour template Accès
+  $meta_boxes[] = array(
+    'title'  => __( 'Contenus de la page Tarifs et Abonnements', 'meta-box' ),
+    'id'         => 'blocs-acces',
+    'post_types' => array( 'page' ),
+    'include' => array(
+      'template' => array( 'page-acces.php' ),
+    ),
+    'context'    => 'normal',
+    'autosave'   => true,
+    'fields' => array(
+
+      // Map requires at least one address field (with type = text)
+      array(
+        'id'   => 'address',
+        'name' => __( 'Address', 'meta-box' ),
+        'type' => 'text',
+        'std'  => __( 'Place Jacques Brel, Sartrouville, France', 'meta-box' ),
+      ),
+      array(
+        'id'            => 'map',
+        'name'          => __( 'Location', 'meta-box' ),
+        'type'          => 'map',
+        'std'           => '-6.233406,-35.049906,15',
+        'address_field' => 'address',
+      ),
+
+
+      // Content
+      array(
+        'id'     =>  $prefix . 'acces_bloc',
+        'name'   => __( '', 'meta-box' ),
+        'type'   => 'group', 
+        'clone'  => true,   
+        'fields' => array(
+
+          // TITLE
+          array(
+            'name'          => __( 'Titre de la partie', 'meta-box' ),
+            'id'            => "title",
+            'type'          => 'text',
+          ),
+
+          // MAIN
+          array(
+            'name'          => __( 'Le contenu', 'meta-box' ),
+            'id'            => "main",
+            'type'          => 'wysiwyg',
+            'options' => array(
+              'textarea_rows' => 6,
+              'teeny'         => false,
+              'media_buttons' => false,
+            ),
+          ),
+
+        ),
+      ),
+    ),
+  );
+
+
+
   return $meta_boxes;
 }
 

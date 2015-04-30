@@ -60,8 +60,18 @@
 
       @include clearfix();      
     }
+    .entry-content-plain {
+      width: 100%;
 
+      @include clearfix();      
+    }
+    .entry-content-plain-1 {
+      @extend %l-11col;
+      @extend %l-1col-push;
+      @extend %l-first;
 
+      @include clearfix();      
+    }
     .related-content {
       @include clearfix();
       margin-bottom: $base_line_height;
