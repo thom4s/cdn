@@ -24,7 +24,9 @@
 			<p class="post-excerpt"><?php echo $introduction; ?></p>
 
 		</div><!-- .entry-header-inner -->
+
 		<?php the_post_thumbnail( ); ?> 
+
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

@@ -29,7 +29,8 @@ get_header(); ?>
       </header><!-- .entry-header -->
 
       <div class="entry-content">
-        <?php the_content(); ?>
+        hello
+        <?php echo get_the_content(); ?>
       </div><!-- .entry-content -->
       
       <div class="row">
