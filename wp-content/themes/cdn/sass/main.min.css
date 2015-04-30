@@ -1660,6 +1660,47 @@ img {
   height: auto;
 }
 
+.event-slider {
+  opacity: 0;
+  position: relative;
+}
+.event-slider .bxslider-video {
+  height: 100%;
+}
+.event-slider li {
+  height: 100%;
+}
+
+.event-slider-inner {
+  height: 500px;
+  overflow: hidden;
+}
+
+.bx-controls {
+  position: absolute;
+  top: 40%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.bx-controls-direction a {
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+  background-image: url("../img/arrow_gray.png");
+  background-repeat: no-repeat;
+}
+
+.bx-prev {
+  left: -40px;
+}
+
+.bx-next {
+  right: -40px;
+}
+
 /* 
  * Tables
  * 

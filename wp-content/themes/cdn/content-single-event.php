@@ -55,14 +55,20 @@
 
 	<header class="entry-header--event">
 		
-		<div class="entry-medias bxslider-video">
-      <?php foreach ($slides as $slide) { ?>
-          <li><img src="<?php echo $slide['full_url']; ?>"></li>
-      <?php } ?>
-      <?php foreach ($videos as $video) { ?>
-          <li><iframe src="<?php echo $video; ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></li>
-      <?php } ?>
-    </div>
+		<div class="event-slider">
+      <div class="event-slider-inner">
+
+        <div class="bxslider-video">
+          <?php foreach ($slides as $slide) { ?>
+              <li><img src="<?php echo $slide['full_url']; ?>"></li>
+          <?php } ?>
+          <?php foreach ($videos as $video) { ?>
+              <li><iframe src="<?php echo $video; ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></li>
+          <?php } ?>
+        </div>
+
+      </div><!-- .event-slider-inner -->
+    </div><!-- .event-slider -->
 
     <div class="row">
       <div class="entry-titles">

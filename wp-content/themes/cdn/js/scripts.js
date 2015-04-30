@@ -28,6 +28,11 @@ jQuery(function($) {
     pager: false,
     controls: true,
     auto: false,
+    nextText: '',
+    prevText: '',
+    onSliderLoad: function(currentIndex){
+      $('.event-slider').css('opacity', '1');
+    }
   });
 
 
