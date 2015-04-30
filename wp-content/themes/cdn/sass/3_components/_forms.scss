@@ -67,7 +67,12 @@
 		padding: 0;
 		color: #fff;
 		
-		@include placeholder(#999)
+		@include placeholder(#999);
+
+		&:focus,
+		&:active {
+			color: #FFF;
+		}
 	}
 
 	input[type="submit"] {
@@ -81,14 +86,23 @@
 		padding: 0;
 		display: list-item;
 		list-style-type: disc;
-		padding-left: 20px;
+		padding-left: 50px;
 
 		&:hover {
 			color: $color_link_hover;
 		}
 	}
-
 }
+
+	#mce-responses {
+		@include fontsize(13);
+		line-height: 15px;
+		margin-top: 10px;
+	}
+		#mce-success-response {
+		}
+		#mce-error-response {
+		}
 
 button,
 input,

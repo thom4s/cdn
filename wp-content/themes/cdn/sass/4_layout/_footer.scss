@@ -18,6 +18,11 @@
 
     aside {
       @extend %l-4col;
+
+      &:last-child {
+        @extend %l-5col;
+        @extend %l-last;
+      }
     }
 
     h6 {
@@ -26,7 +31,6 @@
 
     a {
       color: inherit;
-
     }
 
   }

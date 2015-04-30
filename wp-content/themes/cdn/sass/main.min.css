@@ -611,6 +611,23 @@ th {
     margin-left: 8.51064%;
     width: 72.87234%;
   }
+  .row .footer-contacts aside:last-child, .footer-contacts .row aside:last-child {
+    /* Acceptable values are border, content, and padding - content is the default W3C model */
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 29.875%;
+    float: left;
+    margin-left: 2%;
+  }
+  .row .footer-contacts aside:last-child .footer-infos-third, .footer-contacts .row aside:last-child .footer-infos-third, .row .footer-contacts aside:last-child .entry-metas, .footer-contacts .row aside:last-child .entry-metas {
+    margin-left: 6.69456%;
+    width: 57.32218%;
+  }
+  .row .footer-contacts aside:last-child .bloc-outer.bloc-1col, .footer-contacts .row aside:last-child .bloc-outer.bloc-1col, .row .footer-contacts aside:last-child .size-1of3, .footer-contacts .row aside:last-child .size-1of3, .row .footer-contacts aside:last-child .site-header, .footer-contacts .row aside:last-child .site-header, .row .footer-contacts aside:last-child aside, .footer-contacts .row aside:last-child aside, .row .footer-contacts aside:last-child .footer-infos-first, .footer-contacts .row aside:last-child .footer-infos-first {
+    margin-left: 6.69456%;
+    width: 78.66109%;
+  }
   .row .footer-infos-second, .row .entry-titles {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
@@ -628,6 +645,10 @@ th {
     margin-left: 4.69208%;
     width: 55.13196%;
   }
+  .row .footer-infos-second .footer-contacts aside:last-child, .footer-contacts .row .footer-infos-second aside:last-child, .row .entry-titles .footer-contacts aside:last-child, .footer-contacts .row .entry-titles aside:last-child {
+    margin-left: 4.69208%;
+    width: 70.08798%;
+  }
   .row .bloc-outer.bloc-2col, .row .entry-content, .row .entry-footer p, .entry-footer .row p, .row .entry-header .entry-header-inner, .entry-header .row .entry-header-inner {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
@@ -644,6 +665,10 @@ th {
   .row .bloc-outer.bloc-2col .bloc-outer.bloc-1col, .row .entry-content .bloc-outer.bloc-1col, .row .entry-footer p .bloc-outer.bloc-1col, .entry-footer .row p .bloc-outer.bloc-1col, .row .entry-header .entry-header-inner .bloc-outer.bloc-1col, .entry-header .row .entry-header-inner .bloc-outer.bloc-1col, .row .bloc-outer.bloc-2col .size-1of3, .row .entry-content .size-1of3, .row .entry-footer p .size-1of3, .entry-footer .row p .size-1of3, .row .entry-header .entry-header-inner .size-1of3, .entry-header .row .entry-header-inner .size-1of3, .row .bloc-outer.bloc-2col .site-header, .row .entry-content .site-header, .row .entry-footer p .site-header, .entry-footer .row p .site-header, .row .entry-header .entry-header-inner .site-header, .entry-header .row .entry-header-inner .site-header, .row .bloc-outer.bloc-2col .footer-contacts aside, .footer-contacts .row .bloc-outer.bloc-2col aside, .row .entry-content .footer-contacts aside, .footer-contacts .row .entry-content aside, .row .entry-footer p .footer-contacts aside, .footer-contacts .row .entry-footer p aside, .entry-footer .row p .footer-contacts aside, .footer-contacts .entry-footer .row p aside, .row .entry-header .entry-header-inner .footer-contacts aside, .footer-contacts .row .entry-header .entry-header-inner aside, .entry-header .row .entry-header-inner .footer-contacts aside, .footer-contacts .entry-header .row .entry-header-inner aside, .row .bloc-outer.bloc-2col .footer-infos-first, .row .entry-content .footer-infos-first, .row .entry-footer p .footer-infos-first, .entry-footer .row p .footer-infos-first, .row .entry-header .entry-header-inner .footer-infos-first, .entry-header .row .entry-header-inner .footer-infos-first {
     margin-left: 4.08163%;
     width: 47.95918%;
+  }
+  .row .bloc-outer.bloc-2col .footer-contacts aside:last-child, .footer-contacts .row .bloc-outer.bloc-2col aside:last-child, .row .entry-content .footer-contacts aside:last-child, .footer-contacts .row .entry-content aside:last-child, .row .entry-footer p .footer-contacts aside:last-child, .footer-contacts .row .entry-footer p aside:last-child, .entry-footer .row p .footer-contacts aside:last-child, .footer-contacts .entry-footer .row p aside:last-child, .row .entry-header .entry-header-inner .footer-contacts aside:last-child, .footer-contacts .row .entry-header .entry-header-inner aside:last-child, .entry-header .row .entry-header-inner .footer-contacts aside:last-child, .footer-contacts .entry-header .row .entry-header-inner aside:last-child {
+    margin-left: 4.08163%;
+    width: 60.96939%;
   }
   .row .bloc-outer.bloc-2col .footer-infos-second, .row .entry-content .footer-infos-second, .row .entry-footer p .footer-infos-second, .entry-footer .row p .footer-infos-second, .row .entry-header .entry-header-inner .footer-infos-second, .entry-header .row .entry-header-inner .footer-infos-second, .row .bloc-outer.bloc-2col .entry-titles, .row .entry-content .entry-titles, .row .entry-footer p .entry-titles, .entry-footer .row p .entry-titles, .row .entry-header .entry-header-inner .entry-titles, .entry-header .row .entry-header-inner .entry-titles {
     margin-left: 4.08163%;
@@ -666,6 +691,10 @@ th {
     margin-left: 2.68456%;
     width: 31.54362%;
   }
+  .row .site-content .footer-contacts aside:last-child, .footer-contacts .row .site-content aside:last-child {
+    margin-left: 2.68456%;
+    width: 40.10067%;
+  }
   .row .site-content .footer-infos-second, .row .site-content .entry-titles {
     margin-left: 2.68456%;
     width: 57.21477%;
@@ -677,7 +706,7 @@ th {
   .row .site-header, .row .entry-content, .row .entry-footer p, .entry-footer .row p, .row h2, .row .entry-header .entry-header-inner, .entry-header .row .entry-header-inner {
     margin-left: 0 !important;
   }
-  .row .footer-infos-third, .row .entry-metas {
+  .row .footer-contacts aside:last-child, .footer-contacts .row aside:last-child, .row .footer-infos-third, .row .entry-metas {
     float: right !important;
   }
 }
@@ -1233,6 +1262,10 @@ a:active {
  * 
  * @package sasskit
  */
+#grid {
+  display: none;
+}
+
 .bloc-outer {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -1391,6 +1424,9 @@ a:active {
 .widget_newsletter_submission input[type="email"]:-ms-input-placeholder {
   color: #999;
 }
+.widget_newsletter_submission input[type="email"]:focus, .widget_newsletter_submission input[type="email"]:active {
+  color: #FFF;
+}
 .widget_newsletter_submission input[type="submit"] {
   height: 40px;
   line-height: 40px;
@@ -1402,10 +1438,17 @@ a:active {
   padding: 0;
   display: list-item;
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 50px;
 }
 .widget_newsletter_submission input[type="submit"]:hover {
   color: #DF4949;
+}
+
+#mce-responses {
+  font-size: 13px;
+  font-size: 13 / 10 rem;
+  line-height: 15px;
+  margin-top: 10px;
 }
 
 button,

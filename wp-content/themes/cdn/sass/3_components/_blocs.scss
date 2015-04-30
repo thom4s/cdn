@@ -4,6 +4,10 @@
  * @package sasskit
  */
 
+#grid {
+  display: none;
+}
+
 .bloc-outer {
   @include box-sizing();
   float: left;
