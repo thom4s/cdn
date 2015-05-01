@@ -4489,6 +4489,10 @@ h6 + .info:before {
 a {
   color: inherit;
   text-decoration: none;
+  -webkit-transition: all, 0.2s;
+  -moz-transition: all, 0.2s;
+  -o-transition: all, 0.2s;
+  transition: all, 0.2s;
 }
 
 a:hover,
@@ -4551,6 +4555,50 @@ a:active {
  * 
  * @package sasskit
  */
+.search-form input[type="search"], .widget_newsletter_submission input[type="email"] {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  border-bottom: 1px dotted;
+  border-radius: 0;
+  background: none;
+  color: #666;
+  padding: 0;
+}
+.search-form input[type="search"]::-webkit-input-placeholder, .widget_newsletter_submission input[type="email"]::-webkit-input-placeholder {
+  color: #777;
+}
+.search-form input[type="search"]:-moz-placeholder, .widget_newsletter_submission input[type="email"]:-moz-placeholder {
+  /* Firefox 18- */
+  color: #777;
+}
+.search-form input[type="search"]::-moz-placeholder, .widget_newsletter_submission input[type="email"]::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #777;
+}
+.search-form input[type="search"]:-ms-input-placeholder, .widget_newsletter_submission input[type="email"]:-ms-input-placeholder {
+  color: #777;
+}
+
+.search-form input[type="submit"], .widget_newsletter_submission input[type="submit"] {
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  display: list-item;
+  list-style-type: disc;
+  -webkit-transition: all, 0.2s;
+  -moz-transition: all, 0.2s;
+  -o-transition: all, 0.2s;
+  transition: all, 0.2s;
+}
+.search-form input[type="submit"]:hover, .widget_newsletter_submission input[type="submit"]:hover {
+  color: #DF4949;
+}
+
 .search-form-outer {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
@@ -4588,91 +4636,26 @@ a:active {
   width: auto;
 }
 .search-form input[type="search"] {
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  border: none;
-  border-bottom: 1px dotted #000;
-  border-radius: 0;
-  background: none;
+  border-bottom-color: #000;
   color: #666;
-  padding: 0;
-}
-.search-form input[type="search"]::-webkit-input-placeholder {
-  color: #777;
-}
-.search-form input[type="search"]:-moz-placeholder {
-  /* Firefox 18- */
-  color: #777;
-}
-.search-form input[type="search"]::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #777;
-}
-.search-form input[type="search"]:-ms-input-placeholder {
-  color: #777;
 }
 .search-form input[type="submit"] {
-  height: 40px;
-  line-height: 40px;
-  border: none;
-  border-radius: 0;
-  background: none;
   color: #000;
   font-weight: 700;
-  padding: 0;
-  display: list-item;
-  list-style-type: disc;
   padding-left: 20px;
-}
-.search-form input[type="submit"]:hover {
-  color: #DF4949;
 }
 
 .widget_newsletter_submission input[type="email"] {
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  border: none;
-  border-bottom: 1px dotted #fff;
-  border-radius: 0;
-  background: none;
-  color: #666;
-  padding: 0;
+  border-bottom-color: #fff;
   color: #fff;
-}
-.widget_newsletter_submission input[type="email"]::-webkit-input-placeholder {
-  color: #999;
-}
-.widget_newsletter_submission input[type="email"]:-moz-placeholder {
-  /* Firefox 18- */
-  color: #999;
-}
-.widget_newsletter_submission input[type="email"]::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #999;
-}
-.widget_newsletter_submission input[type="email"]:-ms-input-placeholder {
-  color: #999;
 }
 .widget_newsletter_submission input[type="email"]:focus, .widget_newsletter_submission input[type="email"]:active {
   color: #FFF;
 }
 .widget_newsletter_submission input[type="submit"] {
-  height: 40px;
-  line-height: 40px;
-  border: none;
-  border-radius: 0;
-  background: none;
   color: #fff;
   font-weight: 400;
-  padding: 0;
-  display: list-item;
-  list-style-type: disc;
   padding-left: 50px;
-}
-.widget_newsletter_submission input[type="submit"]:hover {
-  color: #DF4949;
 }
 
 #mce-responses {
@@ -4694,40 +4677,6 @@ textarea {
   /* Improves appearance and consistency in all browsers */
   *vertical-align: middle;
   /* Improves appearance and consistency in all browsers */
-}
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  border: 1px solid #ccc;
-  border-color: #ccc #ccc #bbb #ccc;
-  border-radius: 3px;
-  background: #e6e6e6;
-  cursor: pointer;
-  /* Improves usability and consistency of cursor style between image-type 'input' and others */
-  -webkit-appearance: button;
-  /* Corrects inability to style clickable 'input' types in iOS */
-  padding: .6em 1em .4em;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  border-color: #ccc #bbb #aaa #bbb;
-}
-
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-  border-color: #aaa #bbb #bbb #bbb;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 input[type="checkbox"],
@@ -4755,32 +4704,6 @@ input::-moz-focus-inner {
   /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
   border: 0;
   padding: 0;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
-  color: #666;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-  color: #111;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-  padding: 3px;
 }
 
 textarea {
