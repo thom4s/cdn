@@ -5,19 +5,23 @@
  */
 
 .search-form-outer {
-	@extend %sprited;
 	@include box-sizing();
 	@include clearfix();
-	display: block;
+	display: table;
 	float: left;
-	background-image: url('../img/arrow_gray.png');
-	background-repeat: no-repeat;
-	padding-left: 35px;
+	padding-left: 5px;
 	margin-top: 44px;
 	margin-bottom: 44px;
 }
 
+.search-arrow {
+	display: table-cell;
+	vertical-align: top;
+}
+
 .search-form {
+	display: table-cell;
+	width: auto;
 
 	input[type="search"] {
 		width: 100%;

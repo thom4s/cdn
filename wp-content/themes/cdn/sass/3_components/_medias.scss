@@ -35,15 +35,15 @@ img {
       a {
         position: absolute;
         display: inline-block;
-        width: 30px;
-        height: 40px;
-        background-image: url('../img/arrow_gray.png');
-        background-repeat: no-repeat;
       }
     }
       .bx-prev {
+        @extend .sprite-boxed;
+        @extend .arrow-thin-left;
         left: -40px;
       }
       .bx-next {
+        @extend .sprite-boxed;        
+        @extend .arrow-thin-right;
         right: -40px;
       }

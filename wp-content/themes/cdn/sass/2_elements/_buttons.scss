@@ -18,9 +18,7 @@
 
   h4 {
     color: #fff;
-    background-image: url('../img/arrow_gray.png');
-    background-repeat: no-repeat;
-    background-position: 0 0 ;
+    @extend .arrow-gray-right;
   }
 
   ul {
