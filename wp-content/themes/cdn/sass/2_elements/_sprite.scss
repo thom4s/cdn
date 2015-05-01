@@ -1,0 +1,51 @@
+/* 
+ * Sprite
+ * 
+ * @package sasskit
+ */
+
+$x: -38px;
+$y: -48px;
+
+%sprite {
+  background-image: url('../img/sprite.png');
+  background-repeat: no-repeat;
+  background-color: none;
+}
+
+.sprite-boxed {
+  width: 30px;
+  height: 40px;
+}
+
+.arrow-gray-left {
+  @extend %sprite;
+  background-position: 0 0;
+}
+
+.arrow-gray-right {
+  @extend %sprite;
+  background-position: $x 0;
+}
+
+.arrow-black-left {
+  @extend %sprite;
+  background-position: 0 $y;
+}
+
+.arrow-black-right {
+  @extend %sprite;
+  background-position: $x $y;
+}
+
+.arrow-thin-left {
+  @extend %sprite;
+  background-position: 0 ( $y * 2 );
+}
+
+.arrow-thin-right {
+  @extend %sprite;
+  background-position: $x ( $y * 2 );
+}
+
+
