@@ -13,7 +13,7 @@
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content l-8col l-1col-push l-first">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

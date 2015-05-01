@@ -23,7 +23,7 @@
 	<div class="wrap row">
 
 		<?php
-		if ( is_home() ) {
+		if ( is_front_page() ) {
 		    // This is the blog posts index
 		    get_template_part( 'header', 'home' );
 		} else {
@@ -32,4 +32,4 @@
 		}
 		?>
 
-		<div id="content" class="site-content w-12col l-12col l-last">
+		<div id="content" class="site-content l-12col l-last">

@@ -8,6 +8,15 @@
 
 /* 
  * BASIC COLORS
+ * 
+ * Needs :
+ * fond
+ * bg info "fun"
+ * couleur meta + titres
+ * bg "pratique" 
+ * bg footer 1
+ * bg footer 2
+ *
  */
 
 $black:                             #000 !default;
@@ -18,9 +27,25 @@ $gray_light:                        #999 !default;
 $gray_lighter:                      #eee !default;
 $white:                             #fff !default;
 
+$orange:                            #ffdc2e; 
+$magenta:                           #ea148c;
+$brown_dark:                        #393131;
+$brown_light:                       #766a6a;
+
+$yellow:                            #EFC94C; 
+$red:                               #DF4949;
+$orange:                            #E27A3F;
+$blue_light:                        #34495E;
+$blue_dark:                         #1A2530;
+$blue_darker:                       #0F161C;
+
+$practical-color:     $blue-light;
+$fun-color:           $yellow;
+$meta-color:          $red;
+
 $color_text:                        $gray_dark !default;
 $color_link:                        $gray !default;
-$color_link_hover:                  $gray_dark;
+$color_link_hover:                  $red;
 $color_quote:                       $gray_light;
 $color_body_background:             $white;
 
@@ -35,8 +60,8 @@ $color_body_background:             $white;
 
 $colors_map: (
   text: (
-    tone: gray, // Change that if you want
-    hexa: #474747, // Change that too 
+    tone: gray, 
+    hexa: #474747, 
   ), 
   quotes: (
     tone: red,

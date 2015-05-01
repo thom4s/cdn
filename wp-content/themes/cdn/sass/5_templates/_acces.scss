@@ -1,0 +1,9 @@
+/*
+ * Styles for template acces
+ */
+
+
+.acces-item {
+  @include box-sizing;
+  padding: 1%;
+}

@@ -5,8 +5,55 @@
  */
 
 .site-footer {
-  background-color: #333;
   color: #fff;
   margin-top: 0;
-  padding: 20px 0;
 }
+
+
+  .footer-contacts {
+    background-color: $blue_dark;
+    margin: 0;
+    padding: 20px 0;
+    @include fontsize(16);
+
+    aside {
+
+      &:last-child {
+        @extend %l-5col;
+        @extend %l-last;
+      }
+    }
+
+    h6 {
+      color: blue;
+    }
+
+    a {
+      color: inherit;
+    }
+
+  }
+
+  .footer-infos { 
+    background-color: $blue_darker;
+    margin: 0;
+    padding-top: 40px;
+    padding-bottom: 100px;
+
+    h6,
+    p {
+      @include fontsize(14);
+      margin-bottom: 5px;
+      margin-top: 0;
+    }
+
+    aside {
+      margin-bottom: 20px;
+    }
+  }
+    .footer-infos-first {
+    }
+    .footer-infos-second {
+    }
+    .footer-infos-third {
+    }

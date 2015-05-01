@@ -30,7 +30,7 @@ gulp.task('lint', function() {
 
 // Compile Our Sass
 gulp.task('sass', function() {
-    return sass(sassfolder, { style: 'compressed', sourcemap: true })
+    return sass(sassfolder, { style: 'expanded', sourcemap: true })
     .on('error', function (err) {
       console.error('Error!', err.message);
     })

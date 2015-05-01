@@ -41,13 +41,6 @@ function cdn_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	//add_theme_support( 'post-thumbnails' );
-
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'cdn' ),
@@ -61,13 +54,11 @@ function cdn_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
-	) );
+	// Add mage Size
+	add_image_size( 'home-featured', 1200, 500, true ); // 1200px wide / 500px height / cropped
+	add_image_size( 'event-media', 894, 500, true ); 
+	add_image_size( 'bloc-thumb-2col', 9999, 300 ); 
+	add_image_size( 'bloc-thumb', 276 ); 
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'cdn_custom_background_args', array(
@@ -88,11 +79,56 @@ function cdn_widgets_init() {
 		'name'          => __( 'Sidebar', 'cdn' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget-commun bg-practical %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 1er colonne', 'cdn' ),
+		'id'            => 'footer-1',
+		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h6 class="widget-title">',
+		'after_title'   => '</h6>',
+	) );	
+	register_sidebar( array(
+		'name'          => __( 'Footer 2eme colonne', 'cdn' ),
+		'id'            => 'footer-2',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h6 class="widget-title">',
+		'after_title'   => '</h6>',
+	) );	
+	register_sidebar( array(
+		'name'          => __( 'Footer 3eme colonne', 'cdn' ),
+		'id'            => 'footer-3',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h6 class="widget-title">',
+		'after_title'   => '</h6>',
+	) );	
+	register_sidebar( array(
+		'name'          => __( 'Footer supérieur', 'cdn' ),
+		'id'            => 'upper-footer',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="bloc-buttons widget l-4col %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Accueil - Sous le menu', 'cdn' ),
+		'id'            => 'hp-aside',
+		'description'   => '',
+		'before_widget' => '<div class="bloc-buttons bg-practical">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>',
+	) );			
 }
 add_action( 'widgets_init', 'cdn_widgets_init' );
 
@@ -100,11 +136,28 @@ add_action( 'widgets_init', 'cdn_widgets_init' );
  * Enqueue scripts and styles.
  */
 function cdn_scripts() {
-	wp_enqueue_style( 'cdn-style', get_template_directory_uri() . '/sass/main.min.css');
 
+  wp_deregister_script('jquery');
+  wp_enqueue_style( 'cdn-style', get_template_directory_uri() . '/sass/main.min.css');
 	wp_enqueue_script( 'cdn-scripts', get_template_directory_uri() . '/js/all.min.js', array(), '20140501', true );
 }
 add_action( 'wp_enqueue_scripts', 'cdn_scripts' );
+
+
+
+// Add Query Var for Event PRO
+function add_query_vars($aVars) {
+	$aVars[] = "pro"; // represents the name of the product category as shown in the URL
+	return $aVars;
+}
+// hook add_query_vars function into query_vars
+add_filter('query_vars', 'add_query_vars');
+ 
+// hook add_rewrite_rules function into rewrite_rules_array
+add_filter('rewrite_rules_array', 'add_rewrite_rules');
+
+
+
 
 /**
  * Implement the Custom Header feature.

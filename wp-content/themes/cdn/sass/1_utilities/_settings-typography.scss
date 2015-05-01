@@ -32,7 +32,7 @@ body {
 
 /* For responsive, adjust root font size only. And go. */
 
-@media screen and (min-width: medium_breakpoint) {
+@media screen and (max-width: $medium_breakpoint) {
   html {
     font-size: 50%;
   }
@@ -88,6 +88,7 @@ $typos_map: (
     font-family: $font_family_paragraph,
     font-size: 1.6rem,
     line-height: $base_line_height,
+    margin: 0 0 $base_line_height 0,
  ),
   blockquote: (
     use: "A quote very ",
@@ -102,40 +103,48 @@ $typos_map: (
     line-height: $base_line_height,
   ),
   h1: (
-    use: "Headings 1",
+    use: "Site title / Page titles",
     font-family: $font_family_title,
-    font-size: 3rem,
-    line-height: 1rem,
+    font-size: 7.3rem,
+    line-height: 6rem,
+    font-weight: 100,
+    margin: 0,
   ),
   h2: (
-    use: "Headings 2",
-    font-family: $font_family_title,
-    font-size: 2rem,
-    line-height: 0.8rem,
+    use: "titles dotted",
+    font-family: $font_family_meta,
+    font-size: 1.6rem,
+    line-height: $base_line_height,
+    margin: 0 0 11px 0,
   ),
   h3: (
-    use: "Headings 3",
+    use: "Bloc titles",
     font-family: $font_family_title,
-    font-size: 1.6rem,
-    line-height: 0.8rem,
+    font-size: 2.6rem,
+    line-height: $base_line_height,
+    margin: 0 0 11px 0,
   ),
   h4: (
-    use: "Headings 4",
-    font-family: $font_family_title,
-    font-size: 1rem,
-    line-height: 0.8rem,
+    use: "Buttons titles",
+    font-family: $font_family_meta,
+    font-size: 1.6rem,
+    line-height: 40px,
+    height: 40px,
+    margin: 0,
+    padding: 0 0 0 40px,
+    text-transform: uppercase,
   ),
   h5: (
     use: "Headings 5",
-    font-family: $font_family_title,
-    font-size: 1rem,
-    line-height: 0.8rem,
+    font-family: $font_family_meta,
+    font-size: 1.6rem,
+    line-height: $base_line_height,
   ),
   h6: (
-    use: "Headings 6",
+    use: "footer title",
     font-family: $font_family_title,
     font-size: 1.6rem,
-    line-height: 0.8rem,
+    line-height: $base_line_height,
   ),
 ) !default;
 
@@ -219,9 +228,14 @@ big {
  
 .meta {
   font-family: $font_family_meta;
+  color: $meta-color;
 }
 
-
+.main-navigation {
+  font-family: $font_family_nav;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
 
 /*
@@ -243,7 +257,22 @@ big {
     @if map-get($_values, color) {
       color: #{map-get($_values, color)};
     }
-
+    @if map-get($_values, height) {
+      height: #{map-get($_values, height)};
+    }
+    @if map-get($_values, margin) {
+      margin: #{map-get($_values, margin)};
+    }
+    @if map-get($_values, padding) {
+      padding: #{map-get($_values, padding)};
+    }
+    @if map-get($_values, text-transform) {
+      text-transform: #{map-get($_values, text-transform)};
+    }
+    @if map-get($_values, font-weight) {
+      font-weight: #{map-get($_values, font-weight)};
+    }
+        
     & > .use:before {
       content: '#{map-get($_values, use)}';
     }

@@ -3,3 +3,57 @@
  * 
  * @package sasskit
  */
+
+
+
+.bloc-buttons {
+  @include box-sizing();
+
+  width: 100%;
+  padding-bottom: 20px;
+  float: left;
+  margin-bottom: $base_line_height;
+  background-color: none;
+  color: #fff;
+
+  h4 {
+    color: #fff;
+    @extend .arrow-gray-right;
+  }
+
+  ul {
+   margin: 0 0 0 50px;
+   padding: 0;
+   @include fontsize(15);
+  }
+
+  a,
+  a:visited {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: $color_link_hover;
+    }
+  }
+}
+  .bloc-buttons-inner {
+
+  }
+
+
+
+// BACKGROUNDS FOR BUTTONS AND BLOCS
+.no-bg {
+  background-color: none;
+}
+.bg-practical {
+  background-color: $practical-color;
+  color: #fff;
+}
+.bg-fun {
+  background-color: $fun-color;
+}
+.bg-white {
+  background-color: #fff;
+}  

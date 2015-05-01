@@ -10,15 +10,16 @@
  * GRID VARIABLES SETTING
  */
 
-$max_width:                         1024px; 
+$max_width:                         1024px;
+$max_width_large:                   1200px;
 $cols:                              16 !default; 
 $gutter:                            2% !default; 
         
-$mobile_first:                      false !default; 
+$mobile_first:                      true !default; 
 $minimal_breakpoint:                320px !default; 
 $medium_breakpoint:                 760px !default; 
-$large_breakpoint:                  1080px !default; 
-$wide_breakpoint:                   1500px !default; 
+$large_breakpoint:                  1024px !default; 
+$wide_breakpoint:                   1400px !default; 
 
 
 /* 
@@ -26,6 +27,8 @@ $wide_breakpoint:                   1500px !default;
  */
 
 .plain {
+    @include box-sizing;
+    display: block;
     width: 100%;
     margin: auto;
 }
@@ -34,10 +37,13 @@ $wide_breakpoint:                   1500px !default;
   width: $max_width;
   margin: auto;
 
-  @include up-to(large) {
-    width: 100%;
-  }
+    @include up-to(large) {
+        width: 100%;
+    }
 
+    @include at-least(wide) {
+        width: $max_width_large;
+    }
 }
 
 
@@ -62,24 +68,26 @@ $one_col: (100% - ($gutter * ($cols - 1))) / $cols;
 @mixin parse-columns($suffix: ''){
     .row {
         @for $i from 1 through $cols {
-            .#{$suffix}-#{$i}col {
+            %#{$suffix}-#{$i}col,
+            .#{$suffix}-#{$i}col{
                 @include cols($i);
                 float: left;
                 margin-left: $gutter;
 
                 @for $j from 1 through ($i - 1) {
+                    %#{$suffix}-#{$j}col,
                     .#{$suffix}-#{$j}col {
                         @include sub_cols($j, $i);
                     }
                 }
             }
-            .#{$suffix}-#{$i}col-push { left: $i / $cols * 100%; }
-            .#{$suffix}-#{$i}col-pull { right: $i / $cols * 100%; }
+            %#{$suffix}-#{$i}col-push, .#{$suffix}-#{$i}col-push { left: $i / $cols * 100%; position: relative; right: auto; }
+            %#{$suffix}-#{$i}col-pull, .#{$suffix}-#{$i}col-pull { right: $i / $cols * 100%; position: relative; left: auto; }
         }
-        .#{$suffix}-hide { display: none; }
-        .#{$suffix}-show { display: block; }
-        .#{$suffix}-first { margin-left: 0 !important; }
-        .#{$suffix}-last { float: right !important; }
+        %#{$suffix}-hide, .#{$suffix}-hide { display: none; }
+        %#{$suffix}-show, .#{$suffix}-show { display: block; }
+        %#{$suffix}-first, .#{$suffix}-first { margin-left: 0 !important; }
+        %#{$suffix}-last, .#{$suffix}-last { float: right !important; }
     }
 }
 

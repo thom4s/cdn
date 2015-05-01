@@ -5,6 +5,7 @@
  */
 
 
+
 .site {
   background-color: #E1E3E4;
 }
@@ -12,3 +13,34 @@
   .site-content {
     background-color: #fff;
   }
+
+    .entry-content {
+
+      @include clearfix();
+
+      h2 {
+        @extend %l-1col-push;
+        @extend %l-first;
+
+        @include clearfix;
+      }
+    }
+
+    .related-content {
+      @include clearfix();
+      margin-bottom: $base_line_height;
+    }
+
+    .entry-footer {
+      
+      p {
+        @extend %l-8col;
+        @extend %l-1col-push;
+        @extend %l-first;
+      }
+    }
+
+
+
+
+
