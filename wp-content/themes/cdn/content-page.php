@@ -21,7 +21,7 @@
 
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<h5><?php echo $subtitle; ?></h5>
-			<?php echo $introduction; ?>
+			<div class="post-excerpt"><?php echo $introduction; ?></div>
 
 		</div><!-- .entry-header-inner -->
 

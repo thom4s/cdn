@@ -25,7 +25,7 @@
     text-decoration: none;
   }
 }
-
+ 
 
 .entry-header {
   @include box-sizing;
@@ -34,14 +34,16 @@
   width: 100%;
   float: left;
 
-  .entry-header-inner {
-      float: none;   }
-
-  &.bg {
-    background-color: $fun-color; }
-
-  &.img-last { }
+  .entry-header-inner { float: none;   }
+  &.bg { background-color: $fun-color; }
 }
+
+  .post-excerpt {
+    
+    p {
+      font-weight: 700;
+      @include fontsize(18); }
+  }
 
   .entry-titles {
 

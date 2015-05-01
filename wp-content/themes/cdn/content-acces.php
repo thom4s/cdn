@@ -18,7 +18,7 @@
 		<div class="entry-header-inner l-12col l-first l-1col-push">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<h5><?php echo $subtitle; ?></h5>
-			<p class="post-excerpt"><?php echo $introduction; ?></p>
+			<div class="post-excerpt"><?php echo $introduction; ?></div>
 		</div><!-- .entry-header-inner -->
 
 		<?php
