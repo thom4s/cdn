@@ -1,3 +1,7 @@
 cdn.sublime-project
 cdn.sublime-worspace
 wp-content/themes/cdn/sass/main.min.css
+wp-content/themes/cdn/js/all.min.js
+wp-content/themes/cdn/js/all.js
+.htaccess
+.sass-cache/
