@@ -3,3 +3,50 @@
  * 
  * @package sasskit
  */
+
+
+
+%widget {
+  @include clearfix;
+  padding: 11px 11px 0 11px;
+  margin-bottom: 22px;
+
+  h4 {
+    padding-left: 0;
+  }
+
+  ul {
+    margin-left: 0;
+    padding-left: 20px;
+  }
+  .post-date {
+    @include fontsize(12);
+    &:before {
+      content: ' (';
+    }
+    &:after {
+      content: ')';
+    }   
+  }
+}
+
+.widget_recent_entries {
+  @extend %widget;
+}
+
+.widget_text {
+  @extend %widget;
+}
+
+.widget_nav_menu {
+  @extend .bloc-buttons;
+}
+
+.widget_newsletter_submission {
+  @extend .bloc-buttons;
+  padding-bottom: 11px;
+
+  input[type"email"] {
+    padding-left: 22px;
+  }
+}

@@ -60,7 +60,7 @@
             <?php } } ?>
 
 
-            <!-- TEchnique -->
+            <!-- Technique -->
             <?php 
               if(is_array($technique)) {
                 foreach ($technique as $file) { 
@@ -108,7 +108,9 @@
     } ?><!-- endif event -->
 
 
-    <?php if( is_singular( 'page' ) ){ ?>
+    <?php if( is_singular( 'page' ) && !is_page_template( 'page-saison.php' ) && !is_page_template( 'page-saison-active.php' ) && !is_page_template( 'page-production.php' ) ){ ?>
+
+      <?php dynamic_sidebar( 'sidebar-1' ); ?>
 
     <?php } ?><!-- endif page -->
 

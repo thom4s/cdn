@@ -36,14 +36,10 @@
 
   .entry-header-inner { float: none;   }
   &.bg { background-color: $fun-color; }
+  img { float: left; }
+  h5 { font-weight: 400; @include fontsize(20); }
+  p { font-weight: 700; @include fontsize(18); color: #333; margin-top: 44px; }
 }
-
-  .post-excerpt {
-    
-    p {
-      font-weight: 700;
-      @include fontsize(18); }
-  }
 
   .entry-titles {
 

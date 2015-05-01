@@ -9,6 +9,8 @@
   $linked_post_col = 'bloc-1col';
   $linked_post_has_link = true;
 
+  $elements_title = rwmb_meta(  $prefix_default . 'related_title', get_the_ID() );
+
   // Linked Posts
   if ($linkedposts = rwmb_meta(  $prefix_default . 'linkedposts', get_the_ID() ) ): 
     $first_id = $linkedposts[0];
@@ -20,7 +22,7 @@
     <?php if ( is_front_page() ) { ?>
       
     <?php } else { ?>
-      <h2>Aller plus loin</h2>
+      <h2><?php echo $elements_title; ?></h2>
     <?php }?>
     
       <div id="grid" class="row" data-columns>

@@ -33,6 +33,14 @@ function defaults_register_meta_boxes( $meta_boxes )
     'context'    => 'side',
     'fields' => array(
 
+      // Le titre au dessus des blocs
+      array(
+        'id'      => $prefix . 'related_title',
+        'name'   => __( 'Le titre au dessus des éléments liés', 'meta-box' ),
+        'type'   => 'text', 
+      ),
+
+      // Les spectacles (par groupe)
       array(
         'id'     =>  $prefix . 'linkedposts',
         'name'   => __( '', 'meta-box' ),

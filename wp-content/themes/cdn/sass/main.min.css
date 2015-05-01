@@ -4393,7 +4393,7 @@ h6 + .info:before {
  * 
  * @package sasskit
  */
-.bloc-buttons {
+.bloc-buttons, .widget_nav_menu, .widget_newsletter_submission {
   /* Acceptable values are border, content, and padding - content is the default W3C model */
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -4405,25 +4405,29 @@ h6 + .info:before {
   background-color: none;
   color: #fff;
 }
-.bloc-buttons h4 {
+.bloc-buttons h4, .widget_nav_menu h4, .widget_newsletter_submission h4 {
   color: #fff;
   background-image: url("../img/arrow_gray.png");
   background-repeat: no-repeat;
   background-position: 0 0;
 }
-.bloc-buttons ul {
+.bloc-buttons ul, .widget_nav_menu ul, .widget_newsletter_submission ul {
   margin: 0 0 0 50px;
   padding: 0;
   font-size: 15px;
   font-size: 15 / 10 rem;
 }
-.bloc-buttons a,
-.bloc-buttons a:visited {
+.bloc-buttons a, .widget_nav_menu a, .widget_newsletter_submission a,
+.bloc-buttons a:visited,
+.widget_nav_menu a:visited,
+.widget_newsletter_submission a:visited {
   color: inherit;
   text-decoration: none;
 }
-.bloc-buttons a:hover,
-.bloc-buttons a:visited:hover {
+.bloc-buttons a:hover, .widget_nav_menu a:hover, .widget_newsletter_submission a:hover,
+.bloc-buttons a:visited:hover,
+.widget_nav_menu a:visited:hover,
+.widget_newsletter_submission a:visited:hover {
   color: #DF4949;
 }
 
@@ -4960,11 +4964,20 @@ th {
 .entry-header.bg {
   background-color: #EFC94C;
 }
-
-.post-excerpt  p {
+.entry-header img {
+  float: left;
+}
+.entry-header h5 {
+  font-weight: 400;
+  font-size: 20px;
+  font-size: 20 / 10 rem;
+}
+.entry-header p {
   font-weight: 700;
   font-size: 18px;
   font-size: 18 / 10 rem;
+  color: #333;
+  margin-top: 44px;
 }
 
 .entry-titles .entry-title {
@@ -5025,6 +5038,50 @@ th {
  * 
  * @package sasskit
  */
+.widget_recent_entries, .widget_text {
+  clear: both;
+  padding: 11px 11px 0 11px;
+  margin-bottom: 22px;
+}
+.widget_recent_entries:before, .widget_text:before, .widget_recent_entries:after, .widget_text:after {
+  content: " ";
+  display: table;
+}
+.widget_recent_entries:after, .widget_text:after {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin-top: -1px;
+  visibility: hidden;
+}
+.widget_recent_entries, .widget_text {
+  *zoom: 1;
+}
+.widget_recent_entries h4, .widget_text h4 {
+  padding-left: 0;
+}
+.widget_recent_entries ul, .widget_text ul {
+  margin-left: 0;
+  padding-left: 20px;
+}
+.widget_recent_entries .post-date, .widget_text .post-date {
+  font-size: 12px;
+  font-size: 12 / 10 rem;
+}
+.widget_recent_entries .post-date:before, .widget_text .post-date:before {
+  content: ' (';
+}
+.widget_recent_entries .post-date:after, .widget_text .post-date:after {
+  content: ')';
+}
+
+.widget_newsletter_submission {
+  padding-bottom: 11px;
+}
+.widget_newsletter_submission input[type "email"] {
+  padding-left: 22px;
+}
+
 /* 
  * templates/layout
  * 
@@ -5258,7 +5315,7 @@ th {
   margin-bottom: 11px;
 }
 
-.price-item-aside .bloc-buttons {
+.price-item-aside .bloc-buttons, .price-item-aside .widget_nav_menu, .price-item-aside .widget_newsletter_submission {
   margin-top: 22px;
 }
 
