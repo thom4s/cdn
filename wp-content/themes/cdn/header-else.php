@@ -6,7 +6,7 @@
 
 ?>
 
-  <header id="masthead" class="site-header" role="banner">
+  <header id="masthead" class="site-header l-4col l-first" role="banner">
 
     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>  
 

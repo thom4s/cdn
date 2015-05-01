@@ -32,4 +32,4 @@
 		}
 		?>
 
-		<div id="content" class="site-content">
+		<div id="content" class="site-content l-12col l-last">

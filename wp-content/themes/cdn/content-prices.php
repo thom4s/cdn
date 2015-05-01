@@ -16,8 +16,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header img-last <?php if($has_bg){ echo 'bg'; } ?> ">
-		<div class="entry-header-inner">
+	<header class="entry-header row <?php if($has_bg){ echo 'bg'; } ?> ">
+		<div class="entry-header-inner l-12col l-first l-1col-push">
 
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<h5><?php echo $subtitle; ?></h5>
@@ -29,7 +29,7 @@
 
 	</header><!-- .entry-header -->
 
-	<div class="entry-content-plain-1">
+	<div class="entry-content l-11col l-1col-push l-first row">
 		<?php the_content(); ?>
 
 		<?php 
@@ -44,11 +44,11 @@
 			<div class="price-item">
 				<h2><?php echo $bloc_title; ?></h2>
 
-				<div class="price-item-main">
+				<div class="price-item-main l-7col l-first">
 					<?php echo $bloc_main; ?>
 				</div><!-- .price-item-main -->
 				
-				<div class="price-item-aside">
+				<div class="price-item-aside l-4col l-last">
 					<?php echo $bloc_aside; ?>
 
 					<div class="bloc-buttons bg-practical">

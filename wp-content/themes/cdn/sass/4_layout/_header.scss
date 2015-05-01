@@ -6,8 +6,6 @@
 
 
 .site-header {
-  @extend %l-4col;
-  @extend %l-first;
 
   & > div {
     width: 100%;
@@ -37,9 +35,6 @@
   float: left;
 
   .entry-header-inner {
-      @extend %l-8col;
-      @extend %l-1col-push;
-      @extend %l-first;
       float: none;   }
 
   &.bg {
@@ -49,8 +44,7 @@
 }
 
   .entry-titles {
-    @extend %l-7col;
-    @extend %l-1col-push;
+
     .entry-title { margin: 22px 0; }
     .entry-authors { font-weight: 100; display: inline-block; clear: both; }
     p { font-weight: 900; } 

@@ -85,7 +85,7 @@
 
 
     <div class="row">
-      <div class="entry-titles">
+      <div class="entry-titles l-7col l-first l-1col-push">
         <?php the_title( '<h1 class="event-title">', '</h1>' ); ?>
         
         <?php foreach ( $authors as $author ) { echo '<span class="meta event-authors">' . $author . '</span>'; } ?>
@@ -93,7 +93,7 @@
         <?php echo $intro; ?>
       </div>
 
-      <div class="event-metas">
+      <div class="event-metas l-3col l-last">
 
         <div class="event-metas-group">
           <?php if($is_creation) : echo 'Création'; endif; ?><br>
@@ -150,7 +150,7 @@
     </div><!-- .row -->
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content l-8col l-1col-push l-first">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
@@ -158,9 +158,16 @@
   <?php get_template_part('loop','related-content'); ?>
 
 	<footer class="entry-footer">
-		<h2 id="distribution">Distribution</h2>
-				<?php echo $distribution; ?>
-		<?php if($public){ ?><h2 id="presse">La presse</h2>
-			<?php echo $press; }?>
+    <div class="event-distribution clearfix">
+      <h2 id="distribution">Distribution</h2>
+      <?php echo $distribution; ?>
+    </div>
+
+		<?php if($public){ ?>
+      <div class="event-pressereview clearfix">
+        <h2 id="presse">La presse</h2>
+        <?php echo $press; ?>
+      </div>
+      <?php } ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

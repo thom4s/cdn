@@ -13,8 +13,7 @@
   padding: 1%;
 
   // COLS FOR BLOCS
-  &.bloc-2col {
-    @extend %l-8col;
+  &.l-8col{
 
     .bloc-img,
     .bloc-content {
@@ -31,8 +30,7 @@
       float: left;
     }
   }
-  &.bloc-1col {
-    @extend %l-4col;
+  &.l-4col {
   } 
 
   &:hover {

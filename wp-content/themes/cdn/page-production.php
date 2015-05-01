@@ -18,8 +18,8 @@ get_header(); ?>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-      <header class="entry-header <?php if($has_bg){ echo 'bg'; } ?>">
-        <div class="entry-header-inner">
+      <header class="entry-header row <?php if($has_bg){ echo 'bg'; } ?>">
+        <div class="entry-header-inner l-12col l-first l-1col-push">
 
           <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
           <h5><?php echo $subtitle; ?></h5>
@@ -28,7 +28,7 @@ get_header(); ?>
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
 
-      <div class="entry-content">
+      <div class="entry-content l-8col l-1col-push l-first">
         hello
         <?php echo get_the_content(); ?>
       </div><!-- .entry-content -->

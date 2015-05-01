@@ -76,8 +76,8 @@ function defaults_register_meta_boxes( $meta_boxes )
             'id'          => "{$prefix}bloc_col",
             'type'        => 'select',
             'options'     => array(
-              'bloc-1col' => __( 'Sur 1 colonne', 'meta-box' ),
-              'bloc-2col' => __( 'Sur 2 colonnes', 'meta-box' ),
+              'l-4col' => __( 'Sur 1 colonne', 'meta-box' ),
+              'l-8col' => __( 'Sur 2 colonnes', 'meta-box' ),
             ),
             'std'         => '1col-bloc',
             // Select multiple values, optional. Default is false.
@@ -355,6 +355,35 @@ function defaults_register_meta_boxes( $meta_boxes )
       ),
     ),
   );
+
+
+
+  // Pour template Accès
+  $meta_boxes[] = array(
+    'title'  => __( 'Contenus de la page LE PROJET', 'meta-box' ),
+    'id'         => 'blocs-acces',
+    'post_types' => array( 'page' ),
+    'include' => array(
+      'template' => array( 'page-projet.php' ),
+    ),
+    'context'    => 'normal',
+    'autosave'   => true,
+    'fields' => array(
+
+      // Content
+      array(
+        'id'      =>  $prefix . 'projet_equipe',
+        'name'    => __( '', 'meta-box' ),
+        'type'    => 'wysiwyg',
+        'options' => array(
+          'textarea_rows' => 4,
+          'teeny'         => false,
+          'media_buttons' => false,
+        ),
+      ),
+    ),
+  );
+
 
 
 

@@ -18,7 +18,7 @@ get_header(); ?>
     <main id="main" class="site-main" role="main">
 
       <header class="entry-header bg">
-        <div class="entry-header-inner">
+        <div class="entry-header-inner l-12col l-first l-1col-push">
 
           <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
@@ -34,8 +34,6 @@ get_header(); ?>
       <div class="row">
 
         <?php
-
- 
 
           $args = array(
             'post_type'       => 'event',

@@ -15,7 +15,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content l-8col l-1col-push l-first">
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(

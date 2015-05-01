@@ -11,17 +11,10 @@
 }
 
   .site-content {
-    @extend %w-12col;
-    @extend %l-12col;
-    @extend %w-last;
-
     background-color: #fff;
   }
 
     .entry-content {
-      @extend %l-8col;
-      @extend %l-1col-push;
-      @extend %l-first;
 
       @include clearfix();
 
@@ -31,11 +24,6 @@
 
         @include clearfix;
       }
-    }
-    .entry-content-plain {
-      width: 100%;
-
-      @include clearfix();      
     }
 
     .related-content {

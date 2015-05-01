@@ -32,7 +32,7 @@
 
   <?php endif; ?>
 
-  <header id="masthead" class="site-header" role="banner">
+  <header id="masthead" class="site-header l-4col l-first" role="banner">
     <nav id="site-navigation" class="main-navigation" role="navigation">
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->

@@ -17,7 +17,6 @@
     @include fontsize(16);
 
     aside {
-      @extend %l-4col;
 
       &:last-child {
         @extend %l-5col;
@@ -53,13 +52,8 @@
     }
   }
     .footer-infos-first {
-      @extend %l-4col;
     }
     .footer-infos-second {
-      @extend %l-7col;
-      @extend %l-1col-push;
     }
     .footer-infos-third {
-      @extend %l-3col;
-      @extend %l-last;
     }

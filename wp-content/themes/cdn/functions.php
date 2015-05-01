@@ -115,7 +115,7 @@ function cdn_widgets_init() {
 		'name'          => __( 'Footer supérieur', 'cdn' ),
 		'id'            => 'upper-footer',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="bloc-buttons widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="bloc-buttons widget l-4col %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',

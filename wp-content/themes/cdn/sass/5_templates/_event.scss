@@ -26,8 +26,6 @@
     padding-right: 5px; }
 
     .event-metas {
-      @extend %l-3col;
-      @extend %l-last;
       @extend .meta;
 
       margin-top: 22px;
@@ -51,3 +49,7 @@
     .event-ancres {
       @extend .meta;
       @include fontsize(14); }
+
+      .event-distribution {
+        color: $red;
+      }

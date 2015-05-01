@@ -1,5 +1,5 @@
 
-  <article class="grid-item related-post bloc-outer bloc-1col">
+  <article class="grid-item related-post bloc-outer l-4col">
     <a href="<?php the_permalink(); ?>?pro=yes">
       
       <div class="bloc-img">

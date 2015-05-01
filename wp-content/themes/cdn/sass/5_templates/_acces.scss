@@ -4,6 +4,6 @@
 
 
 .acces-item {
-  @extend %l-4col;
-
+  @include box-sizing;
+  padding: 1%;
 }
