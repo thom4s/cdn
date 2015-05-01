@@ -50,3 +50,12 @@
     padding-left: 22px;
   }
 }
+
+.aside-related {
+  @include clearfix;
+
+  .grid-item {
+    padding: 5px;
+  }
+
+}

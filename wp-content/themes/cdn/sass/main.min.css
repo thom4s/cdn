@@ -5082,6 +5082,27 @@ th {
   padding-left: 22px;
 }
 
+.aside-related {
+  clear: both;
+}
+.aside-related:before, .aside-related:after {
+  content: " ";
+  display: table;
+}
+.aside-related:after {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin-top: -1px;
+  visibility: hidden;
+}
+.aside-related {
+  *zoom: 1;
+}
+.aside-related .grid-item {
+  padding: 5px;
+}
+
 /* 
  * templates/layout
  * 

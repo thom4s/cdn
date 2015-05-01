@@ -22,7 +22,7 @@ function defaults_register_meta_boxes( $meta_boxes )
 {
   $prefix = 'defaults_meta_';
 
-  // LINKED TO ...
+  // LINKED TO ... (MAIN CONTENT)
   $meta_boxes[] = array(
     'title'      => __( 'Allez plus loin...', 'meta-box' ),
     'id'         => 'linkedposts',
@@ -105,6 +105,73 @@ function defaults_register_meta_boxes( $meta_boxes )
       ),
     )
   );
+
+
+
+  // LINKED TO ... (ASIDE)
+  $meta_boxes[] = array(
+    'title'      => __( 'Lier des contenus (colonne gauche)', 'meta-box' ),
+    'id'         => 'aside_linkedposts',
+    'post_types' => array( 'post', 'page', 'event' ),
+    'exclude'    => array(
+      'template'    => array( 'page-home.php' ),
+    ),    
+    'context'     => 'normal',
+    'priority'    => 'low',
+    'fields' => array(
+
+      // Les spectacles (par groupe)
+      array(
+        'id'     =>  $prefix . 'aside_linkedposts',
+        'name'   => __( '', 'meta-box' ),
+        'type'   => 'group', 
+        'clone'  => true,   
+        'fields' => array(
+
+          // EVENT
+          array(
+            'name'        => __( 'Choisir une page/actu/événement.', 'meta-box' ),
+            'id'          => "id",
+            'type'        => 'post',
+            'post_type'   => array('event', 'post', 'page'),
+            'field_type'  => 'select_advanced',
+            'placeholder' => __( 'Select an Item', 'meta-box' ),
+            'query_args'  => array(
+              'post_status'    => 'publish',
+              'posts_per_page' => - 1,
+            ),
+            'multiple'    => false,
+          ),
+
+          // IMPORTANCE
+          array(
+            'name'          => __( 'Cet élément est...', 'meta-box' ),
+            'id'            => "bloc_bg",
+            'type'          => 'select',
+            'options'       => array(
+              'bg-white'      => __( 'Par défault (blanc)', 'meta-box' ),
+              'bg-practical'  => __( 'Pratique', 'meta-box' ),
+              'bg-fun'        => __( 'Fun', 'meta-box' ),
+            ),
+            'std'         => 'bg-white',
+            'multiple'    => false,
+            'placeholder' => __( 'Select an Item', 'meta-box' ),
+          ),
+
+          // HAS LINK ?
+          array(
+            'name'        => __( 'Activer le lien du bloc ?', 'meta-box' ),
+            'id'          => "has_link",
+            'type'        => 'checkbox',
+            'std'         => 1,
+          ),
+
+        ),
+      ),
+    )
+  );
+
+
 
 
   // Haut de page 

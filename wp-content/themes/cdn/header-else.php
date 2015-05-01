@@ -107,6 +107,7 @@
     <?php } // endif isset 
     } ?><!-- endif event -->
 
+    <?php get_template_part('loop', 'aside-related')?>
 
     <?php if( is_singular( 'page' ) && !is_page_template( 'page-saison.php' ) && !is_page_template( 'page-saison-active.php' ) && !is_page_template( 'page-production.php' ) ){ ?>
 
