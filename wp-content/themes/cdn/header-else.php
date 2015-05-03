@@ -115,6 +115,18 @@
 
     <?php } ?><!-- endif page -->
 
+
+    <?php if( is_page_template( 'page-saison.php' ) || is_page_template( 'page-saison-active.php' ) && is_page_template( 'page-production.php' ) ){ ?>
+      
+      <div class="saison-aside">
+        <?php dynamic_sidebar( 'saison-aside' ); ?>
+      </div>
+      
+    <?php } ?><!-- endif saison -->
+
+
+
+
   </header><!-- .site-branding -->
 
 

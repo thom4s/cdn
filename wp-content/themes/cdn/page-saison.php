@@ -21,6 +21,7 @@ get_header(); ?>
         <div class="entry-header-inner l-12col l-first l-1col-push">
 
           <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+          <p class="post-excerpt"><?php echo $introduction; ?></p>
 
           <div class="calendar-filter">
             Filtres

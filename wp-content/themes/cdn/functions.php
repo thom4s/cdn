@@ -78,7 +78,7 @@ function cdn_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'cdn' ),
 		'id'            => 'sidebar-1',
-		'description'   => '',
+		'description'   => 'Sur toutes les pages statiques sauf Saison, Production et Accueil',
 		'before_widget' => '<aside id="%1$s" class="widget-commun bg-practical %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -123,12 +123,21 @@ function cdn_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Accueil - Sous le menu', 'cdn' ),
 		'id'            => 'hp-aside',
-		'description'   => '',
+		'description'   => 'Sur le page d\'accueil uniquement' ,
 		'before_widget' => '<div class="bloc-buttons bg-practical">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4>',
 		'after_title'   => '</h4>',
 	) );			
+	register_sidebar( array(
+		'name'          => __( 'Saison - Sous le menu', 'cdn' ),
+		'id'            => 'saison-aside',
+		'description'   => 'Pour les pages Calendrier et Production',
+		'before_widget' => '<div class="bloc-buttons">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'cdn_widgets_init' );
 
