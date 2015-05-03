@@ -19,9 +19,6 @@
       @include clearfix();
 
       h2 {
-        @extend %l-1col-push;
-        @extend %l-first;
-
         @include clearfix;
       }
     }

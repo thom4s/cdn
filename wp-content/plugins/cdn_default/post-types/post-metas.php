@@ -394,7 +394,7 @@ function defaults_register_meta_boxes( $meta_boxes )
         'id'            => 'map',
         'name'          => __( 'Location', 'meta-box' ),
         'type'          => 'map',
-        'std'           => '-6.233406,-35.049906,15',
+        'std'           => '',
         'address_field' => 'address',
       ),
 

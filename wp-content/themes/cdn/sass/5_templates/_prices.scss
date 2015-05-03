@@ -3,13 +3,16 @@
  */
 
 .entry-content-plain-1 {
-  @include clearfix();      
 }
 
 .price-item {
   margin-bottom: 44px;
   float: left;
 
+  h2 {
+    color: $red;
+  }
+  
   h6 {
     margin-top: 0;
     margin-bottom: 11px;

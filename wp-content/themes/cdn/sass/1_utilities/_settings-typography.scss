@@ -120,7 +120,7 @@ $typos_map: (
   h3: (
     use: "Bloc titles",
     font-family: $font_family_title,
-    font-size: 2.6rem,
+    font-size: 2rem,
     line-height: $base_line_height,
     margin: 0 0 11px 0,
   ),
@@ -223,9 +223,13 @@ big {
 
 
 /*
- * CLASSES
+ * CLASSES & SPECIALS
  */
- 
+
+h2 {
+  
+} 
+
 .meta {
   font-family: $font_family_meta;
   color: $meta-color;

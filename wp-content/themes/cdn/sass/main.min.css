@@ -2214,7 +2214,7 @@ th {
     margin-left: 45.71429%;
     width: -45.71429%;
   }
-  .row .entry-content h2, .entry-content .row h2, .row .entry-footer p, .entry-footer .row p, .row .l-1col-push {
+  .row .entry-footer p, .entry-footer .row p, .row .l-1col-push {
     left: 6.25%;
     position: relative;
     right: auto;
@@ -3076,7 +3076,7 @@ th {
   .row .l-show {
     display: block;
   }
-  .row .entry-content h2, .entry-content .row h2, .row .entry-footer p, .entry-footer .row p, .row .l-first {
+  .row .entry-footer p, .entry-footer .row p, .row .l-first {
     margin-left: 0 !important;
   }
   .row .footer-contacts aside:last-child, .footer-contacts .row aside:last-child, .row .l-last {
@@ -4158,7 +4158,7 @@ big {
 }
 
 /*
- * CLASSES
+ * CLASSES & SPECIALS
  */
 .meta, .event-metas, .event-dates, .event-ancres {
   font-family: "Roboto Slab", Georgia, Times New Roman, serif;
@@ -4240,7 +4240,7 @@ h2 + .info:before {
 
 h3 {
   font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
-  font-size: 2.6rem;
+  font-size: 2rem;
   line-height: 22px;
   margin: 0 0 11px 0;
 }
@@ -4248,7 +4248,7 @@ h3 > .use:before {
   content: "Bloc titles";
 }
 h3 + .info:before {
-  content: "Source Sans Pro, Arial, Helvetica, sans-serif / 2.6rem / 22px";
+  content: "Source Sans Pro, Arial, Helvetica, sans-serif / 2rem / 22px";
 }
 
 h4 {
@@ -4728,7 +4728,7 @@ hr {
 }
 
 ul, ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0px 0px 0.5em 0em;
 }
 
 ul {
@@ -5063,7 +5063,7 @@ th {
 }
 
 .saison-aside {
-  margin-top: 44px;
+  margin-top: 22px;
 }
 .saison-aside h3 {
   color: #000;
@@ -5275,27 +5275,12 @@ th {
 /*
  * Styles for template prices
  */
-.entry-content-plain-1 {
-  clear: both;
-}
-.entry-content-plain-1:before, .entry-content-plain-1:after {
-  content: " ";
-  display: table;
-}
-.entry-content-plain-1:after {
-  display: block;
-  clear: both;
-  height: 1px;
-  margin-top: -1px;
-  visibility: hidden;
-}
-.entry-content-plain-1 {
-  *zoom: 1;
-}
-
 .price-item {
   margin-bottom: 44px;
   float: left;
+}
+.price-item h2 {
+  color: #DF4949;
 }
 .price-item h6 {
   margin-top: 0;

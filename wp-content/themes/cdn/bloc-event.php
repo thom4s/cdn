@@ -1,6 +1,6 @@
 
   <article class="grid-item related-post bloc-outer l-4col">
-    <a href="<?php the_permalink(); ?>?pro=yes">
+    <a href="<?php the_permalink(); ?><?php if( is_page_template( 'page-production.php' ) ) { echo '?pro=yes'; } ?>">
       
       <div class="bloc-img">
         <?php the_post_thumbnail( 'bloc-thumb', '' ); ?>
@@ -18,7 +18,7 @@
         </div>
         
         <h3><?php the_title(); ?></h3>
-        <p><?php echo $post_excerpt; ?></p>
+        <div><?php echo $post_excerpt; ?></div>
       </div>
 
     </a>
