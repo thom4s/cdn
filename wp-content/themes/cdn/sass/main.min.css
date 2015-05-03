@@ -438,7 +438,7 @@ th {
   float: right !important;
 }
 
-.u-clearfix {
+.clearfix {
   *zoom: 1;
 }
 
@@ -5042,21 +5042,8 @@ th {
 }
 
 .aside-related {
-  clear: both;
-}
-.aside-related:before, .aside-related:after {
-  content: " ";
-  display: table;
-}
-.aside-related:after {
-  display: block;
-  clear: both;
-  height: 1px;
-  margin-top: -1px;
-  visibility: hidden;
-}
-.aside-related {
-  *zoom: 1;
+  margin-top: 44px;
+  float: left;
 }
 .aside-related .grid-item {
   padding: 5px;
@@ -5261,6 +5248,16 @@ th {
  * 
  * @package sasskit
  */
+.content-single .entry-header {
+  margin-bottom: 0;
+}
+.content-single .entry-title {
+  margin-bottom: 22px;
+}
+.content-single .entry-content {
+  margin-top: 44px;
+}
+
 /*
  * Styles for template acces
  */

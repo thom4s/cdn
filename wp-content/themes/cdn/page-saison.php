@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-  <div id="primary" class="content-area">
+  <div id="primary" class="content-area content-saison">
     <main id="main" class="site-main" role="main">
 
       <header class="entry-header bg">

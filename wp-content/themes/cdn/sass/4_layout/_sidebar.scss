@@ -52,8 +52,9 @@
 }
 
 .aside-related {
-  @include clearfix;
-
+  margin-top: 44px;
+  float: left;
+  
   .grid-item {
     padding: 5px;
   }

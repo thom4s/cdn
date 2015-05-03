@@ -65,6 +65,38 @@ function the_post_navigation() {
 }
 endif;
 
+if ( ! function_exists( 'cdn_post_metas' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function cdn_post_metas() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+
+	$posted_on = sprintf(
+		_x( '%s', 'post date', 'cdn' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
+
+	$categories_list = get_the_category_list( __( ', ', 'cdn' ) );
+	if ( $categories_list && cdn_categorized_blog() ) {
+		printf( '<span class="cat-links">' . __( '%1$s | ', 'cdn' ) . '</span>', $categories_list );
+	}
+
+	echo '<span class="posted-on">' . $posted_on . '</span>';
+
+}
+endif;
+
 if ( ! function_exists( 'cdn_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.

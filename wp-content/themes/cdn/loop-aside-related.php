@@ -15,7 +15,7 @@
     if ($first_id !== '') { ?>
 
 
-  <div class="aside-related">
+  <div class="aside-related clearfix">
     
           <?php
             foreach($linkedposts as $linkedpost):

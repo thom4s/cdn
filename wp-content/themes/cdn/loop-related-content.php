@@ -19,10 +19,9 @@
 
 
   <div class="related-content">
-    <?php if ( is_front_page() ) { ?>
-      
-    <?php } else { ?>
+    <?php if ( !is_front_page() ) { ?>
       <h2><?php echo $elements_title; ?></h2>
+     
     <?php }?>
     
       <div id="grid" class="row" data-columns>
@@ -33,7 +32,12 @@
               $linked_post_id = $linkedpost['defaults_meta_linkedpost-id'];
               $linked_post_bg = $linkedpost['defaults_meta_bloc_bg'];
               $linked_post_col = $linkedpost['defaults_meta_bloc_col'];
-              $linked_post_has_link = $linkedpost['defaults_meta_has_link'];
+
+              if( isset($linkedpost['defaults_meta_has_link']) ) {
+                $linked_post_has_link = true;
+              } else {
+                $linked_post_has_link = false;
+              }
 
               $linked_post = get_post($linked_post_id);
               $post_title = $linked_post->post_title;

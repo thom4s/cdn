@@ -4,8 +4,23 @@
  * @package sasskit
  */
 
-.entry-header {
+
+
+
+
+.content-single {
+
+  .entry-header{
+    margin-bottom: 0;
+  }
+    .entry-title {
+      margin-bottom: 22px;
+    }
+  
+  .entry-content {
+    margin-top: 44px;
+  }
 }
 
-.entry-content {
-}
+
+
