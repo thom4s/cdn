@@ -20,7 +20,7 @@ get_header(); ?>
       <header class="entry-header bg">
         <div class="entry-header-inner l-12col l-first l-1col-push">
 
-          <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+          <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
           <p class="post-excerpt"><?php echo $introduction; ?></p>
 
           <ul class="calendar-filter clearfix">
@@ -42,42 +42,21 @@ get_header(); ?>
       
       <div class="row">
 
-        <?php
+        <?php if ( have_posts() ) { ?>
 
-          $args = array(
-            'post_type'       => 'event',
-            'posts_per_page'  => -1,
-            'status'          => 'published',
-            'tax_query'       => array(
-                array(
-                  'taxonomy' => 'event_type',
-                  'field'    => 'slug',
-                  'terms'    => array('recre'),
-                  'operator'  => 'NOT IN'
-                ),           
-            ),
-          );
-
-          // The Query
-          $saison_events = new WP_Query( $args );
-
-          // The Loop
-          if ( $saison_events->have_posts() ) { ?>
             <div class="row">
-
-            <?php while ( $saison_events->have_posts() ) {
-
-                $saison_events->the_post();
+               <?php while ( have_posts() ) : the_post(); 
                 $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $post->ID );
                 $post_meta = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID ); ?>
 
-              <?php include(locate_template('bloc-event.php')); } ?>
+                <?php include(locate_template('bloc-event.php'));  ?>
 
+              <?php endwhile; ?>  
             </div>
 
-          <?php
-          } else { }
-          wp_reset_postdata(); ?>
+        <?php } ?>
+
+
       </div>
 
     </main><!-- #main -->

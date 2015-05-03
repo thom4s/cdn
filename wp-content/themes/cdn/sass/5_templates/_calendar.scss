@@ -1,0 +1,26 @@
+
+
+
+
+.calendar-filter {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 22px;
+  
+  h2 {
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .cat-item {
+    font-family: $font_family_meta;
+    display: inline-block;
+    float: left; 
+    margin-right: 11px;
+  }
+}

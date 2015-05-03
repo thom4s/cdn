@@ -2274,7 +2274,6 @@ th {
     position: relative;
     left: auto;
   }
-  .row .size-1of3,
   .row .l-4col {
     /* Acceptable values are border, content, and padding - content is the default W3C model */
     box-sizing: border-box;
@@ -2284,17 +2283,14 @@ th {
     float: left;
     margin-left: 2%;
   }
-  .row .size-1of3 .l-1col,
   .row .l-4col .l-1col {
     margin-left: 8.51064%;
     width: 18.61702%;
   }
-  .row .size-1of3 .l-2col,
   .row .l-4col .l-2col {
     margin-left: 8.51064%;
     width: 45.74468%;
   }
-  .row .size-1of3 .l-3col,
   .row .l-4col .l-3col {
     margin-left: 8.51064%;
     width: 72.87234%;
@@ -2337,10 +2333,8 @@ th {
     margin-left: 6.69456%;
     width: 57.32218%;
   }
-  .row .footer-contacts aside:last-child .size-1of3, .footer-contacts .row aside:last-child .size-1of3,
   .row .footer-contacts aside:last-child .l-4col,
   .footer-contacts .row aside:last-child .l-4col,
-  .row .l-5col .size-1of3,
   .row .l-5col .l-4col {
     margin-left: 6.69456%;
     width: 78.66109%;
@@ -2376,7 +2370,6 @@ th {
     margin-left: 5.51724%;
     width: 47.24138%;
   }
-  .row .l-6col .size-1of3,
   .row .l-6col .l-4col {
     margin-left: 5.51724%;
     width: 64.82759%;
@@ -2418,7 +2411,6 @@ th {
     margin-left: 4.69208%;
     width: 40.17595%;
   }
-  .row .l-7col .size-1of3,
   .row .l-7col .l-4col {
     margin-left: 4.69208%;
     width: 55.13196%;
@@ -2471,10 +2463,8 @@ th {
     margin-left: 4.08163%;
     width: 34.94898%;
   }
-  .row .entry-footer p .size-1of3, .entry-footer .row p .size-1of3,
   .row .entry-footer p .l-4col,
   .entry-footer .row p .l-4col,
-  .row .l-8col .size-1of3,
   .row .l-8col .l-4col {
     margin-left: 4.08163%;
     width: 47.95918%;
@@ -2531,7 +2521,6 @@ th {
     margin-left: 3.61174%;
     width: 30.92551%;
   }
-  .row .l-9col .size-1of3,
   .row .l-9col .l-4col {
     margin-left: 3.61174%;
     width: 42.43792%;
@@ -2587,7 +2576,6 @@ th {
     margin-left: 3.23887%;
     width: 27.73279%;
   }
-  .row .l-10col .size-1of3,
   .row .l-10col .l-4col {
     margin-left: 3.23887%;
     width: 38.05668%;
@@ -2647,7 +2635,6 @@ th {
     margin-left: 2.93578%;
     width: 25.13761%;
   }
-  .row .l-11col .size-1of3,
   .row .l-11col .l-4col {
     margin-left: 2.93578%;
     width: 34.49541%;
@@ -2711,7 +2698,6 @@ th {
     margin-left: 2.68456%;
     width: 22.98658%;
   }
-  .row .l-12col .size-1of3,
   .row .l-12col .l-4col {
     margin-left: 2.68456%;
     width: 31.54362%;
@@ -2779,7 +2765,6 @@ th {
     margin-left: 2.47295%;
     width: 21.17465%;
   }
-  .row .l-13col .size-1of3,
   .row .l-13col .l-4col {
     margin-left: 2.47295%;
     width: 29.05719%;
@@ -2851,7 +2836,6 @@ th {
     margin-left: 2.29226%;
     width: 19.62751%;
   }
-  .row .l-14col .size-1of3,
   .row .l-14col .l-4col {
     margin-left: 2.29226%;
     width: 26.9341%;
@@ -2927,7 +2911,6 @@ th {
     margin-left: 2.13618%;
     width: 18.29105%;
   }
-  .row .l-15col .size-1of3,
   .row .l-15col .l-4col {
     margin-left: 2.13618%;
     width: 25.10013%;
@@ -3007,7 +2990,6 @@ th {
     margin-left: 2%;
     width: 17.125%;
   }
-  .row .l-16col .size-1of3,
   .row .l-16col .l-4col {
     margin-left: 2%;
     width: 23.5%;
@@ -5306,6 +5288,27 @@ th {
 .project-team li {
   margin: 0;
   padding: 0;
+}
+
+.calendar-filter {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 22px;
+}
+.calendar-filter h2 {
+  margin-bottom: 0;
+}
+.calendar-filter ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.calendar-filter .cat-item {
+  font-family: "Roboto Slab", Georgia, Times New Roman, serif;
+  display: inline-block;
+  float: left;
+  margin-right: 11px;
 }
 
 
