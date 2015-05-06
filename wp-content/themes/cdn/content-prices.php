@@ -25,7 +25,7 @@
 
 		</div><!-- .entry-header-inner -->
 
-		<?php the_post_thumbnail( ); ?> 
+		<?php the_post_thumbnail( 'page-media' ); ?> 
 
 	</header><!-- .entry-header -->
 

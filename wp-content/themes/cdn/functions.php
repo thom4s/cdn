@@ -57,7 +57,8 @@ function cdn_setup() {
 	// Add mage Size
 	add_image_size( 'home-featured', 1200, 500, true ); // 1200px wide / 500px height / cropped
 	add_image_size( 'event-media', 894, 500, true ); 
-	add_image_size( 'bloc-thumb-2col', 9999, 300 ); 
+	add_image_size( 'bloc-thumb-2col', 9999, 300 );
+	add_image_size( 'page-media', 900 ); 
 	add_image_size( 'bloc-thumb', 276 ); 
 
 	// Set up the WordPress core custom background feature.
@@ -154,16 +155,6 @@ add_action( 'wp_enqueue_scripts', 'cdn_scripts' );
 
 
 
-// Add Query Var for Event PRO
-function add_query_vars($aVars) {
-	$aVars[] = "pro"; // represents the name of the product category as shown in the URL
-	return $aVars;
-}
-// hook add_query_vars function into query_vars
-add_filter('query_vars', 'add_query_vars');
- 
-// hook add_rewrite_rules function into rewrite_rules_array
-add_filter('rewrite_rules_array', 'add_rewrite_rules');
 
 
 

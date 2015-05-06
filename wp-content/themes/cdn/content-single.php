@@ -25,7 +25,7 @@
 
 	</header><!-- .entry-header -->
 
-	<?php the_post_thumbnail( ); ?> 
+	<?php the_post_thumbnail( 'page-media' ); ?> 
 
 	<div class="entry-content l-8col l-1col-push l-first">
 		<?php the_content(); ?>
