@@ -4142,6 +4142,38 @@ big {
 /*
  * CLASSES & SPECIALS
  */
+.title-underline-gray, .title-underline-red {
+  display: table;
+  width: 100%;
+  margin-bottom: 22px;
+}
+.title-underline-gray h2, .title-underline-red h2 {
+  display: table-cell;
+  color: inherit;
+  text-align: center;
+  width: 30%;
+}
+
+.line-dotted {
+  display: table-cell;
+  border-bottom: 2px dotted;
+  width: 70%;
+}
+
+.title-underline-gray {
+  color: #555;
+}
+.title-underline-gray .line-dotted {
+  border-color: #555;
+}
+
+.title-underline-red {
+  color: #DF4949;
+}
+.title-underline-red .line-dotted {
+  border-color: #DF4949;
+}
+
 .meta, .event-metas, .event-dates, .event-ancres {
   font-family: "Roboto Slab", Georgia, Times New Roman, serif;
   color: #DF4949;
@@ -4209,7 +4241,7 @@ h1 + .info:before {
 
 h2 {
   font-family: Roboto Slab, Georgia, Times New Roman, serif;
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 22px;
   margin: 0 0 11px 0;
 }
@@ -4217,7 +4249,7 @@ h2 > .use:before {
   content: "titles dotted";
 }
 h2 + .info:before {
-  content: "Roboto Slab, Georgia, Times New Roman, serif / 1.6rem / 22px";
+  content: "Roboto Slab, Georgia, Times New Roman, serif / 2rem / 22px";
 }
 
 h3 {
@@ -5068,23 +5100,6 @@ th {
 .entry-content {
   *zoom: 1;
 }
-.entry-content h2 {
-  clear: both;
-}
-.entry-content h2:before, .entry-content h2:after {
-  content: " ";
-  display: table;
-}
-.entry-content h2:after {
-  display: block;
-  clear: both;
-  height: 1px;
-  margin-top: -1px;
-  visibility: hidden;
-}
-.entry-content h2 {
-  *zoom: 1;
-}
 
 .related-content {
   clear: both;
@@ -5102,6 +5117,25 @@ th {
   visibility: hidden;
 }
 .related-content {
+  *zoom: 1;
+}
+
+.content-part {
+  clear: both;
+  margin-bottom: 44px;
+}
+.content-part:before, .content-part:after {
+  content: " ";
+  display: table;
+}
+.content-part:after {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin-top: -1px;
+  visibility: hidden;
+}
+.content-part {
   *zoom: 1;
 }
 
@@ -5257,9 +5291,6 @@ th {
 .price-item {
   margin-bottom: 44px;
   float: left;
-}
-.price-item h2 {
-  color: #DF4949;
 }
 .price-item h6 {
   margin-top: 0;

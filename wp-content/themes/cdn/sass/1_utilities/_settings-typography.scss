@@ -113,7 +113,7 @@ $typos_map: (
   h2: (
     use: "titles dotted",
     font-family: $font_family_meta,
-    font-size: 1.6rem,
+    font-size: 2rem,
     line-height: $base_line_height,
     margin: 0 0 11px 0,
   ),
@@ -226,9 +226,42 @@ big {
  * CLASSES & SPECIALS
  */
 
-h2 {
+%title-underline {
+  display: table;
+  width: 100%;  
+  margin-bottom: 22px;
   
-} 
+  h2 {
+    display: table-cell;
+    color: inherit;
+    text-align: center;
+    width: 30%;
+  } 
+}
+  .line-dotted {
+    display: table-cell;
+    border-bottom: 2px dotted;
+    width: 70%;
+  }
+
+.title-underline-gray {
+  @extend %title-underline;
+  color: $gray;
+
+  .line-dotted {
+    border-color: $gray;
+  }
+}
+
+.title-underline-red {
+  @extend %title-underline;
+  color: $red;
+
+  .line-dotted {
+    border-color: $red;
+  }
+}
+
 
 .meta {
   font-family: $font_family_meta;

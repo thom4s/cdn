@@ -42,7 +42,11 @@
 
 
 			<div class="price-item">
-				<h2><?php echo $bloc_title; ?></h2>
+
+				<div class="title-underline-red">
+					<h2><?php echo $bloc_title; ?></h2>
+					<div class="line-dotted"></div>
+				</div>
 
 				<div class="price-item-main l-7col l-first">
 					<?php echo $bloc_main; ?>

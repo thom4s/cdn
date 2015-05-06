@@ -18,10 +18,14 @@
     if ($first_id !== '') { ?>
 
 
-  <div class="related-content">
-    <?php if ( !is_front_page() ) { ?>
-      <h2><?php echo $elements_title; ?></h2>
-     
+  <div class="related-content content-part">
+    <?php if ( !is_front_page() && $elements_title != '' ) { ?>
+
+        <div class="l-1col-push l-11col l-first title-underline-gray">
+          <h2><?php echo $elements_title; ?></h2>
+          <div class="line-dotted"></div>
+        </div>
+
     <?php }?>
     
       <div id="grid" class="row" data-columns>

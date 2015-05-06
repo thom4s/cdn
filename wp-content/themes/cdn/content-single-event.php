@@ -64,7 +64,7 @@
 	<header class="entry-header--event">
 		
     <!-- DISPLAY SLIDER IF PUBLIC-->
-    <?php if($public){ ?>
+    <?php if($public && $slides){ ?>
 
       <div class="event-slider">
         <div class="event-slider-inner">
@@ -150,7 +150,7 @@
     </div><!-- .row -->
 	</header><!-- .entry-header -->
 
-	<div class="entry-content l-8col l-1col-push l-first">
+	<div class="entry-content content-part l-8col l-1col-push l-first">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
@@ -158,14 +158,24 @@
   <?php get_template_part('loop','related-content'); ?>
 
 	<footer class="entry-footer">
-    <div class="event-distribution clearfix">
-      <h2 id="distribution">Distribution</h2>
+    <div class="event-distribution content-part clearfix">
+
+      <div class="l-1col-push l-11col l-first title-underline-gray">
+        <h2 id="distribution">Distribution</h2>
+        <div class="line-dotted"></div>
+      </div>
+
       <?php echo $distribution; ?>
     </div>
 
 		<?php if($public){ ?>
-      <div class="event-pressereview clearfix">
-        <h2 id="presse">La presse</h2>
+      <div class="event-pressereview content-part clearfix">
+
+        <div class="l-1col-push l-11col l-first title-underline-gray">
+          <h2 id="presse">La presse</h2>
+          <div class="line-dotted"></div>
+        </div>
+        
         <?php echo $press; ?>
       </div>
       <?php } ?>
