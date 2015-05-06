@@ -155,8 +155,37 @@ add_action( 'wp_enqueue_scripts', 'cdn_scripts' );
 
 
 
+// add google analytics to footer
+function add_google_analytics() {
+	echo '<script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>';
+	echo '<script type="text/javascript">';
+	echo 'var pageTracker = _gat._getTracker("UA-XXXXX-X");';
+	echo 'pageTracker._trackPageview();';
+	echo '</script>';
+}
+add_action('wp_footer', 'add_google_analytics');
 
 
+
+// custom admin login logo
+function custom_login_logo() {
+	echo '<style type="text/css">
+	h1 a { background-image: url('.get_bloginfo('template_directory').'/img/logo-cdn.png) !important; }
+	</style>';
+}
+add_action('login_head', 'custom_login_logo');
+
+
+// remove junk from head
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'feed_links', 2);
+remove_action('wp_head', 'index_rel_link');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'start_post_rel_link', 10, 0);
+remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 
 /**
