@@ -32,6 +32,9 @@ require_once CDN_POST_TYPES_DIR . 'event-metas.php';
 require_once CDN_POST_TYPES_DIR . 'post-metas.php';
   // WIDGETS
 require_once CDN_WIDGETS_DIR . 'newsletter_widget.php';
+  // Elses
+require_once CDN_DEFAULT_DIR . 'remove_blog_slug.php';
+
 
 
 add_theme_support( 'post-thumbnails' );
@@ -42,6 +45,7 @@ add_filter('show_admin_bar', '__return_false');
 
 
 // Custom Query Vars
+// some help here : http://www.rlmseo.com/blog/passing-get-query-string-parameters-in-wordpress-url/
 function add_query_vars($aVars) {
   $aVars[] = "pro";
   $aVars[] = "quoi";
@@ -50,8 +54,9 @@ function add_query_vars($aVars) {
 add_filter('query_vars', 'add_query_vars');
 
 function add_rewrite_rules($aRules) {
-  $aNewRules = array('saison/quoi/([^/]+)/?$' => 'index.php?pagename=saison&quoi=$matches[1]');
-  $aRules = $aNewRules + $aRules;
+  $rules_for_filter = array('saison/quoi/([^/]+)/?$' => 'index.php?pagename=saison&quoi=$matches[1]');
+  $rules_for_blog_slug = array('blog/([a-z0-9]+)$' => '$matches[1]');
+  $aRules = $rules_for_filter + $rules_for_blog_slug + $aRules;
   return $aRules;
 }
 add_filter('rewrite_rules_array', 'add_rewrite_rules');

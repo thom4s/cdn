@@ -28,7 +28,7 @@ function type_taxonomy() {
         'not_found'                  => __( 'Aucun résultat', 'type_taxo' ),
     );
     $rewrite = array(
-        'slug'                       => 'type',
+        'slug'                       => 'saison/quoi',
         'with_front'                 => true,
         'hierarchical'               => false,
     );

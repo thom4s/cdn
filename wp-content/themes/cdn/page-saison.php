@@ -12,9 +12,21 @@
     $introduction = rwmb_meta( $prefix_default . 'intro' );
     $subtitle = rwmb_meta( $prefix_default . 'subtitle' );
 
-    if(isset($wp_query->query_vars['quoi'])) {
-      $quoi = urldecode($wp_query->query_vars['quoi']);
-    }
+    $args = array(
+      'post_type'       => 'event',
+      'posts_per_page'  => -1,
+      'status'          => 'published',
+    );
+    
+    // Get query vars if existed
+    if ( get_query_var('quoi') ):
+      $args['tax_query'][] = array(
+          'taxonomy'  =>  'event_type',
+          'field'   =>  'slug',
+          'terms'   =>  preg_split("#,#", get_query_var('quoi'))
+        );
+    endif;
+
 
 
 get_header(); ?>
@@ -48,21 +60,6 @@ get_header(); ?>
       <div class="row">
 
         <?php
-
-          $args = array(
-            'post_type'       => 'event',
-            'posts_per_page'  => -1,
-            'status'          => 'published',
-          );
-
-          // Get query vars if existed
-          if ( get_query_var('quoi') ):
-            $args['tax_query'][] = array(
-                'taxonomy'  =>  'event_type',
-                'field'   =>  'slug',
-                'terms'   =>  preg_split("#,#", get_query_var('quoi'))
-              );
-          endif;
 
           // The Query
           $saison_events = new WP_Query( $args );
