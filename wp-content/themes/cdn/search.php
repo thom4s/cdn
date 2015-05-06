@@ -5,28 +5,28 @@
  * @package cdn
  */
 
+
+
 get_header(); ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-area content-results">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'cdn' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+			<header class="entry-header row">
+				<div class="entry-header-inner l-12col l-first l-1col-push">
 
-			<?php /* Start the Loop */ ?>
+					<h1 class="entry-title"><?php printf( __( 'Votre recherche : %s', 'cdn' ), '<span><em>' . get_search_query() . '</em></span>' ); ?></h1>
+
+				</div><!-- .entry-header-inner -->
+			</header><!-- .entry-header -->
+
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'content', 'search' );
-				?>
+				<div class=" l-8col l-1col-push l-first">
+					<?php get_template_part( 'content', 'search' ); ?>
+				</div>
 
 			<?php endwhile; ?>
 
@@ -41,5 +41,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
