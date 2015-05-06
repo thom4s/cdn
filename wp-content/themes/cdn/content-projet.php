@@ -35,7 +35,7 @@
 			<?php the_content(); ?>
 		</div>
 
-		<div class="project-team l-3col l-last">
+		<div class="project-team l-4col l-last">
 			<?php echo $projet_equipe; ?>
 		</div>
 

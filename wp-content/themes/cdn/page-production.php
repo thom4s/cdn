@@ -28,11 +28,18 @@ get_header(); ?>
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
 
-      <div class="entry-content l-8col l-1col-push l-first">
-        <?php echo the_content(); ?>
+      <div class="entry-content content-part l-8col l-1col-push l-first">
+        <?php the_content(); ?>
       </div><!-- .entry-content -->
       
-      <div class="row">
+      <div class="row content-part">
+
+        <div class="l-1col-push l-11col l-first title-underline-gray">
+          <h2>Les créations du CDN</h2>
+          <div class="line-dotted"></div>
+        </div>
+
+
         <?php
            $args = array(
             'post_type'       => 'event',
@@ -44,7 +51,7 @@ get_header(); ?>
                   'field'    => 'slug',
                   'terms'    => array('recre'),
                   'operator'  => 'NOT IN'
-                ),           
+                ),
             ),
           );
 

@@ -60,10 +60,10 @@ $font_family_serif:                 Georgia, Times New Roman, serif !default;
 $font_family_mono:                  Menlo, Consolas, monospace !default;
 
 // Typo Attributions
-$font_family_paragraph:             $source, $font_family_serif;
+$font_family_paragraph:             $source, $font_family_sans;
 $font_family_title:                 $source, $font_family_sans;
-$font_family_nav:                   $source, $font_family_serif;
-$font_family_alt:                   $source, $font_family_serif;
+$font_family_nav:                   $source, $font_family_sans;
+$font_family_alt:                   $source, $font_family_sans;
 $font_family_quote:                 $roboto, $font_family_serif;
 $font_family_meta:                  $roboto, $font_family_serif;
 

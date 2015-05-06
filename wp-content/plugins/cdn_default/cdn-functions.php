@@ -41,6 +41,14 @@ add_theme_support( 'post-thumbnails' );
 add_filter('show_admin_bar', '__return_false');
 
 
+function add_query_vars($aVars) {
+  $aVars[] = "pro"; // represents the name of the product category as shown in the URL
+return $aVars;
+}
+ 
+// hook add_query_vars function into query_vars
+add_filter('query_vars', 'add_query_vars');
+
 
 // Widget
 function tutsplus_register_list_pages_widget() {

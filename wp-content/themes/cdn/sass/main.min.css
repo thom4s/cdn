@@ -4064,7 +4064,7 @@ input,
 select,
 textarea {
   color: #333;
-  font-family: "Source Sans Pro", Georgia, Times New Roman, serif;
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   line-height: 22px;
 }
 
@@ -4180,7 +4180,7 @@ big {
 }
 
 .main-navigation {
-  font-family: "Source Sans Pro", Georgia, Times New Roman, serif;
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -4189,7 +4189,7 @@ big {
  * DON'T TOUCH THAT !
  */
 p {
-  font-family: Source Sans Pro, Georgia, Times New Roman, serif;
+  font-family: Source Sans Pro, Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
   line-height: 22px;
   margin: 0 0 22px 0;
@@ -4198,7 +4198,7 @@ p > .use:before {
   content: "This is the body copy. ";
 }
 p + .info:before {
-  content: "Source Sans Pro, Georgia, Times New Roman, serif / 1.6rem / 22px";
+  content: "Source Sans Pro, Arial, Helvetica, sans-serif / 1.6rem / 22px";
 }
 
 blockquote {

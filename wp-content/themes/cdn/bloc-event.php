@@ -1,6 +1,13 @@
+<?php 
+  if( is_page_template( 'page-production.php' ) ) { 
+    $url = esc_url( add_query_arg( 'pro', 'yes', get_permalink() ) );
+  } else {
+    $url_default = get_permalink();
+  }
 
+?>
   <article class="grid-item related-post bloc-outer l-4col">
-    <a href="<?php the_permalink(); ?><?php if( is_page_template( 'page-production.php' ) ) { echo '?pro=yes'; } ?>">
+    <a href="<?php echo $url; ?>">
       
       <div class="bloc-img">
         <?php the_post_thumbnail( 'bloc-thumb', '' ); ?>
