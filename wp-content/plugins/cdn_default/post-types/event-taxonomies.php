@@ -2,16 +2,16 @@
 
 /*
  * Register Custom Taxonomy for event
- * Require from post-types.php
+ * Require from cdn-functions.php
  ************************************
  */
 
 // Type événement
 function type_taxonomy() {
     $labels = array(
-        'name'                       => _x( 'Types d\'événements', 'Taxonomy General Name', 'type_taxo' ),
-        'singular_name'              => _x( 'Type d\'événement', 'Taxonomy Singular Name', 'type_taxo' ),
-        'menu_name'                  => __( 'Types événement', 'type_taxo' ),
+        'name'                       => _x( 'Types de spectacle', 'Taxonomy General Name', 'type_taxo' ),
+        'singular_name'              => _x( 'Type de spectacle', 'Taxonomy Singular Name', 'type_taxo' ),
+        'menu_name'                  => __( 'Types spectacles', 'type_taxo' ),
         'all_items'                  => __( 'Tous les types', 'type_taxo' ),
         'parent_item'                => __( 'Parent Item', 'type_taxo' ),
         'parent_item_colon'          => __( 'Parent Item:', 'type_taxo' ),
@@ -45,6 +45,47 @@ function type_taxonomy() {
     register_taxonomy( 'event_type', array( 'event' ), $args );
 }
 add_action( 'init', 'type_taxonomy', 0 );
+
+
+// Type événement
+function event_cat_taxonomy() {
+    $labels = array(
+        'name'                       => _x( 'Catégories d\'événements', 'Taxonomy General Name', 'type_taxo' ),
+        'singular_name'              => _x( 'Catégorie d\'événement', 'Taxonomy Singular Name', 'type_taxo' ),
+        'menu_name'                  => __( 'Catégories événement', 'type_taxo' ),
+        'all_items'                  => __( 'Toutes les Catégories', 'type_taxo' ),
+        'parent_item'                => __( 'Parent Item', 'type_taxo' ),
+        'parent_item_colon'          => __( 'Parent Item:', 'type_taxo' ),
+        'new_item_name'              => __( 'Nouvelle Catégorie', 'type_taxo' ),
+        'add_new_item'               => __( 'Ajouter une catégorie', 'type_taxo' ),
+        'edit_item'                  => __( 'Editer la catégorie', 'type_taxo' ),
+        'update_item'                => __( 'Mettre à jour', 'type_taxo' ),
+        'view_item'                  => __( 'Voir la catégorie', 'type_taxo' ),
+        'separate_items_with_commas' => __( 'Separate items with commas', 'type_taxo' ),
+        'add_or_remove_items'        => __( 'Add or remove items', 'type_taxo' ),
+        'choose_from_most_used'      => __( 'Choose from the most used', 'type_taxo' ),
+        'popular_items'              => __( 'Catégories récurentes', 'type_taxo' ),
+        'search_items'               => __( 'Rechercher une catégorie', 'type_taxo' ),
+        'not_found'                  => __( 'Aucun résultat', 'type_taxo' ),
+    );
+    $rewrite = array(
+        'slug'                       => 'saison/cat',
+        'with_front'                 => true,
+        'hierarchical'               => false,
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => false,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+        'rewrite'                    => $rewrite,
+    );
+    register_taxonomy( 'event_cat', array( 'event' ), $args );
+}
+add_action( 'init', 'event_cat_taxonomy', 0 );
 
 
 // AGE 

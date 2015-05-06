@@ -20,7 +20,7 @@ var alljs = [vendorsjs, mainjs];
 var scssfiles = app_folder + 'sass/**/*.scss';
 var sassfolder = app_folder + 'sass/';
 
-
+ 
 // Lint Task
 gulp.task('lint', function() {
     return gulp.src(mainjs)
@@ -30,7 +30,7 @@ gulp.task('lint', function() {
 
 // Compile Our Sass
 gulp.task('sass', function() {
-    return sass(sassfolder, { style: 'expanded', sourcemap: true })
+    return sass(sassfolder, { style: 'compressed', sourcemap: true })
     .on('error', function (err) {
       console.error('Error!', err.message);
     })

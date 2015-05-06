@@ -95,11 +95,22 @@ function event_register_meta_boxes( $meta_boxes )
             ),
             // TYPE d'événement
             array(
-                'name'    => __( 'Type événement', 'meta-box' ),
+                'name'    => __( 'Type de spectacle', 'meta-box' ),
                 'id'      => "{$prefix}event_type",
                 'type'    => 'taxonomy',
                 'options' => array(
                     'taxonomy' => 'event_type',
+                    'type'     => 'checkbox_list',
+                    'args'     => array()
+                ),
+            ),
+            // TYPE d'événement
+            array(
+                'name'    => __( 'Catégorie d\'événement', 'meta-box' ),
+                'id'      => "{$prefix}event_cat",
+                'type'    => 'taxonomy',
+                'options' => array(
+                    'taxonomy' => 'event_cat',
                     'type'     => 'checkbox_list',
                     'args'     => array()
                 ),
