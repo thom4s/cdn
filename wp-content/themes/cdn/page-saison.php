@@ -11,11 +11,23 @@
 
     $introduction = rwmb_meta( $prefix_default . 'intro' );
     $subtitle = rwmb_meta( $prefix_default . 'subtitle' );
+    $subtitle = rwmb_meta( $prefix_default . 'subtitle' );
 
     $args = array(
       'post_type'       => 'event',
       'posts_per_page'  => -1,
       'status'          => 'published',
+      'tax_query'       => array(
+        'relation' => 'AND',
+        array(
+          'taxonomy'      => 'event_cat',
+          'field'         => 'slug',
+          'terms'         => array('spectacle'),
+        ),
+      ),
+      'orderby'   => 'meta_value_num',
+      'meta_key'  => 'event_meta_firstdate',
+      'order'      => 'ASC',
     );
     
     // Get query vars if existed
@@ -26,7 +38,6 @@
           'terms'   =>  preg_split("#,#", get_query_var('quoi'))
         );
     endif;
-
 
 
 get_header(); ?>
@@ -45,7 +56,7 @@ get_header(); ?>
               $filter_args = array(
                 'hide_empty'         => 1,
                 'taxonomy'           => 'event_type',
-                'title_li'           => __( '<h2>Filtrer par : </h2>' ),
+                'title_li'           => __( '<h2>Afficher uniquement : </h2>' ),
               );
             ?>
             
@@ -57,8 +68,6 @@ get_header(); ?>
       </header><!-- .entry-header -->
 
       
-      <div class="row">
-
         <?php
 
           // The Query
@@ -71,6 +80,8 @@ get_header(); ?>
             <?php while ( $saison_events->have_posts() ) {
 
                 $saison_events->the_post();
+                $firstdate = rwmb_meta(  $prefix_event . 'firstdate', array(), $post->ID );
+
                 $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $post->ID );
                 $post_meta = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID ); ?>
 
@@ -81,7 +92,8 @@ get_header(); ?>
           <?php
           } else { }
           wp_reset_postdata(); ?>
-      </div>
+
+
 
     </main><!-- #main -->
   </div><!-- #primary -->

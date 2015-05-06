@@ -2,8 +2,8 @@
 
     // Just get the necessary metas 
     $prefix = 'event_meta_';
-    $event_booking_id = rwmb_meta( $prefix . 'event_booking_id' );
-
+    $event_booking_id = rwmb_meta( $prefix . 'the_dates' );
+    $event_booking_id = $event_booking_id['booking_id'];
 ?>
 
   <header id="masthead" class="site-header l-4col l-first" role="banner">

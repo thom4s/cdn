@@ -3,7 +3,7 @@
  * @package cdn
  */
 
-    setlocale(LC_TIME, 'fra_fra');
+    setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
     $today = time();
     $pro = false;
     $public = false;
@@ -19,15 +19,26 @@
     $prefix_default = 'defaults_meta_';
 
     // Dates & Reservations
-    $event_date =	rwmb_meta( $prefix . 'event_date' );
-    $event_booking_id =	rwmb_meta( $prefix . 'event_booking_id' );
+    $the_dates_text = rwmb_meta( $prefix . 'the_dates' );
+    $event_date_text =  $the_dates_text['date'];
+    $the_dates = array();
 
-    $dates_infos = rwmb_meta(  $prefix . 'dates' );
-		$datetime = $prefix . 'datetime';
-		$datetime_array = isset( $dates_infos[$datetime] ) ? $dates_infos[$datetime] : false;
+    // First Date
+    $event_firstdate =  rwmb_meta( $prefix . 'firstdate' );
+    $event_firstdate_booking_id = rwmb_meta( $prefix . 'booking_id' );
+    $event_firstdate_array = array(
+      'date' => $event_firstdate, 
+      'booking_id' => $event_firstdate_booking_id
+    );
+    $the_dates[] = $event_firstdate_array;
 
-		$date_booking_id = $prefix . 'date_booking_id';
-		$date_booking_id_array = isset( $dates_infos[$date_booking_id] ) ? $dates_infos[$date_booking_id] : false;
+    // Other Dates
+    $other_dates = rwmb_meta(  $prefix . 'other_dates' );
+    foreach ($other_dates as $date) {
+      $date_string = $date["date"];
+      $date["date"]= strtotime($date_string);
+      $the_dates[] = $date;
+    }
 
     // Générique
     $authors =	rwmb_meta( $prefix . 'authors' );
@@ -65,10 +76,8 @@
 		
     <!-- DISPLAY SLIDER IF PUBLIC-->
     <?php if($public && $slides){ ?>
-
       <div class="event-slider">
         <div class="event-slider-inner">
-
           <div class="bxslider-video">
             <?php foreach ($slides as $slide) { ?>
                 <li><img src="<?php echo $slide['full_url']; ?>"></li>
@@ -77,12 +86,9 @@
                 <li><iframe src="<?php echo $video; ?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></li>
             <?php } ?>
           </div>
-
         </div><!-- .event-slider-inner -->
       </div><!-- .event-slider -->
-
     <?php } ?>
-
 
     <div class="row">
       <div class="entry-titles l-7col l-first l-1col-push">
@@ -94,40 +100,28 @@
       </div>
 
       <div class="event-metas l-3col l-last">
-
         <div class="event-metas-group">
           <?php if($is_creation) : echo 'Création'; endif; ?><br>
-
           <?php foreach ( $event_types as $type ) { echo $type->name; } ?> | <?php foreach ( $age as $a ) { echo $a->name; } ?><br>
-
           <?php if($public){ ?><?php foreach ( $salle as $s ) { echo $s->name; } ?> | <?php echo $duration; }?>
         </div><!-- .entry-metas-group -->
-
 
         <!-- DISPLAY DATES IF PUBLIC-->
         <?php if($public){ ?>
         <div class="event-metas-group">
           <ul class="event-dates">
-            <?php foreach ($dates_infos as $date) {
-
-              setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
-
-              $date_booking_id = $date["event_meta_date_booking_id"];
-              $date_string = $date["event_meta_datetime"];
-              $date_raw = strtotime($date_string);
-              $date_formated = strftime('%a %e %b %g : %kh%M', $date_raw );
-
+            <?php foreach ($the_dates as $date) {
+              $date_formated = strftime('%a %e %b %g : %kh%M', $date["date"] );
+              $date_booking_id = $date['booking_id'];
               echo  '<li>';
-
-              if( $today > $date_raw ) {
+              if( $today > $date["date"] ) {
                 // date passée
                 echo  '<span class="passed_date">'. $date_formated .'</span>';
-
               } else {
                 // date à venir
                 echo  '<a href="http://www.forumsirius.fr/orion/sartrouville.phtml?seance='. 
                       $date_booking_id .
-                      '" title="Réservez pour la séance du spectacle " alt="Réservez pour la séance du spectacle ">'.
+                      '" title="Réservez pour la séance du spectacle " alt="Réservez pour la séance du spectacle " target="_blank">'.
                       $date_formated.
                       '</a>';
               }
@@ -137,14 +131,12 @@
         </div><!-- .entry-metas-group -->
         <?php } ?>
 
-
         <div class="event-metas-group">
           <ul class="event-ancres">
             <li><a href="#distribution">Voir la Distribution</a></li>
             <?php if($public){ ?><li><a href="#presse">Lire la presse</a></li><?php } ?>
           </ul>
         </div><!-- .entry-metas-group -->
-
 
       </div><!-- .event-metas -->
     </div><!-- .row -->
@@ -164,18 +156,15 @@
         <h2 id="distribution">Distribution</h2>
         <div class="line-dotted"></div>
       </div>
-
       <?php echo $distribution; ?>
     </div>
 
 		<?php if($public){ ?>
       <div class="event-pressereview content-part clearfix">
-
         <div class="l-1col-push l-11col l-first title-underline-gray">
           <h2 id="presse">La presse</h2>
           <div class="line-dotted"></div>
         </div>
-        
         <?php echo $press; ?>
       </div>
       <?php } ?>

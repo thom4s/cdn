@@ -151,24 +151,65 @@ function event_register_meta_boxes( $meta_boxes )
         'post_types' => array( 'event' ),
         'fields' => array(
 
-            // Dates
+            // 1ere date
             array(
-                'name'       => __( 'Dates de l\'événement (en texte)', 'meta-box' ),
-                'id'         => "{$prefix}event_date",
-                'type'       => 'text',
+                'id'     =>  $prefix . 'the_dates',
+                'name'   => __( 'Date générale', 'meta-box' ),
+                'type'   => 'group', 
+                'clone'  => false,   
+                'fields' => array(
+
+                    // Dates en toutes lettres
+                    array(
+                        'name'          => __( 'Dates de l\'événement (en texte)', 'meta-box' ),
+                        'id'            => 'date',
+                        'type'          => 'text',
+                        'timestamp'     => true,
+                    ),
+
+                    // Code Spectacle
+                    array(
+                        'name'       => __( 'Code de l\'événement', 'meta-box' ),
+                        'id'         => 'booking_id',
+                        'type'       => 'number',
+                    ),
+                ),
             ),
 
-            // Code Spectacle
+            // DIVIDER
             array(
-                'name'       => __( 'Code de l\'événement', 'meta-box' ),
-                'id'         => "{$prefix}event_booking_id",
+                'type' => 'divider',
+                'id'   => 'fake_divider_id', // Not used, but needed
+            ),
+
+            // Date de la séance
+            array(
+                'name'       => __( 'Première Date', 'meta-box' ),
+                'id'         => $prefix . 'firstdate',
+                'type'       => 'datetime',
+                'timestamp'     => true,
+                'js_options' => array(
+                    'stepMinute'     => 15,
+                    'showTimepicker' => true,
+                ),
+            ),
+            // Code résa de la séance
+            array(
+                'name'       => __( 'Code de la séance', 'meta-box' ),
+                'id'         => $prefix . 'booking_id',
                 'type'       => 'number',
+            ),
+
+            // DIVIDER
+            array(
+                'type' => 'divider',
+                'id'   => 'fake_divider_id', // Not used, but needed
             ),
 
             // Séances (Groupe(s))
             array(
-                'id'     =>  $prefix . 'dates',
-                'name'   => __( 'Séances (pour les événements', 'meta-box' ),
+                'id'     => $prefix . 'other_dates',
+                'name'   => __( 'Les autres séances', 'meta-box' ),
                 'type'   => 'group', 
                 'clone'  => true,   
                 'fields' => array(
@@ -176,9 +217,10 @@ function event_register_meta_boxes( $meta_boxes )
                     // Date de la séance
                     array(
                         'name'       => __( 'Date', 'meta-box' ),
-                        'id'         => $prefix . 'datetime',
+                        'id'         => 'date',
                         'type'       => 'datetime',
-                        'js_options' => array(
+                        'timestamp'     => false,
+                        'js_options'    => array(
                             'stepMinute'     => 15,
                             'showTimepicker' => true,
                         ),
@@ -186,7 +228,7 @@ function event_register_meta_boxes( $meta_boxes )
                     // Code résa de la séance
                     array(
                         'name'       => __( 'Code de la séance', 'meta-box' ),
-                        'id'         => $prefix . 'date_booking_id',
+                        'id'         => 'booking_id',
                         'type'       => 'number',
                     ),
                 ),
