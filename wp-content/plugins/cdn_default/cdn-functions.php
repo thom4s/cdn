@@ -23,7 +23,7 @@ if ( ! defined( 'CDN_WIDGETS_DIR' ) )
     define( 'CDN_WIDGETS_DIR', trailingslashit( CDN_DEFAULT_DIR . 'widgets' ) );
 
 
-  // REQUIRES 
+// REQUIRES 
   // EVENTS
 require_once CDN_POST_TYPES_DIR . 'event-post-type.php';
 require_once CDN_POST_TYPES_DIR . 'event-taxonomies.php';
@@ -41,13 +41,21 @@ add_theme_support( 'post-thumbnails' );
 add_filter('show_admin_bar', '__return_false');
 
 
+// Custom Query Vars
 function add_query_vars($aVars) {
-  $aVars[] = "pro"; // represents the name of the product category as shown in the URL
-return $aVars;
+  $aVars[] = "pro";
+  $aVars[] = "quoi";
+  return $aVars;
 }
- 
-// hook add_query_vars function into query_vars
 add_filter('query_vars', 'add_query_vars');
+
+function add_rewrite_rules($aRules) {
+  $aNewRules = array('saison/quoi/([^/]+)/?$' => 'index.php?pagename=saison&quoi=$matches[1]');
+  $aRules = $aNewRules + $aRules;
+  return $aRules;
+}
+add_filter('rewrite_rules_array', 'add_rewrite_rules');
+
 
 
 // Widget

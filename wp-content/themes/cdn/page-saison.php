@@ -12,6 +12,11 @@
     $introduction = rwmb_meta( $prefix_default . 'intro' );
     $subtitle = rwmb_meta( $prefix_default . 'subtitle' );
 
+    if(isset($wp_query->query_vars['quoi'])) {
+      $quoi = urldecode($wp_query->query_vars['quoi']);
+    }
+
+
 get_header(); ?>
 
   <div id="primary" class="content-area content-saison">
@@ -25,14 +30,14 @@ get_header(); ?>
 
           <ul class="calendar-filter clearfix">
             <?php 
-              $args = array(
+              $filter_args = array(
                 'hide_empty'         => 1,
                 'taxonomy'           => 'event_type',
                 'title_li'           => __( '<h2>Filtrer par : </h2>' ),
               );
             ?>
             
-            <?php wp_list_categories( $args ); ?>
+            <?php wp_list_categories( $filter_args ); ?>
 
           </div>
 
@@ -48,15 +53,16 @@ get_header(); ?>
             'post_type'       => 'event',
             'posts_per_page'  => -1,
             'status'          => 'published',
-            'tax_query'       => array(
-                array(
-                  'taxonomy' => 'event_type',
-                  'field'    => 'slug',
-                  'terms'    => array('recre'),
-                  'operator'  => 'NOT IN'
-                ),           
-            ),
           );
+
+          // Get query vars if existed
+          if ( get_query_var('quoi') ):
+            $args['tax_query'][] = array(
+                'taxonomy'  =>  'event_type',
+                'field'   =>  'slug',
+                'terms'   =>  preg_split("#,#", get_query_var('quoi'))
+              );
+          endif;
 
           // The Query
           $saison_events = new WP_Query( $args );

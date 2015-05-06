@@ -26,7 +26,7 @@ $args = array(
 
 if ( get_query_var('quoi') ):
   $args['tax_query'][] = array(
-      'taxonomy'  =>  $current_festival?'festival_event_category':'event_category',
+      'taxonomy'  =>  'event_type',
       'field'   =>  'slug',
       'terms'   =>  preg_split("#,#", get_query_var('quoi'))
     );
@@ -43,7 +43,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area content-saison">
 		<main id="main" class="site-main" role="main">
-
+POUET 
       <header class="entry-header bg">
         <div class="entry-header-inner l-12col l-first l-1col-push">
 

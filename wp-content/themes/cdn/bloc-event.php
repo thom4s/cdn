@@ -2,7 +2,7 @@
   if( is_page_template( 'page-production.php' ) ) { 
     $url = esc_url( add_query_arg( 'pro', 'yes', get_permalink() ) );
   } else {
-    $url_default = get_permalink();
+    $url = get_permalink();
   }
 
 ?>
