@@ -30,7 +30,7 @@
 
 	</header><!-- .entry-header -->
 
-	<div class="entry-content-project plain row">
+	<div class="entry-content-project content-part plain row">
 		<div class="l-8col l-1col-push l-first">
 			<?php the_content(); ?>
 		</div>

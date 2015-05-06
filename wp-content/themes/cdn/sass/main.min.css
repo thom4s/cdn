@@ -5307,6 +5307,9 @@ th {
 
 .project-team {
   text-align: right;
+  margin-right: -20px;
+  background: #FFF;
+  padding: 10px 20px 10px 0;
 }
 .project-team ul {
   margin: 0;
