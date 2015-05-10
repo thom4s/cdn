@@ -32,51 +32,8 @@ get_header(); ?>
         <?php the_content(); ?>
       </div><!-- .entry-content -->
       
-      <div class="row content-part">
-
-        <div class="l-1col-push l-11col l-first title-underline-gray">
-          <h2>Les créations du CDN</h2>
-          <div class="line-dotted"></div>
-        </div>
-
-
-        <?php
-           $args = array(
-            'post_type'       => 'event',
-            'posts_per_page'  => -1,
-            'status'          => 'published',
-            'tax_query'       => array(
-                array(
-                  'taxonomy' => 'event_type',
-                  'field'    => 'slug',
-                  'terms'    => array('recre'),
-                  'operator'  => 'NOT IN'
-                ),
-            ),
-          );
-
-          // The Query
-          $saison_events = new WP_Query( $args );
-
-          // The Loop
-          if ( $saison_events->have_posts() ) { ?>
-            <div class="row">
-
-            <?php while ( $saison_events->have_posts() ) {
-
-                $saison_events->the_post();
-                $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $post->ID );
-                $post_meta = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID );
-                $pro = true; ?>
-
-              <?php include(locate_template('bloc-event.php')); } ?>
-            
-            </div>
-
-          <?php
-          } else { }
-          wp_reset_postdata(); ?>
-      </div>
+      <!-- Get Related Content -->
+      <?php get_template_part('loop','related-content'); ?>
 
     </main><!-- #main -->
   </div><!-- #primary -->

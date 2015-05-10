@@ -50,15 +50,21 @@
 
               if($post_type == 'event'){
                 $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $linked_post_id );
+                $event_type = rwmb_meta(  $prefix_event . 'event_type', 'type=taxonomy&taxonomy=event_type', $linked_post_id );
                 $post_meta = rwmb_meta(  $prefix_event . 'event_date', array(), $linked_post_id );
+                $authors =  rwmb_meta( $prefix_event . 'authors', array(), $linked_post_id );
               }
               if($post_type == 'post'){
                 $post_meta = get_the_terms( $linked_post_id, 'category' );
                 $post_excerpt = $linked_post->post_excerpt;
+                $event_type = NULL;
+                $authors = NULL;
               }  
               if($post_type == 'page'){
                 $post_meta = get_the_terms( $linked_post_id, 'category' );
                 $post_excerpt = $linked_post->post_excerpt;
+                $event_type = NULL;
+                $authors = NULL;
               }  
 
               include(locate_template('bloc.php'));

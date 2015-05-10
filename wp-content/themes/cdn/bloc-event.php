@@ -14,7 +14,7 @@
       </div>
       
       <div class="bloc-content">
-        <div class="meta">
+        <div class="meta entry-datas">
           <?php
             $i = 0;
             if( is_array($event_type) ){
@@ -33,11 +33,11 @@
         </div>
         
         <h3 class="item-event-title"><?php the_title(); ?></h3>
-        <div class="meta">
+        <div class="meta entry-authors">
           <?php 
             if( is_array($authors) ) {
               foreach ( $authors as $author ) { 
-                echo '<span class="meta-author">' . $author['name'] . '</span>'; 
+                echo '<span class="meta-author">' . $author['name'] . '</span><br>'; 
               }
             }
           ?>

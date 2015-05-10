@@ -7,7 +7,20 @@
       </div>
       
       <div class="bloc-content">
-        <div class="meta">
+
+        <div class="meta entry-datas">
+          <?php if( isset($event_type) ) {
+            $i = 0;
+            foreach ($event_type as $type) {
+                if($i > 0) {
+                  echo ' - ';
+                }
+                echo $type->name;
+                $i++;
+              }
+              echo '<br>';
+          } ?>
+
           <?php if( is_array($post_meta) ){
             foreach ($post_meta as $meta) {
               echo $meta->name;
@@ -15,11 +28,24 @@
           } else {
             echo $post_meta; 
           } ?>
-        </div>
+        </div><!-- .entry-datas -->
         
         <h3><?php echo $post_title ?></h3>
-        <p><?php echo $post_excerpt ?></p>
-      </div>
+
+        <?php if( isset($authors) ) { ?>
+          <div class="meta entry-authors">
+            <?php 
+              if( is_array($authors) ) {
+                foreach ( $authors as $author ) { 
+                  echo '<span class="meta-author">' . $author['name'] . '</span><br>'; 
+                }
+              }
+            ?>
+          </div><!-- .entry-authors -->
+        <?php } else { } ?>
+
+        <div><?php echo $post_excerpt ?></div>
+      </div><!-- .bloc-content -->
 
     <?php if($linked_post_has_link) { ?></a><?php } ?>
   </article><!-- end article-->

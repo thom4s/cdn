@@ -48,22 +48,23 @@
 
 
 
-.item-event {
 
-  .meta {
+
+  .entry-datas {
     @include fontsize(15);
     line-height: 16px;
     margin-bottom: 5px;
   }
-  h3 {
-    @include fontsize(26);
+  .entry-authors {
+    margin-bottom: 11px;
   }
-  .meta-author {
-    display: inline-block;
-    clear: both;
-    color: $gray_darker;
-  }
-}
+    .meta-author {
+      display: inline-block;
+      clear: both;
+      color: $gray_darker;
+      @include fontsize(14);
+    }
+
 
 
 

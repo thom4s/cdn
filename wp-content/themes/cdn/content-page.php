@@ -36,10 +36,6 @@
 	</div><!-- .entry-content -->
 
 	<!-- Get Related Content -->
-  <?php 
-  	if(!$blocks_displayed) {
-			get_template_part('loop','related-content'); 
-  	}
- 	?>
+  <?php get_template_part('loop','related-content'); ?>
 
 </article><!-- #post-## -->
