@@ -11,6 +11,8 @@
     $has_bg =	rwmb_meta( $prefix . 'title-bg' );
 		$introduction =	rwmb_meta( $prefix . 'intro' );
 		$subtitle =	rwmb_meta( $prefix . 'subtitle' );
+		
+		global $blocks_displayed;
 
 ?>
 
@@ -34,6 +36,10 @@
 	</div><!-- .entry-content -->
 
 	<!-- Get Related Content -->
-  <?php get_template_part('loop','related-content'); ?>
+  <?php 
+  	if(!$blocks_displayed) {
+			get_template_part('loop','related-content'); 
+  	}
+ 	?>
 
 </article><!-- #post-## -->

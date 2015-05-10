@@ -189,6 +189,35 @@ remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 
 /**
+ * SHORTCODES NOT WORKING // UNFINISHED
+ */
+
+function get_blocks_shortcode($atts) {
+ 
+  	// Get attributes
+  $a = shortcode_atts( array(
+        'pages' => '140',
+    ), $atts );
+
+  $pages_id = $a['pages'];
+
+  // Medias attributes
+  $get_pages = get_posts(array(
+    'post_type'   	=> array('event', 'page', 'post'),
+    'include'				=> $pages_id,
+  ));
+
+  if ($get_pages){ 
+    ob_start(); 
+    get_template_part('loop','related-content');
+    $blocks_displayed = true;
+    return ob_get_clean();
+  }
+}
+add_shortcode( 'get_blocks', 'get_blocks_shortcode' );
+
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
