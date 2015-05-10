@@ -27,7 +27,7 @@
 
 	<?php the_post_thumbnail( 'page-media' ); ?> 
 
-	<div class="entry-content l-8col l-1col-push l-first">
+	<div class="entry-content content-part l-8col l-1col-push l-first">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
