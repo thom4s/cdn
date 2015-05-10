@@ -17,3 +17,8 @@ a:focus,
 a:active {
 	color: $color_link_hover;
 }
+
+p a {
+  color: #000;
+  border-bottom: 1px dotted $red;
+}

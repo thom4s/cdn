@@ -59,7 +59,7 @@ function cdn_setup() {
 	add_image_size( 'event-media', 894, 500, true ); 
 	add_image_size( 'bloc-thumb-2col', 9999, 300 );
 	add_image_size( 'page-media', 900 ); 
-	add_image_size( 'bloc-thumb', 276 ); 
+	add_image_size( 'bloc-thumb', 290 ); 
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'cdn_custom_background_args', array(
@@ -233,6 +233,7 @@ function group_by_post_type($orderby, $query) {
 function search_filter($query) {
   if ( !is_admin() && $query->is_main_query() ) {
     if ($query->is_search) {
+      $query->set('post_type', array('event', 'page', 'post') );
       $query->set('tax_query', array(
       	array( 
       		'taxonomy' => 'event_cat',

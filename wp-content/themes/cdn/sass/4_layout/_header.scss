@@ -24,6 +24,11 @@
     color: inherit;
     text-decoration: none;
   }
+ 
+  &:after {
+    display: block;
+    background-image: url('../img/arrow_blue.png');
+  }
 }
  
 
