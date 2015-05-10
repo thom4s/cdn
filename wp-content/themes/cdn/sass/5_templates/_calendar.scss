@@ -5,22 +5,35 @@
 .calendar-filter {
   margin: 0;
   padding: 0;
-  list-style: none;
   margin-bottom: 22px;
   
-  h2 {
+  h4 {
+    @extend %sprite;
+    background-position: -38px 0px;
     margin-bottom: 0;
+    margin-right: 11px;
+    float: left;
+    color: #fff;
+  }
+
+  & > li {
+    display: inline-block;
+    float: left;
   }
 
   ul {
-    list-style: none;
+    display: inline-block;
+    float: left;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 22px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px dotted #000;
   }
   .cat-item {
     font-family: $font_family_meta;
-    display: inline-block;
+    font-weight: 700;
     float: left; 
-    margin-right: 11px;
+    margin-right: 33px;
   }
 }

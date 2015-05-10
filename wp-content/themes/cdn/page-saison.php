@@ -39,24 +39,23 @@
         );
     endif;
 
-
 get_header(); ?>
 
   <div id="primary" class="content-area content-saison">
     <main id="main" class="site-main" role="main">
 
       <header class="entry-header bg">
-        <div class="entry-header-inner l-12col l-first l-1col-push">
+        <div class="entry-header-inner">
 
-          <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-          <p class="post-excerpt"><?php echo $introduction; ?></p>
+          <?php the_title( '<h1 class="entry-title l-12col l-first l-1col-push">', '</h1>' ); ?>
+          <div class="post-excerpt l-12col l-first l-1col-push"><?php echo $introduction; ?></div>
 
-          <ul class="calendar-filter clearfix">
+          <ul class="calendar-filter l-15col l-first l-1col-push clearfix">
             <?php 
               $filter_args = array(
                 'hide_empty'         => 1,
                 'taxonomy'           => 'event_type',
-                'title_li'           => __( '<h2>Afficher uniquement : </h2>' ),
+                'title_li'           => __( '<h4>Filtrer par </h4>' ),
               );
             ?>
             
@@ -66,7 +65,6 @@ get_header(); ?>
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
 
-      
         <?php
 
           // The Query
@@ -83,9 +81,9 @@ get_header(); ?>
                 $event_type = rwmb_meta(  $prefix_event . 'event_type', 'type=taxonomy&taxonomy=event_type', $post->ID );
                 $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $post->ID );
                 $dates = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID ); 
-                $authors =  rwmb_meta( $prefix_event . 'authors', array(), $post->ID ); ?>
+                $authors =  rwmb_meta( $prefix_event . 'authors', array(), $post->ID );
 
-              <?php include(locate_template('bloc-event.php')); } ?>
+                include(locate_template('bloc-event.php')); } ?>
 
             </div>
 
@@ -93,10 +91,7 @@ get_header(); ?>
           } else { }
           wp_reset_postdata(); ?>
 
-
-
     </main><!-- #main -->
   </div><!-- #primary -->
-
 <?php get_footer(); ?>
 
