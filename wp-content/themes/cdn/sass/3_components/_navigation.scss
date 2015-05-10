@@ -64,3 +64,11 @@
 		display: block;
 	}
 }
+
+.calendar-filter {
+
+	.active {
+		@include transition(all 0.1s);
+		color: $red;
+	}
+}
