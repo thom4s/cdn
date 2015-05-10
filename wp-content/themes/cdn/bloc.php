@@ -44,7 +44,7 @@
           </div><!-- .entry-authors -->
         <?php } else { } ?>
 
-        <div><?php echo $post_excerpt ?></div>
+        <div class="entry-intro"><?php echo $post_excerpt ?></div>
       </div><!-- .bloc-content -->
 
     <?php if($linked_post_has_link) { ?></a><?php } ?>

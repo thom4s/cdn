@@ -10,7 +10,12 @@
   @include box-sizing();
   float: left;
   margin-bottom: $base_line_height;
-  padding: 1%;
+  border-radius: 5px;
+  overflow: hidden;
+
+-webkit-box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.75);
+box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.75);
 
   // COLS FOR BLOCS
   &.l-8col{
@@ -46,6 +51,9 @@
   }
 }
 
+  .bloc-content {
+    padding: 5px 5px 11px 5px;
+  }
 
 
 
@@ -65,7 +73,9 @@
       @include fontsize(14);
     }
 
-
+  .entry-intro {
+    @include fontsize(15);
+  }
 
 
 
