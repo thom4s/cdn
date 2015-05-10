@@ -32,7 +32,7 @@
   }
   &.l-4col {
   } 
-
+ 
   &:hover {
   }
 
@@ -56,6 +56,9 @@
 /* These are the classes that are going to be applied: */
 .column { float: left; }
 
+.size-1of3 {
+  @extend .l-4col;
+}
 
 .grid-item {
   float: none;
