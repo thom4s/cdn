@@ -218,6 +218,44 @@ add_shortcode( 'get_blocks', 'get_blocks_shortcode' );
 
 
 /**
+ * FILTER SEARCH RESULTS BY POST TYPE
+ */
+add_filter('posts_orderby', 'group_by_post_type', 10, 2);
+function group_by_post_type($orderby, $query) {
+    global $wpdb;
+    if ($query->is_search) {
+        return $wpdb->posts . '.post_type ASC';
+    }
+    // provide a default fallback return if the above condition is not true
+    return $orderby;
+}
+
+function search_filter($query) {
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ($query->is_search) {
+      $query->set('tax_query', array(
+      	array( 
+      		'taxonomy' => 'event_cat',
+      		'field'    => 'slug',
+      		'terms'    => array( 'recre', 'rencontre' ),
+					'operator' => 'NOT IN',
+      	)
+      ));
+      $query->set('post__not_in', array('35') );
+    }
+  }
+}
+
+add_action('pre_get_posts','search_filter');
+
+
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
