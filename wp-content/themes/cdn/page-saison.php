@@ -63,7 +63,6 @@ get_header(); ?>
             <?php wp_list_categories( $filter_args ); ?>
 
           </div>
-
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
 
@@ -75,15 +74,16 @@ get_header(); ?>
 
           // The Loop
           if ( $saison_events->have_posts() ) { ?>
-            <div class="row">
+            <div id="grid" class="row" data-columns>
 
             <?php while ( $saison_events->have_posts() ) {
 
                 $saison_events->the_post();
                 $firstdate = rwmb_meta(  $prefix_event . 'firstdate', array(), $post->ID );
-
+                $event_type = rwmb_meta(  $prefix_event . 'event_type', 'type=taxonomy&taxonomy=event_type', $post->ID );
                 $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $post->ID );
-                $post_meta = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID ); ?>
+                $dates = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID ); 
+                $authors =  rwmb_meta( $prefix_event . 'authors', array(), $post->ID ); ?>
 
               <?php include(locate_template('bloc-event.php')); } ?>
 

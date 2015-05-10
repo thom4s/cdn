@@ -40,12 +40,27 @@ function event_register_meta_boxes( $meta_boxes )
         'fields'     => array(
             // AUTHORS
             array(
-                'name'  => __( 'Auteurs', 'meta-box' ),
-                'id'    => "{$prefix}authors",
-                'desc'  => __( 'Cliquez sur le + pour ajouter une ligne', 'meta-box' ),
-                'type'  => 'text',
-                'std'   => __( 'texte ', 'meta-box' ),
-                'clone' => true,
+                'name'      => __( 'Auteur(s)', 'meta-box' ),
+                'id'        => "{$prefix}authors",
+                'type'      => 'group',
+                'clone'     => true,
+                'fields'    => array(
+
+                     // 'Qualtificatif' de l'auteur
+                    array(
+                        'name'          => __( '"Qualitificatif" de l\'auteur', 'meta-box' ),
+                        'id'            => 'quali',
+                        'type'          => 'text',
+                        'std'           => 'Texte de',
+                    ),
+
+                    // Nom de l'auteur
+                    array(
+                        'name'       => __( 'Nom de l\'auteur', 'meta-box' ),
+                        'id'         => 'name',
+                        'type'       => 'text',
+                    ),
+                ),
             ),
             // INTRODUCTION
             array(

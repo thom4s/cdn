@@ -6,7 +6,7 @@
   }
 
 ?>
-  <article class="grid-item related-post bloc-outer l-4col">
+  <article class="grid-item item-event bloc-outer">
     <a href="<?php echo $url; ?>">
       
       <div class="bloc-img">
@@ -15,16 +15,33 @@
       
       <div class="bloc-content">
         <div class="meta">
-          <?php if( is_array($post_meta) ){
-            foreach ($post_meta as $meta) {
-              echo $meta->name;
+          <?php
+            $i = 0;
+            if( is_array($event_type) ){
+              foreach ($event_type as $type) {
+                if($i > 0) {
+                  echo ' - ';
+                }
+                echo $type->name;
+                $i++;
+              }
+            } else {
+              echo $event_type;
             }
-          } else {
-            echo $post_meta; 
-          } ?>
+            echo '<br>' . $dates; 
+          ?>
         </div>
         
-        <h3><?php the_title(); ?></h3>
+        <h3 class="item-event-title"><?php the_title(); ?></h3>
+        <div class="meta">
+          <?php 
+            if( is_array($authors) ) {
+              foreach ( $authors as $author ) { 
+                echo '<span class="meta-author">' . $author['name'] . '</span>'; 
+              }
+            }
+          ?>
+        </div>
         <div><?php echo $post_excerpt; ?></div>
       </div>
 

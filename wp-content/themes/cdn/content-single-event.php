@@ -93,9 +93,10 @@
     <div class="row">
       <div class="entry-titles l-7col l-first l-1col-push">
         <?php the_title( '<h1 class="event-title">', '</h1>' ); ?>
-        
-        <?php foreach ( $authors as $author ) { echo '<span class="meta event-authors">' . $author . '</span>'; } ?>
-        
+        <?php 
+          foreach ( $authors as $author ) { 
+            echo '<span class="meta event-authors">' . $author['quali'] . ' ' . $author['name'] . '</span>'; }
+        ?>
         <?php echo $intro; ?>
       </div>
 

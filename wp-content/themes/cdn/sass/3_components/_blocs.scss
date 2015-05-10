@@ -44,9 +44,32 @@
   ul {
     @include fontsize(15);
   }
-
 }
 
+
+
+.item-event {
+
+  .meta {
+    @include fontsize(15);
+    line-height: 16px;
+    margin-bottom: 5px;
+  }
+  h3 {
+    @include fontsize(26);
+  }
+  .meta-author {
+    display: inline-block;
+    clear: both;
+    color: $gray_darker;
+  }
+}
+
+
+
+
+// SALVATTORE GRID
+// http://salvattore.com/
 
 #grid[data-columns]::before {
   content: '3 .column.size-1of3';
@@ -62,4 +85,5 @@
 
 .grid-item {
   float: none;
+  @include transition(all 0.2s);
 }
