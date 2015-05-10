@@ -4,7 +4,7 @@ Donate link: http://www.deluxeblogtips.com/donate
 Tags: meta-box, custom-fields, custom-field, meta, meta-boxes
 Requires at least: 3.5
 Tested up to: 4.2.1
-Stable tag: 4.5.1
+Stable tag: 4.5.2
 License: GPLv2 or later
 
 Meta Box plugin is a complete tool to create meta box and custom fields in WordPress: lightweight, powerful and easy-to-use.
@@ -68,6 +68,12 @@ To getting started with the plugin API, please read [this tutorial](http://metab
 1. Post Taxonomy Fields
 
 == Changelog ==
+
+= 4.5.2 =
+* Improvement: Add Persian (Farsi) language. Thank Ahmad Azimi.
+* Improvement: Update Spanish translation. Thank David Perez.
+* Fix: Cloning text fields
+* Fix: rwmb_meta works incorrectly for image fields if multiple=false
 
 = 4.5.1 =
 * Improvement: Add ability to use multiple post types for `post` field
