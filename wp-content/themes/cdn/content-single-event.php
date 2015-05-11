@@ -34,10 +34,14 @@
 
     // Other Dates
     $other_dates = rwmb_meta(  $prefix . 'other_dates' );
+
     foreach ($other_dates as $date) {
       $date_string = $date["date"];
-      $date["date"]= strtotime($date_string);
-      $the_dates[] = $date;
+      if($date_string != '') {
+        $date["date"]= strtotime($date_string);
+        $the_dates[] = $date;    
+      } 
+
     }
 
     // Générique
