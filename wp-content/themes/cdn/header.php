@@ -21,7 +21,7 @@
 <div id="page" class="hfeed site">
 
 	<div class="wrap row">
-
+		
 		<?php
 		if ( is_front_page() ) {
 		    // This is the blog posts index
@@ -32,4 +32,4 @@
 		}
 		?>
 
-		<div id="content" class="site-content l-12col l-last">
+		<div id="content" class="site-content l-12col l-last m-12col m-last">

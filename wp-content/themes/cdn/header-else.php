@@ -9,8 +9,21 @@
    
 ?>
 
-  <header id="masthead" class="site-header l-4col l-first" role="banner">
+  <div class="navigation-trigger">
+      <a id="trigger-in" class="hamburger-menu">
+        <div class="ham-sprite sprite-boxed"></div>
+        <span>Menu</span>
+      </a>
 
+      <div class="logo">
+        <h1 class="site-title">
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+        </h1>
+      </div>
+  </div>
+
+  <header id="masthead" class="site-header collapsed l-4col l-first m-4col m-first" role="banner">
+    <div id="trigger-out" class=" sprite-boxed"></div>
     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>  
 
     <nav id="site-navigation" class="main-navigation" role="navigation">

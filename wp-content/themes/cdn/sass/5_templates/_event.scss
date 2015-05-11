@@ -8,10 +8,15 @@
   padding-top: 0;
   margin-bottom: 44px; 
 
-  p {
-    margin-top: 22px; }
+  p { margin-top: 22px; }
 }
   
+  .entry-titles {
+    
+    @include up-to(large) {
+      padding-left: 5px
+    }
+  }
   .event-title {
     margin-top: 22px;
     margin-bottom: 11px; }
@@ -38,6 +43,10 @@
       li {
         margin: 0;
         padding: 0; }
+
+      @include up-to(large) {
+        padding-right: 5px
+      }
     }
 
     .event-dates {

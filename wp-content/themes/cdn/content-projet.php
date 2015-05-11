@@ -31,11 +31,11 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content-project content-part plain row">
-		<div class="l-8col l-1col-push l-first">
+		<div class="m-8col l-1col-push m-first">
 			<?php the_content(); ?>
 		</div>
 
-		<div class="project-team l-4col l-last">
+		<div class="project-team m-4col m-last">
 			<?php echo $projet_equipe; ?>
 		</div>
 

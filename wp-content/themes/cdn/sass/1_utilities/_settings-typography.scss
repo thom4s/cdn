@@ -86,7 +86,6 @@ $typos_map: (
   p: (
     use: "This is the body copy. ",
     font-family: $font_family_paragraph,
-    font-size: 1.6rem,
     line-height: $base_line_height,
     margin: 0 0 $base_line_height 0,
  ),
@@ -99,7 +98,6 @@ $typos_map: (
   ul: (
     use: "u lists",
     font-family: $font_family_title,
-    font-size: 1.6rem,
     line-height: $base_line_height,
   ),
   h1: (
@@ -165,6 +163,7 @@ textarea {
 }
 p {
   margin-bottom: $base_line_height;
+  @include fontsize(16);
 }
 b, strong {
   font-weight: bold;
@@ -220,7 +219,9 @@ small {
 big {
   font-size: 125%;
 }
-
+ul {
+  @include fontsize(16);
+}
 
 /*
  * CLASSES & SPECIALS

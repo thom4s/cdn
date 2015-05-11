@@ -59,7 +59,7 @@ function cdn_setup() {
 	add_image_size( 'event-media', 894, 500, true ); 
 	add_image_size( 'bloc-thumb-2col', 9999, 300 );
 	add_image_size( 'page-media', 900 ); 
-	add_image_size( 'bloc-thumb', 290 ); 
+	add_image_size( 'bloc-thumb', 370 ); 
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'cdn_custom_background_args', array(
@@ -116,7 +116,7 @@ function cdn_widgets_init() {
 		'name'          => __( 'Footer supérieur', 'cdn' ),
 		'id'            => 'upper-footer',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="bloc-buttons widget l-4col %2$s">',
+		'before_widget' => '<aside id="%1$s" class="bloc-buttons widget m-4col %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',

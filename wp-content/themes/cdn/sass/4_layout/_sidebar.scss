@@ -68,3 +68,11 @@
     color: #000;
   }
 }
+
+.widget-commun  {
+
+  @include up-to(medium) {
+    display: none;
+  }
+}
+

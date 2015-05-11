@@ -1,11 +1,9 @@
 <?php
-
     $prefix_event = 'event_meta_';
     $prefix_default = 'defaults_meta_';
 
     // Linked Posts
     if ($featured_event_id = rwmb_meta(  $prefix_default . 'hpfeatured-id', get_the_ID() ) ):
-
       $featured_event = get_post($featured_event_id);
       $event_title = $featured_event->post_title;
       $event_excerpt = $featured_event->post_excerpt;
@@ -15,11 +13,14 @@
 ?>
 
   <header class="site-branding-home plain">
-    <h1 class="site-title-home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-    <div class="home-featured plain">
-      
+    <h1 class="site-title-home">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+        <?php bloginfo( 'name' ); ?>
+      </a>
+    </h1>
+    
+    <div class="home-featured plain">  
       <?php echo get_the_post_thumbnail( $featured_event_id, 'home-featured', '' ); ?>
-
       <a href="<?php echo $event_url; ?>">
         <div class="featured-title">
           <div class="meta"><?php echo $event_dates; ?></div>
@@ -29,16 +30,15 @@
       </a>
     </div>   
   </header><!-- .site-branding -->
-
   <?php endif; ?>
 
-  <header id="masthead" class="site-header l-4col l-first" role="banner">
+  <header id="masthead" class="site-header l-4col l-first m-4col m-first" role="banner">
     <nav id="site-navigation" class="main-navigation" role="navigation">
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
-    <?php get_search_form( ); ?>
-
-    <?php dynamic_sidebar( 'hp-aside' ); ?>
-    
+    <div class="header-group">
+      <?php get_search_form( ); ?>
+      <?php dynamic_sidebar( 'hp-aside' ); ?>
+    </div>
   </header><!-- #masthead -->
 

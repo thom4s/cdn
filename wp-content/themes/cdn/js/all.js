@@ -9982,29 +9982,37 @@ jQuery(function($) {
 
 
 
-  $('.bxslider-video').bxSlider({
-    video: true,
-    useCSS: false,
-    pager: false,
-    controls: true,
-    auto: false,
-    nextText: '',
-    prevText: '',
-    onSliderLoad: function(currentIndex){
-      $('.event-slider').css('opacity', '1');
-    }
-  });
+    $('.bxslider-video').bxSlider({
+      video: true,
+      useCSS: false,
+      pager: false,
+      controls: true,
+      auto: false,
+      nextText: '',
+      prevText: '',
+      onSliderLoad: function(currentIndex){
+        $('.event-slider').css('opacity', '1');
+      }
+    });
 
 
-  var str=location.href.toLowerCase();
-  console.log(str);
-  $(".calendar-filter .cat-item a").each(function() {
-    if (str.indexOf(this.href.toLowerCase()) > -1) {
-      $(this).parent().addClass("active");
-    }
-  });
+    var str=location.href.toLowerCase();
+    $(".calendar-filter .cat-item a").each(function() {
+      if (str.indexOf(this.href.toLowerCase()) > -1) {
+        $(this).parent().addClass("active");
+      }
+    });
  
 
+    var trigger_in = $('#trigger-in');
+    var trigger_out = $('#trigger-out');
+
+    trigger_in.click(function(){
+      $('.collapsed').show();
+    });
+    trigger_out.click(function(){
+      $('.collapsed').hide();
+    });
 
   });
 });

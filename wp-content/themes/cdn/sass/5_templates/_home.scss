@@ -19,6 +19,9 @@
       color: #fff;
       @include fontsize(45);
       line-height: 4rem;
+      @include up-to(medium) {
+        display: block;
+      }
     }
     .home-featured {
       height: 100%;

@@ -52,8 +52,22 @@
   }
 }
 
+  .bloc-img {
+    @include box-sizing();
+
+    @include up-to(medium) {
+      width: 45%;
+      float: left;
+    }
+  }
   .bloc-content {
+    @include box-sizing();
     padding: 5px 5px 11px 5px;
+    
+    @include up-to(medium) {
+      width: 53%;
+      float: right;
+    }
   }
 
 
@@ -84,8 +98,14 @@
 // http://salvattore.com/
 
 #grid[data-columns]::before {
-  content: '3 .column.size-1of3';
-  display: none;
+  @include at-least(large){
+    content: '3 .column.size-1of3';
+    display: none;
+  }
+  @include up-to(large) {
+    content: '2 .column.size-1of2';
+    display: none;
+  }
 }
 
 /* These are the classes that are going to be applied: */
@@ -94,6 +114,10 @@
 .size-1of3 {
   @extend .l-4col;
 }
+.size-1of2 {
+  @extend .m-6col;
+}
+
 
 .grid-item {
   float: none;

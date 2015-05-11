@@ -15,7 +15,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header row <?php if($has_bg){ echo 'bg'; } ?> ">
-		<div class="entry-header-inner l-12col l-first l-1col-push">
+		<div class="entry-header-inner l-12col l-first l-1col-push m-12col m-first m-1col-push ">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<h5><?php echo $subtitle; ?></h5>
 			<div class="post-excerpt"><?php echo $introduction; ?></div>
@@ -38,13 +38,10 @@
 		<?php the_content(); ?>
 
 		<?php 
-		foreach ($blocs as $bloc) {			
-			$bloc_title = $bloc['title'];
-			$bloc_main = $bloc['main']; ?>
+		foreach ($blocs as $bloc) { ?>
 
-			<div class="acces-item l-4col">
-				<h2><?php echo $bloc_title; ?></h2>
-				<div><?php echo $bloc_main; ?></div>
+			<div class="acces-item m-4col">
+				<div><?php echo $bloc; ?></div>
 			</div><!-- .acces-item -->
 		<?php	} // end foreach ?>
 

@@ -19,8 +19,8 @@
     aside {
 
       &:last-child {
-        @extend %l-5col;
-        @extend %l-last;
+        @extend %m-last;
+        @extend %m-5col;
       }
     }
 
@@ -31,8 +31,22 @@
     a {
       color: inherit;
     }
-
   }
+    .footer-contacts-inner {
+      @include box-sizing();
+
+      @include up-to(medium) {
+        padding: 0 10%;
+      }
+    }
+    .widget_newsletter_submission {
+        @extend %m-5col;
+    }
+    .widget:last-child {
+      @include up-to(medium) {
+        margin-bottom: 0;
+      }
+    }
 
   .footer-infos { 
     background-color: $blue_darker;
@@ -51,9 +65,12 @@
       margin-bottom: 20px;
     }
   }
-    .footer-infos-first {
+    .row .footer-infos-first {
+      @include at-least(medium) {
+        left: 0;
+      }
     }
-    .footer-infos-second {
+    .row .footer-infos-second {
     }
-    .footer-infos-third {
+    .row .footer-infos-third {
     }

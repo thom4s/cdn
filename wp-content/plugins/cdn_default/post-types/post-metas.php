@@ -322,6 +322,7 @@ function defaults_register_meta_boxes( $meta_boxes )
       array(
         'id'     =>  $prefix . 'price_bloc',
         'name'   => __( '', 'meta-box' ),
+        'desc'  => __( 'Les champs texte fonctionnent uniquement en texte brut. A savoir : vérifiez que l\'onglet des champs est bien sur "Texte" et non "Visuel". A vous de mettre en forme le texte avec les "balises" HTML. <br /> Quelques indispensables : <br> - &lt;strong&gt; Texte en gras &lt;/strong&gt; <br> - &lt;h3&gt; Un titre &lt;/h3&gt; <br> - &lt;ul&gt; <br> &lt;li&gt; Un élément de liste &lt;/li&gt; <br> &lt;li&gt; Un autre élément de liste &lt;/li&gt; <br> &lt;/ul&gt; <br> - &lt;p&gt; un paragraphe &lt;/p&gt; <br> - pour sauter une ligne : &lt;br&gt;', 'meta-box' ),
         'type'   => 'group', 
         'clone'  => true,   
         'fields' => array(
@@ -402,30 +403,13 @@ function defaults_register_meta_boxes( $meta_boxes )
       // Content
       array(
         'id'     =>  $prefix . 'acces_bloc',
-        'name'   => __( '', 'meta-box' ),
-        'type'   => 'group', 
-        'clone'  => true,   
-        'fields' => array(
-
-          // TITLE
-          array(
-            'name'          => __( 'Titre de la partie', 'meta-box' ),
-            'id'            => "title",
-            'type'          => 'text',
-          ),
-
-          // MAIN
-          array(
-            'name'          => __( 'Le contenu', 'meta-box' ),
-            'id'            => "main",
-            'type'          => 'wysiwyg',
-            'options' => array(
-              'textarea_rows' => 6,
-              'teeny'         => false,
-              'media_buttons' => false,
-            ),
-          ),
-
+        'name'   => __( 'Contenu', 'meta-box' ),
+        'type'   => 'wysiwyg', 
+        'clone'  => true,  
+        'options' => array(
+          'textarea_rows' => 6,
+          'teeny'         => false,
+          'media_buttons' => false,
         ),
       ),
     ),
@@ -433,7 +417,7 @@ function defaults_register_meta_boxes( $meta_boxes )
 
 
 
-  // Pour template Accès
+  // Pour template LE PROJET
   $meta_boxes[] = array(
     'title'  => __( 'Contenus de la page LE PROJET', 'meta-box' ),
     'id'         => 'blocs-acces',

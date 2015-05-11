@@ -48,11 +48,11 @@
 					<div class="line-dotted"></div>
 				</div>
 
-				<div class="price-item-main l-7col l-first">
+				<div class="price-item-main m-7col m-first">
 					<?php echo $bloc_main; ?>
 				</div><!-- .price-item-main -->
 				
-				<div class="price-item-aside l-4col l-last">
+				<div class="price-item-aside m-4col m-last">
 					<?php echo $bloc_aside; ?>
 
 					<div class="bloc-buttons bg-practical">

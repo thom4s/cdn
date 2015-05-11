@@ -7,11 +7,18 @@
 
 
 .main-navigation {
+	@include box-sizing();
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
 	margin-top: $base_line_height;
+
+	@include up-to(medium) {
+		padding-left: 5px;
+		width: 50%;
+		margin-top: 66px;
+	}
 }
 	.main-navigation ul {
 		list-style: none;
@@ -24,7 +31,12 @@
 			float: left;
 			position: relative;
 			clear: both;
-			margin-bottom: 10px;
+			margin-bottom: 11px;
+
+			@include up-to(medium) {
+				margin-bottom: 22px; 
+			}
+
 		}
 			.main-navigation a {
 				display: block;
@@ -51,20 +63,26 @@
 		.main-navigation ul ul a {
 		  @include fontsize(18);		
 		}
-
-.main-navigation ul li:hover > ul {
-}
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a {
 	color: $color_link_hover;
 }
-
 .current_page_ancestor {
-	.sub-menu {
-		display: block;
+	.sub-menu { display: block; }
+}
+
+
+// HEADER GROUP : searchform & various buttons
+.header-group {
+
+	@include up-to(medium) {
+		width: 50%;
+		float: left;
 	}
 }
 
+
+// CALENDAR FILTER
 .calendar-filter {
 
 	.active {
@@ -72,3 +90,97 @@
 		color: $red;
 	}
 }
+
+
+// MENU MOBILE
+.navigation-trigger {
+	@include box-sizing();
+	width: 100%;
+	float: left;
+	padding: 5px 0;
+
+	.hamburger-menu {
+		display: block;
+		width: 50%;
+		float: left;
+		text-align: center;
+		height: 40px;
+
+		&:hover {
+			cursor: pointer;
+		}
+		span {
+			line-height: 40px;
+			height: 40px;
+			display: inline-block;
+		}
+	}
+
+	.logo {
+		width: 50%;
+		float: right;
+		h1 {
+			margin: 0;
+			@include fontsize(35);
+		}
+	}
+	.site-title {
+		display: block;
+		@include fontsize(25);
+	}
+
+	@include at-least(medium){
+		display: none;
+	}
+}
+	#trigger-out {
+		display: none;
+		position: absolute;
+		right: 11px;
+		top: 11px;
+
+		&:hover {
+			cursor: pointer;
+		}
+		@include up-to(medium) {
+			display: block;
+		}
+	}
+
+
+.collapsed {
+
+	@include up-to(medium){
+		@include box-sizing();
+		display: none;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		min-height: 100%;
+		width: 80%;
+		padding: 0 11px;
+		background: $bg-color;
+		color: #fff;
+		border-right: 2px solid #000;
+		border-bottom: 2px solid #000;
+	}
+
+	.main-navigation {
+		@include up-to(medium) {
+			width: 100%;
+		}	
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -7,16 +7,21 @@
 
 
 .site {
-  background-color: #E1E3E4;
+  background-color: $bg-color;
 }
 
   .site-content {
     background-color: #fff;
     padding-bottom: 66px;
+
   }
 
     .entry-content {
       @include clearfix();
+
+      @include up-to(large) {
+        padding: 0 5px;
+      }
     }
 
     .related-content {
@@ -27,9 +32,10 @@
     .entry-footer {
       
       p {
+        @extend %m-10col;
+        @extend %m-1col-push;
+        @extend %m-first;
         @extend %l-8col;
-        @extend %l-1col-push;
-        @extend %l-first;
       }
     }
 

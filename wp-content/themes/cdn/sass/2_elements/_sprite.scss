@@ -49,3 +49,13 @@ $y: -48px;
 }
 
 
+.ham-sprite {
+  @extend %sprite;
+  display: inline-block;
+  background-position: 0 ( $y * 3 );
+}
+
+#trigger-out {
+  @extend %sprite;
+  background-position: $x ( $y * 3 );
+}

@@ -4,6 +4,9 @@
     padding-right: 75px;
   }
 
+  @include up-to(large){
+    padding: 5px;
+  }
 }
 
 .project-team {
@@ -23,5 +26,10 @@
     margin: 0;
     padding: 0; 
   }
+
+  @include up-to(large){
+    margin-right: 0;
+  }
+
 }
 

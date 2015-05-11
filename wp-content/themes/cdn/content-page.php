@@ -19,7 +19,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header row <?php if($has_bg){ echo 'bg'; } ?> ">
-		<div class="entry-header-inner l-12col l-first l-1col-push">
+		<div class="entry-header-inner m-12col m-first m-1col-push">
 
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<h5><?php echo $subtitle; ?></h5>
@@ -31,7 +31,7 @@
 
 	</header><!-- .entry-header -->
 
-	<div class="entry-content content-part l-8col l-1col-push l-first">
+	<div class="entry-content content-part m-9col l-8col m-1col-push m-first">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 

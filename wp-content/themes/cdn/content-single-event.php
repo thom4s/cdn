@@ -91,7 +91,7 @@
     <?php } ?>
 
     <div class="row">
-      <div class="entry-titles l-7col l-first l-1col-push">
+      <div class="entry-titles m-7col m-first l-1col-push">
         <?php the_title( '<h1 class="event-title">', '</h1>' ); ?>
         <?php 
           foreach ( $authors as $author ) { 
@@ -100,7 +100,7 @@
         <?php echo $intro; ?>
       </div>
 
-      <div class="event-metas l-3col l-last">
+      <div class="event-metas m-3col m-last">
         <div class="event-metas-group">
           <?php if($is_creation) : echo 'Création'; endif; ?><br>
           <?php foreach ( $event_types as $type ) { echo $type->name; } ?> | <?php foreach ( $age as $a ) { echo $a->name; } ?><br>
@@ -143,7 +143,7 @@
     </div><!-- .row -->
 	</header><!-- .entry-header -->
 
-	<div class="entry-content content-part l-8col l-1col-push l-first">
+	<div class="entry-content content-part m-8col m-1col-push m-first">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
@@ -153,7 +153,7 @@
 	<footer class="entry-footer">
     <div class="event-distribution content-part clearfix">
 
-      <div class="l-1col-push l-11col l-first title-underline-gray">
+      <div class="m-1col-push m-11col m-first title-underline-gray">
         <h2 id="distribution">Distribution</h2>
         <div class="line-dotted"></div>
       </div>
@@ -162,7 +162,7 @@
 
 		<?php if($public){ ?>
       <div class="event-pressereview content-part clearfix">
-        <div class="l-1col-push l-11col l-first title-underline-gray">
+        <div class="m-1col-push m-11col m-first title-underline-gray">
           <h2 id="presse">La presse</h2>
           <div class="line-dotted"></div>
         </div>

@@ -24,15 +24,15 @@
     <div class="footer-infos">
       <div class="footer-info-inner wrap row">
 
-        <div class="footer-infos-first l-4col">
+        <div class="s-12col s-1col-push m-4col s-first l-4col footer-infos-first ">
           <?php dynamic_sidebar( 'footer-1' ); ?>
         </div> 
 
-        <div class="footer-infos-second l-7col l-1col-push">
+        <div class=" s-12col s-1col-push s-first m-6col m-1col-push l-7col l-1col-push footer-infos-second">
           <?php dynamic_sidebar( 'footer-2' ); ?>
         </div> 
 
-        <div class="footer-infos-third l-3col l-last">
+        <div class=" s-12col s-1col-push s-first m-5col m-last l-4col l-last footer-infos-third">
           <?php dynamic_sidebar( 'footer-3' ); ?>
         </div> 
 

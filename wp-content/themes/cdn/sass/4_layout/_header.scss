@@ -6,10 +6,6 @@
 
 
 .site-header {
-
-  & > div {
-    width: 100%;
-  }  
 }
 
 .site-title {
@@ -29,6 +25,10 @@
     display: block;
     background-image: url('../img/arrow_blue.png');
   }
+
+  @include up-to(medium) {
+    display: none;
+  }
 }
  
 
@@ -45,6 +45,13 @@
   h5 { font-weight: 400; @include fontsize(20); }
   p { font-weight: 700; @include fontsize(18); color: #333; margin-top: 44px; }
 }
+
+  .entry-header-inner {
+
+    @include up-to(large) {
+      padding: 0 5px;
+    }
+  }
 
   .entry-titles {
 
