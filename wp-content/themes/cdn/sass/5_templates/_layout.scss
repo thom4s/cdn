@@ -22,6 +22,36 @@
       @include up-to(large) {
         padding: 0 5px;
       }
+
+      h1, h2 {
+        @include clearfix();
+        margin-bottom: $base_line_height;
+      }
+
+      h3 {
+        @include clearfix();
+        margin-top: $base_line_height_ * 2;
+      }
+      h4 {
+        @include clearfix();
+        height: auto;
+        line-height: $base_line_height;
+        margin-bottom: 11px;
+      }
+      h5, h6 {
+        @include clearfix();
+        @include fontsize(16);
+        margin-bottom: 11px;
+      }
+    }
+
+    .p-is-formated {
+      p {
+        @include clearfix();
+        @extend %m-9col;
+        @extend %l-8col;
+        @extend %m-first;
+      }
     }
 
     .related-content {

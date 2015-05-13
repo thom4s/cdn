@@ -189,9 +189,10 @@ remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 
 /**
- * SHORTCODES NOT WORKING // UNFINISHED
+ * SHORTCODES 
  */
 
+// NOT WORKING // UNFINISHED
 function get_blocks_shortcode($atts) {
  
   	// Get attributes
@@ -215,6 +216,30 @@ function get_blocks_shortcode($atts) {
   }
 }
 add_shortcode( 'get_blocks', 'get_blocks_shortcode' );
+
+
+// Shortcode for making a big title (h2 in template) WORKING
+function make_a_big_title_shortcode($atts) {
+ 
+  // Get attributes
+  $a = shortcode_atts( array(
+        'titre' => 'Le titre de la partie',
+        'couleur' => 'red',
+    ), $atts );
+  $title = $a['titre'];
+  $color = $a['couleur'];
+
+  ob_start(); ?>
+
+    <div class="l-11col l-first title-underline-<?php echo $color; ?> clearfix">
+      <h2><?php echo $title; ?></h2>
+      <div class="line-dotted"></div>
+    </div>
+
+  <?php return ob_get_clean();
+}
+add_shortcode( 'une_partie', 'make_a_big_title_shortcode' );
+
 
 
 /**

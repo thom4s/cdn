@@ -75,76 +75,71 @@ $font_size_mini:                    $font_size_base * 0.75 !default;
 
 
 
+// BASICS
+p {
+  @include fontsize(16);
+  font-family: $font_family_paragraph;
+  line-height: $base_line_height;
+  margin: 0 0 $base_line_height 0;
+}
 
+blockquote {
+  margin: 0 $base_line_height;
+  @include fontsize(20);
+  font-family: $font_family_quote;
+  line-height: $base_line_height;
+}
 
-/*
- * TYPOGRAPHY MAP.
- * CHANGE IF NEEDED (headings with different family ex.)
- */
+ul {
+  @include fontsize(16);
+  font-family: $font_family_title;
+  line-height: $base_line_height;
+}
 
-$typos_map: (
-  p: (
-    use: "This is the body copy. ",
-    font-family: $font_family_paragraph,
-    line-height: $base_line_height,
-    margin: 0 0 $base_line_height 0,
- ),
-  blockquote: (
-    use: "A quote very ",
-    font-family: $font_family_quote,
-    font-size: 2rem,
-    line-height: $base_line_height,
-  ),
-  ul: (
-    use: "u lists",
-    font-family: $font_family_title,
-    line-height: $base_line_height,
-  ),
-  h1: (
-    use: "Site title / Page titles",
-    font-family: $font_family_title,
-    font-size: 7.3rem,
-    line-height: 6rem,
-    font-weight: 100,
-    margin: 0,
-  ),
-  h2: (
-    use: "titles dotted",
-    font-family: $font_family_meta,
-    font-size: 2rem,
-    line-height: $base_line_height,
-    margin: 0 0 11px 0,
-  ),
-  h3: (
-    use: "Bloc titles",
-    font-family: $font_family_title,
-    font-size: 2.6rem,
-    line-height: $base_line_height,
-    margin: 0 0 11px 0,
-  ),
-  h4: (
-    use: "Buttons titles",
-    font-family: $font_family_meta,
-    font-size: 1.6rem,
-    line-height: 40px,
-    height: 40px,
-    margin: 0,
-    padding: 0 0 0 40px,
-    text-transform: uppercase,
-  ),
-  h5: (
-    use: "Headings 5",
-    font-family: $font_family_meta,
-    font-size: 1.6rem,
-    line-height: $base_line_height,
-  ),
-  h6: (
-    use: "footer title",
-    font-family: $font_family_title,
-    font-size: 1.6rem,
-    line-height: $base_line_height,
-  ),
-) !default;
+h1 {
+  font-family: $font_family_title;
+  @include fontsize(73);
+  line-height: 6rem;
+  font-weight: 100;
+  margin: 0;
+}
+
+h2 {
+  font-family: $font_family_meta;
+  @include fontsize(20);
+  line-height: $base_line_height;
+  margin: 0 0 11px 0;
+}
+
+h3 {
+  font-family: $font_family_title;
+  @include fontsize(26);
+  line-height: $base_line_height;
+  margin: 0 0 11px 0;
+}
+
+h4 {
+  font-family: $font_family_meta;
+  @include fontsize(16);
+  line-height: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0 0 0 40px;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-family: $font_family_meta;
+  @include fontsize(16);
+  line-height: $base_line_height;
+}
+
+h6 {
+  font-family: $font_family_title;
+  @include fontsize(16);
+  line-height: $base_line_height;
+}
+
 
 
 
@@ -162,17 +157,13 @@ textarea {
   line-height: $base_line_height;
 }
 p {
-  margin-bottom: $base_line_height;
-  @include fontsize(16);
+
 }
 b, strong {
   font-weight: bold;
 }
 dfn, cite, em, i {
   font-style: italic;
-}
-blockquote {
-  margin: 0 $base_line_height;
 }
 address {
   margin: 0 0 $base_line_height;
@@ -219,9 +210,7 @@ small {
 big {
   font-size: 125%;
 }
-ul {
-  @include fontsize(16);
-}
+
 
 /*
  * CLASSES & SPECIALS
@@ -244,7 +233,6 @@ ul {
     border-bottom: 2px dotted;
     width: 70%;
   }
-
 .title-underline-gray {
   @extend %title-underline;
   color: $gray;
@@ -253,7 +241,6 @@ ul {
     border-color: $gray;
   }
 }
-
 .title-underline-red {
   @extend %title-underline;
   color: $red;
@@ -262,7 +249,6 @@ ul {
     border-color: $red;
   }
 }
-
 
 .meta {
   font-family: $font_family_meta;
@@ -276,10 +262,13 @@ ul {
 }
 
 
+
+
+
 /*
  * DON'T TOUCH THAT !
  */
-
+$typos_map: () !default; // NOT USED
 @each $typo in $typos_map {
   $i: index($typos_map, $typo);
 
