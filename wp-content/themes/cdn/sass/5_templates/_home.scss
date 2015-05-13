@@ -26,6 +26,7 @@
     .home-featured {
       height: 100%;
       overflow: hidden;
+      color: #FFF;
 
       img {
         width: 1200px;
@@ -35,16 +36,23 @@
         @include at-least(wide) {
           margin-left: 0;
         }
-
       }
     }
+      .featured-date,
+      .featured-authors {
+        @include fontsize(18);
+        font-family: $font_family_meta;
+      }
+      .featured-title {
+        margin-bottom: 11px;
+      }
 
 .home .site-content {
   background: none;
   margin-top: $base_line_height;
 }
 
-.featured-title {
+.featured-infos {
   position: absolute;
   bottom: 20px;
   right: 20px;
