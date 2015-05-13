@@ -31,7 +31,7 @@
 
 	</header><!-- .entry-header -->
 
-	<div class="entry-content content-part p-is-formated m-1col-push m-first">
+	<div class="entry-content content-part p-is-formated m-11col m-1col-push m-first">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 

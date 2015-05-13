@@ -102,6 +102,31 @@
 }
 
 
+
+// CONTACT FORMS 
+.wpcf7-form {
+	@include box-sizing;
+	max-width: 100%;
+	
+	p {
+		margin-bottom: 11px;
+	}
+}
+
+	.wpcf7-submit {
+		@extend %default-submit;
+		padding-left: 20px;
+		font-weight: 900;
+	}
+ 	
+ 	div.wpcf7-response-output {
+ 		@include box-sizing;
+ 		@include clearfix;
+ 		margin-left: 0;
+ 	}
+
+
+
 // SOMES SETTINGS
 button,
 input,

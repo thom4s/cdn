@@ -153,7 +153,6 @@
 	@include up-to(medium){
 		@include box-sizing();
 		display: none;
-
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -171,12 +170,15 @@
 			width: 100%;
 		}	
 	}
-
 }
 
 
 
-
+.posts-navigation {
+	@extend .m-11col;
+	@extend .m-1col-push;
+	@extend .m-first;
+}
 
 
 

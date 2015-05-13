@@ -23,13 +23,14 @@
 
 		<?php
 			$args = array(
-		    'type'         => 'map',
-		    'width'        => '100%', 
-		    'height'       => '480px', 
-		    'zoom'         => 14,  
-		    'marker'       => true, // Display marker? Default is 'true',
-		    'marker_title' => 'Théâtre de Sartrouville - CDN', 
-		    'info_window'  => 'Théâtre de Sartrouville - CDN<br> Place Jacques Brel, Sartrouville', 
+		    'type'          => 'map',
+		    'width'         => '100%', 
+		    'height'        => '480px',
+		    'scrollwheel'		=> false, 
+		    'zoom'          => 14,  
+		    'marker'        => true, 
+		    'marker_title'  => 'Théâtre de Sartrouville - CDN', 
+		    'info_window'   => 'Théâtre de Sartrouville - CDN<br> Place Jacques Brel, Sartrouville', 
 			);
 			echo rwmb_meta( 'map', $args ); // For current post ?> 
 	</header><!-- .entry-header -->

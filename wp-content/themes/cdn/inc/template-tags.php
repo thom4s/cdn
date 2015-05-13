@@ -20,15 +20,14 @@ function the_posts_navigation() {
 	}
 	?>
 	<nav class="navigation posts-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'cdn' ); ?></h2>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'cdn' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( 'Eléments plus anciens', 'cdn' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'cdn' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Eléments plus récents', 'cdn' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
