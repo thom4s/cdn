@@ -1,7 +1,6 @@
 
   <article class="grid-item related-post bloc-outer <?php echo $linked_post_bg; ?> <?php // echo $linked_post_col; ?>">
-    <?php if($linked_post_has_link) { ?><a href="<?php echo $post_url; ?>"><?php } ?>
-      
+
       <div class="bloc-img">
         <?php echo get_the_post_thumbnail( $linked_post_id, 'bloc-thumb', '' ); ?>
       </div>
@@ -44,8 +43,16 @@
           </div><!-- .entry-authors -->
         <?php } else { } ?>
 
-        <div class="entry-intro"><?php echo $post_excerpt ?></div>
-      </div><!-- .bloc-content -->
+        <div class="entry-intro">
+          <?php echo $post_excerpt ?>
 
-    <?php if($linked_post_has_link) { ?></a><?php } ?>
+          <?php if($linked_post_has_link) { ?>
+            <a class="more-link" href="<?php echo $post_url; ?>">Lire la suite</a>
+          <?php } ?>
+
+        </div>
+
+
+
+      </div><!-- .bloc-content -->
   </article><!-- end article-->

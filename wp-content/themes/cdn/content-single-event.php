@@ -99,15 +99,17 @@
         <?php the_title( '<h1 class="event-title">', '</h1>' ); ?>
         <?php 
           foreach ( $authors as $author ) { 
-            echo '<span class="meta event-authors">' . $author['quali'] . ' ' . $author['name'] . '</span>'; }
+            echo '<div class="meta event-authors">' . $author['quali'] . ' <span class="author-name">' . $author['name'] . '</span></div>'; }
         ?>
-        <?php echo $intro; ?>
+        <div class="event-intro">
+          <?php echo $intro; ?>
+        </div> 
       </div>
 
-      <div class="event-metas m-3col m-last">
+      <div class="event-metas m-4col m-last">
         <div class="event-metas-group">
-          <?php if($is_creation) : echo 'Création'; endif; ?><br>
-          <?php foreach ( $event_types as $type ) { echo $type->name; } ?> | <?php foreach ( $age as $a ) { echo $a->name; } ?><br>
+          <?php if($is_creation) : echo '<span class="event-is-created">Création</span>'; endif; ?><br>
+          <?php foreach ( $event_types as $type ) { echo '<span class="event-type"> ' . $type->name . '</span>'; } ?> | <?php foreach ( $age as $a ) { echo '<span class="event-age">'. $a->name . '</span>'; } ?><br>
           <?php if($public){ ?><?php foreach ( $salle as $s ) { echo $s->name; } ?> | <?php echo $duration; }?>
         </div><!-- .entry-metas-group -->
 

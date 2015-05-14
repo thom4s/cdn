@@ -22,9 +22,18 @@
     margin-bottom: 11px; }
 
   .event-authors {
+    @include clearfix;
     display: inline-block;
+    float: left;
     clear: both;
-    font-weight: 400; }
+    font-weight: 400;
+    color: $gray_darker; }
+
+    .author-name {
+      text-transform: uppercase; }
+
+  .event-intro {
+    @include clearfix; }
 
   .event-metas-group {
     margin-bottom: 22px;
@@ -32,7 +41,6 @@
 
     .event-metas {
       @extend .meta;
-
       margin-top: 22px;
       text-align: right;
       @include fontsize(14);
@@ -48,16 +56,20 @@
         padding-right: 5px
       }
     }
+      .event-type,
+      .event-age {
+        text-transform: uppercase; }
 
     .event-dates {
       @extend .meta;
       @include fontsize(14);
-      color: #000; } 
+      color: #000;
+      text-transform: uppercase; } 
     .passed_date { color: #999; }
 
     .event-ancres {
-      @extend .meta;
-      @include fontsize(14); }
+      @include fontsize(14);
+      color: $gray; }
 
       .event-distribution {
         color: $red;

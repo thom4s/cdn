@@ -18,6 +18,7 @@
   -moz-box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.75);
   box-shadow: 4px 4px 18px -8px rgba(0,0,0,0.75);
 
+
   // COLS FOR BLOCS
   &.l-8col{
 
@@ -36,19 +37,18 @@
       float: left;
     }
   }
-  &.l-4col {
-  } 
- 
-  &:hover {
-  }
-
   .meta {
     font-weight: 900;
   }
 
-  p,
+  p {
+    display: inline;
+    @include fontsize(15);
+    margin-bottom: 0;
+  }
   ul {
     @include fontsize(15);
+    margin-bottom: 0;
   }
 }
 
@@ -71,12 +71,11 @@
   }
 
 
-
-
   .entry-datas {
-    @include fontsize(15);
-    line-height: 16px;
+    @include fontsize(14);
+    line-height: 16px; 
     margin-bottom: 5px;
+    text-transform: uppercase;
   }
   .entry-authors {
     margin-bottom: 11px;
@@ -86,13 +85,24 @@
       clear: both;
       color: $gray_darker;
       @include fontsize(14);
+      text-transform: uppercase;
     }
 
   .entry-intro {
     @include fontsize(15);
   }
 
+  .more-link {
+    font-family: $font_family_meta;
+    display: inline;
+    color: $gray_light;
+    @include fontsize(13);
 
+    &:before {
+      content: ' ● ';
+    }
+
+  }
 
 // SALVATTORE GRID
 // http://salvattore.com/
@@ -110,16 +120,6 @@
 
 /* These are the classes that are going to be applied: */
 .column { float: left; }
-
-.size-1of3 {
-  @extend .l-4col;
-}
-.size-1of2 {
-  @extend .m-6col;
-}
-
-
-.grid-item {
-  float: none;
-  @include transition(all 0.2s);
-}
+.size-1of3 { @extend .l-4col; }
+.size-1of2 { @extend .m-6col; }
+.grid-item { float: none; @include transition(all 0.2s); }
