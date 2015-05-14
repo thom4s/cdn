@@ -23,17 +23,20 @@
         <?php echo get_the_post_thumbnail( $featured_event_id, 'home-featured', '' ); ?>
         <a href="<?php echo $event_url; ?>">
           <div class="featured-infos">
-            <div class="featured-date"><?php echo $event_dates; ?></div>
-            <h1 class='featured-title'><?php echo $event_title ?></h1>
-            <div class="featured-authors">
-              <?php 
-                $numItems = count($authors);
-                $i = 0;
-                foreach ( $authors as $k => $author ) { 
-                  echo '<span class="">' . $author['name'] . '</span>';
-                  if(++$i !== $numItems) { echo ' / '; }
-                }
-              ?>
+            <div class="featured-bg"></div>
+            <div class="featured-inner">
+              <div class="featured-date"><?php echo $event_dates; ?></div>
+              <h1 class='featured-title'><?php echo $event_title ?></h1>
+              <div class="featured-authors">
+                <?php 
+                  $numItems = count($authors);
+                  $i = 0;
+                  foreach ( $authors as $k => $author ) { 
+                    echo '<span class="">' . $author['name'] . '</span>';
+                    if(++$i !== $numItems) { echo ' / '; }
+                  }
+                ?>
+              </div>
             </div>
           </div>
         </a>
@@ -42,6 +45,7 @@
   <?php endif; ?>
 
   <header id="masthead" class="site-header l-4col l-first m-4col m-first" role="banner">
+    <div class="site-logo"></div>
     <nav id="site-navigation" class="main-navigation" role="navigation">
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->

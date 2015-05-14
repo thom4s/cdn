@@ -5,11 +5,9 @@
  */
 
 
-
-
   .site-branding-home {
     position: relative;
-    height: 500px;
+    height: 650px;
   }
     .site-title-home {
       @extend .site-title;
@@ -26,8 +24,7 @@
     .home-featured {
       height: 100%;
       overflow: hidden;
-      color: #FFF;
-
+      color: #FFF;      
       img {
         width: 1200px;
         max-width: none;
@@ -38,8 +35,37 @@
         }
       }
     }
+      .featured-infos {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 11px;
+        color: #fff;
+
+        &:hover {
+          .featured-bg {
+            background: rgba(0, 0, 0, 0.8);
+          }
+        }
+
+      }
+      .featured-bg {
+        position: absolute;
+        z-index: 3;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        @include transition(all 0.2s);
+      }
+      .featured-inner {
+        position: relative;
+        z-index: 5;
+      }
       .featured-date,
       .featured-authors {
+        text-transform: uppercase;
         @include fontsize(18);
         font-family: $font_family_meta;
       }
@@ -52,10 +78,4 @@
   margin-top: $base_line_height;
 }
 
-.featured-infos {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
 
-  color: #fff;
-}

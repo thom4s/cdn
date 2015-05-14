@@ -55,7 +55,7 @@ function cdn_setup() {
 	) );
 
 	// Add mage Size
-	add_image_size( 'home-featured', 1200, 500, true ); // 1200px wide / 500px height / cropped
+	add_image_size( 'home-featured', 1200, 650, true ); 
 	add_image_size( 'event-media', 894, 500, true ); 
 	add_image_size( 'bloc-thumb-2col', 9999, 300 );
 	add_image_size( 'page-media', 900 ); 

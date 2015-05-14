@@ -28,11 +28,15 @@ $gray_lighter:                      #eee !default;
 $white:                             #fff !default;
 $bg-color:                          #E1E3E4;
 
+// tests
 $orange:                            #ffdc2e; 
 $magenta:                           #ea148c;
-$brown_dark:                        #393131;
-$brown_light:                       #766a6a;
+$brown_darker:                      #2B2525;
+$brown_dark:                        #4A4040;
+$brown_light:                       #5C5353;
+$brown_lighter:                     #918383;
 
+// props
 $yellow:                            #EFC94C; 
 $red:                               #DF4949;
 $orange:                            #E27A3F;
@@ -40,14 +44,23 @@ $blue_light:                        #34495E;
 $blue_dark:                         #1A2530;
 $blue_darker:                       #0F161C;
 
-$practical-color:     $blue-light;
-$fun-color:           $yellow;
-$meta-color:          $red;
+// def
+$magenta_2:     #DF4274;
+$yellow_2:      #EFD54C;
+
+$color_1:       $magenta_2;
+$color_2:       $yellow_2;
+$color_3:       $brown_dark;
+$color_4:       $brown_light;
+
+$practical-color:     $color_4;
+$fun-color:           $color_2;
+$meta-color:          $color_1;
 $bg-color:            #E1E3E4;
 
 $color_text:                        $gray_dark !default;
 $color_link:                        $gray !default;
-$color_link_hover:                  $red;
+$color_link_hover:                  $color_1;
 $color_quote:                       $gray_light;
 $color_body_background:             $white;
 

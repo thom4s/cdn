@@ -89,7 +89,7 @@
 
 	.active {
 		@include transition(all 0.1s);
-		color: $red;
+		color: $color_1;
 	}
 }
 
@@ -106,14 +106,14 @@
 		width: 50%;
 		float: left;
 		text-align: center;
-		height: 40px;
+		height: $arrow_height;
 
 		&:hover {
 			cursor: pointer;
 		}
 		span {
-			line-height: 40px;
-			height: 40px;
+			line-height: $arrow_height;
+			height: $arrow_height;
 			display: inline-block;
 		}
 	}

@@ -4,8 +4,11 @@
  * @package sasskit
  */
 
-$x: -38px;
-$y: -48px;
+$x: -72px;
+$y: -60px;
+$y-logo: 96px;
+$arrow_height: 50px;
+$logo_border: 91px;
 
 %sprite {
   background-image: url('../img/sprite.png');
@@ -13,9 +16,15 @@ $y: -48px;
   background-color: none;
 }
 
+%sprite-logo {
+  @extend %sprite;
+  width: 91px;
+  height: 91px;
+}
+
 .sprite-boxed {
-  width: 30px;
-  height: 40px;
+  width: 36px;
+  height: $arrow_height;
 }
 
 .arrow-gray-left {
@@ -47,6 +56,16 @@ $y: -48px;
   @extend %sprite;
   background-position: $x ( $y * 2 );
 }
+
+// Home
+.site-logo {
+  position: relative;
+  @extend %sprite-logo;
+  background-position: ($x * 2) 0;
+  margin-top: -66px;
+  z-index: 9999;
+}
+
 
 
 .ham-sprite {

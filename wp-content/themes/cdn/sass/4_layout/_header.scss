@@ -49,14 +49,12 @@
 }
 
   .entry-header-inner {
-
     @include up-to(large) {
       padding: 0 5px;
     }
   }
 
   .entry-titles {
-
     .entry-title { margin: 22px 0; }
     .entry-authors { font-weight: 100; display: inline-block; clear: both; }
     p { font-weight: 900; } 

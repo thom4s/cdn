@@ -121,10 +121,10 @@ h3 {
 h4 {
   font-family: $font_family_meta;
   @include fontsize(16);
-  line-height: 40px;
-  height: 40px;
+  line-height: 49px;
+  height: 49px;
   margin: 0;
-  padding: 0 0 0 40px;
+  padding: 0 0 0 45px;
   text-transform: uppercase;
 }
 
@@ -243,10 +243,10 @@ big {
 }
 .title-underline-red {
   @extend %title-underline;
-  color: $red;
+  color: $color_1;
 
   .line-dotted {
-    border-color: $red;
+    border-color: $color_1;
   }
 }
 

@@ -10,7 +10,7 @@
   @include box-sizing();
   float: left;
   margin-bottom: $base_line_height;
-  border-radius: 5px;
+  @include border-radius(5px);
   overflow: hidden;
 
   // http://www.cssmatic.com/box-shadow
