@@ -34,9 +34,6 @@
       }
       h4 {
         @include clearfix();
-        height: auto;
-        line-height: $base_line_height;
-        margin-bottom: 11px;
       }
       h5, h6 {
         @include clearfix();

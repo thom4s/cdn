@@ -409,7 +409,7 @@ function defaults_register_meta_boxes( $meta_boxes )
         'options' => array(
           'textarea_rows' => 6,
           'teeny'         => false,
-          'media_buttons' => false,
+          'media_buttons' => true,
         ),
       ),
     ),
