@@ -38,12 +38,10 @@ img {
       }
     }
       .bx-prev {
-        @extend .sprite-boxed;
         @extend .arrow-thin-left;
-        left: -40px;
+        left: -30px;
       }
       .bx-next {
-        @extend .sprite-boxed;        
         @extend .arrow-thin-right;
-        right: -40px;
+        right: -30px;
       }

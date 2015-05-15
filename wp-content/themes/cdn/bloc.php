@@ -2,11 +2,12 @@
   <article class="grid-item related-post bloc-outer <?php echo $linked_post_bg; ?> <?php // echo $linked_post_col; ?>">
 
       <div class="bloc-img">
-        <?php echo get_the_post_thumbnail( $linked_post_id, 'bloc-thumb', '' ); ?>
+        <?php if($linked_post_has_link) { ?>
+          <a href="<?php echo $post_url; ?>"><?php echo get_the_post_thumbnail( $linked_post_id, 'bloc-thumb', '' ); ?></a>
+        <?php } ?>
       </div>
       
       <div class="bloc-content">
-
         <div class="meta entry-datas">
           <?php if( isset($event_type) ) {
             $i = 0;
@@ -29,7 +30,9 @@
           } ?>
         </div><!-- .entry-datas -->
         
-        <h3><?php echo $post_title ?></h3>
+        <?php if($linked_post_has_link) { ?>
+          <a href="<?php echo $post_url; ?>"><h3><?php echo $post_title ?></h3></a>
+        <?php } ?>
 
         <?php if( isset($authors) ) { ?>
           <div class="meta entry-authors">

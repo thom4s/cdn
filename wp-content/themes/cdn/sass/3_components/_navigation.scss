@@ -106,14 +106,14 @@
 		width: 50%;
 		float: left;
 		text-align: center;
-		height: $arrow_height;
+		height: $arrow_fat_height;
 
 		&:hover {
 			cursor: pointer;
 		}
 		span {
-			line-height: $arrow_height;
-			height: $arrow_height;
+			line-height: $arrow_fat_height;
+			height: $arrow_fat_height;
 			display: inline-block;
 		}
 	}

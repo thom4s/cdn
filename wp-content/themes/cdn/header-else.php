@@ -24,8 +24,8 @@
 
   <header id="masthead" class="site-header collapsed l-4col l-first m-4col m-first" role="banner">
     <div id="trigger-out" class=" sprite-boxed"></div>
-    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>  
-
+    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+    <div class="site-logo-common"></div>
     <nav id="site-navigation" class="main-navigation" role="navigation">
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
@@ -34,14 +34,12 @@
 
     <?php if( is_singular( 'event' ) ){ 
       if(isset($wp_query->query_vars['pro'])) { 
-
         $pedago = rwmb_meta( $prefix . 'pedago', 'type=file' );
         $presskit = rwmb_meta( $prefix . 'presskit', 'type=file' );
         $diffusion = rwmb_meta( $prefix . 'diffusion', 'type=file' );
         $technique = rwmb_meta( $prefix . 'technique', 'type=file' );
         $pressreview = rwmb_meta( $prefix . 'pressreview', 'type=file' );
         $visuals = rwmb_meta( $prefix . 'visuals', 'type=file' );
-
       ?>
      
       <div class="bloc-buttons bg-practical">
@@ -107,8 +105,6 @@
         </div>
       </div><!-- .bloc-buttons -->
 
-
-
       <?php } else { ?>
       <div class="bloc-buttons bg-practical">
         <div class="bloc-buttons-inner">
@@ -127,22 +123,14 @@
     <?php get_template_part('loop', 'aside-related')?>
 
     <?php if( is_singular( 'page' ) && !is_page_template( 'page-saison.php' ) && !is_page_template( 'page-saison-active.php' ) && !is_page_template( 'page-production.php' ) ){ ?>
-
       <?php dynamic_sidebar( 'sidebar-1' ); ?>
-
     <?php } ?><!-- endif page -->
 
-
     <?php if( is_page_template( 'page-saison.php' ) || is_page_template( 'page-saison-active.php' ) && is_page_template( 'page-production.php' ) ){ ?>
-      
       <div class="saison-aside">
         <?php dynamic_sidebar( 'saison-aside' ); ?>
       </div>
-      
     <?php } ?><!-- endif saison -->
-
-
-
 
   </header><!-- .site-branding -->
 

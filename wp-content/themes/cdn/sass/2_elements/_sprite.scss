@@ -7,8 +7,13 @@
 $x: -72px;
 $y: -60px;
 $y-logo: 96px;
-$arrow_height: 50px;
+
+$arrow_fat_height: 50px;
+$arrow_fat_width: 50px;
 $logo_border: 91px;
+$arrow_thin_height: 44px;
+$arrow_thin_width: 26px;
+
 
 %sprite {
   background-image: url('../img/sprite.png');
@@ -18,14 +23,93 @@ $logo_border: 91px;
 
 %sprite-logo {
   @extend %sprite;
-  width: 91px;
-  height: 91px;
+  width: $logo_border;
+  height: $logo_border;
 }
-
+%sprite-arrow-thin {
+  @extend %sprite;
+  width: $arrow_thin_width;
+  height: $arrow_thin_height;
+}
 .sprite-boxed {
   width: 36px;
-  height: $arrow_height;
+  height: $arrow_fat_height;
 }
+
+
+// Fat Arrows
+.arrow-blue-left {
+  @extend %sprite;
+  background-position: 0 0;
+}
+
+.arrow-blue-right {
+  @extend %sprite;
+  background-position: $x 0;
+}
+
+.arrow-brown-left {
+  @extend %sprite;
+  background-position: 0 $y;
+}
+
+.arrow-brown-right {
+  @extend %sprite;
+  background-position: $x $y;
+}
+
+.arrow-white-left {
+  @extend %sprite;
+  background-position: 0 ($y * 2);
+}
+
+.arrow-white-right {
+  @extend %sprite;
+  background-position: $x ($y * 2);
+}
+
+
+// Thin Arrows
+.arrow-thin-left {
+  @extend %sprite-arrow-thin;
+  background-position: 0 ( $y * 3 );
+}
+
+.arrow-thin-right {
+  @extend %sprite-arrow-thin;
+  background-position: $x ( $y * 3 );
+}
+
+
+
+// Home
+%site-logo {
+  position: relative;
+  @extend %sprite-logo;
+  background-position: ($x * 2) 0;
+  z-index: 9999;
+}
+  .site-logo-home {
+    @extend %site-logo;
+    margin-top: -66px;
+  }
+  .site-logo-common {
+    @extend %site-logo;
+    margin-bottom: 22px;
+  }
+
+// Hamburger Menu for Responsive
+.ham-sprite {
+  @extend %sprite;
+  display: inline-block;
+  background-position: 0 ( $y * 3 );
+}
+#trigger-out {
+  @extend %sprite;
+  background-position: $x ( $y * 3 );
+}
+
+
 
 .arrow-gray-left {
   @extend %sprite;
@@ -47,34 +131,8 @@ $logo_border: 91px;
   background-position: $x $y;
 }
 
-.arrow-thin-left {
-  @extend %sprite;
-  background-position: 0 ( $y * 2 );
-}
-
-.arrow-thin-right {
-  @extend %sprite;
-  background-position: $x ( $y * 2 );
-}
-
-// Home
-.site-logo {
-  position: relative;
-  @extend %sprite-logo;
-  background-position: ($x * 2) 0;
-  margin-top: -66px;
-  z-index: 9999;
-}
 
 
 
-.ham-sprite {
-  @extend %sprite;
-  display: inline-block;
-  background-position: 0 ( $y * 3 );
-}
 
-#trigger-out {
-  @extend %sprite;
-  background-position: $x ( $y * 3 );
-}
+

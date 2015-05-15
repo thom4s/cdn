@@ -44,8 +44,8 @@
     </header><!-- .site-branding -->
   <?php endif; ?>
 
-  <header id="masthead" class="site-header l-4col l-first m-4col m-first" role="banner">
-    <div class="site-logo"></div>
+  <header id="masthead" class="site-header home-header l-4col l-first m-4col m-first" role="banner">
+    <div class="site-logo-home"></div>
     <nav id="site-navigation" class="main-navigation" role="navigation">
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
