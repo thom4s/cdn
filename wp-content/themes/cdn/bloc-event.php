@@ -33,15 +33,16 @@
         </div>
         
         <h3 class="item-event-title"><?php the_title(); ?></h3>
-        <div class="meta entry-authors">
-          <?php 
-            if( is_array($authors) ) {
-              foreach ( $authors as $author ) { 
-                echo '<span class="meta-author">' . $author['name'] . '</span><br>'; 
-              }
-            }
-          ?>
-        </div>
+
+        <?php if( !empty($authors) ) : ?>
+          <div class="meta entry-authors">
+            <?php 
+                foreach ( $authors as $author ) { 
+                  echo '<span class="meta-author">' . $author['name'] . '</span><br>'; 
+                }
+            ?>
+          </div>
+        <?php endif; ?>
         <div><?php echo $post_excerpt; ?></div>
       </div>
 

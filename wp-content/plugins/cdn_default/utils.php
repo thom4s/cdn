@@ -1,7 +1,9 @@
 <?php 
 
 
-function mahi_add_query_path($url, $args, $v = null) {
+function cdn_add_query_path($url, $args, $v = null) {
+  global $query;
+
   if ( ! $url )
     $url = $_SERVER['REQUEST_URI'];
 
@@ -23,6 +25,31 @@ function mahi_add_query_path($url, $args, $v = null) {
     else:
       $components['path'] = preg_replace("#/".$k."/([^/]+)#", '', $components['path']);
     endif;
+
+  $components['query'] = http_build_query($query);
+
+  $url = preg_replace("#\?$#", '', http_build_url($url, $components));
+  $url = preg_replace("#([^:])//#", "\\1/", $url);
+
+  return $url;
+}
+function cnd_remove_query_path($url, $args, $v = null) {
+  global $query;
+
+  if ( ! $url )
+    $url = $_SERVER['REQUEST_URI'];
+
+  if ( ! is_array($args) ):
+    $a[$args] = $v;
+    $args = $a;
+  endif;
+
+  $components = parse_url($url);
+
+  parse_str($components['query'], $query);
+
+  foreach($args as $k => $v)
+    $components['path'] = preg_replace("#/".$k."/([^/]+)#", '', $components['path']);
 
   $components['query'] = http_build_query($query);
 

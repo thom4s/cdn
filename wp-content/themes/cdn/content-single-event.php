@@ -41,7 +41,6 @@
         $date["date"]= strtotime($date_string);
         $the_dates[] = $date;    
       } 
-
     }
 
     // Générique
@@ -141,8 +140,8 @@
 
         <div class="event-metas-group">
           <ul class="event-ancres">
-            <li><a href="#distribution">Voir la Distribution</a></li>
-            <?php if($public){ ?><li><a href="#presse">Lire la presse</a></li><?php } ?>
+            <?php if($distribution != '') : ?><li><a href="#distribution">Voir la Distribution</a></li><?php endif; ?>
+            <?php if($public && $press != '' ) : ?><li><a href="#presse">Lire la presse</a></li><?php endif; ?>
           </ul>
         </div><!-- .entry-metas-group -->
 
@@ -158,16 +157,18 @@
   <?php get_template_part('loop','related-content'); ?>
 
 	<footer class="entry-footer">
-    <div class="event-distribution content-part clearfix">
 
+    <?php if($distribution != '') : ?>
+    <div class="event-distribution content-part clearfix">
       <div class="m-1col-push m-11col m-first title-underline-gray">
         <h2 id="distribution">Distribution</h2>
         <div class="line-dotted"></div>
       </div>
       <?php echo $distribution; ?>
     </div>
+    <?php endif; ?>
 
-		<?php if($public){ ?>
+		<?php if($public && $press != ''){ ?>
       <div class="event-pressereview content-part clearfix">
         <div class="m-1col-push m-11col m-first title-underline-gray">
           <h2 id="presse">La presse</h2>

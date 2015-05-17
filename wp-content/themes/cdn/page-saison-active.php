@@ -6,26 +6,24 @@
  * @package cdn
  */
 
-    $prefix_event = 'event_meta_';
-    $prefix_default = 'defaults_meta_';
+  error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-    $introduction = rwmb_meta( $prefix_default . 'intro' );
-    $subtitle = rwmb_meta( $prefix_default . 'subtitle' );
+  $prefix_event = 'event_meta_';
+  $prefix_default = 'defaults_meta_';
+  $introduction = rwmb_meta( $prefix_default . 'intro' );
+  $subtitle = rwmb_meta( $prefix_default . 'subtitle' );
 
-
-if ( ! isset($exclude) )
-  $exclude = array();
-
-  $args = array(
-    'post_type'       => array('event'),
-    'post__not_in'    => $exclude,
-    'posts_per_page'  =>  -1,
-    'status'          => 'published',
-    'orderby'         => 'meta_value_num',
-    'meta_key'        => 'event_meta_firstdate',
-    'order'           => 'ASC',
-  );
-
+  if ( ! isset($exclude) )
+    $exclude = array();
+    $args = array(
+      'post_type'       => 'event',
+      'post__not_in'    => $exclude,
+      'posts_per_page'  =>  -1,
+      'status'          => 'published',
+      'orderby'         => 'meta_value_num',
+      'meta_key'        => 'event_meta_firstdate',
+      'order'           => 'ASC',
+    );
 
     // Get query TYPE if existed
     if ( get_query_var('t') ):
@@ -72,7 +70,6 @@ if ( ! isset($exclude) )
         );
     endif;
 
-
     if ( ! isset($args['meta_date_after_key']) ):
       $args['meta_date_after_key'] = 'end_date';
       $args['meta_date_after'] = date('Y-m-d');
@@ -85,51 +82,21 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
  
       <header class="entry-header bg">
-        <div class="entry-header-inner l-12col l-first l-1col-push">
-
-          <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-          <div class="post-excerpt"><?php echo $introduction; ?></div>
-
-          <ul class="calendar-filter l-15col l-first l-1col-push clearfix">
-            <?php 
-              $type_args = array(
-                'hide_empty'         => 1,
-                'taxonomy'           => 'event_type',
-                'title_li'           => __( '<h4>Filtrer par </h4>' ),
-              );
-            ?>
-            <?php wp_list_categories( $type_args ); ?>
-
-            <ul id="en_famille_selector" class="">
-              <li class="cat-item"><a href="?enfamille=y">En famille</a></li>
-            </ul>
-
-            <?php 
-              $cat_args = array(
-                'hide_empty'         => 1,
-                'taxonomy'           => 'event_cat',
-                'title_li'           => __( '' ),
-              );
-            ?>
-            <?php wp_list_categories( $cat_args ); ?>
-
-
-
-
-          </ul>
-
-
-
+        <div class="entry-header-inner">
+          <?php the_title( '<h1 class="entry-title  l-12col l-first l-1col-push">', '</h1>' ); ?>
+          <div class="post-excerpt l-12col l-first l-1col-push"><?php echo $introduction; ?></div>
+          <div class="calendar-filter-all l-first l-1col-push clearfix">
+            <?php get_template_part('part', 'filter-type'); ?>
+            <?php get_template_part('part', 'filter-cat'); ?>
+            <?php get_template_part('part', 'filter-age'); ?>
+          </div>
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
 
 
         <?php
-
-          // The Query
           $saison_events = new WP_Query( $args );
 
-          // The Loop
           if ( $saison_events->have_posts() ) { ?>
             <div id="grid" class="row" data-columns>
 

@@ -12,6 +12,8 @@ function add_query_vars($aVars) {
   $aVars[] = "pro";
   $aVars[] = "t";
   $aVars[] = "c";
+  $aVars[] = "a";
+  $aVars[] = "s";
   $aVars[] = "enfamille";
   return $aVars;
 }
