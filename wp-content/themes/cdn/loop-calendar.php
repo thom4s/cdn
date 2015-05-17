@@ -1,5 +1,7 @@
 <?php
 $previous_month = false;
+$previous_day = false;
+
 if ( $saison_events->have_posts() ) :
   $i = 0; ?>
 
@@ -13,18 +15,19 @@ if ( $saison_events->have_posts() ) :
     $authors =  rwmb_meta( $prefix_event . 'authors', array(), $post->ID );
 
     $month = date('Y/m', $firstdate);
+    $day = date('d/m/Y', $firstdate);
 
-    if ( $previous_month != $month ): 
+    if ( $previous_day != $day ): 
       if ($i > 0) { echo '</div><!-- #grid --> '; }
-      echo do_shortcode( '[une_partie titre="'. strftime('%B %Y', strtotime($month.'/01')) .'"]' );
-      $previous_month = $month; 
+      echo do_shortcode( '[une_partie titre="'. $day .'"]' );
+      $previous_day = $day; 
        ?>
       <div id="grid" class="row" data-columns>
     <?php endif;
 
     include(locate_template('bloc-event.php'));
 
-    if( $previous_month != $month) : ?>
+    if( $previous_day != $day) : ?>
       </div>
     <?php endif;
     $i = $i + 1;
