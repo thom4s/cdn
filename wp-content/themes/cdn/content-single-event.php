@@ -49,6 +49,7 @@
     $intro =	rwmb_meta( $prefix . 'intro' );
     $distribution =	rwmb_meta( $prefix . 'distribution' );
     $is_creation =	rwmb_meta( $prefix . 'creation' );
+    $is_en_famille =  rwmb_meta( $prefix . 'en_famille' );    
     $event_types =	rwmb_meta( $prefix . 'event_type', 'type=taxonomy&taxonomy=event_type' );
     $salle =	rwmb_meta( $prefix . 'salle', 'type=taxonomy&taxonomy=event_salle' );
     $age =	rwmb_meta( $prefix . 'age', 'type=taxonomy&taxonomy=event_age' );
@@ -108,7 +109,7 @@
 
       <div class="event-metas m-4col m-last">
         <div class="event-metas-group">
-          <?php if($is_creation) : echo '<span class="event-is-created">Création</span>'; endif; ?><br>
+          <?php if($is_creation) : echo '<span class="event-is-created">Création</span>'; endif; ?> <?php if($is_creation && $is_en_famille) : echo ' | '; endif; ?> <?php if($is_en_famille) : echo '<span class="event-is-created"> A voir en famille</span>'; endif; ?> <br>
           <?php foreach ( $event_types as $type ) { echo '<span class="event-type"> ' . $type->name . '</span>'; } ?> | <?php foreach ( $age as $a ) { echo '<span class="event-age">'. $a->name . '</span>'; } ?><br>
           <?php if($public){ ?><?php foreach ( $salle as $s ) { echo $s->name; } ?> | <?php echo $duration; }?>
         </div><!-- .entry-metas-group -->

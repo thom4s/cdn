@@ -28,7 +28,7 @@ function type_taxonomy() {
         'not_found'                  => __( 'Aucun résultat', 'type_taxo' ),
     );
     $rewrite = array(
-        'slug'                       => 'saison/quoi',
+        'slug'                       => 'saison/t',
         'with_front'                 => true,
         'hierarchical'               => false,
     );
@@ -69,7 +69,7 @@ function event_cat_taxonomy() {
         'not_found'                  => __( 'Aucun résultat', 'type_taxo' ),
     );
     $rewrite = array(
-        'slug'                       => 'saison/cat',
+        'slug'                       => 'saison/c',
         'with_front'                 => true,
         'hierarchical'               => false,
     );
@@ -110,7 +110,7 @@ function age_taxonomy() {
         'not_found'                  => __( 'Aucun résultat', 'age_taxo' ),
     );
     $rewrite = array(
-        'slug'                       => 'age',
+        'slug'                       => 'saison/a',
         'with_front'                 => true,
         'hierarchical'               => false,
     );
@@ -151,7 +151,7 @@ function salle_taxonomy() {
         'not_found'                  => __( 'Aucun résultat', 'salle_taxo' ),
     );
     $rewrite = array(
-        'slug'                       => 'salle',
+        'slug'                       => 'saison/s',
         'with_front'                 => true,
         'hierarchical'               => false,
     );

@@ -82,8 +82,8 @@ function cdn_widgets_init() {
 		'description'   => 'Sur toutes les pages statiques sauf Saison, Production et Accueil',
 		'before_widget' => '<aside id="%1$s" class="widget-commun bg-practical %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer 1er colonne', 'cdn' ),

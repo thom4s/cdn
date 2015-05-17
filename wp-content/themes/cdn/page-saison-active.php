@@ -16,74 +16,137 @@
 if ( ! isset($exclude) )
   $exclude = array();
 
-
-$args = array(
-  'post_type' => array('event'),
-  'post__not_in' => $exclude,
-  'posts_per_page'  =>  -1,
+  $args = array(
+    'post_type'       => array('event'),
+    'post__not_in'    => $exclude,
+    'posts_per_page'  =>  -1,
+    'status'          => 'published',
+    'orderby'         => 'meta_value_num',
+    'meta_key'        => 'event_meta_firstdate',
+    'order'           => 'ASC',
   );
 
 
-if ( get_query_var('quoi') ):
-  $args['tax_query'][] = array(
-      'taxonomy'  =>  'event_type',
-      'field'   =>  'slug',
-      'terms'   =>  preg_split("#,#", get_query_var('quoi'))
-    );
-endif;
+    // Get query TYPE if existed
+    if ( get_query_var('t') ):
+      $args['tax_query'][] = array(
+          'taxonomy'  =>  'event_type',
+          'field'   =>  'slug',
+          'terms'   =>  preg_split("#,#", get_query_var('t'))
+        );
+    endif;
+
+    // Get query CAT if existed
+    if ( get_query_var('c') ):
+      $args['tax_query'][] = array(
+          'taxonomy'  =>  'event_cat',
+          'field'   =>  'slug',
+          'terms'   =>  preg_split("#,#", get_query_var('c'))
+        );
+    endif;
+
+    // Get query AGE if existed
+    if ( get_query_var('a') ):
+      $args['meta_query'][] = array(
+          'key'       =>  'event_age',
+          'field'   =>  'slug',
+          'terms'   =>  preg_split("#,#", get_query_var('a'))
+        );
+    endif;
+
+    // Get query SALLE if existed
+    if ( get_query_var('s') ):
+      $args['meta_query'][] = array(
+          'key'       =>  'event_salle',
+          'field'   =>  'slug',
+          'terms'   =>  preg_split("#,#", get_query_var('s'))
+        );
+    endif;
+
+    // Get query vars if existed
+    if ( get_query_var('enfamille') ):
+      $args['meta_query'][] = array(
+          'key'       =>  'event_meta_en_famille',
+          'value'     =>  1,
+          'compare'   =>  'IN'
+        );
+    endif;
 
 
-if ( ! isset($args['meta_date_after_key']) ):
-  $args['meta_date_after_key'] = 'end_date';
-  $args['meta_date_after'] = date('Y-m-d');
-endif;
+    if ( ! isset($args['meta_date_after_key']) ):
+      $args['meta_date_after_key'] = 'end_date';
+      $args['meta_date_after'] = date('Y-m-d');
+    endif;
 
 
 get_header(); ?>
 
 	<div id="primary" class="content-area content-saison">
 		<main id="main" class="site-main" role="main">
-POUET 
+ 
       <header class="entry-header bg">
         <div class="entry-header-inner l-12col l-first l-1col-push">
 
           <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-          <p class="post-excerpt"><?php echo $introduction; ?></p>
+          <div class="post-excerpt"><?php echo $introduction; ?></div>
 
-          <ul class="calendar-filter clearfix">
+          <ul class="calendar-filter l-15col l-first l-1col-push clearfix">
+            <?php 
+              $type_args = array(
+                'hide_empty'         => 1,
+                'taxonomy'           => 'event_type',
+                'title_li'           => __( '<h4>Filtrer par </h4>' ),
+              );
+            ?>
+            <?php wp_list_categories( $type_args ); ?>
 
-            <?php
-              if ( get_query_var('quoi') ):
-                $terms = preg_split("#,#", get_query_var('quoi'), -1, PREG_SPLIT_NO_EMPTY);
-                sort($terms);
-                foreach($terms as $term):
-                  $term = get_term_by('slug', $term, 'event_type');
-                  $t = implode(',', array_diff($terms, array($term->slug)));
-                  $url = mahi_add_query_path(null, 'quoi', $t);
-                  ?>
-                  <li class="sidebar-filter-dashboard">
-                    <a href="<?php print $url ?>">
-                      <?php echo $test; print $term->name ?>
-                    </a>
-                  </li>
-                  <?php
-                endforeach;
-              endif;
-              ?>
+            <ul id="en_famille_selector" class="">
+              <li class="cat-item"><a href="?enfamille=y">En famille</a></li>
+            </ul>
 
-          </div>
+            <?php 
+              $cat_args = array(
+                'hide_empty'         => 1,
+                'taxonomy'           => 'event_cat',
+                'title_li'           => __( '' ),
+              );
+            ?>
+            <?php wp_list_categories( $cat_args ); ?>
+
+
+
+
+          </ul>
+
+
 
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
 
 
-	    <div class="row">
+        <?php
+
+          // The Query
+          $saison_events = new WP_Query( $args );
+
+          // The Loop
+          if ( $saison_events->have_posts() ) { ?>
+            <div id="grid" class="row" data-columns>
+
+            <?php while ( $saison_events->have_posts() ) {
+                $saison_events->the_post();
+                $firstdate = rwmb_meta(  $prefix_event . 'firstdate', array(), $post->ID );
+                $event_type = rwmb_meta(  $prefix_event . 'event_type', 'type=taxonomy&taxonomy=event_type', $post->ID );
+                $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $post->ID );
+                $dates = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID );
+                $authors =  rwmb_meta( $prefix_event . 'authors', array(), $post->ID );
+
+                include(locate_template('bloc-event.php')); } ?>
+            </div><!-- .row -->
+
           <?php
-          query_posts($args);
-          get_template_part( 'loop', 'calendar' );
-          wp_reset_query();
-          ?>
-      </div>
+          } else { }
+          wp_reset_postdata(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

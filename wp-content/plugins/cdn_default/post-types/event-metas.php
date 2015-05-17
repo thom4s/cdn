@@ -102,6 +102,12 @@ function event_register_meta_boxes( $meta_boxes )
                 'id'    => "{$prefix}creation",
                 'type'  => 'checkbox',
             ),
+            // A voir en famille
+            array(
+                'name'  => __( 'A voir en famille', 'meta-box' ),
+                'id'    => "{$prefix}en_famille",
+                'type'  => 'checkbox',
+            ),
             // DUREE
             array(
                 'name'  => __( 'Durée', 'meta-box' ),

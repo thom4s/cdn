@@ -46,13 +46,18 @@ jQuery(function($) {
 
     var trigger_in = $('#trigger-in');
     var trigger_out = $('#trigger-out');
-
     trigger_in.click(function(){
       $('.collapsed').show();
     });
     trigger_out.click(function(){
       $('.collapsed').hide();
     });
+
+
+    $en_famille_selector = $('#en_famille_selector');
+    
+
+
 
   });
 });

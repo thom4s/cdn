@@ -31,11 +31,20 @@
     );
     
     // Get query vars if existed
-    if ( get_query_var('quoi') ):
+    if ( get_query_var('t') ):
       $args['tax_query'][] = array(
           'taxonomy'  =>  'event_type',
           'field'   =>  'slug',
-          'terms'   =>  preg_split("#,#", get_query_var('quoi'))
+          'terms'   =>  preg_split("#,#", get_query_var('t'))
+        );
+    endif;
+
+    // Get query vars if existed
+    if ( get_query_var('enfamille') ):
+      $args['meta_query'][] = array(
+          'key'       =>  'event_meta_en_famille',
+          'value'     =>  1,
+          'compare'   =>  'IN'
         );
     endif;
 
@@ -58,10 +67,12 @@ get_header(); ?>
                 'title_li'           => __( '<h4>Filtrer par </h4>' ),
               );
             ?>
-            
             <?php wp_list_categories( $filter_args ); ?>
 
-          </div>
+            <ul id="en_famille_selector" class="">
+              <li class="cat-item"><a href="?enfamille=y">En famille</a></li>
+            </ul>
+          </ul>
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
 
@@ -75,17 +86,15 @@ get_header(); ?>
             <div id="grid" class="row" data-columns>
 
             <?php while ( $saison_events->have_posts() ) {
-
                 $saison_events->the_post();
                 $firstdate = rwmb_meta(  $prefix_event . 'firstdate', array(), $post->ID );
                 $event_type = rwmb_meta(  $prefix_event . 'event_type', 'type=taxonomy&taxonomy=event_type', $post->ID );
                 $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $post->ID );
-                $dates = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID ); 
+                $dates = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID );
                 $authors =  rwmb_meta( $prefix_event . 'authors', array(), $post->ID );
 
                 include(locate_template('bloc-event.php')); } ?>
-
-            </div>
+            </div><!-- .row -->
 
           <?php
           } else { }

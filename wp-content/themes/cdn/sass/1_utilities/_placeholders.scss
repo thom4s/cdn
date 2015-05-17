@@ -12,7 +12,13 @@
 
 .#{$utilities-prefix}right {
   float: right !important; }
-
+.no-float {
+  float: none !important;;
+  clear: none !important;;
+}
+.no-clear {
+  clear: none !important;;
+}
 .clearfix {
   *zoom: 1; }
   .clearfix:before, .clearfix:after {
