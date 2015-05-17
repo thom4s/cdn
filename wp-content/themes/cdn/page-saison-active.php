@@ -93,27 +93,10 @@ get_header(); ?>
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
 
-
         <?php
           $saison_events = new WP_Query( $args );
-
-          if ( $saison_events->have_posts() ) { ?>
-            <div id="grid" class="row" data-columns>
-
-            <?php while ( $saison_events->have_posts() ) {
-                $saison_events->the_post();
-                $firstdate = rwmb_meta(  $prefix_event . 'firstdate', array(), $post->ID );
-                $event_type = rwmb_meta(  $prefix_event . 'event_type', 'type=taxonomy&taxonomy=event_type', $post->ID );
-                $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $post->ID );
-                $dates = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID );
-                $authors =  rwmb_meta( $prefix_event . 'authors', array(), $post->ID );
-
-                include(locate_template('bloc-event.php')); } ?>
-            </div><!-- .row -->
-
-          <?php
-          } else { }
-          wp_reset_postdata(); ?>
+          include(locate_template('loop-calendar.php'));
+         ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

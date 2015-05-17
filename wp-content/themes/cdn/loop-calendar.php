@@ -1,58 +1,34 @@
 <?php
 $previous_month = false;
-if ( have_posts() ) :
-  while ( have_posts() ) :
+if ( $saison_events->have_posts() ) :
+  $i = 0; ?>
 
-    the_post();
+  <?php while ( $saison_events->have_posts() ) :
 
-    if ( preg_match("#\d+\-\d+?#", get_query_var('quand') ) ):
-      $date = get_query_var('quand');
-    else:
-      $date = get_query_var('quand').'-01-01';
-    endif;
+    $saison_events->the_post();
+    $firstdate = rwmb_meta(  $prefix_event . 'firstdate', array(), $post->ID );
+    $event_type = rwmb_meta(  $prefix_event . 'event_type', 'type=taxonomy&taxonomy=event_type', $post->ID );
+    $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $post->ID );
+    $dates = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID );
+    $authors =  rwmb_meta( $prefix_event . 'authors', array(), $post->ID );
 
-    $month = date('Y/m', max(strtotime($date), strtotime(get_post_meta(get_the_ID(), 'start_date', true))));
+    $month = date('Y/m', $firstdate);
 
-    if ( $previous_month != $month ):
-      ?>
-      <div class="box big" data-date="<?php print strtotime($month.'/01') ?>">
-        <h2 class="box-title">
-          <?php print strftime('%B %Y', strtotime($month.'/01')) ?>
-        </h2>
-      </div><!-- .box -->
-      <?php
-      $previous_month = $month;
-    endif;
+    if ( $previous_month != $month ): 
+      if ($i > 0) { echo '</div><!-- #grid --> '; }
+      echo do_shortcode( '[une_partie titre="'. strftime('%B %Y', strtotime($month.'/01')) .'"]' );
+      $previous_month = $month; 
+       ?>
+      <div id="grid" class="row" data-columns>
+    <?php endif;
 
-    ?>
-    <div class="box" data-date="<?php print strtotime(get_post_meta(get_the_ID(), 'start_date',true))  ?>">
-      <article class="post clearfix <?php //echo ($dm == 'displaymode2')?' small':'';?>">
-        <?php
-        if (has_post_thumbnail()):
-          ?>
+    include(locate_template('bloc-event.php'));
 
-          <?php
-        endif;
-        ?>
-        <div class="excerpt">
-          <div class="ellipsis">
-            <div>
-              <h2 class="box-title">
-                <a href="<?php the_permalink();?>">
-                  <strong>
-                  <?php the_title();?>
-                  </strong>
-
-                </a>
-              </h2>
-            </div>
-          </div>
-        </div><!-- .excerpt -->
-      </article><!-- .post -->
-    </div><!-- .box --><?php
-
+    if( $previous_month != $month) : ?>
+      </div>
+    <?php endif;
+    $i = $i + 1;
   endwhile;
-
 
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
@@ -67,13 +43,14 @@ if ( have_posts() ) :
   endif;
 else :
 ?>
-  <div class="programmation-no-results">
-    <h2 class="aligncenter">Aucun résultat <br /> ne correspond à votre recherche</h2>
+  <div class="saison-no-result l-12col l-first l-1col-push">
+    <h2 class="aligncenter">Aucun événement ne correspond à votre recherche</h2>
     <hr />
     <div class="bt-back clearfix">
-      <a href="/programmation/">Retour à la programmation complète</a>
+      <a href="/saison/">Retour à la saison complète</a>
     </div><!-- .bt-back -->
   </div><!-- .programmation-no-results -->
 <?php
   endif;
+  wp_reset_postdata(); 
 ?>
