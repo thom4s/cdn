@@ -83,7 +83,7 @@ get_header(); ?>
  
       <header class="entry-header bg">
         <div class="entry-header-inner">
-          <?php the_title( '<h1 class="entry-title  l-12col l-first l-1col-push">', '</h1>' ); ?>
+          <?php the_title( '<h1 class="entry-title l-12col l-first l-1col-push">', '</h1>' ); ?>
           <div class="post-excerpt l-12col l-first l-1col-push"><?php echo $introduction; ?></div>
           <div class="calendar-filter-all l-first l-1col-push clearfix">
             <?php get_template_part('part', 'filter-type'); ?>
