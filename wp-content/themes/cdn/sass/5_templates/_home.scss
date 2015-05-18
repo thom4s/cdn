@@ -8,6 +8,10 @@
   .site-branding-home {
     position: relative;
     height: 650px;
+    
+    @include up-to(large) {
+      height: auto;
+    }
   }
     .site-title-home {
       @extend .site-title;
@@ -17,7 +21,10 @@
       color: #fff;
       @include fontsize(45);
       line-height: 4rem;
+      
       @include up-to(medium) {
+        @include fontsize(25);
+        line-height: 2.5rem;
         display: block;
       }
     }
@@ -33,6 +40,10 @@
         @include at-least(wide) {
           margin-left: 0;
         }
+        @include up-to(large) {
+          margin-left: 0;
+          max-width: 100%;
+        }
       }
     }
       .featured-infos {
@@ -46,6 +57,12 @@
           .featured-bg {
             background: rgba(0, 0, 0, 0.8);
           }
+        }
+
+        @include up-to(medium) {
+          position: relative;
+          bottom: 0;
+          right: 0;
         }
 
       }
@@ -77,5 +94,20 @@
   background: none;
   margin-top: $base_line_height;
 }
+
+
+.home-header {
+
+  @include up-to(medium){
+    margin: 44px 0;
+    float: left;
+    width: 100%;
+  }
+
+  .menu-menu-principal-container {
+    margin-top: 44px;
+  }
+}
+
 
 

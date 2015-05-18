@@ -17,7 +17,7 @@
 	@include up-to(medium) {
 		padding-left: 5px;
 		width: 50%;
-		margin-top: 66px;
+		margin-top: 0;
 	}
 }
 	.main-navigation ul {
@@ -48,6 +48,7 @@
 			  	color: $color_link_hover;
 			  }
 			}
+
 
 .main-navigation ul ul {
 	display: none;
@@ -103,7 +104,7 @@
 
 	.hamburger-menu {
 		display: block;
-		width: 50%;
+		width: 40%;
 		float: left;
 		text-align: center;
 		height: $arrow_fat_height;
@@ -119,11 +120,19 @@
 	}
 
 	.logo {
-		width: 50%;
+		width: 60%;
 		float: right;
+
+		.site-logo-common {
+			float: left;
+			margin-right: 11px; 
+			z-index: 0;
+		}
+
 		h1 {
 			margin: 0;
-			@include fontsize(35);
+			@include fontsize(25);
+			float: left;
 		}
 	}
 	.site-title {
@@ -160,7 +169,7 @@
 		left: 0;
 		min-height: 100%;
 		width: 80%;
-		padding: 0 11px;
+		padding: 66px 11px 0;
 		background: $bg-color;
 		color: #fff;
 		border-right: 2px solid #000;

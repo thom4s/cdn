@@ -80,7 +80,13 @@ $arrow_thin_width: 26px;
   background-position: $x ( $y * 3 );
 }
 
-
+// Close Button
+.bt-close {
+  @extend %sprite;
+  @extend .sprite-boxed;
+  background-position: $x ( $y * 4 );
+  z-index: 9999;
+}
 
 // Home
 %site-logo {
@@ -92,6 +98,9 @@ $arrow_thin_width: 26px;
   .site-logo-home {
     @extend %site-logo;
     margin-top: -66px;
+    @include up-to(medium){
+      margin-top: 0;
+    } 
   }
   .site-logo-common {
     @extend %site-logo;
@@ -104,11 +113,6 @@ $arrow_thin_width: 26px;
   display: inline-block;
   background-position: 0 ( $y * 3 );
 }
-#trigger-out {
-  @extend %sprite;
-  background-position: $x ( $y * 3 );
-}
-
 
 
 .arrow-gray-left {

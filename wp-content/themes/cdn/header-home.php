@@ -21,8 +21,9 @@
       
       <div class="home-featured plain">  
         <?php echo get_the_post_thumbnail( $featured_event_id, 'home-featured', '' ); ?>
-        <a href="<?php echo $event_url; ?>">
+        
           <div class="featured-infos">
+            <a href="<?php echo $event_url; ?>">
             <div class="featured-bg"></div>
             <div class="featured-inner">
               <div class="featured-date"><?php echo $event_dates; ?></div>
@@ -38,15 +39,16 @@
                 ?>
               </div>
             </div>
+            </a>
           </div>
-        </a>
+        
       </div>   
     </header><!-- .site-branding -->
   <?php endif; ?>
 
   <header id="masthead" class="site-header home-header l-4col l-first m-4col m-first" role="banner">
-    <div class="site-logo-home"></div>
     <nav id="site-navigation" class="main-navigation" role="navigation">
+      <div class="site-logo-home"></div>
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
     <div class="header-group">

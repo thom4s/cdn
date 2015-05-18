@@ -16,6 +16,7 @@
       </a>
 
       <div class="logo">
+        <div class="site-logo-common"></div>
         <h1 class="site-title">
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
         </h1>
@@ -23,9 +24,9 @@
   </div>
 
   <header id="masthead" class="site-header collapsed l-4col l-first m-4col m-first" role="banner">
-    <div id="trigger-out" class=" sprite-boxed"></div>
+    <div id="trigger-out" class="bt-close"></div>
     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-    <div class="site-logo-common"></div>
+    
     <nav id="site-navigation" class="main-navigation" role="navigation">
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
