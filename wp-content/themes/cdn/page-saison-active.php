@@ -18,7 +18,7 @@
     $args = array(
       'post_type'       => 'event',
       'post__not_in'    => $exclude,
-      'posts_per_page'  =>  -1,
+      'posts_per_page'  =>  3,
       'status'          => 'published',
       'orderby'         => 'meta_value_num',
       'meta_key'        => 'event_meta_firstdate',
@@ -61,19 +61,12 @@
         );
     endif;
 
-    // Get query vars if existed
-    if ( get_query_var('enfamille') ):
-      $args['meta_query'][] = array(
-          'key'       =>  'event_meta_en_famille',
-          'value'     =>  1,
-          'compare'   =>  'IN'
-        );
-    endif;
-
     if ( ! isset($args['meta_date_after_key']) ):
       $args['meta_date_after_key'] = 'end_date';
       $args['meta_date_after'] = date('Y-m-d');
     endif;
+
+    $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
 get_header(); ?>
 
@@ -94,6 +87,10 @@ get_header(); ?>
 
       <?php
         $saison_events = new WP_Query( $args );
+        $temp_query = $wp_query;
+        $wp_query = NULL;
+        $wp_query = $saison_events;
+
         include(locate_template('loop-calendar.php'));
       ?>
 

@@ -31,7 +31,10 @@ if ( $saison_events->have_posts() ) :
       </div>
     <?php endif;
     $i = $i + 1;
-  endwhile;
+  endwhile; ?>
+  
+</div>
+  <?php cdn_posts_navigation(); 
 
 else :
 ?>

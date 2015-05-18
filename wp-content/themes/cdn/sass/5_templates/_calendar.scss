@@ -24,9 +24,8 @@
     float: left;
   }
 
-  ul {
+  .filter-group {
     display: inline-block;
-    float: left;
     margin: 0;
   }
 
@@ -43,8 +42,9 @@
 }
 
 
-.calendar-filter {
+.calendar-filter-minimal {
   @extend %filter;
+  @include clearfix;
   margin: 0 0 22px 0;
 
   h4 {
@@ -54,20 +54,16 @@
     }    
   }
 
-  ul {
+  .filter-group {
     @include clearfix;
     padding: 0 0 0 22px;
-    height: $arrow_fat_height;
-    line-height: $arrow_fat_height;
     border-bottom: 1px dotted #000;
-
+    float: left;
   }
 
-  & > li {
+  .cat-item {
 
   }
-
-
 }
 
 
@@ -87,6 +83,7 @@
     width: 25%;
     margin-right: 5%;
     padding: 0;
+    float: left;
   }
 
 }

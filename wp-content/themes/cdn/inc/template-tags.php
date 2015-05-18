@@ -52,8 +52,8 @@ function cdn_posts_navigation($numpages = '', $pagerange = '', $paged='') {
     'end_size'        => 1,
     'mid_size'        => $pagerange,
     'prev_next'       => True,
-    'prev_text'       => __('&laquo;'),
-    'next_text'       => __('&raquo;'),
+    'prev_text'       => __('&laquo; éléments plus anciens'),
+    'next_text'       => __('éléments plus récents &raquo;'),
     'type'            => 'plain',
     'add_args'        => false,
     'add_fragment'    => ''
@@ -61,12 +61,19 @@ function cdn_posts_navigation($numpages = '', $pagerange = '', $paged='') {
 
   $paginate_links = paginate_links($pagination_args);
 
-  if ($paginate_links) {
-    echo "<nav class='custom-pagination'>";
-      echo "<span class='page-numbers page-num'>Page " . $paged . " of " . $numpages . "</span> ";
-      echo $paginate_links;
-    echo "</nav>";
-  }
+  if ($paginate_links) : ?>
+    <nav class='pagination m-14col m-1col-push m-first'>
+      <div class="previous-posts-link">
+        
+        <?php previous_posts_link( '<div class="arrow-thin-left"></div><div class="posts-link-text">Evénéments précédents</div>', 0 ); ?>
+      </div>
+      <div class="next-posts-link">
+        <?php next_posts_link( '<div class="arrow-thin-right"></div><div class="posts-link-text">Evénements suivants</div>', 0 ); ?>
+
+      </div>
+
+    </nav>
+  <?php endif; 
 }
 endif;
 

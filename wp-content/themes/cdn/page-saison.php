@@ -5,7 +5,9 @@
  *
  * @package cdn
  */
+  error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
+ 
     $prefix_event = 'event_meta_';
     $prefix_default = 'defaults_meta_';
 
@@ -15,7 +17,7 @@
 
     $args = array(
       'post_type'       => 'event',
-      'posts_per_page'  => 3,
+      'posts_per_page'  => 15,
       'status'          => 'published',
       'tax_query'       => array(
         'relation' => 'AND',
@@ -40,11 +42,11 @@
     endif;
 
     // Get query vars if existed
-    if ( get_query_var('enfamille') ):
-      $args['meta_query'][] = array(
-          'key'       =>  'event_meta_en_famille',
-          'value'     =>  1,
-          'compare'   =>  'IN'
+    if ( get_query_var('a') ):
+      $args['tax_query'][] = array(
+          'taxonomy'  =>  'event_age',
+          'field'   =>  'slug',
+          'terms'   =>  preg_split("#,#", get_query_var('a'))
         );
     endif;
 
@@ -61,19 +63,8 @@ get_header(); ?>
           <?php the_title( '<h1 class="entry-title l-12col l-first l-1col-push">', '</h1>' ); ?>
           <div class="post-excerpt l-12col l-first l-1col-push"><?php echo $introduction; ?></div>
 
-          <ul class="calendar-filter l-15col l-first l-1col-push clearfix">
-            <?php 
-              $filter_args = array(
-                'hide_empty'         => 1,
-                'taxonomy'           => 'event_type',
-                'title_li'           => __( '<h4>Filtrer par </h4>' ),
-              );
-            ?>
-            <?php wp_list_categories( $filter_args ); ?>
-
-            <ul id="en_famille_selector" class="">
-              <li class="cat-item"><a href="?enfamille=y">En famille</a></li>
-            </ul>
+          <ul class="calendar-filter-minimal l-15col l-first l-1col-push clearfix">
+            <?php get_template_part('part', 'filter-minimal'); ?>
           </ul>
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
@@ -102,8 +93,7 @@ get_header(); ?>
             </div><!-- .row -->
 
           <?php
-          cdn_paging_nav(); 
-
+          cdn_posts_navigation(); 
 
           } else { }
           $wp_query = NULL;

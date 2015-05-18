@@ -5,6 +5,7 @@
  *
  * @package cdn
  */
+  error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
     $prefix_event = 'event_meta_';
     $prefix_default = 'defaults_meta_';
@@ -15,7 +16,7 @@
 
     $args = array(
       'post_type'       => 'event',
-      'posts_per_page'  => 2,
+      'posts_per_page'  => 15,
       'status'          => 'published',
       'tax_query'       => array(
         'relation' => 'AND',
@@ -62,7 +63,7 @@ get_header(); ?>
           <?php the_title( '<h1 class="entry-title l-12col l-first l-1col-push">', '</h1>' ); ?>
           <div class="post-excerpt l-12col l-first l-1col-push"><?php echo $introduction; ?></div>
 
-          <ul class="calendar-filter-all l-first l-1col-push clearfix">
+          <ul class="calendar-filter-minimal l-first l-1col-push clearfix">
             <?php get_template_part('part', 'filter-saison'); ?>
           </ul>
         </div><!-- .entry-header-inner -->
