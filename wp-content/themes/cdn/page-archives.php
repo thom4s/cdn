@@ -15,7 +15,7 @@
 
     $args = array(
       'post_type'       => 'event',
-      'posts_per_page'  => 3,
+      'posts_per_page'  => 2,
       'status'          => 'published',
       'tax_query'       => array(
         'relation' => 'AND',
@@ -27,7 +27,7 @@
       ),
       'orderby'   => 'meta_value_num',
       'meta_key'  => 'event_meta_firstdate',
-      'order'      => 'ASC',
+      'order'      => 'DESC',
     );
     
     // Get query vars if existed
@@ -40,15 +40,16 @@
     endif;
 
     // Get query vars if existed
-    if ( get_query_var('enfamille') ):
-      $args['meta_query'][] = array(
-          'key'       =>  'event_meta_en_famille',
-          'value'     =>  1,
-          'compare'   =>  'IN'
+    if ( get_query_var('saison') ):
+      $args['tax_query'][] = array(
+          'taxonomy'  =>  'event_saison',
+          'field'   =>  'slug',
+          'terms'   =>  preg_split("#,#", get_query_var('saison'))
         );
     endif;
 
     $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
 
 get_header(); ?>
 
@@ -61,19 +62,8 @@ get_header(); ?>
           <?php the_title( '<h1 class="entry-title l-12col l-first l-1col-push">', '</h1>' ); ?>
           <div class="post-excerpt l-12col l-first l-1col-push"><?php echo $introduction; ?></div>
 
-          <ul class="calendar-filter l-15col l-first l-1col-push clearfix">
-            <?php 
-              $filter_args = array(
-                'hide_empty'         => 1,
-                'taxonomy'           => 'event_type',
-                'title_li'           => __( '<h4>Filtrer par </h4>' ),
-              );
-            ?>
-            <?php wp_list_categories( $filter_args ); ?>
-
-            <ul id="en_famille_selector" class="">
-              <li class="cat-item"><a href="?enfamille=y">En famille</a></li>
-            </ul>
+          <ul class="calendar-filter-all l-first l-1col-push clearfix">
+            <?php get_template_part('part', 'filter-saison'); ?>
           </ul>
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
@@ -87,7 +77,7 @@ get_header(); ?>
           $wp_query = $saison_events;
 
           // The Loop
-          if ( $saison_events->have_posts() ) { ?>
+          if ( $saison_events->have_posts() ) : ?>
             <div id="grid" class="row" data-columns>
 
             <?php while ( $saison_events->have_posts() ) {
@@ -98,17 +88,20 @@ get_header(); ?>
                 $dates = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID );
                 $authors =  rwmb_meta( $prefix_event . 'authors', array(), $post->ID );
 
-                include(locate_template('bloc-event.php')); } ?>
+                include(locate_template('bloc-event.php')); 
+              }  ?>
             </div><!-- .row -->
 
-          <?php
-          cdn_paging_nav(); 
+      <?php
+        cdn_posts_navigation();
+        $wp_query = NULL;
+        $wp_query = $temp_query;
+        wp_reset_postdata();
+      ?>
 
-
-          } else { }
-          $wp_query = NULL;
-          $wp_query = $temp_query;
-          wp_reset_postdata(); ?>
+    <?php else:  ?>
+      <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+    <?php endif; ?>
 
     </main><!-- #main -->
   </div><!-- #primary -->

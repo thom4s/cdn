@@ -14,6 +14,7 @@ function add_query_vars($aVars) {
   $aVars[] = "c";
   $aVars[] = "a";
   $aVars[] = "s";
+  $aVars[] = "saison";
   $aVars[] = "enfamille";
   return $aVars;
 }
@@ -26,6 +27,11 @@ function add_rewrite_rules($rules) {
   $newrules['(saison)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/?$'] = 'index.php?pagename=$matches[1]&$matches[2]=$matches[3]&$matches[4]=$matches[5]&$matches[6]=$matches[7]';
   $newrules['(saison)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/?$'] = 'index.php?pagename=$matches[1]&$matches[2]=$matches[3]&$matches[4]=$matches[5]';
   $newrules['(saison)/([^/]+)/([^/]+)/?$'] = 'index.php?pagename=$matches[1]&$matches[2]=$matches[3]';
+
+  // For Pagination
+  $newrules['(archives)/page/([0-9]+)?$'] = 'index.php?pagename=$matches[1]&paged=$matches[2]';
+  $newrules['(archives)/([^/]+)/([^/]+)/page/([0-9]+)?$'] = 'index.php?pagename=$matches[1]&$matches[2]=$matches[3]&paged=$matches[4]';
+  $newrules['(archives)/([^/]+)/([^/]+)/?$'] = 'index.php?pagename=$matches[1]&$matches[2]=$matches[3]';
 
   return $newrules + $rules;
 }

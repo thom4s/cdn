@@ -114,7 +114,7 @@ function event_register_meta_boxes( $meta_boxes )
                 'id'    => "{$prefix}duration",
                 'type'  => 'text',
             ),
-            // TYPE d'événement
+            // TYPE de spectacle
             array(
                 'name'    => __( 'Type de spectacle', 'meta-box' ),
                 'id'      => "{$prefix}event_type",
@@ -125,13 +125,24 @@ function event_register_meta_boxes( $meta_boxes )
                     'args'     => array()
                 ),
             ),
-            // TYPE d'événement
+            // Catégorie d'événement
             array(
                 'name'    => __( 'Catégorie d\'événement', 'meta-box' ),
                 'id'      => "{$prefix}event_cat",
                 'type'    => 'taxonomy',
                 'options' => array(
                     'taxonomy' => 'event_cat',
+                    'type'     => 'checkbox_list',
+                    'args'     => array()
+                ),
+            ),
+            // Saison
+            array(
+                'name'    => __( 'Saison', 'meta-box' ),
+                'id'      => "{$prefix}event_saison",
+                'type'    => 'taxonomy',
+                'options' => array(
+                    'taxonomy' => 'event_saison',
                     'type'     => 'checkbox_list',
                     'args'     => array()
                 ),
@@ -210,14 +221,15 @@ function event_register_meta_boxes( $meta_boxes )
                 'type'       => 'datetime',
                 'timestamp'     => true,
                 'js_options' => array(
+                    'dateFormat'        => 'dd-mm-yy',
                     'stepMinute'     => 15,
                     'showTimepicker' => true,
                 ),
             ),
             // Code résa de la séance
             array(
-                'name'       => __( 'Code de la séance', 'meta-box' ),
-                'id'         => $prefix . 'booking_id',
+                'name'       => __( 'Code de la première séance', 'meta-box' ),
+                'id'         => $prefix . 'first_booking_id',
                 'type'       => 'number',
             ),
 
@@ -242,8 +254,9 @@ function event_register_meta_boxes( $meta_boxes )
                         'type'       => 'datetime',
                         'timestamp'     => false,
                         'js_options'    => array(
-                            'stepMinute'     => 15,
-                            'showTimepicker' => true,
+                            'dateFormat'        => 'dd-mm-yy',
+                            'stepMinute'        => 15,
+                            'showTimepicker'    => true,
                         ),
                     ),
                     // Code résa de la séance
@@ -254,6 +267,32 @@ function event_register_meta_boxes( $meta_boxes )
                     ),
                 ),
             ),
+
+            // DIVIDER
+            array(
+                'type' => 'divider',
+                'id'   => 'fake_divider_id', // Not used, but needed
+            ),
+
+            // Dernière Date
+            array(
+                'name'       => __( 'Dernière Date', 'meta-box' ),
+                'id'         => $prefix . 'lastdate',
+                'type'       => 'datetime',
+                'timestamp'     => true,
+                'js_options' => array(
+                    'dateFormat'        => 'dd-mm-yy',
+                    'stepMinute'     => 15,
+                    'showTimepicker' => true,
+                ),
+            ),
+            // Code résa de la séance
+            array(
+                'name'       => __( 'Code de la dernière séance', 'meta-box' ),
+                'id'         => $prefix . 'last_booking_id',
+                'type'       => 'number',
+            ),
+
         ),
     );
 

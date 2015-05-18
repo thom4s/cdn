@@ -177,9 +177,8 @@
 
 
 .posts-navigation {
-	@extend .m-11col;
-	@extend .m-1col-push;
-	@extend .m-first;
+	background-color: $color_2;
+	color: #000;
 }
 
 

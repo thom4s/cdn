@@ -6,7 +6,7 @@
  ************************************
  */
 
-// Type événement
+// Type spectacle
 function type_taxonomy() {
     $labels = array(
         'name'                       => _x( 'Types de spectacle', 'Taxonomy General Name', 'type_taxo' ),
@@ -47,7 +47,48 @@ function type_taxonomy() {
 add_action( 'init', 'type_taxonomy', 0 );
 
 
-// Type événement
+// Saison
+function saison_taxonomy() {
+    $labels = array(
+        'name'                       => _x( 'Saisons', 'Taxonomy General Name', 'type_taxo' ),
+        'singular_name'              => _x( 'Saison', 'Taxonomy Singular Name', 'type_taxo' ),
+        'menu_name'                  => __( 'Saisons', 'type_taxo' ),
+        'all_items'                  => __( 'Toutes les Saisons', 'type_taxo' ),
+        'parent_item'                => __( 'Parent Item', 'type_taxo' ),
+        'parent_item_colon'          => __( 'Parent Item:', 'type_taxo' ),
+        'new_item_name'              => __( 'Nouvelle saison', 'type_taxo' ),
+        'add_new_item'               => __( 'Ajouter une saison', 'type_taxo' ),
+        'edit_item'                  => __( 'Editer la saison', 'type_taxo' ),
+        'update_item'                => __( 'Mettre à jour', 'type_taxo' ),
+        'view_item'                  => __( 'Voir la saison', 'type_taxo' ),
+        'separate_items_with_commas' => __( 'Separate items with commas', 'type_taxo' ),
+        'add_or_remove_items'        => __( 'Add or remove items', 'type_taxo' ),
+        'choose_from_most_used'      => __( 'Choose from the most used', 'type_taxo' ),
+        'popular_items'              => __( 'Types récurents', 'type_taxo' ),
+        'search_items'               => __( 'Rechercher un type', 'type_taxo' ),
+        'not_found'                  => __( 'Aucun résultat', 'type_taxo' ),
+    );
+    $rewrite = array(
+        'slug'                       => 'archives/saison/',
+        'with_front'                 => true,
+        'hierarchical'               => false,
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => false,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+        'rewrite'                    => $rewrite,
+    );
+    register_taxonomy( 'event_saison', array( 'event' ), $args );
+}
+add_action( 'init', 'saison_taxonomy', 0 );
+
+
+// Catégorie événement
 function event_cat_taxonomy() {
     $labels = array(
         'name'                       => _x( 'Catégories d\'événements', 'Taxonomy General Name', 'type_taxo' ),
@@ -151,7 +192,7 @@ function salle_taxonomy() {
         'not_found'                  => __( 'Aucun résultat', 'salle_taxo' ),
     );
     $rewrite = array(
-        'slug'                       => 'saison/s',
+        'slug'                       => 'saison/p',
         'with_front'                 => true,
         'hierarchical'               => false,
     );

@@ -75,7 +75,6 @@
       $args['meta_date_after'] = date('Y-m-d');
     endif;
 
-
 get_header(); ?>
 
 	<div id="primary" class="content-area content-saison">
@@ -93,10 +92,10 @@ get_header(); ?>
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
 
-        <?php
-          $saison_events = new WP_Query( $args );
-          include(locate_template('loop-calendar.php'));
-         ?>
+      <?php
+        $saison_events = new WP_Query( $args );
+        include(locate_template('loop-calendar.php'));
+      ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

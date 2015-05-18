@@ -33,23 +33,12 @@ if ( $saison_events->have_posts() ) :
     $i = $i + 1;
   endwhile;
 
-  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-  if ( $wp_query->max_num_pages > 1 && $paged < $wp_query->max_num_pages ) :
-    $paginglink = "ppage/".($paged+1)."/";
-
-    ?>
-    <div class="load-more clearfix navigation" data-date="<?php print strtotime('2100/01/01') ?>">
-      <a class="more-events" href="<?php echo mahi_add_query_path(null, 'ppage', $paged + 1) ?>">Plus de dates</a>
-    </div><!-- #nav-below -->
-    <?php
-  endif;
 else :
 ?>
   <div class="saison-no-result l-12col l-first l-1col-push">
-    <h2 class="aligncenter">Aucun événement ne correspond à votre recherche</h2>
+    <h2>Aucun événement ne correspond à votre recherche</h2>
     <hr />
-    <div class="bt-back clearfix">
+    <div class="clearfix">
       <a href="/saison/">Retour à la saison complète</a>
     </div><!-- .bt-back -->
   </div><!-- .programmation-no-results -->

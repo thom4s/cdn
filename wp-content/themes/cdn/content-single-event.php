@@ -25,22 +25,32 @@
 
     // First Date
     $event_firstdate =  rwmb_meta( $prefix . 'firstdate' );
-    $event_firstdate_booking_id = rwmb_meta( $prefix . 'booking_id' );
+    $event_firstdate_booking_id = rwmb_meta( $prefix . 'first_booking_id' );
     $event_firstdate_array = array(
       'date' => $event_firstdate, 
       'booking_id' => $event_firstdate_booking_id
     );
     $the_dates[] = $event_firstdate_array;
 
-    // Other Dates
+    // In Between Dates
     $other_dates = rwmb_meta(  $prefix . 'other_dates' );
-
     foreach ($other_dates as $date) {
       $date_string = $date["date"];
       if($date_string != '') {
         $date["date"]= strtotime($date_string);
         $the_dates[] = $date;    
       } 
+    }
+
+    // Last Date
+    $event_lastdate =  rwmb_meta( $prefix . 'lastdate' );
+    $event_last_booking_id = rwmb_meta( $prefix . 'last_booking_id' );
+    if($event_lastdate != '' ) {
+      $event_lastdate_array = array(
+        'date' => $event_lastdate, 
+        'booking_id' => $event_last_booking_id
+      );
+      $the_dates[] = $event_lastdate_array;
     }
 
     // Générique
