@@ -33,7 +33,7 @@ if ( $saison_events->have_posts() ) :
     $i = $i + 1;
   endwhile; ?>
   
-</div>
+</div><!-- end last #grid -->
   <?php cdn_posts_navigation(); 
 
 else :

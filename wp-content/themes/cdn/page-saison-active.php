@@ -18,7 +18,7 @@
     $args = array(
       'post_type'       => 'event',
       'post__not_in'    => $exclude,
-      'posts_per_page'  =>  3,
+      'posts_per_page'  => 16,
       'status'          => 'published',
       'orderby'         => 'meta_value_num',
       'meta_key'        => 'event_meta_firstdate',

@@ -118,8 +118,19 @@
 
       <div class="event-metas m-4col m-last">
         <div class="event-metas-group">
-          <?php if($is_creation) : echo '<span class="event-is-created">Création</span>'; endif; ?> <?php if($is_creation && $is_en_famille) : echo ' | '; endif; ?> <?php if($is_en_famille) : echo '<span class="event-is-created"> A voir en famille</span>'; endif; ?> <br>
-          <?php foreach ( $event_types as $type ) { echo '<span class="event-type"> ' . $type->name . '</span>'; } ?> | <?php foreach ( $age as $a ) { echo '<span class="event-age">'. $a->name . '</span>'; } ?><br>
+          <?php if($is_creation) : echo '<span class="event-is-created">Création</span>'; endif; ?>
+          <br>
+          <?php foreach ( $event_types as $type ) { echo '<span class="event-type"> ' . $type->name . '</span>'; } ?> 
+          <br>
+          <?php 
+            $i = 0; 
+            foreach ( $age as $a ) { 
+              echo '<span class="event-age">';
+              echo $a->name;
+              if($i == 0) { echo ' - '; }
+              echo '</span>';
+              $i++;
+            } ?><br>
           <?php if($public){ ?><?php foreach ( $salle as $s ) { echo $s->name; } ?> | <?php echo $duration; }?>
         </div><!-- .entry-metas-group -->
 
