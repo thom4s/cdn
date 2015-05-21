@@ -5,15 +5,19 @@
  *
  * @package cdn
  */
-  error_reporting(E_ERROR | E_WARNING | E_PARSE);
-
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
  
     $prefix_event = 'event_meta_';
     $prefix_default = 'defaults_meta_';
 
     $introduction = rwmb_meta( $prefix_default . 'intro' );
     $subtitle = rwmb_meta( $prefix_default . 'subtitle' );
-    $subtitle = rwmb_meta( $prefix_default . 'subtitle' );
+    $has_bg = rwmb_meta( $prefix_default . 'title-bg' );
+    $saison_to_display = rwmb_meta( $prefix_default . 'saison_to_display', 'type=taxonomy&taxonomy=event_saison' );
+    $saison = array();
+    foreach ($saison_to_display as $s) {
+      $saison[] = $s->slug;
+    }
 
     $args = array(
       'post_type'       => 'event',
@@ -26,6 +30,11 @@
           'field'         => 'slug',
           'terms'         => array('spectacle'),
         ),
+        array(
+          'taxonomy'      => 'event_saison',
+          'field'         => 'slug',
+          'terms'         => $saison,
+        )
       ),
       'orderby'   => 'meta_value_num',
       'meta_key'  => 'event_meta_firstdate',
@@ -57,7 +66,7 @@ get_header(); ?>
   <div id="primary" class="content-area content-saison">
     <main id="main" class="site-main" role="main">
 
-      <header class="entry-header bg">
+      <header class="entry-header <?php if($has_bg){ echo 'bg'; } ?> ">
         <div class="entry-header-inner">
 
           <?php the_title( '<h1 class="entry-title l-12col l-first l-1col-push">', '</h1>' ); ?>
@@ -95,7 +104,16 @@ get_header(); ?>
           <?php
           cdn_posts_navigation(); 
 
-          } else { }
+          } else { ?>
+            <div class="saison-no-result l-12col l-first l-1col-push">
+              <h2>Aucun événement ne correspond à votre recherche</h2>
+              <hr />
+              <div class="clearfix">
+                <a href="/saison/">Retour à la saison complète</a>
+              </div><!-- .bt-back -->
+            </div><!-- .programmation-no-results -->
+          
+          <?php }
           $wp_query = NULL;
           $wp_query = $temp_query;
           wp_reset_postdata(); ?>

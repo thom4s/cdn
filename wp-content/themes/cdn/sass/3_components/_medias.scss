@@ -26,11 +26,15 @@ img {
   }
   .bx-controls {
     position: absolute;
+    height: 50px;
     top: 40%;
     bottom: 0;
     left: 0;
     right: 0;
   }
+    .bx-pager {
+      display: none;
+    }
     .bx-controls-direction {
       a {
         position: absolute;

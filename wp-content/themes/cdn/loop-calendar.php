@@ -1,6 +1,37 @@
 <?php
 $previous_month = false;
 $previous_day = false;
+$previous_week = false;
+
+setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
+function getStartAndEndDate($week, $year) {
+  $dto = new DateTime();
+  $dto->setTimezone(new DateTimeZone('UTC'));
+  $dto->setISODate($year, $week);
+
+  $start = strtotime($dto->format('j M Y'));
+  $start_month = date('m', $start);
+  $start_year = date('Y', $start);
+
+  $dto->modify('+6 days');
+  $end = strtotime($dto->format('j M Y'));
+  $end_month = date('m', $end);
+  $end_year = date('Y', $end);
+
+  if( $end_month == $start_month && $end_year == $start_year) {
+    $start = strftime('%e', $start );
+  } elseif($end_month != $start_month && $end_year == $start_year) {
+    $start = strftime('%e %b', $start );
+  } elseif($end_month != $start_month && $end_year != $start_year) {
+    $start = strftime('%e %b %g', $start );
+  }
+  $end = strftime('%e %b %Y', $end );
+
+  $ret['week_start'] = $start;
+  $ret['week_end'] = $end;
+  return $ret;
+}
+
 
 if ( $saison_events->have_posts() ) :
   $i = 0; ?>
@@ -16,18 +47,22 @@ if ( $saison_events->have_posts() ) :
 
     $month = date('Y/m', $firstdate);
     $day = date('d/m/Y', $firstdate);
-
-    if ( $previous_day != $day ): 
+    $week = date('W', $firstdate);
+    $week_year = date('o', $firstdate);
+    $week_array = getStartAndEndDate($week,$week_year);
+    
+    if ( $previous_week != $week ): 
       if ($i > 0) { echo '</div><!-- #grid --> '; }
-      echo do_shortcode( '[une_partie titre="'. $day .'"]' );
-      $previous_day = $day; 
+      echo do_shortcode( '[une_partie titre="Du '. $week_array['week_start'] . ' au '. $week_array['week_end'] .'"]' );
+      $previous_week = $week; 
        ?>
       <div id="grid" class="row" data-columns>
     <?php endif;
 
     include(locate_template('bloc-event.php'));
+    
 
-    if( $previous_day != $day) : ?>
+    if( $previous_week != $week) : ?>
       </div>
     <?php endif;
     $i = $i + 1;

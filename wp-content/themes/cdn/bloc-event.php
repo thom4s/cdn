@@ -1,5 +1,5 @@
 <?php 
-  if( is_page_template( 'page-production.php' ) ) { 
+  if( $pro ) { 
     $url = esc_url( add_query_arg( 'pro', 'yes', get_permalink() ) );
   } else {
     $url = get_permalink();

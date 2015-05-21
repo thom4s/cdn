@@ -28,8 +28,8 @@ function defaults_register_meta_boxes( $meta_boxes )
     'id'         => 'linkedposts',
     'post_types' => array( 'post', 'page', 'event' ),
     'exclude' => array(
-      'template' => array( 'page-home.php' ),
-    ),    
+      'template' => array( 'page-home.php', 'page-saison.php', 'page-saison-active.php' ),
+    ),
     'context'    => 'side',
     'fields' => array(
 
@@ -38,6 +38,12 @@ function defaults_register_meta_boxes( $meta_boxes )
         'id'      => $prefix . 'related_title',
         'name'   => __( 'Le titre au dessus des éléments liés', 'meta-box' ),
         'type'   => 'text', 
+      ),
+
+      // DIVIDER
+      array(
+        'type' => 'divider',
+        'id'   => 'fake_divider_id', // Not used, but needed
       ),
 
       // Les spectacles (par groupe)
@@ -444,7 +450,30 @@ function defaults_register_meta_boxes( $meta_boxes )
   );
 
 
+  // Pour template LA SAISON
+  $meta_boxes[] = array(
+    'title'  => __( 'Saison à Afficher ?', 'meta-box' ),
+    'id'         => 'saison-to-display',
+    'post_types' => array( 'page' ),
+    'include' => array(
+      'template' => array( 'page-saison.php' )
+    ),
+    'context'    => 'side',
+    'autosave'   => true,
+    'fields' => array(
 
+      // Content
+      array(
+        'id'      =>  $prefix . 'saison_to_display',
+        'name'    => __( 'Saison', 'meta-box' ),
+        'type'    => 'taxonomy',
+        'options' => array(
+            'taxonomy' => 'event_saison',
+            'type'     => 'select',
+        ),
+      ),
+    ),
+  );
 
   return $meta_boxes;
 }

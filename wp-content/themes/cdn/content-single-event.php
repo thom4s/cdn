@@ -70,7 +70,7 @@
     // Slideshow
     $slides =  rwmb_meta( $prefix . 'imgadv', 'type=image_advanced' );
     $videos =  rwmb_meta( $prefix . 'video', 'type=oembed' );
-
+    
     // Fichiers
     $pedago =	rwmb_meta( $prefix . 'pedago', 'type=file' );
     $presskit =	rwmb_meta( $prefix . 'presskit', 'type=file' );
@@ -118,6 +118,7 @@
 
       <div class="event-metas m-4col m-last">
         <div class="event-metas-group">
+          <?php if($pro) { echo '<div class="event-is-pro">Espace Pro</div>'; } ?>
           <?php if($is_creation) : echo '<span class="event-is-created">Création</span>'; endif; ?>
           <br>
           <?php foreach ( $event_types as $type ) { echo '<span class="event-type"> ' . $type->name . '</span>'; } ?> 
@@ -163,6 +164,7 @@
           <ul class="event-ancres">
             <?php if($distribution != '') : ?><li><a href="#distribution">Voir la Distribution</a></li><?php endif; ?>
             <?php if($public && $press != '' ) : ?><li><a href="#presse">Lire la presse</a></li><?php endif; ?>
+            <?php if($public && $videos[0] != '' ) : ?><li><a id="gotovideo" href="#">Lire la vidéo</a></li><?php endif; ?>
           </ul>
         </div><!-- .entry-metas-group -->
 

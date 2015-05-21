@@ -53,7 +53,8 @@
         padding: 11px;
         color: #fff;
         max-width: 60%;
-
+        min-width: 30%;
+        
         &:hover {
           .featured-bg {
             background: rgba(0, 0, 0, 0.8);

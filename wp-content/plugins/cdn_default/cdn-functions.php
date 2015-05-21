@@ -54,5 +54,12 @@ add_action( 'widgets_init', 'tutsplus_register_list_pages_widget' );
 
 
 
+add_action('admin_head', 'my_custom_style');
+function my_custom_style() {
+  echo '<style>
+    .rwmb-wysiwyg-wrapper .rwmb-clone { padding-top: 5px; margin-bottom: 30px; }
+  </style>';
+}
+
 
 

@@ -9995,6 +9995,29 @@ jQuery(function($) {
       }
     });
 
+    $('#gotovideo').click(function(event){
+      event.preventDefault();
+      var slider = $('.bxslider-video').bxSlider();
+      
+      slider.reloadSlider({
+        video: true,
+        useCSS: false,
+        pager: false,
+        controls: true,
+        auto: false,
+        nextText: '',
+        prevText: '',
+      });
+
+      var current = slider.getCurrentSlide();
+      console.log('current: ' + current);
+
+      var slideQty = slider.getSlideCount();
+      console.log('quantity: ' + slideQty);
+
+      slider.goToSlide(slideQty - 1);
+
+    });
 
     var str=location.href.toLowerCase();
     $(".calendar-filter .cat-item a").each(function() {
@@ -10012,10 +10035,7 @@ jQuery(function($) {
     trigger_out.click(function(){
       $('.collapsed').hide();
     });
-
-
-    $en_famille_selector = $('#en_famille_selector');
-    
+  
 
 
 

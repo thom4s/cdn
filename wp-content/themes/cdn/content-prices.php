@@ -41,7 +41,7 @@
 			$bloc_menu = $bloc['menu']; ?>
 
 
-			<div class="price-item">
+			<div class="price-item plain">
 
 				<div class="title-underline-red">
 					<h2><?php echo $bloc_title; ?></h2>

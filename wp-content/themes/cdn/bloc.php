@@ -38,10 +38,10 @@
           echo '<h3>' . $post_title . '</h3>';
         }?>
 
-        <?php if( isset($authors) ) { ?>
+        <?php if( isset($authors) && is_array($authors) ) {  ?>
           <div class="meta entry-authors">
             <?php 
-              if( is_array($authors) ) {
+              if( $authors[0]['name'] != '' ) {
                 foreach ( $authors as $author ) { 
                   echo '<span class="meta-author">' . $author['name'] . '</span><br>'; 
                 }
