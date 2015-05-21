@@ -63,7 +63,7 @@ get_header(); ?>
           <?php the_title( '<h1 class="entry-title l-12col l-first l-1col-push">', '</h1>' ); ?>
           <div class="post-excerpt l-12col l-first l-1col-push"><?php echo $introduction; ?></div>
 
-          <ul class="calendar-filter-minimal l-first l-1col-push clearfix">
+          <ul class="calendar-filter-minimal l-first l-15col l-1col-push clearfix">
             <?php get_template_part('part', 'filter-saison'); ?>
           </ul>
         </div><!-- .entry-header-inner -->

@@ -53,6 +53,12 @@ function tutsplus_register_list_pages_widget() {
 add_action( 'widgets_init', 'tutsplus_register_list_pages_widget' );
 
 
+function myplugin_settings() {  
+  register_taxonomy_for_object_type('post_tag', 'page'); 
+  register_taxonomy_for_object_type('category', 'page');  
+}
+add_action( 'admin_init', 'myplugin_settings' );
+
 
 add_action('admin_head', 'my_custom_style');
 function my_custom_style() {

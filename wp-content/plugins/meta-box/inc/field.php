@@ -296,12 +296,7 @@ if ( ! class_exists( 'RWMB_Field ' ) )
 		 */
 		static function esc_meta( $meta )
 		{
-			if ( is_array( $meta ) )
-			{
-				array_walk_recursive( $meta, 'esc_attr' );
-				return $meta;
-			}
-			return esc_attr( $meta );
+			return is_array( $meta ) ? array_map( __METHOD__, $meta ) : esc_attr( $meta );
 		}
 
 		/**
