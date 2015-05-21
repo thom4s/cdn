@@ -88,7 +88,7 @@ function cdn_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer 1er colonne', 'cdn' ),
 		'id'            => 'footer-1',
-		'description'   => '',
+		'description'   => 'Footer inférieur. Infos sur CDN.',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h6 class="widget-title">',
@@ -97,7 +97,7 @@ function cdn_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer 2eme colonne', 'cdn' ),
 		'id'            => 'footer-2',
-		'description'   => '',
+		'description'   => 'Footer inférieur. Infos sur contacts.',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h6 class="widget-title">',
@@ -106,7 +106,7 @@ function cdn_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer 3eme colonne', 'cdn' ),
 		'id'            => 'footer-3',
-		'description'   => '',
+		'description'   => 'Footer inférieur. Infos sur Odyssées',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h6 class="widget-title">',
@@ -115,7 +115,7 @@ function cdn_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer supérieur', 'cdn' ),
 		'id'            => 'upper-footer',
-		'description'   => '',
+		'description'   => 'Menus contact + Newsletter + Menu PRO',
 		'before_widget' => '<aside id="%1$s" class="bloc-buttons widget m-4col %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -125,7 +125,7 @@ function cdn_widgets_init() {
 		'name'          => __( 'Accueil - Sous le menu', 'cdn' ),
 		'id'            => 'hp-aside',
 		'description'   => 'Sur le page d\'accueil uniquement' ,
-		'before_widget' => '<div class="bloc-buttons bg-practical">',
+		'before_widget' => '<div class="bloc-buttons bg-practical widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4>',
 		'after_title'   => '</h4>',

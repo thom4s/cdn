@@ -36,6 +36,17 @@
 
 .widget_text {
   @extend %widget;
+
+  h4 {
+    @extend h3;
+    text-transform: none;
+    height: auto;
+
+    &:before {
+      background: none;
+      height: auto;
+    }
+  }
 }
 
 .widget_nav_menu {
