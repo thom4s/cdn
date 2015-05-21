@@ -32,7 +32,7 @@ $arrow_thin_width: 26px;
   height: $arrow_thin_height;
 }
 .sprite-boxed {
-  width: 36px;
+  width: 38px;
   height: $arrow_fat_height;
 }
 
@@ -111,7 +111,7 @@ $arrow_thin_width: 26px;
 .ham-sprite {
   @extend %sprite;
   display: inline-block;
-  background-position: 0 ( $y * 3 );
+  background-position: 0 -232px;
 }
 
 

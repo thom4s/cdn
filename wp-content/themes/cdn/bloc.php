@@ -1,13 +1,15 @@
 
   <article class="grid-item related-post bloc-outer <?php echo $linked_post_bg; ?> <?php echo $bloc_col; ?>">
 
-      <div class="bloc-img">
-        <?php if($linked_post_has_link) { ?>
-          <a href="<?php echo $post_url; ?>"><?php echo get_the_post_thumbnail( $linked_post_id, 'bloc-thumb', '' ); ?></a>
-        <?php } else { 
-          echo get_the_post_thumbnail( $linked_post_id, 'bloc-thumb', '' ); 
-        }?>
-      </div>
+      <?php if( has_post_thumbnail( $linked_post_id ) ) : ?>
+        <div class="bloc-img">
+          <?php if($linked_post_has_link) { ?>
+            <a href="<?php echo $post_url; ?>"><?php echo get_the_post_thumbnail( $linked_post_id, 'bloc-thumb', '' ); ?></a>
+          <?php } else { 
+            echo get_the_post_thumbnail( $linked_post_id, 'bloc-thumb', '' ); 
+          }?>
+        </div>
+      <?php endif; ?>
       
       <div class="bloc-content">
         <div class="meta entry-datas">

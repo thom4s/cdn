@@ -6,13 +6,16 @@
     if($event_booking_id) {
       $event_booking_id = $event_booking_id['booking_id'];
     }
+    $bloc_col = '';
    
 ?>
 
   <div class="navigation-trigger">
       <a id="trigger-in" class="hamburger-menu">
-        <div class="ham-sprite sprite-boxed"></div>
-        <span>Menu</span>
+        <div class="ham-inner">
+          <div class="ham-sprite sprite-boxed"></div>
+          <div class="ham-text">Menu</div>
+        </div>
       </a>
 
       <div class="logo">

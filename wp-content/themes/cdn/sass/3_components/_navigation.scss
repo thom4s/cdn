@@ -15,9 +15,9 @@
 	margin-top: $base_line_height;
 
 	@include up-to(medium) {
-		padding-left: 5px;
-		width: 50%;
-		margin-top: 0;
+		padding: 0;
+		margin: 0;
+		text-align: center;
 	}
 }
 	.main-navigation ul {
@@ -55,6 +55,12 @@
 	float: left;
 	margin-left: 0;
 	margin-top: 5px;
+
+	@include up-to(medium) {
+		margin-bottom: 22px; 
+		float: none;
+	}
+
 }
 	.main-navigation ul ul li {
 		margin-bottom: 3px;
@@ -62,6 +68,10 @@
 		border-bottom: 1px dotted #000;
 		padding-left: 11px;
 		font-weight: 400;
+		
+		@include up-to(medium) {
+			padding-left: 0;
+		}		
 	}
 		.main-navigation ul ul a {
 		  @include fontsize(18);		
@@ -79,8 +89,9 @@
 .header-group {
 
 	@include up-to(medium) {
-		width: 50%;
-		float: left;
+		float: none;
+		width: 90%;
+		margin: auto;
 	}
 }
 
@@ -100,7 +111,8 @@
 	@include box-sizing();
 	width: 100%;
 	float: left;
-	padding: 5px 0;
+	padding: 0;
+	background: $bg-color;
 
 	.hamburger-menu {
 		display: block;
@@ -108,17 +120,28 @@
 		float: left;
 		text-align: center;
 		height: $arrow_fat_height;
+		margin-top: 20px;
 
 		&:hover {
 			cursor: pointer;
 		}
-		span {
-			line-height: $arrow_fat_height;
-			height: $arrow_fat_height;
-			display: inline-block;
-		}
 	}
-
+	.ham-inner {
+		
+	}
+	.ham-sprite {
+		margin-left: 20%;
+		margin-right: 11px;
+		float: left;
+	}
+	.ham-text {
+		font-family: $font_family_meta;
+		line-height: $arrow_fat_height;
+		height: $arrow_fat_height;
+		display: inline-block;
+		float: left;
+		text-transform: uppercase;
+	}
 	.logo {
 		width: 60%;
 		float: right;
@@ -127,17 +150,17 @@
 			float: left;
 			margin-right: 11px; 
 			z-index: 0;
-		}
-
-		h1 {
-			margin: 0;
-			@include fontsize(25);
-			float: left;
+			margin-bottom: 0;
 		}
 	}
-	.site-title {
+
+	h1 {
 		display: block;
-		@include fontsize(25);
+		margin: 0;
+		@include fontsize(20);
+		line-height: 2rem;
+		float: left;
+		margin-top: 11px;
 	}
 
 	@include at-least(medium){
@@ -174,12 +197,16 @@
 		color: #fff;
 		border-right: 2px solid #000;
 		border-bottom: 2px solid #000;
-	}
 
-	.main-navigation {
-		@include up-to(medium) {
+		.main-navigation {
 			width: 100%;
-		}	
+			text-align: left;
+		
+			ul ul li {
+				padding-left: 11px;
+				width: auto;
+			}
+		}
 	}
 }
 

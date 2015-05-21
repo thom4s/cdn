@@ -26,6 +26,7 @@
         @include fontsize(25);
         line-height: 2.5rem;
         display: block;
+        margin-top: 7px;
       }
     }
     .home-featured {
@@ -109,7 +110,7 @@
   }
 
   .menu-menu-principal-container {
-    margin-top: 44px;
+    margin-top: 0;
   }
 }
 

@@ -30,6 +30,9 @@
   @include up-to(large){
     margin-right: 0;
   }
-
+  @include up-to(medium){
+    text-align: center;
+    padding: 0;
+  }
 }
 
