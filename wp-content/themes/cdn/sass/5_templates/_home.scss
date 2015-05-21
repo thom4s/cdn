@@ -7,7 +7,7 @@
 
   .site-branding-home {
     position: relative;
-    height: 650px;
+    height: 575px;
     
     @include up-to(large) {
       height: auto;
@@ -52,6 +52,7 @@
         right: 20px;
         padding: 11px;
         color: #fff;
+        max-width: 60%;
 
         &:hover {
           .featured-bg {

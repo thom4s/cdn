@@ -4,7 +4,9 @@
       <div class="bloc-img">
         <?php if($linked_post_has_link) { ?>
           <a href="<?php echo $post_url; ?>"><?php echo get_the_post_thumbnail( $linked_post_id, 'bloc-thumb', '' ); ?></a>
-        <?php } ?>
+        <?php } else { 
+          echo get_the_post_thumbnail( $linked_post_id, 'bloc-thumb', '' ); 
+        }?>
       </div>
       
       <div class="bloc-content">
@@ -31,8 +33,10 @@
         </div><!-- .entry-datas -->
         
         <?php if($linked_post_has_link) { ?>
-          <a href="<?php echo $post_url; ?>"><h3><?php echo $post_title ?></h3></a>
-        <?php } ?>
+          <a href="<?php echo $post_url; ?>"><h3><?php echo $post_title; ?></h3></a>
+        <?php } else { 
+          echo '<h3>' . $post_title . '</h3>';
+        }?>
 
         <?php if( isset($authors) ) { ?>
           <div class="meta entry-authors">
@@ -44,7 +48,7 @@
               }
             ?>
           </div><!-- .entry-authors -->
-        <?php } else { } ?>
+        <?php } ?>
 
         <div class="entry-intro">
           <?php echo $post_excerpt ?>
