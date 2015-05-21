@@ -20,7 +20,7 @@
 
 
   // COLS FOR BLOCS
-  &.l-8col{
+  &.m-8col{
 
     .bloc-img,
     .bloc-content {
@@ -35,6 +35,7 @@
     a {
       display: block;
       float: left;
+      max-width: 100%;
     }
   }
   .meta {

@@ -1,5 +1,5 @@
 
-  <article class="grid-item related-post bloc-outer <?php echo $linked_post_bg; ?> <?php // echo $linked_post_col; ?>">
+  <article class="grid-item related-post bloc-outer <?php echo $linked_post_bg; ?> <?php echo $bloc_col; ?>">
 
       <div class="bloc-img">
         <?php if($linked_post_has_link) { ?>

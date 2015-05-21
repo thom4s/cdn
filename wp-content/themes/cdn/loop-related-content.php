@@ -6,10 +6,12 @@
 
   // Defaults
   $linked_post_bg = 'bg-white';
-  $linked_post_col = 'bloc-1col';
   $linked_post_has_link = true;
+  $second_featured = false;
 
   $elements_title = rwmb_meta(  $prefix_default . 'related_title', get_the_ID() );
+  $second_featured = rwmb_meta(  $prefix_default . 'second_featured', get_the_ID() );
+  if($second_featured == 1) { $second_featured = true; }
 
   // Linked Posts
   if ($linkedposts = rwmb_meta(  $prefix_default . 'linkedposts', get_the_ID() ) ): 
@@ -19,23 +21,42 @@
 
 
   <div class="related-content content-part">
-    <?php if ( !is_front_page() && $elements_title != '' ) { ?>
 
+    <?php if ( !is_front_page() && $elements_title != '' ) : ?>
         <div class="l-1col-push l-11col l-first title-underline-gray">
           <h2><?php echo $elements_title; ?></h2>
           <div class="line-dotted"></div>
         </div>
-
-    <?php }?>
-    
-      <div id="grid" class="row" data-columns>
+    <?php endif; ?>
+          
 
           <?php
+            $y = 0;
             foreach($linkedposts as $linkedpost):
+
+              if($second_featured) {
+                if($y === 0) {
+                  echo '<div class="second_featured">';
+                  $bloc_col = 'm-8col m-first';
+                } elseif( $y === 1) {
+                  $bloc_col = 'm-4col m-last';
+                } elseif( $y === 2) {
+                  echo '</div><!-- .second_featured -->';
+                  echo '<div id="grid" class="row" data-columns>';
+                  $bloc_col = '';
+                } elseif( $y < 2) {
+                  $bloc_col = '';
+                }
+              } else {
+                $bloc_col = '';
+                if($y == 0) {
+                  echo '<div id="grid" class="row" data-columns>';
+                }
+              }
+
 
               $linked_post_id = $linkedpost['defaults_meta_linkedpost-id'];
               $linked_post_bg = $linkedpost['defaults_meta_bloc_bg'];
-              $linked_post_col = $linkedpost['defaults_meta_bloc_col'];
 
               if( isset($linkedpost['defaults_meta_has_link']) ) {
                 $linked_post_has_link = true;
@@ -62,13 +83,14 @@
               }  
               if($post_type == 'page'){
                 $post_meta = get_the_terms( $linked_post_id, 'category' );
-                $post_excerpt = $linked_post->post_excerpt;
+                $post_excerpt = rwmb_meta(  $prefix_default . 'intro', array(), $linked_post_id );
                 $event_type = NULL;
                 $authors = NULL;
               }  
 
               include(locate_template('bloc.php'));
 
+              $y++;
             endforeach;
             wp_reset_postdata(); ?>
 

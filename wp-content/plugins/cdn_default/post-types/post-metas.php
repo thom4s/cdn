@@ -245,6 +245,25 @@ function defaults_register_meta_boxes( $meta_boxes )
         'multiple'    => false,
       ),
 
+      // DIVIDER
+      array(
+        'type' => 'divider',
+        'id'   => 'fake_divider_id', // Not used, but needed
+      ),
+
+      // HOME PAGE FEATURED EVENT
+      array(
+        'name'        => __( 'Mettre le premier élément sur 2 colonnes ', 'meta-box' ),
+        'id'          => "{$prefix}second_featured",
+        'type'        => 'checkbox',
+      ),
+
+      // DIVIDER
+      array(
+        'type' => 'divider',
+        'id'   => 'fake_divider_id', // Not used, but needed
+      ),
+
       array(
         'id'     =>  $prefix . 'linkedposts',
         'name'   => __( 'Choisir les événement, pages et actualités à faire apparaitre sous l\'élément principal', 'meta-box' ),
@@ -282,7 +301,7 @@ function defaults_register_meta_boxes( $meta_boxes )
             'placeholder' => __( 'Select an Item', 'meta-box' ),
           ),
 
-          // STYLE
+          /* STYLE
           array(
             'name'        => __( 'Sur x colonnes : ', 'meta-box' ),
             'id'          => "{$prefix}bloc_col",
@@ -295,7 +314,7 @@ function defaults_register_meta_boxes( $meta_boxes )
             // Select multiple values, optional. Default is false.
             'multiple'    => false,
             'placeholder' => __( 'Select an Item', 'meta-box' ),
-          ),
+          ), */
 
           // STYLE
           array(
