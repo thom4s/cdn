@@ -7,7 +7,8 @@
  */
 
   error_reporting(E_ERROR | E_WARNING | E_PARSE);
-
+    setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
+    $today = time();
   $prefix_event = 'event_meta_';
   $prefix_default = 'defaults_meta_';
   $introduction = rwmb_meta( $prefix_default . 'intro' );
@@ -23,6 +24,14 @@
       'orderby'         => 'meta_value_num',
       'meta_key'        => 'event_meta_firstdate',
       'order'           => 'ASC',
+      'meta_query' => array(
+        array(
+           'key' => 'event_meta_firstdate',
+           'value' => $today,
+           'compare' => '>=',
+        )
+      )
+
     );
 
     // Get query TYPE if existed

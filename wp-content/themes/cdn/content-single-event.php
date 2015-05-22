@@ -26,11 +26,13 @@
     // First Date
     $event_firstdate =  rwmb_meta( $prefix . 'firstdate' );
     $event_firstdate_booking_id = rwmb_meta( $prefix . 'first_booking_id' );
-    $event_firstdate_array = array(
-      'date' => $event_firstdate, 
-      'booking_id' => $event_firstdate_booking_id
-    );
-    $the_dates[] = $event_firstdate_array;
+    if(strlen($event_firstdate) != 1) {
+      $event_firstdate_array = array(
+        'date' => $event_firstdate, 
+        'booking_id' => $event_firstdate_booking_id
+      );
+      $the_dates[] = $event_firstdate_array;  
+    }
 
     // In Between Dates
     $other_dates = rwmb_meta(  $prefix . 'other_dates' );
@@ -45,12 +47,13 @@
     // Last Date
     $event_lastdate =  rwmb_meta( $prefix . 'lastdate' );
     $event_last_booking_id = rwmb_meta( $prefix . 'last_booking_id' );
-    if($event_lastdate != '' ) {
+
+    if(strlen($event_lastdate) != 1) {
       $event_lastdate_array = array(
         'date' => $event_lastdate, 
         'booking_id' => $event_last_booking_id
       );
-      $the_dates[] = $event_lastdate_array;
+      $the_dates[] = $event_lastdate_array;  
     }
 
     // Générique
@@ -80,8 +83,7 @@
     $visuals =	rwmb_meta( $prefix . 'visuals', 'type=file' );
 
     // Presse
-    $press =	rwmb_meta( $prefix . 'press' );
-
+    $press =	rwmb_meta( $prefix . 'press' );    
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -119,7 +121,7 @@
       <div class="event-metas m-4col m-last">
         <div class="event-metas-group">
           <?php if($pro) { echo '<div class="event-is-pro">Espace Pro</div>'; } ?>
-          <?php if($is_creation) : echo '<span class="event-is-created">Création</span>'; endif; ?>
+          <?php if($is_creation) : echo '<span class="event-is-created">Une création du CDN</span>'; endif; ?>
           <br>
           <?php foreach ( $event_types as $type ) { echo '<span class="event-type"> ' . $type->name . '</span>'; } ?> 
           <br>

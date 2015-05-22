@@ -1,5 +1,8 @@
 <?php 
 
+    setlocale(LC_TIME, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
+    $today = time();
+
     // Just get the necessary metas 
     $prefix = 'event_meta_';
     $event_booking_id = rwmb_meta( $prefix . 'the_dates' );
@@ -7,7 +10,38 @@
       $event_booking_id = $event_booking_id['booking_id'];
     }
     $bloc_col = '';
-   
+    
+    if( is_single() ) :
+      $this_event_firstdate =  rwmb_meta( $prefix . 'firstdate' );
+      $this_event_id = get_the_ID();
+      $next_event_args = array(
+        'posts_per_page'  => 1,
+        'post_type'       => 'event',
+        'exclude'         => array( $this_event_id ),
+        'status'          => 'published',
+        'orderby'         => 'meta_value_num',
+        'meta_key'        => 'event_meta_firstdate',
+        'order'           => 'ASC',
+        'tax_query'       => array(
+          'relation' => 'AND',
+          array(
+            'taxonomy'      => 'event_cat',
+            'field'         => 'slug',
+            'terms'         => array('spectacle'),
+          ),
+        ),
+        'meta_query' => array(
+            array(
+               'key' => 'event_meta_firstdate',
+               'value' => $this_event_firstdate,
+               'compare' => '>',
+            )
+        )
+      );
+      $next_event = get_posts( $next_event_args );
+      $next_event_url = $next_event[0]->guid;
+    endif;
+
 ?>
 
   <div class="navigation-trigger">
@@ -117,7 +151,7 @@
             <li class="btn"><a href="http://www.forumsirius.fr/orion/sartrouville.phtml?spec=<?php echo $event_booking_id; ?>">Réservez pour ce spectacle</a></li>
             <li class="btn"><a href="http://www.forumsirius.fr/orion/sartrouville.phtml">Billetterie en ligne</a></li>
             <li class="btn"><a href="/saison">Retournez au calendrier</a></li>
-            <li class="btn"><a href="">Le spectacle suivant</a></li>
+            <li class="btn"><a href="<?php echo $next_event_url; ?>">Le spectacle suivant</a></li>
           </ul>
         </div>
       </div><!-- .bloc-buttons -->
