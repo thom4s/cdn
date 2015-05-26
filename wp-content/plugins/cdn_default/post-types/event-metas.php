@@ -84,6 +84,17 @@ function event_register_meta_boxes( $meta_boxes )
                     'media_buttons' => false,
                 ),
             ),
+            // DISTRIBUTION
+            array(
+                'name' => __( 'Entretien', 'meta-box' ),
+                'id'   => "{$prefix}entretien",
+                'type' => 'wysiwyg',
+                'options' => array(
+                    'textarea_rows' => 4,
+                    'teeny'         => false,
+                    'media_buttons' => true,
+                ),
+            ),
         )
     );
 

@@ -60,6 +60,7 @@
     $authors =	rwmb_meta( $prefix . 'authors' );
     $intro =	rwmb_meta( $prefix . 'intro' );
     $distribution =	rwmb_meta( $prefix . 'distribution' );
+    $entretien = rwmb_meta( $prefix . 'entretien' );
     $is_creation =	rwmb_meta( $prefix . 'creation' );
     $is_en_famille =  rwmb_meta( $prefix . 'en_famille' );    
     $event_types =	rwmb_meta( $prefix . 'event_type', 'type=taxonomy&taxonomy=event_type' );
@@ -181,8 +182,13 @@
   <!-- Get Related Posts-->
   <?php get_template_part('loop','related-content'); ?>
 
-	<footer class="entry-footer">
+  <?php if($entretien != '') : ?>
+    <div class="event-entretien content-part m-10col m-1col-push m-first">
+      <?php echo $entretien; ?>
+    </div>
+  <?php endif; ?>
 
+	<footer class="entry-footer">
     <?php if($distribution != '') : ?>
     <div class="event-distribution content-part clearfix">
       <div class="m-1col-push m-11col m-first title-underline-gray">
