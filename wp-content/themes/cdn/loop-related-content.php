@@ -66,13 +66,15 @@
 
               $linked_post = get_post($linked_post_id);
               $post_title = $linked_post->post_title;
-              $post_url = $linked_post->guid;
+              $post_url = get_permalink($linked_post);
               $post_type = $linked_post->post_type;
 
               if($post_type == 'event'){
                 $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $linked_post_id );
                 $event_type = rwmb_meta(  $prefix_event . 'event_type', 'type=taxonomy&taxonomy=event_type', $linked_post_id );
-                $post_meta = rwmb_meta(  $prefix_event . 'event_date', array(), $linked_post_id );
+                // $post_meta = rwmb_meta( $prefix_event . 'event_date', array(), $linked_post_id );
+                $post_meta = rwmb_meta( $prefix_event . 'the_dates', array(), $linked_post_id );
+                $post_meta = $post_meta['date'];
                 $authors =  rwmb_meta( $prefix_event . 'authors', array(), $linked_post_id );
               }
               if($post_type == 'post'){

@@ -6,11 +6,12 @@
 
 $x: -72px;
 $y: -60px;
-$y-logo: 96px;
+$y-logo: -100px;
 
 $arrow_fat_height: 50px;
 $arrow_fat_width: 50px;
 $logo_border: 91px;
+$logo_small_border: 75px;
 $arrow_thin_height: 44px;
 $arrow_thin_width: 26px;
 
@@ -25,6 +26,11 @@ $arrow_thin_width: 26px;
   @extend %sprite;
   width: $logo_border;
   height: $logo_border;
+}
+%sprite-logo-small {
+  @extend %sprite;
+  width: $logo_small_border;
+  height: $logo_small_border;
 }
 %sprite-arrow-thin {
   @extend %sprite;
@@ -102,8 +108,14 @@ $arrow_thin_width: 26px;
       margin-top: 0;
     } 
   }
+%site-logo-small {
+  position: relative;
+  @extend %sprite-logo-small;
+  background-position: ($x * 2) ($y-logo * 3);
+  z-index: 9999;
+}  
   .site-logo-common {
-    @extend %site-logo;
+    @extend %site-logo-small;
     margin-bottom: 22px;
   }
 

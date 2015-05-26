@@ -55,7 +55,7 @@
       </a>
 
       <div class="logo">
-        <div class="site-logo-common"></div>
+        <div class="site-logo-common mobile"></div>
         <h1 class="site-title">
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
         </h1>
@@ -67,7 +67,7 @@
     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
     
     <nav id="site-navigation" class="main-navigation" role="navigation">
-      <div class="site-logo-common"></div>
+      <div class="site-logo-common not-mobile"></div>
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
 

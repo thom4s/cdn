@@ -120,7 +120,7 @@
 		float: left;
 		text-align: center;
 		height: $arrow_fat_height;
-		margin-top: 20px;
+		margin-top: 13px;
 
 		&:hover {
 			cursor: pointer;
@@ -152,8 +152,10 @@
 			z-index: 0;
 			margin-bottom: 0;
 
-			@include up-to (medium) {
-				display: none;
+			&.not-mobile {
+				@include up-to(medium) {
+					display: none;
+				}			
 			}
 		}
 	}
@@ -164,7 +166,7 @@
 		@include fontsize(20);
 		line-height: 2rem;
 		float: left;
-		margin-top: 11px;
+		margin-top: 8px;
 	}
 
 	@include at-least(medium){

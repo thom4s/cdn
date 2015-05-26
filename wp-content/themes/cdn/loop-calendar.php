@@ -42,7 +42,9 @@ if ( $saison_events->have_posts() ) :
     $firstdate = rwmb_meta(  $prefix_event . 'firstdate', array(), $post->ID );
     $event_type = rwmb_meta(  $prefix_event . 'event_type', 'type=taxonomy&taxonomy=event_type', $post->ID );
     $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $post->ID );
-    $dates = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID );
+    // $dates = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID );
+    $dates_array = rwmb_meta( $prefix_event . 'the_dates', array(), $post->ID );
+    $dates = $dates_array['date'];
     $authors =  rwmb_meta( $prefix_event . 'authors', array(), $post->ID );
 
     $month = date('Y/m', $firstdate);

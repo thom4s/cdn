@@ -9,7 +9,8 @@
     $event_excerpt = $featured_event->post_excerpt;
     $event_url = $featured_event->guid;
     $event_type = $featured_event->post_type;
-    $event_dates = rwmb_meta(  $prefix_event . 'event_date', array(), $featured_event_id );
+    $event_dates = rwmb_meta( $prefix_event . 'the_dates', array(), $featured_event_id );
+    $event_dates = $event_dates['date'];
     $authors =  rwmb_meta( $prefix_event . 'authors', array(), $featured_event_id ); ?>
 
     <header class="site-branding-home plain">
