@@ -43,6 +43,8 @@ function add_rewrite_rules($rules) {
   $newrules['(archives)/([^/]+)/([^/]+)/page/([0-9]+)?$'] = 'index.php?pagename=$matches[1]&$matches[2]=$matches[3]&paged=$matches[4]'; // For Pagination
   $newrules['(archives)/([^/]+)/([^/]+)/?$'] = 'index.php?pagename=$matches[1]&$matches[2]=$matches[3]';
 
+
+
   return $newrules + $rules;
 }
 add_filter('rewrite_rules_array', 'add_rewrite_rules');

@@ -32,7 +32,7 @@
           <?php dynamic_sidebar( 'footer-2' ); ?>
         </div> 
 
-        <div class=" s-12col s-1col-push s-first m-5col m-last l-4col l-last footer-infos-third">
+        <div class=" s-12col s-1col-push s-first m-6col m-last l-4col l-last footer-infos-third">
           <?php dynamic_sidebar( 'footer-3' ); ?>
         </div> 
 
@@ -44,7 +44,7 @@
 
 <?php wp_footer(); ?>
 
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,900italic,900,700italic,700,600italic,600,400italic|Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,900italic,900,700italic,700,400italic|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
 
 </body>
 </html>

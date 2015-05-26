@@ -94,6 +94,25 @@ jQuery(function($) {
     else {
     }
 
+    // Adapt fontsize of featured title based on word count
+    // Font size is 73px by default
+    // Set at 50px for 
+    var $event_title = $(".event-title");
+    var $numWordTitle = $event_title.text().split(" ").length;
+    
+    if (($numWordTitle >= 10) && ($numWordTitle < 20)) {
+        $event_title.css("font-size", "65px");
+        $event_title.css("line-height", "55px");
+    }
+    else if ( $numWordTitle >= 20 ) {
+        $event_title.css("font-size", "40px");
+        $event_title.css("line-height", "40px");
+    }
+    else {
+    }
+
+
+
 
   });
 });

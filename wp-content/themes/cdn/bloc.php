@@ -1,4 +1,10 @@
 
+  <?php 
+    if( !isset($bloc_col) ) {
+      $bloc_col = '';
+    }
+    ?>
+
   <article class="grid-item related-post bloc-outer <?php echo $linked_post_bg; ?> <?php echo $bloc_col; ?>">
 
       <?php if( has_post_thumbnail( $linked_post_id ) ) : ?>

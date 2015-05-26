@@ -474,9 +474,6 @@ function defaults_register_meta_boxes( $meta_boxes )
     'title'  => __( 'Saison à Afficher ?', 'meta-box' ),
     'id'         => 'saison-to-display',
     'post_types' => array( 'page' ),
-    'include' => array(
-      'template' => array( 'page-saison.php' )
-    ),
     'context'    => 'side',
     'autosave'   => true,
     'fields' => array(

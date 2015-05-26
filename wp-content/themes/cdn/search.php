@@ -53,9 +53,11 @@ get_header(); ?>
 
   	</div>
   
-  	<?php the_posts_navigation(); ?>
+    <?php 
 
-		<?php else : ?>
+        cdn_posts_navigation(); 
+
+		else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>
 

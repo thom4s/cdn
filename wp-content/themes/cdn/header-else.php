@@ -39,7 +39,10 @@
         )
       );
       $next_event = get_posts( $next_event_args );
-      $next_event_url = $next_event[0]->guid;
+      if($next_event) {
+        $next_event_url = $next_event[0]->guid;
+      }
+      
     endif;
 ?>
 
@@ -64,7 +67,7 @@
     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
     
     <nav id="site-navigation" class="main-navigation" role="navigation">
-      <div class="site-logo-common s-hide"></div>
+      <div class="site-logo-common"></div>
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
 

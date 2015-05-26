@@ -151,6 +151,10 @@
 			margin-right: 11px; 
 			z-index: 0;
 			margin-bottom: 0;
+
+			@include up-to (medium) {
+				display: none;
+			}
 		}
 	}
 
