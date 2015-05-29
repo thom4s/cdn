@@ -6,16 +6,31 @@
 
 
 html {
-  font-size: 62.5%; /* sets the base font to 10px for easier math */
+  @include up-to(medium) {
+    font-size: 50; /* sets the base font to 10px for easier math */
+  }
+  @include up-to(large) {
+    font-size: 55%; /* sets the base font to 10px for easier math */
+  }  
+  @include up-to(wide) {
+    font-size: 62.5%; /* sets the base font to 10px for easier math */
+  }
+  @include at-least(wide) {
+    font-size: 75%; /* sets the base font to 10px for easier math */
+  }    
+}
+
+@function get_rem($px) {
+  @return ($px / 10);
 }
 
 @mixin fontsize($size: "16") {
   font-size: #{$size}px;
-  font-size: #{$size} / 10 rem;
+  font-size: ( get_rem($size) )rem;
 }
 
 
-/*
+/* 
  * Essentials
  */
 $font_size_base:                  16 !default;
@@ -24,25 +39,12 @@ $base_line_height_:               $font_size_base * $line_height_ratio !default;
 $base_line_height:                #{$font_size_base * $line_height_ratio}px !default;
 
 body {
-  @include fontsize($font_size_base);  /* sets the default sizing to make sure nothing is actually 10px */
+  @include fontsize($font_size_base);
 }
 
 
 
 
-/* For responsive, adjust root font size only. And go. */
-
-@media screen and (max-width: $medium_breakpoint) {
-  html {
-    font-size: 50%;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  html {
-    font-size: 75%;
-  }
-}
 
 
 
@@ -155,9 +157,6 @@ textarea {
   font-family: $font_family_paragraph;
   line-height: $base_line_height;
 }
-p {
-
-}
 b, strong {
   font-weight: bold;
 }
@@ -226,6 +225,10 @@ big {
     text-align: center;
     width: 30%;
     padding: 0 10px;
+
+    @include up-to(medium) {
+      width: 50%;
+    }
   } 
 }
   .line-dotted {

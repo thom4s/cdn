@@ -125,11 +125,11 @@
 
 #custom-grid[data-columns]::before {
   @include at-least(medium){
-    content: '2 .column.size-1of2';
+    content: '2 .m-6col';
     display: none;
   }
   @include up-to(medium) {
-    content: '1 .column.size-1of2';
+    content: '1 .s-16col';
     display: none;
   }
 }

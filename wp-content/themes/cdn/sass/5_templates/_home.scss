@@ -93,6 +93,9 @@
       }
       .featured-title {
         margin-bottom: 11px;
+        @include up-to(medium) {
+          @include fontsize(35);
+        }
       }
 
 .home .site-content {

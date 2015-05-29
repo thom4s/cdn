@@ -57,7 +57,9 @@
         padding: 0; }
       li {
         margin: 0;
-        padding: 0; }
+        padding: 0; 
+        list-style-position: inside;
+      }
 
       @include up-to(large) {
         padding-right: 5px

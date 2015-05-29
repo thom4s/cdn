@@ -20,7 +20,7 @@
     if ($first_id !== '') { ?>
 
 
-  <div class="related-content content-part">
+  <div class="related-content content-part row">
 
     <?php if ( !is_front_page() && $elements_title != '' ) : ?>
         <div class="l-1col-push l-11col l-first title-underline-gray">
