@@ -61,7 +61,7 @@
     $intro =	rwmb_meta( $prefix . 'intro' );
     $distribution =	rwmb_meta( $prefix . 'distribution' );
     $entretien = rwmb_meta( $prefix . 'entretien' );
-    $is_creation =	rwmb_meta( $prefix . 'creation' );
+    $event_creation =	rwmb_meta( $prefix . 'event_creation', 'type=taxonomy&taxonomy=event_creation' );
     $is_en_famille =  rwmb_meta( $prefix . 'en_famille' );    
     $event_types =	rwmb_meta( $prefix . 'event_type', 'type=taxonomy&taxonomy=event_type' );
     $salle =	rwmb_meta( $prefix . 'salle', 'type=taxonomy&taxonomy=event_salle' );
@@ -84,7 +84,10 @@
     $visuals =	rwmb_meta( $prefix . 'visuals', 'type=file' );
 
     // Presse
-    $press =	rwmb_meta( $prefix . 'press' );    
+    $press =	rwmb_meta( $prefix . 'press' );
+
+    // Presse
+    $disponibilities =  rwmb_meta( $prefix . 'disponible' );    
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -122,20 +125,46 @@
       <div class="event-metas m-4col m-last">
         <div class="event-metas-group">
           <?php if($pro) { echo '<div class="event-is-pro">Espace Pro</div>'; } ?>
-          <?php if($is_creation) : echo '<span class="event-is-created">Une création du CDN</span>'; endif; ?>
+          
+          <?php if($pro && $disponibilities != '') { echo '<div class="event-is-pro">'. $disponibilities .'</div>'; } ?>
+
+          <?php 
+            if($event_creation) { 
+              foreach ( $event_creation as $crea ) { 
+                echo '<span class="event-is-created"> ' . $crea->name . '</span>'; 
+              }
+            }
+          ?>
           <br>
-          <?php foreach ( $event_types as $type ) { echo '<span class="event-type"> ' . $type->name . '</span>'; } ?> 
+          
+          <?php 
+            if($event_types) { 
+              foreach ( $event_types as $type ) { 
+                echo '<span class="event-type"> ' . $type->name . '</span>'; 
+              } 
+            } ?> 
           <br>
+          
           <?php 
             $i = 0; 
             foreach ( $age as $a ) { 
               echo '<span class="event-age">';
               echo $a->name;
-              if($i == 0) { echo ' - '; }
+              if($i == 0) { echo ' | '; }
               echo '</span>';
               $i++;
-            } ?><br>
-          <?php if($public){ ?><?php foreach ( $salle as $s ) { echo $s->name; } ?> | <?php echo $duration; }?>
+            }
+          ?>
+          <br>
+
+          <?php 
+            if($public) { 
+              $j = 0; 
+              foreach ( $salle as $s ) {
+                if($j > 0) { echo ' - '; }
+                echo $s->name;
+                $j++;
+              } ?> | <?php echo $duration; }?>
         </div><!-- .entry-metas-group -->
 
         <!-- DISPLAY DATES IF PUBLIC-->

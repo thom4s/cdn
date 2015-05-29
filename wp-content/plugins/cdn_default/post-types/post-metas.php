@@ -81,7 +81,7 @@ function defaults_register_meta_boxes( $meta_boxes )
             ),
             'std'         => 'bg-white',
             'multiple'    => false,
-            'placeholder' => __( 'Select an Item', 'meta-box' ),
+            'placeholder' => __( 'Choisir un fond', 'meta-box' ),
           ),
 
           // STYLE

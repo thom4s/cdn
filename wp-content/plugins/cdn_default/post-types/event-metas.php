@@ -109,9 +109,21 @@ function event_register_meta_boxes( $meta_boxes )
         'fields' => array(
             // Création
             array(
-                'name'  => __( 'Création ?', 'meta-box' ),
-                'id'    => "{$prefix}creation",
-                'type'  => 'checkbox',
+                'name'  => __( 'Créations', 'meta-box' ),
+                'id'    => "{$prefix}event_creation",
+                'type'    => 'taxonomy',
+                'options' => array(
+                    'taxonomy' => 'event_creation',
+                    'type'     => 'checkbox_list',
+                    'args'     => array()
+                ),
+            ),
+            // Disponibilités
+            array(
+                'name'  => __( 'Spectacle disponible..', 'meta-box' ),
+                'id'    => "{$prefix}disponible",
+                'type'  => 'text',
+                'std'   => 'Spectacle disponible du .... au ....'
             ),
             // DUREE
             array(

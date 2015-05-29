@@ -6,6 +6,47 @@
  ************************************
  */
 
+// Créations
+function creation_taxonomy() {
+    $labels = array(
+        'name'                       => _x( 'Créations', 'Taxonomy General Name', 'type_taxo' ),
+        'singular_name'              => _x( 'Type de création', 'Taxonomy Singular Name', 'type_taxo' ),
+        'menu_name'                  => __( 'Les Créations du CDN', 'type_taxo' ),
+        'all_items'                  => __( 'Toutes les créations', 'type_taxo' ),
+        'parent_item'                => __( 'Parent Item', 'type_taxo' ),
+        'parent_item_colon'          => __( 'Parent Item:', 'type_taxo' ),
+        'new_item_name'              => __( 'Nouvelle création', 'type_taxo' ),
+        'add_new_item'               => __( 'Ajouter une création', 'type_taxo' ),
+        'edit_item'                  => __( 'Editer la création', 'type_taxo' ),
+        'update_item'                => __( 'Mettre à jour', 'type_taxo' ),
+        'view_item'                  => __( 'Voir la création', 'type_taxo' ),
+        'separate_items_with_commas' => __( 'Separate items with commas', 'type_taxo' ),
+        'add_or_remove_items'        => __( 'Add or remove items', 'type_taxo' ),
+        'choose_from_most_used'      => __( 'Choose from the most used', 'type_taxo' ),
+        'popular_items'              => __( 'créations récurents', 'type_taxo' ),
+        'search_items'               => __( 'Rechercher une création', 'type_taxo' ),
+        'not_found'                  => __( 'Aucun résultat', 'type_taxo' ),
+    );
+    $rewrite = array(
+        'slug'                       => 'saison/c',
+        'with_front'                 => true,
+        'hierarchical'               => false,
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => false,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+        'rewrite'                    => $rewrite,
+    );
+    register_taxonomy( 'event_creation', array( 'event' ), $args );
+}
+add_action( 'init', 'creation_taxonomy', 0 );
+
+
 // Type spectacle
 function type_taxonomy() {
     $labels = array(
@@ -45,7 +86,6 @@ function type_taxonomy() {
     register_taxonomy( 'event_type', array( 'event' ), $args );
 }
 add_action( 'init', 'type_taxonomy', 0 );
-
 
 // Saison
 function saison_taxonomy() {
