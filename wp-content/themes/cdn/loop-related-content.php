@@ -32,19 +32,27 @@
 
           <?php
             $y = 0;
+            $number_of_posts = count($linkedposts);
+            $a_third = round($number_of_posts / 3);
+
             foreach($linkedposts as $linkedpost):
 
+
               if($second_featured) {
-                if($y === 0) {
+                if($y == 0) {
+                  echo '<div class="m-8col m-first">';
                   echo '<div class="second_featured">';
-                  $bloc_col = 'm-8col m-first';
-                } elseif( $y === 1) {
-                  $bloc_col = 'm-4col m-last';
-                } elseif( $y === 2) {
+                  $bloc_col = 'second_featured_bloc';
+                } elseif( $y == 1) {
                   echo '</div><!-- .second_featured -->';
-                  echo '<div id="grid" class="row" data-columns>';
+                  echo '<div id="custom-grid" class="row" data-columns>';
                   $bloc_col = '';
-                } elseif( $y < 2) {
+                } elseif( $y == ( $a_third + 1 ) ) {
+                  echo '</div><!-- end custom-grid -->';
+                  echo '</div><!-- close first col -->';
+                  echo '<div class="m-4col m-last">';
+                  $bloc_col = '';
+                } elseif( $y < $a_third) {
                   $bloc_col = '';
                 }
               } else {
@@ -53,7 +61,7 @@
                   echo '<div id="grid" class="row" data-columns>';
                 }
               }
-
+ 
 
               $linked_post_id = $linkedpost['defaults_meta_linkedpost-id'];
               $linked_post_bg = $linkedpost['defaults_meta_bloc_bg'];

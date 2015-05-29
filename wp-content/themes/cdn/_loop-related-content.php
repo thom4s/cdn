@@ -29,7 +29,6 @@
         </div>
     <?php endif; ?>
           
-
           <?php
             $y = 0;
             foreach($linkedposts as $linkedpost):
