@@ -22,6 +22,14 @@ jQuery(function($) {
 
 
 
+    $('.bxslider').bxSlider({
+      video: true,
+      useCSS: false
+    });
+
+
+
+
     $('.bxslider-video').bxSlider({
       video: true,
       useCSS: false,
@@ -35,6 +43,7 @@ jQuery(function($) {
         $('.event-slider').css('opacity', '1');
       }
     });
+
 
     $('#gotovideo').click(function(event){
       event.preventDefault();
