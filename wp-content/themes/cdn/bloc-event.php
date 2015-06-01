@@ -28,6 +28,17 @@
             } else {
               echo $event_type;
             }
+            echo '<br>';
+            $j = 0;
+            if( isset($diffusion) && $diffusion ){
+              foreach ($event_creation as $crea) {
+                if($j > 0) {
+                  echo ' - ';
+                }
+                echo $crea->name;
+                $j++;
+              }
+            }
             echo '<br>' . $dates; 
           ?>
         </div>

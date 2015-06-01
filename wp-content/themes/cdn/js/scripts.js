@@ -27,6 +27,7 @@ jQuery(function($) {
       useCSS: false,
       pager: false,
       controls: true,
+      adaptiveHeight: true,
       auto: false,
       nextText: '',
       prevText: '',

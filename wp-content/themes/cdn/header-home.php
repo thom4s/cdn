@@ -7,7 +7,7 @@
     $featured_event = get_post($featured_event_id);
     $event_title = $featured_event->post_title;
     $event_excerpt = $featured_event->post_excerpt;
-    $event_url = $featured_event->guid;
+    $event_url = get_permalink($featured_event_id);
     $event_type = $featured_event->post_type;
     $event_dates = rwmb_meta( $prefix_event . 'the_dates', array(), $featured_event_id );
     $event_dates = $event_dates['date'];

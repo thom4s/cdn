@@ -133,29 +133,32 @@
               foreach ( $event_creation as $crea ) { 
                 echo '<span class="event-is-created"> ' . $crea->name . '</span>'; 
               }
+              echo '<br>';
             }
           ?>
-          <br>
+          
           
           <?php 
             if($event_types) { 
               foreach ( $event_types as $type ) { 
                 echo '<span class="event-type"> ' . $type->name . '</span>'; 
-              } 
+              }
+              echo '<br>';
             } ?> 
-          <br>
           
           <?php 
-            $i = 0; 
-            foreach ( $age as $a ) { 
-              echo '<span class="event-age">';
-              echo $a->name;
-              if($i == 0) { echo ' | '; }
-              echo '</span>';
-              $i++;
+            if($age) { 
+              $i = 0; 
+              foreach ( $age as $a ) { 
+                echo '<span class="event-age">';
+                echo $a->name;
+                if($i == 0) { echo ' | '; }
+                echo '</span>';
+                $i++;
+              }
+              echo '<br>';
             }
           ?>
-          <br>
 
           <?php 
             if($public) { 

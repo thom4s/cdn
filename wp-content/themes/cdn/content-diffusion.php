@@ -13,6 +13,12 @@
 		$introduction =	rwmb_meta( $prefix . 'intro' );
 		$subtitle =	rwmb_meta( $prefix . 'subtitle' );
 
+    $event_creation = 'event_creation';
+    $taxonomy_terms = get_terms( $event_creation, array(
+        'hide_empty' => 0,
+        'fields' => 'ids'
+    ) );
+
     $args = array(
       'post_type'       => 'event',
       'posts_per_page'  => 15,
@@ -23,6 +29,11 @@
           'taxonomy'      => 'event_cat',
           'field'         => 'slug',
           'terms'         => array('spectacle'),
+        ),
+        array(
+          'taxonomy'      => 'event_creation',
+          'field'         => 'id',
+          'terms'         => $taxonomy_terms,
         ),
       ),
       'orderby'   => 'meta_value_num',
@@ -78,7 +89,8 @@
       $temp_query = $wp_query;
       $wp_query = NULL;
       $wp_query = $saison_events;
-
+      $diffusion = true;
+      
       // The Loop
       if ( $saison_events->have_posts() ) : ?>
         <div id="grid" class="row" data-columns>
@@ -92,6 +104,7 @@
             $dates_array = rwmb_meta( $prefix_event . 'the_dates', array(), $post->ID );
             $dates = $dates_array['date'];
             $authors =  rwmb_meta( $prefix_event . 'authors', array(), $post->ID );
+            $event_creation = rwmb_meta(  $prefix_event . 'event_creation', 'type=taxonomy&taxonomy=event_creation', $post->ID );
             include(locate_template('bloc-event.php'));
           }  ?>
         </div><!-- .row -->

@@ -4,28 +4,208 @@
 		"selected_items":
 		[
 			[
-				"intr",
-				"introduction"
+				"tax",
+				"taxonomy_terms"
 			],
 			[
-				"di",
-				"distribution"
-			],
-			[
-				"event",
-				"event_type"
-			],
-			[
-				"colo",
-				"color_link_hover"
-			],
-			[
-				"margin",
-				"margin-top"
+				"dispo",
+				"disponibilities"
 			],
 			[
 				"font",
 				"fontsize"
+			],
+			[
+				"post",
+				"post_meta"
+			],
+			[
+				"li",
+				"linkedposts"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"pos",
+				"post_meta"
+			],
+			[
+				"check",
+				"checkbox"
+			],
+			[
+				"start",
+				"start_year"
+			],
+			[
+				"star",
+				"start_month"
+			],
+			[
+				"sai",
+				"saison_to_display"
+			],
+			[
+				"slid",
+				"slideQty"
+			],
+			[
+				"vid",
+				"videos"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"backgroun",
+				"background-position"
+			],
+			[
+				"filter",
+				"filter-group"
+			],
+			[
+				"event",
+				"event_lastdate"
+			],
+			[
+				"end",
+				"endif"
+			],
+			[
+				"is_",
+				"is_en_famille"
+			],
+			[
+				"site",
+				"site-logo"
+			],
+			[
+				"feat",
+				"featured-bg"
+			],
+			[
+				"featured-in",
+				"featured-infos"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"blue_dar",
+				"blue_darker"
+			],
+			[
+				"date",
+				"date_string"
+			],
+			[
+				"ba",
+				"background-position"
+			],
+			[
+				"footer",
+				"footer-contacts"
+			],
+			[
+				"page",
+				"pages_id"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"at",
+				"author"
+			],
+			[
+				"autho",
+				"authors"
+			],
+			[
+				"ta",
+				"tax_query"
+			],
+			[
+				"title",
+				"title-underline"
+			],
+			[
+				"lin",
+				"line-dotted"
+			],
+			[
+				"defu",
+				"default-input"
+			],
+			[
+				"background",
+				"background-position"
+			],
+			[
+				"is",
+				"is_array"
+			],
+			[
+				"file",
+				"filetype"
+			],
+			[
+				"bloc_m",
+				"bloc_menu"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"linked",
+				"linkedposts"
+			],
+			[
+				"linke",
+				"linkedposts"
+			],
+			[
+				"box-s",
+				"box-sizing"
+			],
+			[
+				"event_",
+				"event_booking_id"
+			],
+			[
+				"entry",
+				"entry-header"
+			],
+			[
+				"en",
+				"endif"
+			],
+			[
+				"di",
+				"disc"
+			],
+			[
+				"l",
+				"l	left"
+			],
+			[
+				"intr",
+				"introduction"
+			],
+			[
+				"colo",
+				"color_link_hover"
 			],
 			[
 				"tex",
@@ -33,10 +213,6 @@
 			],
 			[
 				"bac",
-				"background-color"
-			],
-			[
-				"back",
 				"background-color"
 			],
 			[
@@ -52,14 +228,6 @@
 				"clearfix"
 			],
 			[
-				"background",
-				"background-color"
-			],
-			[
-				"backgroun",
-				"background-color"
-			],
-			[
 				"green",
 				"green_dark"
 			],
@@ -70,14 +238,6 @@
 			[
 				"backgrou",
 				"background-position"
-			],
-			[
-				"font-",
-				"font-family"
-			],
-			[
-				"text",
-				"text-decoration"
 			],
 			[
 				"base",
@@ -132,10 +292,6 @@
 				"margin-top"
 			],
 			[
-				"post",
-				"postids"
-			],
-			[
 				"articl",
 				"articlesids"
 			],
@@ -154,14 +310,6 @@
 			[
 				"su",
 				"submitText"
-			],
-			[
-				"page",
-				"pageHeight"
-			],
-			[
-				"border",
-				"border-right"
 			],
 			[
 				"search",
@@ -280,10 +428,6 @@
 				"font-feature-settings"
 			],
 			[
-				"ba",
-				"boxPadding"
-			],
-			[
 				"navigation",
 				"navigation-group"
 			],
@@ -298,10 +442,6 @@
 			[
 				"relat",
 				"related-posts"
-			],
-			[
-				"margin-",
-				"margin-top"
 			],
 			[
 				"saiso",
@@ -374,46 +514,24 @@
 			[
 				"clea",
 				"clear"
-			],
-			[
-				"clear",
-				"clearfix"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "wp-content/themes/cdn/content-single-event.php",
+			"file": "wp-content/themes/cdn/content-diffusion.php",
 			"settings":
 			{
-				"buffer_size": 3306,
+				"buffer_size": 4332,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "wp-content/themes/cdn/header-else.php",
+			"file": "wp-content/themes/cdn/bloc-event.php",
 			"settings":
 			{
-				"buffer_size": 1287,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix",
-				"name": "Package Control Messages",
-				"scratch": true
-			}
-		},
-		{
-			"file": "wp-content/themes/cdn/sass/2_elements/_buttons.scss",
-			"settings":
-			{
-				"buffer_size": 90,
+				"buffer_size": 1618,
 				"line_ending": "Unix"
 			}
 		}
@@ -421,9 +539,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 270.0,
+		"height": 239.0,
 		"selected_items":
 		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -437,10 +559,6 @@
 				"Package Control: Install Package"
 			],
 			[
-				"instal",
-				"Package Control: Install Package"
-			],
-			[
 				"instl",
 				"Package Control: Install Package"
 			],
@@ -449,7 +567,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 457.0
+		"width": 543.0
 	},
 	"console":
 	{
@@ -466,134 +584,134 @@
 	},
 	"file_history":
 	[
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/loop-related-content.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/post-types/event-taxonomies.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page-diffusion.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/increase_upload.php",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/cdn-functions.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-config.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/functions.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/2_elements/_links.scss",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/post-types/post-metas.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page-prices.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/content-prices.php",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/content-page.php",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/post-types/event-metas.php",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/content-single-event.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/post-types/event-taxonomies.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/front-page.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/header-home.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/header-else.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/single-event.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_settings-colors.scss",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/4_layout/_header.scss",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/3_components/_navigation.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/5_templates/_event.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/main.scss",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_settings-typography.scss",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/2_elements/_typography.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/content-diffusion.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/gulpfile.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/3_components/_pagination.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/5_templates/_layout.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/5_templates/_home.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/3_components/_blocs.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/_loop-related-content.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/js/scripts.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/bloc.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/header-home.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/bloc-event.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page-saison.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page-archives.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/loop-calendar.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page-home.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/2_elements/_sprite.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/header-else.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/3_components/_navigation.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/4_layout/_header.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/footer.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/search.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page-saison-active.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/custom_query_vars.php",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/post-types/event-post-type.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/js/lib/c.masonry.min.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/header.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page-phpinfo.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/5_templates/_pages.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_settings-colors.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_placeholders.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/5_templates/_prices.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/3_components/_medias.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/loop-this-saison.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page-production.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/content-archives.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page-projet.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/4_layout/_sidebar.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/widgets/newsletter_widget.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/inc/template-tags.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/part-filter-minimal.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/part-filter-saison.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/3_components/_filters.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/5_templates/_calendar.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/part-filter-famille.php",
+		"/Users/thomas/Sites/PROJECTS/lavant-seine/wp-content/themes/lavantseine/content-programmation.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/part-filter-cat.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/part-filter-age.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/part-filter-type.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/utils.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/2_elements/_buttons.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/content-search.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/404.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/content-none.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/3_components/_forms.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/4_layout/_footer.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_settings-forms.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_mixins.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/5_templates/_acces.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/content-acces.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/content-projet.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/.gitignore",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_grid.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/content-single.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_print.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/remove_blog_slug.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/_taxonomy-event_type.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/loop-aside-related.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/5_templates/_post.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/cdn.sublime-workspace",
+		"/Users/thomas/Sites/PROJECTS/cdn/.htaccess",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/archive.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/taxonomy-event_type.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/single.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page-acces.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/single-event.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/3_components/_lists.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/searchform.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/content.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wiki/Home.md",
+		"/Users/thomas/Sites/PROJECTS/cdn/readme.md",
+		"/Users/thomas/Sites/PROJECTS/cdn/wiki/typographies.md",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/main.min.css",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/newsletter_widget.php",
+		"/Users/thomas/Library/Caches/Cleanup At Startup/Transmit/A1759D38-C4F1-4472-A1C1-BF35B4851556/index.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/part-related-content.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/js/lib/salvatore.min.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/js/lib/masonry.min.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/front-page.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/2_elements/_typography.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/js/lib/zepto.min.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/meta-box-include-exclude/class-mb-include-exclude.php",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/5_templates/_test.scss",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/js/all.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/js/lib/customizer.js",
+		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/js/lib/jquery.js",
+		"/Users/thomas/.Trash/_config-project.scss",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/event-taxonomies.php",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/event-metas.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/gulpfile.js",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/post-types.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_grid.scss",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/header.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/footer.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/4_layout/_footer.scss",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/5_templates/_home.scss",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/5_templates/_layout.scss",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/page.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/3_components/_medias.scss",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/main.scss",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/6_vendors/_styleguide.scss",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_normalize.scss",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/functions.php",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_config.scss",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_settings-forms.scss",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/main.min.css",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default/pt-to-tax.php",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-config.php",
 		"/Users/thomas/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/Users/thomas/Sites/PROJECTS/cdn/.htaccess",
-		"/Users/thomas/Sites/PROJECTS/cdn/.gitignore",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/styleguide.html",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass/1_utilities/_config-project.scss",
 		"/Users/thomas/Sites/PROJECTS/cdn/node_modules/gulp-ruby-sass/readme.md",
 		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/style.css",
 		"/Users/thomas/Sites/PROJECTS/cdn/node_modules/gulp-ruby-sass/index.js",
-		"/Users/thomas/Sites/PROJECTS/cdn/node_modules/gulp/index.js",
-		"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/js/scripts.js",
-		"/Users/thomas/Sites/PROJECTS/cdn/node_modules/gulp/README.md",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/1_utilities/_config.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/1_utilities/_settings-colors.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/1_utilities/_settings-typography.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/5_templates/_post.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/plugins/wp-google-maps-pro/wp-google-maps-pro.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/page-comment.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/plugins/wp-google-maps-pro/wp-google-maps-pro_categories.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/plugins/wp-google-maps-pro 5.47/wp-google-maps-pro_categories.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/3_components/_navigation.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/5_templates/_layout.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/5_templates/_tabbed.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/page-tabbed-noscroll.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/page-tabbed.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/inc/custom-button-widget.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/plugins/wp-google-maps-pro/wpgmza.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/4_layout/_sidebar.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/2_elements/_buttons.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/page-nosidebar.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/functions.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/6_vendors/_booking_calendar.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/part-headslider.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/header.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/5_templates/_nosidebar.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/6_vendors/_bxslider.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/1_utilities/_grid.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/js/script.js",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/4_layout/_header.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/6_vendors/_wpggmaps.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/4_layout/_footer.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sidebar.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/3_components/_forms.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/6_vendors/_booking_select.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/6_vendors/_booking_search.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/page-plain.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/content-single.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/single.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/main.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/page.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/content-page.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/6_vendors/_jquery.jscrollpane.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/plugins/dopbsp/templates/gitebourthaire/css/jquery.dop.frontend.BSPCalendar.css",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/5_templates/_plain.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/js/bx-slider.js",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/js/customizer.js",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/comments.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/3_components/_comments.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/6_vendors/_booking.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/styleguide.html",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/plugins/wp-google-maps-pro/js/core.js",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/js/infobox.js",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/vendors/wp-google-maps-pro/wp-google-maps-pro.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/vendors/wp-google-maps-pro/wpgmza.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/main.css",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/inc/custom-text-widget.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/2_elements/_links.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/1_utilities/_mixins.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/js/jquery.jscrollpane.min.js",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/index.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/3_components/_lists.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/part-closing-tags.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/footer.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/content-page-notitle.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/3_components/_medias.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/2_elements/_slides.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/inc/attachment-metas.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/part-buttons.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/inc/template-tags.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/style.css",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/front-page.php",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/1_utilities/_placeholders.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/2_elements/_typography.scss",
-		"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/themes/gite-bourthaire/sass/variables-site/_typography.scss",
-		"/Users/thomas/Sites/PROJECTS/internetjurisdiction/wp-content/themes/u-design-child/style.css",
-		"/Users/thomas/Sites/PROJECTS/internetjurisdiction/wp-content/themes/u-design-child/header.php",
-		"/Users/thomas/Sites/PROJECTS/internetjurisdiction/wp-content/themes/u-design-child/page.php",
-		"/Users/thomas/Sites/PROJECTS/internetjurisdiction/wp-content/themes/u-design-child/scripts/search_excerpt/ylsy_search_excerpt.php",
-		"/Users/thomas/Sites/PROJECTS/internetjurisdiction/wp-content/themes/u-design-child/search.php",
-		"/Users/thomas/Sites/PROJECTS/internetjurisdiction/wp-content/themes/u-design-child/retrospect-search.php",
-		"/Users/thomas/Sites/PROJECTS/internetjurisdiction/wp-content/themes/u-design-child/normal-search.php",
-		"/Users/thomas/Sites/PROJECTS/internetjurisdiction/wp-config.php"
+		"/Users/thomas/Sites/PROJECTS/cdn/node_modules/gulp/index.js"
 	],
 	"find":
 	{
@@ -604,6 +722,37 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/plugins/cdn_default",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/js",
+			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn",
 			"/Users/thomas/Sites/PROJECTS/cdn/wp-content/themes/cdn/sass",
 			"/Users/thomas/Sites/PROJECTS/cdn/node_modules",
 			"/Users/thomas/Sites/PROJECTS/gitebourthaire/wp-content/plugins/wp-google-maps-pro",
@@ -670,6 +819,123 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"pagination",
+			"bloc-event.php",
+			"post_url",
+			"font-weight",
+			"weight",
+			"fonts",
+			"http://fonts.googleapis.com/…00,400italic|Roboto+Slab:400,700,300,100",
+			"arrow_blue.png",
+			"common",
+			"has",
+			"-common",
+			"container",
+			"containe",
+			"createFromFormat",
+			"createFromFormat()",
+			"prochain",
+			"creat",
+			"créa",
+			"bloc.",
+			"contain",
+			"$i ",
+			"underline",
+			"dates",
+			"}\n",
+			"aller",
+			"Aller",
+			"bt-close",
+			"site-title-hom",
+			"site-title-home",
+			"site-logo-home",
+			"creat",
+			"line-",
+			"filter-group",
+			"line-he",
+			"page/",
+			"mahi_add_query_path",
+			"D\n\nDistribution",
+			"D\n\nDistribu",
+			"distribu",
+			"quoi",
+			"<h4",
+			"submi",
+			"height",
+			"40px",
+			"height: 40px",
+			"placeholder",
+			"$blue_d",
+			"radius",
+			"border-radius",
+			"border",
+			"blue_dark",
+			".entry-header",
+			"$yellow",
+			"$red",
+			"redcolor_link_hover",
+			"red",
+			"$red",
+			"entry-data",
+			"Billetterie",
+			"navigation posts-navigation",
+			"h2",
+			"h6",
+			"h4",
+			"pro",
+			"desc",
+			".bloc-content",
+			"post_type",
+			"sprite",
+			".widget_newsletter_submission",
+			"date_booking_id",
+			"event_date",
+			"pro",
+			"$pro",
+			"title-underline",
+			"<h2",
+			"<h2>",
+			".entry-content",
+			"the_post_thumbnail",
+			"redirect",
+			"entry-header",
+			".clearfix",
+			"linked_post_has_link",
+			"cdn_posted_on",
+			".entry-content",
+			"%sprited",
+			"arrow",
+			"col",
+			"size-1of3",
+			"entry-content",
+			"site-content",
+			".site-content",
+			"date",
+			"blog",
+			"entry-metas",
+			"entry-header",
+			"buttons-group",
+			"buttons-group\nbuttons-group",
+			"buttons-group",
+			"h2",
+			"class=\"newsletter-submit\"",
+			"title=\"Rechercher :\"",
+			"arrow_blue",
+			"part",
+			"part-related-content",
+			"'related-content'",
+			"part-related-content",
+			"entry-metas-group",
+			"magenta",
+			"post",
+			"typo",
+			"bxSlider",
+			"toggle",
+			"li:hover",
+			"&:hover",
+			"li:hover",
+			".main-navigation ul li:hover > ul",
+			"-push",
 			"press",
 			"type",
 			"post",
@@ -680,124 +946,7 @@
 			"msg.replac",
 			"paths",
 			"paths.",
-			"path",
-			"removePath",
-			"msg",
-			"remove",
-			"removePa",
-			"escape",
-			"400px",
-			"suppr_accents",
-			"wpgmza_checkbox",
-			"Get directions",
-			"javascript:void(0);",
-			"0",
-			"number",
-			"recent-events",
-			"widget_recent_posts",
-			"Open",
-			"DOPBSPSearch-view",
-			":hover",
-			"#ff6300",
-			"#464646",
-			"#68ba68",
-			"#68BA68 !important",
-			"#464646",
-			"#ff6300",
-			"ff6300",
-			".dopbsp-price",
-			"FF6300",
-			"Open sans",
-			"\n    ",
-			"images",
-			"font-family: 'Open Sans', sans-serif !important;",
-			"font-fa",
-			"1750px",
-			"images",
-			"DOPBSPSearch-sidebar",
-			"dopbsp-content",
-			"top:",
-			"content: ",
-			"This is ",
-			"this is th",
-			"This is the",
-			"thsi is the",
-			"this is the",
-			".close",
-			"clearLocations",
-			"infoWindow.close",
-			"close",
-			"trame_ongletWmin",
-			"style=\"",
-			"// ",
-			"html",
-			"html ",
-			"html= ",
-			"html=' ",
-			"html= ",
-			"infoWindow.setOptions",
-			"infobox",
-			"infoWindow.setOptions",
-			"infoWindow.setOptio",
-			"infoWindow.set",
-			"info",
-			"infowindow",
-			"info",
-			"box",
-			"gm-style-iw",
-			"244px",
-			"gm-style-iw",
-			"openInfoWindow",
-			"new ma",
-			"infoBox",
-			"wp-google-map-pro",
-			"plugins",
-			"plugins_url('wp-google-maps-pro')",
-			"plugins_url('wp-google-maps-pro') .",
-			"plugins",
-			"wp-google-maps",
-			"include (",
-			"core.js",
-			"        <",
-			".button ",
-			"comment_form",
-			"jquery",
-			"nav",
-			"margin-top: 32px !important;",
-			"margin-top:",
-			"margin-top: 32px !important;",
-			"style",
-			"global",
-			"Search Results",
-			"results for",
-			"Buy tic",
-			"Buy tick",
-			"innovation",
-			"Innovation",
-			"innovation",
-			"tickets",
-			"Innovation",
-			"innovation",
-			"address",
-			"page",
-			"site-title",
-			"latestposts_home",
-			"wpl_sidebar",
-			"Quote",
-			"quote",
-			"Sponsor",
-			"sponsor",
-			"Sponsor",
-			"sponsor",
-			"wp_redirect",
-			"wp_custom",
-			"<?",
-			"showAlert",
-			"showal",
-			"size",
-			"bx-controls",
-			"bx-controls ",
-			".slider"
+			"path"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -835,28 +984,28 @@
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
-		"wrap": true
+		"wrap": false
 	},
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "wp-content/themes/cdn/content-single-event.php",
+					"file": "wp-content/themes/cdn/content-diffusion.php",
 					"settings":
 					{
-						"buffer_size": 3306,
+						"buffer_size": 4332,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								168,
-								235
+								2898,
+								2898
 							]
 						],
 						"settings":
@@ -951,28 +1100,36 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1120.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
 				{
 					"buffer": 1,
-					"file": "wp-content/themes/cdn/header-else.php",
+					"file": "wp-content/themes/cdn/bloc-event.php",
 					"settings":
 					{
-						"buffer_size": 1287,
+						"buffer_size": 1618,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1111,
-								1111
+								844,
+								844
 							]
 						],
 						"settings":
@@ -1076,155 +1233,6 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_indent": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 3,
-					"file": "wp-content/themes/cdn/sass/2_elements/_buttons.scss",
-					"settings":
-					{
-						"buffer_size": 90,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								90,
-								90
-							]
-						],
-						"settings":
-						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110.0
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"devel": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": "load-save",
-							"sublimelinter_delay": 2.0,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
 				}
 			]
 		}
@@ -1257,7 +1265,7 @@
 		"cols":
 		[
 			0.0,
-			0.523379261256,
+			0.54410011919,
 			1.0
 		],
 		"rows":
@@ -1296,6 +1304,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 277.0,
+	"side_bar_width": 242.0,
 	"status_bar_visible": true
 }
