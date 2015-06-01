@@ -11321,7 +11321,7 @@ jQuery(function($) {
       useCSS: false,
       pager: false,
       controls: true,
-      adaptiveHeight: true ,
+      adaptiveHeight: true,
       auto: false,
       nextText: '',
       prevText: '',
@@ -11370,6 +11370,7 @@ jQuery(function($) {
     trigger_out.click(function(){
       $('.collapsed').hide();
     });
+
   
 
     // Adapt fontsize of featured title based on word count

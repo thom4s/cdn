@@ -17,6 +17,11 @@
 	color: #666;
 	padding: 0;
 
+	&:active,
+	&:focus {
+		border-bottom: 1px dotted $color_1;
+	}
+
 	@include placeholder(#aaa)
 }
 
@@ -110,7 +115,31 @@
 	max-width: 100%;
 	
 	p {
-		margin-bottom: 11px;
+		margin-bottom: 22px;
+	}
+
+	input, 
+	textarea {
+		box-shadow: none;
+	}
+
+	input[type="text"],
+	input[type="email"] {
+		@extend %default-input;
+		height: 30px;
+		line-height: 30px;
+	}
+
+	textarea {
+		border: 1px dotted #000;
+		border-radius: 0;
+		padding: 5px;
+		line-height: 30px;
+
+		&:active,
+		&:focus {
+			border: 1px dotted $color_1;
+		}
 	}
 }
 

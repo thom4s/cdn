@@ -76,6 +76,7 @@ jQuery(function($) {
     trigger_out.click(function(){
       $('.collapsed').hide();
     });
+
   
 
     // Adapt fontsize of featured title based on word count
