@@ -33,10 +33,13 @@
           <?php
             $y = 0;
             $number_of_posts = count($linkedposts);
-            $a_third = round($number_of_posts / 3);
+            $a_third = ceil($number_of_posts / 3);
+
+            if($a_third % 2 != 0 ) {
+              $a_third = $a_third + 1;
+            }
 
             foreach($linkedposts as $linkedpost):
-
 
               if($second_featured) {
                 if($y == 0) {
@@ -87,7 +90,7 @@
               }
               if($post_type == 'post'){
                 $post_meta = get_the_terms( $linked_post_id, 'category' );
-                $post_excerpt = $linked_post->post_excerpt;
+                $post_excerpt = rwmb_meta(  $prefix_default . 'intro', array(), $linked_post_id );
                 $event_type = NULL;
                 $authors = NULL;
               }  

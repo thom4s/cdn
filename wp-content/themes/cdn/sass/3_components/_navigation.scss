@@ -80,7 +80,8 @@
 .main-navigation .current-menu-item a {
 	color: $color_link_hover;
 }
-.current_page_ancestor {
+.current_page_ancestor,
+.current-menu-ancestor {
 	.sub-menu { display: block; }
 }
 
@@ -113,6 +114,8 @@
 	float: left;
 	padding: 0;
 	background: $bg-color;
+	border-bottom: 10px solid #aaa;
+	padding: 5px 0;
 
 	.hamburger-menu {
 		display: block;
@@ -166,7 +169,7 @@
 		@include fontsize(20);
 		line-height: 2rem;
 		float: left;
-		margin-top: 8px;
+		margin: 0;
 	}
 
 	@include at-least(medium){

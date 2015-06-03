@@ -32,7 +32,7 @@
           <?php dynamic_sidebar( 'footer-2' ); ?>
         </div> 
 
-        <div class=" s-12col s-1col-push s-first m-6col m-last l-4col l-last footer-infos-third">
+        <div class=" s-12col s-1col-push s-first m-6col m-last l-5col l-last footer-infos-third">
           <?php dynamic_sidebar( 'footer-3' ); ?>
         </div> 
 

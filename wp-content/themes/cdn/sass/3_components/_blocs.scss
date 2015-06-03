@@ -47,9 +47,8 @@
   }
 
   p {
-    display: inline;
     @include fontsize(15);
-    margin-bottom: 0;
+    margin-bottom: 5px;
   }
   ul {
     @include fontsize(15);
@@ -135,7 +134,7 @@
 }
 
 /* These are the classes that are going to be applied: */
-.column { float: left; }
+.column { float: left; max-width: 100%; }
 .size-1of3 { @extend .l-4col; }
 .size-1of2 { @extend .m-6col; }
 .grid-item { float: none; @include transition(all 0.2s); }
