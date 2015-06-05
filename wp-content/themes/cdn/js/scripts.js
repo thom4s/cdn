@@ -125,7 +125,3 @@ jQuery(function($) {
 
   });
 });
-
-
-var pageTracker = _gat._getTracker("UA-XXXXX-X");
-pageTracker._trackPageview();

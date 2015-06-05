@@ -30,7 +30,7 @@
 
               $linked_post = get_post($linked_post_id);
               $post_title = $linked_post->post_title;
-              $post_url = $linked_post->guid;
+              $post_url = get_permalink($linked_post_id);
               $post_type = $linked_post->post_type;
 
               if($post_type == 'event'){
