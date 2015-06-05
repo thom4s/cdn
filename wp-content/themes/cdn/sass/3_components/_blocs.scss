@@ -4,7 +4,9 @@
  * @package sasskit
  */
 
-
+.cards-list {
+  padding: 5px;
+}
 
 .bloc-outer {
   @include box-sizing();

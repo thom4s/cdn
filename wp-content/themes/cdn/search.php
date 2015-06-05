@@ -38,13 +38,13 @@ get_header(); ?>
         //open type container
         switch ($post->post_type) {
             case 'post':
-                echo '<div class="l-1col-push l-11col l-first title-underline-red"><h2>Informations</h2><div class="line-dotted"></div></div><div id="grid" class="content-part row" data-columns>';
+                echo '<div class="l-1col-push l-11col l-first title-underline-red"><h2>Informations</h2><div class="line-dotted"></div></div><div id="grid" class="content-part row cards-list" data-columns>';
                 break;
             case 'page':
-                echo '<div class="l-1col-push l-11col l-first title-underline-red"><h2>Pages</h2><div class="line-dotted"></div></div><div id="grid" class="content-part row" data-columns>';
+                echo '<div class="l-1col-push l-11col l-first title-underline-red"><h2>Pages</h2><div class="line-dotted"></div></div><div id="grid" class="content-part row cards-list" data-columns>';
                 break;
             case 'event':
-                echo '<div class="l-1col-push l-11col l-first title-underline-red"><h2>Evénements</h2><div class="line-dotted"></div></div><div id="grid" class="content-part row" data-columns>';
+                echo '<div class="l-1col-push l-11col l-first title-underline-red"><h2>Evénements</h2><div class="line-dotted"></div></div><div id="grid" class="content-part row cards-list" data-columns>';
                 break;
         }
     } 

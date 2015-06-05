@@ -61,7 +61,7 @@
               } else {
                 $bloc_col = '';
                 if($y == 0) {
-                  echo '<div id="grid" class="row" data-columns>';
+                  echo '<div id="grid" class="row cards-list" data-columns>';
                 }
               }
  

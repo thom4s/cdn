@@ -79,7 +79,7 @@ get_header(); ?>
 
       // The Loop
       if ( $saison_events->have_posts() ) : ?>
-        <div id="grid" class="row" data-columns>
+        <div id="grid" class="row cards-list" data-columns>
         <?php while ( $saison_events->have_posts() ) {
             $saison_events->the_post();
             $firstdate = rwmb_meta(  $prefix_event . 'firstdate', array(), $post->ID );

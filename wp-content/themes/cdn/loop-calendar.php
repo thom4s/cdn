@@ -58,7 +58,7 @@ if ( $saison_events->have_posts() ) :
       echo do_shortcode( '[une_partie titre="Du '. $week_array['week_start'] . ' au '. $week_array['week_end'] .'"]' );
       $previous_week = $week; 
        ?>
-      <div id="grid" class="row" data-columns>
+      <div id="grid" class="row cards-list" data-columns>
     <?php endif;
 
     include(locate_template('bloc-event.php'));

@@ -38,7 +38,7 @@
       ),
       'orderby'   => 'meta_value_num',
       'meta_key'  => 'event_meta_firstdate',
-      'order'      => 'DESC',
+      'order'      => 'ASC',
     );
     
     // Get query vars if existed
@@ -93,7 +93,7 @@
       
       // The Loop
       if ( $saison_events->have_posts() ) : ?>
-        <div id="grid" class="row" data-columns>
+        <div id="grid" class="row cards-list" data-columns>
         <?php while ( $saison_events->have_posts() ) {
             $saison_events->the_post();
             $pro = true;
