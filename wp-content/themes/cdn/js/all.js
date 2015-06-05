@@ -11763,6 +11763,7 @@ jQuery(function($) {
       auto: false,
       nextText: '',
       prevText: '',
+      infiniteLoop: false,
       onSliderLoad: function(currentIndex){
         $('.event-slider').css('opacity', '1');
       }
@@ -11772,7 +11773,7 @@ jQuery(function($) {
     $('#gotovideo').click(function(event){
       event.preventDefault();
       var slider = $('.bxslider-video').bxSlider();
-      
+
       slider.reloadSlider({
         video: true,
         useCSS: false,
@@ -11781,15 +11782,15 @@ jQuery(function($) {
         auto: false,
         nextText: '',
         prevText: '',
+        infiniteLoop: false,
       });
-
-      var current = slider.getCurrentSlide();
-      console.log('current: ' + current);
-
+      
       var slideQty = slider.getSlideCount();
-      console.log('quantity: ' + slideQty);
+      console.log(slideQty);
+      var lastSlide = slideQty - 1;
+      console.log(lastSlide);
 
-      slider.goToSlide(slideQty - 1);
+      slider.goToSlide(lastSlide);
 
     });
 

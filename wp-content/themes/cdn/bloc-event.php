@@ -25,10 +25,11 @@
                 echo $type->name;
                 $i++;
               }
+              echo '<br>';
             } else {
               echo $event_type;
+              echo '<br>';
             }
-            echo '<br>';
             $j = 0;
             if( isset($diffusion) && $diffusion ){
               foreach ($event_creation as $crea) {
@@ -38,8 +39,9 @@
                 echo $crea->name;
                 $j++;
               }
+              echo '<br>';
             }
-            echo '<br>' . $dates; 
+            echo $dates; 
           ?>
         </div>
         
