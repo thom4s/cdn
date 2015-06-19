@@ -1,0 +1,662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='fr' lang='fr'>
+<head>
+ <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-15'/>
+<script type='text/javascript'>
+
+function GetCookieVal (offset) {
+  var endstr = document.cookie.indexOf(";",offset);
+  if (endstr==-1) endstr = document.cookie.length;
+  return unescape(document.cookie.substring(offset,endstr));
+}
+
+function GetCookie (name) {
+  var arg = name + "=";
+  var alen = arg.length;
+  var clen = document.cookie.length;
+  var i = 0;
+  while (i<clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i,j)==arg) return GetCookieVal(j);
+    i = document.cookie.indexOf(" ",i) + 1;
+    if (i==0) break;
+  }
+  return null;
+}
+
+var codeorion = GetCookie('codeorion');
+
+function CookieDomain () {
+  return location.pathname.substring(0,location.pathname.lastIndexOf('/'))+'/';
+}
+
+function SetCookie (name,value,expires,path,domain,secure) {
+  document.cookie = name + "=" + escape(value) +
+    ((expires) ? "; expires=" + expires.toGMTString() : "") +
+    ((path) ? "; path=" + path : "") +
+    ((domain) ? "; domain=" + domain : "") +
+    ((secure) ? "; secure" : "");
+}
+
+function CreeCookie (value) {
+  var VCookie = value;
+  var largeExpDate = new Date ();
+  largeExpDate.setTime (largeExpDate.getTime() + (6*24*60*60*1000));
+  SetCookie('codeorion',VCookie,largeExpDate,CookieDomain());
+}
+
+function EffaceCookie () {
+  var VCookie = '-';
+  var largeExpDate = new Date ();
+  largeExpDate.setTime(largeExpDate.getTime() + 1);
+  SetCookie('codeorion',VCookie,largeExpDate,CookieDomain());
+}
+
+</script>
+<script type='text/javascript'>
+
+var maxChampQ = 0;
+var idtInst = '21048';
+
+</script><style type='text/css'>
+
+  #aboListe {z-index:10; position:absolute; left:350px; top:200px; }
+  .qAB input { width:10px }
+  td.fAB { text-align:left}
+  .agNonOk {padding-top: 20px}
+</style>
+
+<script type='text/javascript'>
+<!--
+
+function valRadio (nom) {
+  radio = document.getElementsByTagName("input");
+  result = "";
+  bt = 0;
+  if (radio!=null) do {
+    if ((radio[bt].type=="radio") && (radio[bt].name==nom) && radio[bt].checked) result = radio[bt].value;
+    bt++;
+  } while ((bt<radio.length) && (result==""));
+  return result;
+}
+
+function ValType (nom) {
+  var result = '';
+  var html = getElm(nom);
+  if (html==null) return '';
+  else if ((typeof(html.type)!='undefined') && (html.type=='radio')) {
+    html = document.getElementsByName(nom);
+    for (var ch=0;ch<html.length;ch++) if (html[ch].selected) result = html[ch].value;
+  }
+  else for (var ch=0;ch<html.options.length;ch++)
+    if (html.options[ch].selected) result = html.options[ch].value;
+//   alert ('valType('+nom+') ('+result+')');
+  return result;
+}
+
+var noCtrl = false;
+
+function ctrlGroupe(maxIdt,nbTypes,noModifNP) {
+  if (!testNP(maxIdt)) return false;
+  else if (noCtrl) return true;
+  
+  var message = "";
+  var simpleInfo = "";
+  okNom = new Array(maxIdt);
+  okChk = new Array(maxIdt);
+  noNom = new Array(maxIdt);
+
+  if (nbTypes>1) noTypes = 0;
+  else noTypes = 1;
+  
+  nbTypesOk = 0;
+  for (numCh=0;numCh<maxIdt;numCh++) {
+    ab = numCh+1;
+    if (getElm("fAB"+ab) && (getElm("nAB"+ab).value!='') && (getElm("fAB"+ab).value=='')) message = document.fo.AG_errNuFiche.value +'\r\n'+ document.fo.AG_passeParFiche.value;
+    tpAbo = ValType("tAB"+ab);
+    if (tpAbo!='') {
+      okChk[numCh] = 2;
+      nbTypesOk++;
+    }
+    else okChk[numCh] = noTypes;
+    noNom[numCh] = ((document.fo.ctrlAbG.value.indexOf(","+tpAbo+",")>=0) && (numCh>0));
+//    if (ab==1) alert('numCh('+numCh+')  tpAbo('+tpAbo+') noNom('+noNom[numCh]+')');
+  }
+  
+  if ((idtInst=='22022') && (nbTypes>1) && (nbTypesOk==0)) message = 'Il faut renseigner au moins un type de carte';
+  
+  elm = -1;
+  do {
+    elm++;
+    nomElem = document.fo.elements[elm].name;
+    champ = nomElem.substr(0,3); 
+    numCh = nomElem.substr(3)-1;
+    valCh = document.fo.elements[elm].value;
+    if (champ=="nAB") {
+//      alert('elm ('+elm+') champ('+champ+') numCh('+numCh+') valCh('+valCh+') length('+valCh.length+')');
+      if (valCh.length>0) okNom[numCh] = elm;
+      else if (!noNom[numCh]) {
+        okNom[numCh] = -elm;
+        if (numCh==0) message = document.fo.AG_merciUneIdt.value;
+      }
+    }
+    if (champ=="pAB") {
+      if ((valCh.length>0) && (okNom[numCh]<0)) {
+        message = document.fo.AG_preciserNom.value;
+        elm = -okNom[numCh];
+      }
+      else if (noNom[numCh]) champ = "xx";
+      else if ((valCh.length==0) && (okNom[numCh]>0)) message = document.fo.AG_preciserPrenom.value;
+    }
+    if ((champ=="qAB") && (maxChampQ>0) && (valCh>maxChampQ)) {
+      message = "Merci de ne pas dépasser "+maxChampQ;
+    }
+    if ((champ=="tAB") && document.fo.elements[elm].checked) okChk[numCh] = elm;
+  } while ((message=="") && (elm<document.fo.elements.length-1));
+  if (noModifNP>0) message = "";
+  
+  numCh = -1;
+  while ((message=="") && (numCh<maxIdt-1)) {
+    numCh++;
+    if ((okChk[numCh]>0) && (okNom[numCh]<0)) {
+      document.fo.elements[okChk[numCh]].checked = false;
+      if (nbTypes>1) simpleInfo = document.fo.AG_cocheSansIdt.value;
+    }
+    if ((okChk[numCh]==0) && (okNom[numCh]>0)) {
+      if (noModifNP==0) message = document.fo.AG_preciserType.value;
+      elm = okNom[numCh];
+    }
+  }
+//  alert ('et la ('+message+')');
+
+  ok = (message=="");
+  if (!ok) {
+    alert (message);
+    if ((elm>0) &&
+        (document.fo.elements[elm].tagName=='INPUT') &&
+        (document.fo.elements[elm].style.display=='')) document.fo.elements[elm].focus();
+  }
+  else if (simpleInfo.length>0) alert (simpleInfo);
+
+  return ok;
+}
+
+function EnteteNP (disp) {
+  label = document.getElementsByTagName("label");
+  var tr = label.length;
+  do {
+    tr = tr-1;
+    if (label[tr].className=="onOff") label[tr].style.display = disp;
+  } while (tr>0);
+}
+
+function getElm (id) {
+  if (document.getElementById) return document.getElementById(id);
+  else if (document.all) return document.all[id];
+}
+
+function SetValue (id,info) {
+  html = getElm(id);
+  if (html) html.value = info;
+}
+
+function GetValue (id) {
+  var html = getElm(id);
+  if (html) return html.value;
+  else return '';
+}
+
+function SetDisplay (nom,disp) {
+  elm = getElm(nom);
+  if (elm!=null) elm.style.display = disp;
+}
+
+function PrenomAuto (prn) {
+  if (typeof(autoNP)!='object') return false;
+  else {
+    for (var ia in autoNP) if (prn==autoNP[ia]) return true;
+    return false;
+  }
+}
+
+function OkNP (ab) {
+  btR = getElm("tAB"+ab);
+  tpAbo = valRadio("tAB"+ab);
+  carteSeul = (document.fo.ctrlAbG.value.indexOf(","+tpAbo+",")>=0);
+  lesDeux = (document.fo.ctrlAbG.value.length<=2);
+  EnteteNP ("");
+  SetDisplay ("sAB"+ab,"") ;
+  if (carteSeul) {
+    SetDisplay ("nAB"+ab,"none") ;
+    SetDisplay ("pAB"+ab,"none") ;
+    SetDisplay ("qAB"+ab,"none") ;
+    SetDisplay ("rAB"+ab,"");
+    SetDisplay ("kAB"+ab,"") ;
+    foc = getElm("rAB"+ab);
+  }
+  else {
+    foc = getElm("nAB"+ab);
+    SetDisplay ("nAB"+ab,"") ;
+    SetDisplay ("pAB"+ab,"") ;
+    var dispAB = '';
+    if (typeof(maxQab)=='object') {
+      if (maxQab[tpAbo]==0) dispAB = 'none';
+    }
+    if (typeof(autoNP)=='object') {
+      var nomAB = GetValue("nAB"+ab);
+      if ((typeof(autoNP[tpAbo])=='string') && (nomAB=='')) {
+        SetValue ('nAB'+ab,'-');
+        SetValue ('pAB'+ab,autoNP[tpAbo]);
+      }
+      else if ((nomAB=='-') && PrenomAuto(GetValue("pAB"+ab))) {
+        SetValue ('nAB'+ab,'');
+        SetValue ('pAB'+ab,'');
+      }
+    }
+    //if (typeof(maxQab)=='array') 
+    SetDisplay ("qAB"+ab,dispAB) ;
+    SetDisplay("fAB"+ab,"");
+    if (lesDeux) {
+      SetDisplay ("rAB"+ab,""); 
+      SetDisplay ("kAB"+ab,""); 
+    }
+    else {
+      SetDisplay ("rAB"+ab,"none"); 
+      SetDisplay ("kAB"+ab,"none"); 
+    }
+  }
+  SetDisplay ("aAB"+ab,"") ;
+  
+  if (foc==null) foc = getElm("rAB"+ab);
+  if (foc!=null) {
+    foc.style.display = "";
+    foc.focus();
+  }
+  if (getElm("qAB"+ab)) getElm("qAB"+ab).value = 1;
+}
+
+function CacheNP (ab) {
+  SetDisplay ("sAB"+ab,"none");
+  SetDisplay ("nAB"+ab,"none");
+  SetDisplay ("pAB"+ab,"none");
+  SetDisplay ("qAB"+ab,"none");
+  SetDisplay ("rAB"+ab,"none");
+  SetDisplay ("aAB"+ab,"none");
+  SetDisplay ("kAB"+ab,"none");
+  SetDisplay ("fAB"+ab,"none");
+}
+
+function testNP(nb) {  // vérifie que les couples nom/prénom ne figurent pas plus d'une fois
+  if (okDouble) return true;
+  
+  var nom = "nAB";  // racine du champ nom
+  var prn = "pAB";  // racine du champ prénom
+  var err = 0;
+  for (var ab1=1;ab1<=nb;ab1++) {
+    var n1 = GetValue(nom+ab1);  //  valeur balayée 1ere boucle
+    var p1 = GetValue(prn+ab1);  //  idem
+    if ((n1!='') && (p1!='')) for (var ab2=1;ab2<=nb;ab2++) if (ab1!=ab2) {
+      var n2 = GetValue(nom+ab2);  //  valeur courante
+      var p2 = GetValue(prn+ab2);  //  idem
+      if ((n2!="") && (p2!="") && (n1==n2) && (p1==p2)) 
+        err++;  // noms et prénoms identiques et non vides
+    }
+  }
+  if (err!=0) {
+    getElm("suiteAboOk").value = 'ko';
+    alert (GetValue('AG_nomEnDouble'));
+  }
+
+  return (err==0);
+}
+
+function create_XHR_object() {  
+  var xhr_object = null;  
+  if (window.XMLHttpRequest) {
+    xhr_object = new XMLHttpRequest();  // Firefox     
+  }
+  else if (window.ActiveXObject) {
+    xhr_object = new ActiveXObject("Microsoft.XMLHTTP");  // Internet Explorer
+  }
+  return xhr_object;
+}
+  
+function checkBrowserType() {
+  var nom = navigator.appName.toLowerCase();
+  if (nom=="netscape") var browser = "mz";
+  else if (nom=="opera") var browser = "op";
+  else var browser = "ie";
+//  alert(nom);
+  return browser;
+}
+
+browser = checkBrowserType();
+
+function InfoChamp (id) {
+  elm = getElm(id);
+  if (elm==null) return null;
+  else return elm.value;
+}
+
+function GetClient (numAB) {
+  
+  nuFiche = InfoChamp('fAB'+numAB);
+  param = '';
+  if (nuFiche) param = '?nucli='+nuFiche;
+  retour = external.GetPage("bsi/liste.html"+param,"lg=565,ht=342,top=200,left=350");
+  if (retour!="") {
+    var champCli = retour.split(";");
+  
+    getElm("nAB"+numAB).value = champCli[0];
+    getElm("pAB"+numAB).value = champCli[1];
+    getElm("fAB"+numAB).value = champCli[2];
+    SetDisplay("imAB"+numAB,"");
+  }
+}
+
+function ChangeType (ab) {
+  var selAB = ValType('tAB'+ab);
+  if (selAB=='') {
+    SetValue ('nAB'+ab,'');
+    SetValue ('pAB'+ab,'');
+  }
+  else OkNP(ab);
+}
+
+// -->
+</script>
+<script type='text/javascript'>
+<!--
+
+function Champ (elm,nom) {
+  for (ch=0;ch<elm.elements.length;ch++)
+    if (elm.elements[ch].name==nom) return elm.elements[ch];
+}
+
+function Prenom (prn) {
+  var carOk = "_éèêëàçùâäîïôöûü";
+  var info = "";
+  maj = true;
+  for (c=0;c<prn.length;c++) {
+    car = prn.charAt(c);
+    if (maj) car = car.toUpperCase();
+    info = info + car;
+    maj = !((car>='a')&&(car<='z')||(car>='A')&&(car<='Z'));
+    if (carOk.indexOf(car)>0) maj = false;
+    if ((car==" ") && (prn.substr(c,4)==" et ")) maj = false;
+  }
+  lg = info.length;
+  if ((lg>4) && (info.substr(lg-4,4)==" Et ")) info = info.substr(0,lg-4)+' et ';
+
+  return info;
+}
+
+function Telephone (nutel) {
+  var nbCh = 0;
+  info = nutel;
+  if (info.substr(0,2)!="00") {
+    info = "";
+    for (c=0;c<nutel.length;c++) {
+      newC = nutel.charAt(c);
+      if (newC!=' ') {
+        if ((nbCh>0)&&(nbCh%2==0)) info = info + " ";
+        nbCh++;
+        info = info + newC;
+      }
+    }
+  }
+  return info;
+}
+
+function RemplirAuto () {
+}
+
+function ValDef (elm,fam) {
+  var info = "";
+
+  info = elm.value;
+  if (info.length==0) return true;
+  
+  if (info=='$$$') {
+    elm.value = 'alcion@forumsirius.fr';
+  }
+}
+
+function formatNP (elm,fm) {
+  var carInterdit = "*\"\\`;&";
+  var info = "";
+
+  info = elm.value;
+  if (info.length==0) return true;
+  
+  if (info=='$$$$$') {
+    getElm('prenom').value = 'André';
+    getElm('adresse1').value = '8, avenue du Messie';
+    getElm('codepost').value = '30000';
+    getElm('ville').value = 'NIMES';
+    getElm('pays').value = 'FR - FRANCE';
+    getElm('tit1').checked = true;
+    getElm('email').value = 'nobody@forumsirius.fr';
+    getElm('nom').value = 'DUPOND';
+    return true;  
+  }
+ 
+  der = info.charAt(info.length-1);
+  
+  i = carInterdit.length;
+  do {
+    i = i-1;
+    if (der==carInterdit.substr(i,1)) i = -1;
+  } while (i>0);
+  if (i<0) info = info.substr(0,info.length-1);
+
+  if (fm=="N") info = info.toUpperCase();
+  if (fm=="P") info = Prenom(info);
+  if (fm=="T") info = Telephone(info);
+
+// modif ulysse
+//  alert ("dernier "+der+" "+i);
+//  if (der=="\") info = info.substr(0,info.length-1);
+//  if (der==";") info = info.substr(0,info.length-1);
+
+  elm.value = info;
+  return true;
+}
+
+function supCarac(elm) {
+  var listeCar = new Array("\"","\\","`",";");
+  var longl = listeCar.length;
+  var longc = elm.value.length;
+  for (i=0;i<longl;i++) {
+    if (elm.value.substr((longc-1),1)==listeCar[i]) elm.value = elm.value.substr(0,(longc-1));
+    else if (elm.value.substr((longc-2),1)==listeCar[i]) elm.value = elm.value.substr(0,(longc-2));
+  }
+  return true;
+}
+
+function verifCountry(elm,id) {
+  var info = "";
+  var deb = "";
+  info = elm.value;
+  if (info!='') {
+    deb = info.substr(0,2);
+    if (deb!="FR") {
+      if (document.getElementById) document.getElementById(id).style.display = 'block';
+      else if (document.all) document.all[id].style.display = 'block';
+    }
+    else {
+      if (document.getElementById) document.getElementById(id).style.display = 'none';
+      else if (document.all) document.all[id].style.display = 'none';
+    }
+  }
+  return true;
+}
+
+// -->
+</script>
+
+ <meta http-equiv='Pragma' content='no-cache' />
+ <title>R&eacute;servation en ligne / Sirius / Paiement s&eacute;curis&eacute;</title>
+ <!-- optnav== -->
+ <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+<div id='Entete'>
+<span class='enInst'>Th&eacute;&acirc;tre de Sartrouville</span>
+<span class='enEtape'>Identification des abonn&eacute;s</span>
+</div>
+<div id='Menu'>
+ <ul class='mnSpec'>
+  <li class='mnLien'><a href='http://www.theatre-sartrouville.com/index.php' title=' http://www.forumsirius.fr/orion/sartrouville.phtml?aboG=abo1516'>Retour accueil site</a></li>
+ </ul>
+ <ul class='mnPanier'>
+  <li class='mnVisuP'>Le panier est vide</li>
+  <li class='mnLien'><a href="_conditionsvente.phtml?inst=21048&lg=FR&idv=f6660d&abo=abo1516&newfsn=ok&amp;text=cv&amp;pagePrec=aboGroupe&amp;EtapeEncours=" onclick="javascript:window.open(this.href,'','width=600,height=500,scrollbars=yes'); return false;" title="Affiche nos conditions g&eacute;n&eacute;rales de vente">Conditions g&eacute;n&eacute;rales de vente</a></li>
+ </ul>
+ <ul class='mnAbandon'>
+  <li class='mnLien'><a href='_panierB.phtml?inst=21048&lg=FR&idv=f6660d&abo=abo1516&newfsn=ok&amp;supli=-1&amp;retour=site&amp;abandon=1' title="Abandon de la r&eacute;servation, retour au site http://www.forumsirius.fr/orion/sartrouville.phtml?aboG=abo1516">Abandon de la r&eacute;servation</a></li>
+ </ul>
+</div>
+<div id='Dialogue'>
+ <div class='agInfos'><!-- path(21048/abo1516G1.txt) document(21048/abo1516G1) ext(.txt) -->
+<b><font color=#27A0E6>ABONNEMENT EN LIGNE - SAISON 2015 / 2016</font></b><br><br>
+
+<b><font color=#27A0E6>Abonnement Individuel</font></b><br><br> 
+<b>14 Euros la place</b> 4 places minimum dont au moins 3 dans l&acute;activité théâtre<br><br>
+
+<b><font color=#27A0E6>Abonnement Jeune</font></b><br><br> 
+<b>8 Euros</b> 3 places minimum dont au moins 2 dans l&acute;activité théâtre<br><br>
+
+
+Pour l'Abonnement Jeune, les justificatifs adéquats vous seront demandés au retrait des billets.<br><br><br><br>
+
+L'abonnement est nominatif : inscrivez les noms et prénoms de chaque abonné dans la limite de 6 personnes.<br><br>
+
+Indiquez pour chaque abonné la formule choisie :<br><br><!-- path(21048/abo1516G1.txt) okHtml(2) premCar(<) -->
+ </div>
+ <div class='agListe' id='aboListe' name='aboListe' style='display:none'>
+ </div>
+ <div class='agIdt'><br/>
+  <form method='post' name='fo' onsubmit='return ctrlGroupe(6,2,0)' action='_aboGroupe.phtml'>
+   <input type='hidden' name='noInit' value='ok'/>
+   <input type='hidden' name='AG_passeParFiche' value="Merci de passer par le bouton &acute;Fiche&acute; pour choisir un client" />
+   <input type='hidden' name='AG_errNuFiche' value="num&eacute;ro de client inconnu" />
+   <input type='hidden' name='AG_merciUneIdt' value="Merci de renseigner au moins une identit&eacute;" />
+   <input type='hidden' name='AG_preciserNom' value="Merci de pr&eacute;ciser le nom de l&acute;abonn&eacute;" />
+   <input type='hidden' name='AG_preciserPrenom' value="Merci de pr&eacute;ciser le pr&eacute;nom de l&acute;abonn&eacute;" />
+   <input type='hidden' name='AG_cocheSansIdt' value="Abonnement coch&eacute; sans identification de l&acute;abonn&eacute;" />
+   <input type='hidden' name='AG_preciserType' value="Merci de pr&eacute;ciser le type d&acute;abonnement" />
+   <input type='hidden' name='AG_nomEnDouble' id='AG_nomEnDouble' value="Noms/pr&eacute;noms identiques non autoris&eacute;s" />
+   <input type='hidden' name='suiteAboOk' id='suiteAboOk' value='ok' />
+   <input type='hidden' name='inst' value='21048' /><input type='hidden' name='lg' value='FR' /><input type='hidden' name='idv' value='f6660d' /><input type='hidden' name='abo' value='abo1516' /><input type='hidden' name='newfsn' value='ok' />
+   <input type='hidden' name='ctrlAbG' value=',,' />
+   <table class='agSaisie'><!-- inputAbG(npt) -->
+    <tr class='agTeteCol'>
+     <td class='agSep'>&nbsp;</td>
+     <td class='nAB'><label class='onOff'>NOM</label></td>
+     <td class='pAB'><label class='onOff'>Pr&eacute;nom</label></td>
+     <td class='agSep'>&nbsp;</td>
+     <td class='tAB' colspan='2'>Type abonnement</td>
+     <td class='agSep'>&nbsp;</td>
+    </tr>
+    <tr>
+     <td class='agSep'>&nbsp;</td>
+     <td></td>
+     <td></td>
+     <td class='agSep'>&nbsp;</td>
+     <td class='tAB2'>Individuel</td>
+     <td class='tAB2'>Jeune</td>
+     <td class='agSep'>&nbsp;</td>
+    </tr>
+    <tr><!-- ccli() inputAbG(npt)-->
+     <td class='agSep'>&nbsp;</td>
+     <td class='nAB'>
+      <input type='text' size='30' id='nAB1' name='nAB1' value='' title='Nom abonn&eacute; 1' onkeyup="formatNP(this,'N');" />
+     </td>
+     <td class='pAB'>
+      <input type='text' size='24' id='pAB1' name='pAB1' value='' title='Pr&eacute;nom abonn&eacute; 1' onkeyup="formatNP(this,'P');" />
+     </td>
+     <td class='agSep'>&nbsp;</td>
+     <td class='tAB'><input id='tAB1' type='radio' name='tAB1' value='ABOI' onclick='OkNP(1)' /></td>
+     <td class='tAB'><input id='tAB1' type='radio' name='tAB1' value='ABOJ' onclick='OkNP(1)' /></td>
+     <td class='agSep'>&nbsp;</td>
+    </tr>
+    <tr><!-- ccli() inputAbG(npt)-->
+     <td class='agSep'>&nbsp;</td>
+     <td class='nAB'>
+      <input type='text' size='30' id='nAB2' name='nAB2' value='' title='Nom abonn&eacute; 2' onkeyup="formatNP(this,'N');" />
+     </td>
+     <td class='pAB'>
+      <input type='text' size='24' id='pAB2' name='pAB2' value='' title='Pr&eacute;nom abonn&eacute; 2' onkeyup="formatNP(this,'P');" />
+     </td>
+     <td class='agSep'>&nbsp;</td>
+     <td class='tAB'><input id='tAB2' type='radio' name='tAB2' value='ABOI' onclick='OkNP(2)' /></td>
+     <td class='tAB'><input id='tAB2' type='radio' name='tAB2' value='ABOJ' onclick='OkNP(2)' /></td>
+     <td class='agSep'>&nbsp;</td>
+    </tr>
+    <tr><!-- ccli() inputAbG(npt)-->
+     <td class='agSep'>&nbsp;</td>
+     <td class='nAB'>
+      <input type='text' size='30' id='nAB3' name='nAB3' value='' title='Nom abonn&eacute; 3' onkeyup="formatNP(this,'N');" />
+     </td>
+     <td class='pAB'>
+      <input type='text' size='24' id='pAB3' name='pAB3' value='' title='Pr&eacute;nom abonn&eacute; 3' onkeyup="formatNP(this,'P');" />
+     </td>
+     <td class='agSep'>&nbsp;</td>
+     <td class='tAB'><input id='tAB3' type='radio' name='tAB3' value='ABOI' onclick='OkNP(3)' /></td>
+     <td class='tAB'><input id='tAB3' type='radio' name='tAB3' value='ABOJ' onclick='OkNP(3)' /></td>
+     <td class='agSep'>&nbsp;</td>
+    </tr>
+    <tr><!-- ccli() inputAbG(npt)-->
+     <td class='agSep'>&nbsp;</td>
+     <td class='nAB'>
+      <input type='text' size='30' id='nAB4' name='nAB4' value='' title='Nom abonn&eacute; 4' onkeyup="formatNP(this,'N');" />
+     </td>
+     <td class='pAB'>
+      <input type='text' size='24' id='pAB4' name='pAB4' value='' title='Pr&eacute;nom abonn&eacute; 4' onkeyup="formatNP(this,'P');" />
+     </td>
+     <td class='agSep'>&nbsp;</td>
+     <td class='tAB'><input id='tAB4' type='radio' name='tAB4' value='ABOI' onclick='OkNP(4)' /></td>
+     <td class='tAB'><input id='tAB4' type='radio' name='tAB4' value='ABOJ' onclick='OkNP(4)' /></td>
+     <td class='agSep'>&nbsp;</td>
+    </tr>
+    <tr><!-- ccli() inputAbG(npt)-->
+     <td class='agSep'>&nbsp;</td>
+     <td class='nAB'>
+      <input type='text' size='30' id='nAB5' name='nAB5' value='' title='Nom abonn&eacute; 5' onkeyup="formatNP(this,'N');" />
+     </td>
+     <td class='pAB'>
+      <input type='text' size='24' id='pAB5' name='pAB5' value='' title='Pr&eacute;nom abonn&eacute; 5' onkeyup="formatNP(this,'P');" />
+     </td>
+     <td class='agSep'>&nbsp;</td>
+     <td class='tAB'><input id='tAB5' type='radio' name='tAB5' value='ABOI' onclick='OkNP(5)' /></td>
+     <td class='tAB'><input id='tAB5' type='radio' name='tAB5' value='ABOJ' onclick='OkNP(5)' /></td>
+     <td class='agSep'>&nbsp;</td>
+    </tr>
+    <tr><!-- ccli() inputAbG(npt)-->
+     <td class='agSep'>&nbsp;</td>
+     <td class='nAB'>
+      <input type='text' size='30' id='nAB6' name='nAB6' value='' title='Nom abonn&eacute; 6' onkeyup="formatNP(this,'N');" />
+     </td>
+     <td class='pAB'>
+      <input type='text' size='24' id='pAB6' name='pAB6' value='' title='Pr&eacute;nom abonn&eacute; 6' onkeyup="formatNP(this,'P');" />
+     </td>
+     <td class='agSep'>&nbsp;</td>
+     <td class='tAB'><input id='tAB6' type='radio' name='tAB6' value='ABOI' onclick='OkNP(6)' /></td>
+     <td class='tAB'><input id='tAB6' type='radio' name='tAB6' value='ABOJ' onclick='OkNP(6)' /></td>
+     <td class='agSep'>&nbsp;</td>
+    </tr>
+   </table>
+   <div class='agErreur' title="AG_retourErreur"></div>
+   <div class='agValide'>en fin de saisie <input id='okSubmit' type='submit' name='cmd[ok]' value='Validez' /></div><script type='text/javascript'> var okDouble = false; </script>
+   <input type='hidden' name='nbAbG' value='-1' />
+  </form><br />
+ </div>
+ <div class='agInfos'><!-- path(21048/abo1516G2.txt) document(21048/abo1516G2) ext(.txt) -->
+
+ </div>
+</div>
+</body>
+</html>

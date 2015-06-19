@@ -1,313 +1,297 @@
 html {
-	margin: 0px;
-	padding: 0px;
-	font-size: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-size: 100%;
 }
 body {
-	color: #000;
-	background-color: #FFFFFF;
-	margin: auto;
-	background-position: center;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding: 0px;
-	font-family: Arial, Helvetica, "sans-serif";
-	font-size: 0.8em;
-	min-width: 800px;
-	max-width: 940px;
+  color: #000;
+  background-color: #E1E3E4;
+  margin: auto;
+  margin-top: 0;
+  padding: 0;
+  font-family: Arial,Helvetica,sans-serif;
+  min-width: 800px;
+  max-width: 1024px;
 }
-div {
-	margin: 0px;
-	padding: 0px
+* {
+  box-sizing: border-box;
 }
-a {
-	font-weight: normal;
-	text-decoration: underline;
-	color: #000000;
-}
-a:hover {color: red}
 img {
-	border: 0;
+  max-width: 100%;
+  height: auto;
+  border: 0;
 }
 ul, li {
-    color : black;
-	margin: 0px;
-	padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
+
+
+
+
 #Entete {
-	background-image: url(http://www.forumsirius.fr/orion/21048/images/header2015.png);
-	height: 140px;
+  width: 25%;
+  float: left;
+	background-image: url(header2015.png);
+	height: 300px;
 	background-repeat: no-repeat;
 	background-position: left top;
 }
+
 #Entete span {
-	display: none;
+  display: none;
 }
 
+
+
 #Menu {
-	margin-top: 0px;
-	position: relative;
-	left: 0px;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	/*text-transform: uppercase;*/
-	width: 100%;
-	margin: auto;
-	clear: both;
-	min-height: 2em;
-	background-color: #000000
+  width: 25%;
+  float: left;
+  margin-top: 44px;
+  clear: both;
 }
 #Menu a {
-	width: 100%;
-	/*background-color: #000000;*/
-	color: #FFFFFF;
-	text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+    margin: 0px;
+  padding: 0px;
 }
 #Menu a:hover {
-	color: #ccc;
-	text-decoration: none;
+  color: #DF4274;
+  text-decoration: none;
 }
 
 #Menu .mnSpec {
-	clear: both;
-	padding-top: 5px;
+  clear: both;
+  padding-top: 5px;
 }
 #Menu .mnAbandon {
-	padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 #Menu ul {
-	background-color: #333333;
-	margin-top: 0px;
-	/*margin-right: 44px;*/
-	margin-bottom: 0px;
-	/*margin-left: 40px;*/
-	padding: 0px;
-	list-style-type: none;
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 18px;
+  font-weight: bold;
 }
 #Menu  li {
-	margin: 0px;
-	padding: 0px;
-	list-style-type: none;
-	padding: 0 8px 0 8px;
+  margin: 0 0 22px 0;
+  padding: 0;
 }
+
 
 /* menu horizotal */
 li.mnLien { 
-	float: left;
+  float: left;
 }
+
+
 
 #Dialogue {
-	color: CC0000;
-	/*background-color: #E7E4D5;*/
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 15px;
-	width: 95%;
-	padding: 1.5em 2em;
+  width: 75%;
+  float: right;
+  margin-top: -300px;
+  background-color: #FFF;
+  padding: 3.5em 2em 5.5em 2em;
+  min-height: 500px;
 }
 
-#Menu li {
-	margin-left: 22px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	padding: 0px;
-}
-#Menu li a {
-	margin: 0px;
-	padding: 0px;
-}
 #Dialogue td {
 
 }
 #Dialogue table.caListe {
-	width: 90%;
+  width: 90%;
 }
 #Dialogue table.caListe td {
-	border-bottom-width: 3px;
-	vertical-align: bottom;
+  border-bottom-width: 3px;
+  vertical-align: bottom;
 }
 
 td.spDate a{
-	color: black;
-	font-weight: normal;
+  color: black;
+  font-weight: normal;
 }
 
 td.paSupli a {
-	color: black;
-	font-weight: normal;
+  color: black;
+  font-weight: normal;
 }
 
 td.paPlaces {
-	color: black;
+  color: black;
 }
 
 div.paCoord a, div.paAutre a {
-	color: black;
+  color: black;
 }
 
 table.coCoord {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 #Dialogue .caTitre {
-	width: 49%;
-	color: #CC0000;
+  width: 49%;
+  color: #CC0000;
 }
 #Dialogue .caSean {
-	width: 49%;
+  width: 49%;
 }
 #Dialogue .caTitre a {
-	color: #CC0000;
-	font-size: 16px;
-	margin-top: 10px;
-	display: block;
-	text-transform: uppercase;
-	text-decoration: none;
+  color: #CC0000;
+  font-size: 16px;
+  margin-top: 10px;
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 #Dialogue .caTitre a:hover {
-	color: #CC0000;
-	text-decoration: underline;
+  color: #CC0000;
+  text-decoration: underline;
 }
 .diComm {
-	display: none;
-	height: 100px;
-	color: #333333;
-	margin-right: -40px;
-	margin-left: -44px;
-	margin-top: 25px;
+  display: none;
+  height: 100px;
+  color: #333333;
+  margin-right: -40px;
+  margin-left: -44px;
+  margin-top: 25px;
 }
 #Dialogue td.caSean {
-	color: #333333;
-	text-align: right;
+  color: #333333;
+  text-align: right;
+}
+.defSeance {
+	margin-bottom: 22px;
 }
 .defSpec .nomSpec {
-	display: block;
-	font-size: 12px;
-	color: #000000;
-	margin-bottom: -15px;	
-
+  display: block;
+  color: #000;
+	font-size: 24px;
+	font-weight: 100;
 }
 .defSeance .nomSpec {
-	font-size: 18px;
-	margin-top: 10px;
-	display: block;
-	text-transform: uppercase;
-	font-weight: bold;
+  font-size: 24px;
+  margin-top: 10px;
+  display: block;
+  text-transform: none;
+  font-weight: 100;
 }
 .defSeance .dateSC {
-	font-size: 15px;
-	margin-top: 10px;
-	display: block;
-	font-weight: bold;
+  font-size: 15px;
+  margin-top: 10px;
+  display: block;
+  font-weight: bold;
 }
 .defSeance  .nomActiv{
-	color: #999999;
+  color: #999999;
 }
 .scListe .scTarifs{
-	color: #999999;
+  color: #999999;
 }
 .scListe .scPlaceNum{
-	color: #999999;
+  color: #999999;
 }
 
 table.scAffPrix {
-	width: 100%;
-	margin-top: 10px;
-	padding: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
 }
 table.scAffPrix td {
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-left: 0px;
-	vertical-align: middle;
-	height: 40px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  vertical-align: middle;
+  height: 40px;
 }
 table.scAffPrix td.scNbMax {
-	color: #999999;
+  color: #999999;
 }
 table.scAffPrix td.scNbPla{
-	color: #333333;
-	background-color: #E7E4D5;
-	padding-left: 15px;
-	font-size: 12px;
+  color: #333333;
+  background-color: #E7E4D5;
+  padding-left: 15px;
+  font-size: 12px;
 }
 table.scAffPrix td.scPrix{
-	background-color: #E7E4D5;
-	padding-right: 15px;
-	text-align: right;
-	font-size: 12px;
+  background-color: #E7E4D5;
+  padding-right: 15px;
+  text-align: right;
+  font-size: 12px;
 }
 div.paListe table {
-	width: 100%;
-	margin-top: 10px;
-	padding: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
 }
 div.paListe table td{
-	border-bottom-width: 3px;
-	border-bottom-style: dotted;
-	border-bottom-color: #CCCCCC;
-	vertical-align: bottom;
-	height: 40px;
+  border-bottom-width: 3px;
+  border-bottom-style: dotted;
+  border-bottom-color: #CCCCCC;
+  vertical-align: bottom;
+  height: 40px;
 }
 div.paOkPaie div {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 .paSeance {
-	background-color: #F6F6F6;
-	padding-left: 15px;
-	font-weight: bold;
-	font-size: 14px;
+  background-color: #F6F6F6;
+  padding-left: 15px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .paTotal, .paPrixTot {
-	font-weight: bold;
-	font-size: 14px;
+  font-weight: bold;
+  font-size: 14px;
 
 }
 #Menu .mnPanier .mnVisuP {
-	float: right;
-	/*margin-top: -20px;*/
-	margin-right: 4px;
-	color: #FFF;
-	font-weight: normal;
-	font-size: 1.1em;
+  margin-right: 4px;
+  color: #000;
+  font-weight: normal;
+  font-size: 1em;
 }
 .paAutre {
-	float: left;
-	width: 200px;
+  float: left;
+  width: 200px;
 }
 .paCoord {
-	float: right;
-	width: 280px;
+  float: right;
+  width: 280px;
 }
 .paCoord span{
-	display: block;
+  display: block;
 }
 .paCoImg {
-	display: block;
+  display: block;
 }
 
-span.coCookie	{
-	display : none;
+span.coCookie {
+  display : none;
 }
 
  
- span.okRetour a	{
-	color: black;
+ span.okRetour a  {
+  color: black;
 }
-  div.abForm a	{
-	color: black;
+  div.abForm a  {
+  color: black;
 }
