@@ -411,6 +411,7 @@ function event_register_meta_boxes( $meta_boxes )
                 'id'               => "{$prefix}video",
                 'type'             => 'oembed',
                 'clone'            => true,
+                'desc'             => 'Pour vimeo : https://player.vimeo.com/video/122647799 (https://player.vimeo.com/video/ + id de la vidéo)<br> Pour youtube : https://www.youtube.com/embed/radm0JQM9aI (https://www.youtube.com/embed/ + id de la vidéo) <br> Attention, pour que la vidéo s\'affiche, il faut au moins 1 photo',
             ),
 
         )
