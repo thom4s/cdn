@@ -52,6 +52,12 @@
       }
     }
 
+    .custom-col {
+      p {
+        width: 100% !important;
+      }
+    }
+
     .related-content {
       @include clearfix();
       margin-bottom: $base_line_height;

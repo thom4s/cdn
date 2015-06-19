@@ -217,7 +217,7 @@ function get_blocks_shortcode($atts) {
 add_shortcode( 'get_blocks', 'get_blocks_shortcode' );
 
 
-// Shortcode for making a big title (h2 in template) WORKING
+// Shortcode - Display big title (h2 in template) - WORKING
 function make_a_big_title_shortcode($atts) {
  
   // Get attributes
@@ -238,6 +238,85 @@ function make_a_big_title_shortcode($atts) {
   <?php return ob_get_clean();
 }
 add_shortcode( 'une_partie', 'make_a_big_title_shortcode' );
+
+
+// Shortcode - Display a column in posts  - WORKING
+function make_a_column_in_posts($atts, $content = null) {
+ 
+  // Get attributes
+  $a = shortcode_atts( array(
+        'nombre'      => 'Le titre de la partie',
+        'alignement'  => 'left',
+        'menu'        => '',
+    ), $atts );
+
+  $nbr = $a['nombre'];
+  
+  if($a['alignement'] == 'gauche') {
+    $align = 'm-first';
+  } elseif ($a['alignement'] == 'droite') {
+    $align = 'm-last';
+  }
+  
+  $menu = $a['menu'];
+  if($menu != '') {
+   $get_menu = wp_nav_menu(
+      array(
+          'menu' => $menu,
+          'echo' => false
+          )
+   );
+  }
+
+  ob_start(); ?>
+
+    <div class="custom-col m-<?php echo $nbr; ?>col <?php echo $align; ?>">
+      <?php echo $content; ?>
+
+      <?php if( isset($get_menu) ) : ?>
+        <div class="bloc-buttons bg-practical">
+          <div class="bloc-buttons-inner">
+              <h4>Pratique</h4>
+              <?php echo $get_menu; ?>
+          </div>
+        </div>
+      <?php endif; ?>
+
+
+    </div>
+
+  <?php return ob_get_clean();
+}
+add_shortcode( 'colonne', 'make_a_column_in_posts' );
+
+
+/**
+ * ADD TINY MCE BUTTONS FOR SHORTCODES
+ */
+function register_button( $buttons ) {
+   array_push( $buttons, "|", "colonne", "|", "mytitle"  );
+   return $buttons;
+}
+
+function add_plugin( $plugin_array ) {
+   $plugin_array['colonne'] = get_template_directory_uri() . '/js/tinybuttons/cdn-tiny-buttons.js';
+   $plugin_array['mytitle'] = get_template_directory_uri() . '/js/tinybuttons/cdn-tiny-buttons.js';
+   return $plugin_array;
+}
+
+function cdn_custom_buttons() {
+
+   if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
+      return;
+   }
+
+   if ( get_user_option('rich_editing') == 'true' ) {
+      add_filter( 'mce_external_plugins', 'add_plugin' );
+      add_filter( 'mce_buttons', 'register_button' );
+   }
+
+}
+add_action('init', 'cdn_custom_buttons');
 
 
 
