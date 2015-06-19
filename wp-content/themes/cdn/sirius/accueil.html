@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='fr' lang='fr'>
+<head>
+ <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-15'/>
+<script type='text/javascript'>
+
+function GetCookieVal (offset) {
+  var endstr = document.cookie.indexOf(";",offset);
+  if (endstr==-1) endstr = document.cookie.length;
+  return unescape(document.cookie.substring(offset,endstr));
+}
+
+function GetCookie (name) {
+  var arg = name + "=";
+  var alen = arg.length;
+  var clen = document.cookie.length;
+  var i = 0;
+  while (i<clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i,j)==arg) return GetCookieVal(j);
+    i = document.cookie.indexOf(" ",i) + 1;
+    if (i==0) break;
+  }
+  return null;
+}
+
+var codeorion = GetCookie('codeorion');
+
+function CookieDomain () {
+  return location.pathname.substring(0,location.pathname.lastIndexOf('/'))+'/';
+}
+
+function SetCookie (name,value,expires,path,domain,secure) {
+  document.cookie = name + "=" + escape(value) +
+    ((expires) ? "; expires=" + expires.toGMTString() : "") +
+    ((path) ? "; path=" + path : "") +
+    ((domain) ? "; domain=" + domain : "") +
+    ((secure) ? "; secure" : "");
+}
+
+function CreeCookie (value) {
+  var VCookie = value;
+  var largeExpDate = new Date ();
+  largeExpDate.setTime (largeExpDate.getTime() + (6*24*60*60*1000));
+  SetCookie('codeorion',VCookie,largeExpDate,CookieDomain());
+}
+
+function EffaceCookie () {
+  var VCookie = '-';
+  var largeExpDate = new Date ();
+  largeExpDate.setTime(largeExpDate.getTime() + 1);
+  SetCookie('codeorion',VCookie,largeExpDate,CookieDomain());
+}
+
+</script>
+<style type='text/css'>
+ .edNb input {width: 16px; height: 18px; text-align: right}
+ .spDispoA {background-color: #00FF00}
+ .spDispoB {background-color: #FF8000}
+ .spDispoC {background-color: #FF0000}
+</style>
+ <meta http-equiv='Pragma' content='no-cache' />
+ <title>R&eacute;servation en ligne / Sirius / Paiement s&eacute;curis&eacute;</title>
+ <!-- optnav== -->
+ 
+ <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+<div id='Entete'>
+<span class='enInst'>Th&eacute;&acirc;tre de Sartrouville</span>
+<span class='enEtape'>CHOISISSEZ VOTRE SPECTACLE</span>
+</div>
+<div id='Menu'>
+ <ul class='mnSpec'>
+  <li class='mnLien'><a href='http://www.theatre-sartrouville.com/index.php' title=' http://forumsirius.fr/orion/sartrouville.phtml?kld=1'>Retour accueil site</a></li>
+ </ul>
+ <ul class='mnPanier'>
+  <li class='mnVisuP'>Le panier est vide</li>
+  <li class='mnLien'><a href="_conditionsvente.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;text=cv&amp;pagePrec=calendrier&amp;EtapeEncours=" onclick="javascript:window.open(this.href,'','width=600,height=500,scrollbars=yes'); return false;" title="Affiche nos conditions g&eacute;n&eacute;rales de vente">Conditions g&eacute;n&eacute;rales de vente</a></li>
+ </ul>
+ <ul class='mnAbandon'>
+  <li class='mnLien'><a href='_panierB.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;supli=-1&amp;retour=site&amp;abandon=1' title="Abandon de la r&eacute;servation, retour au site http://forumsirius.fr/orion/sartrouville.phtml?kld=1">Abandon de la r&eacute;servation</a></li>
+ </ul>
+</div>
+<div id='Dialogue'>
+
+ <div class='defSpec'>
+  <span class='nomSpec'>Les spectacles &agrave; venir</span>
+  <span class='caActiv'>&nbsp;</span>
+ </div>
+ <div class='caListe'>
+  <table class='caListe' border='0'>
+ <tr><td class='caTitre'><a href='spectacle.html' alt='Voir les s&eacute;ances de ce spectacle'>Histoire d'Ernesto</a></td><td class='caSean'>2 s&eacute;ances du 08/10/2015 au 10/10/2015</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=633' alt='Voir les s&eacute;ances de ce spectacle'>Oxmo Puccino Trio</a></td><td class='caSean'>une s&eacute;ance le 09/10/2015</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=634' alt='Voir les s&eacute;ances de ce spectacle'>Le Faiseur</a></td><td class='caSean'>2 s&eacute;ances du 15/10/2015 au 16/10/2015</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=635' alt='Voir les s&eacute;ances de ce spectacle'>Outrages</a></td><td class='caSean'>3 s&eacute;ances du 04/11/2015 au 06/11/2015</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=636' alt='Voir les s&eacute;ances de ce spectacle'>Dedans dehors#2</a></td><td class='caSean'>une s&eacute;ance le 07/11/2015</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=637' alt='Voir les s&eacute;ances de ce spectacle'>Le Sorelle Macaluso</a></td><td class='caSean'>2 s&eacute;ances du 13/11/2015 au 14/11/2015</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=638' alt='Voir les s&eacute;ances de ce spectacle'>Le préambule des étourdis</a></td><td class='caSean'>2 s&eacute;ances du 20/11/2015 au 21/11/2015</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=639' alt='Voir les s&eacute;ances de ce spectacle'>L'idéal Club</a></td><td class='caSean'>2 s&eacute;ances du 01/12/2015 au 02/12/2015</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=640' alt='Voir les s&eacute;ances de ce spectacle'>DakhaBrakha</a></td><td class='caSean'>une s&eacute;ance le 08/12/2015</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=641' alt='Voir les s&eacute;ances de ce spectacle'>Questcequetudeviens?</a></td><td class='caSean'>2 s&eacute;ances du 10/12/2015 au 11/12/2015</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=642' alt='Voir les s&eacute;ances de ce spectacle'>Dînons ensemble</a></td><td class='caSean'>une s&eacute;ance le 17/12/2015</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=643' alt='Voir les s&eacute;ances de ce spectacle'>Les Nouvelles Aventures de Peer Gynt</a></td><td class='caSean'>8 s&eacute;ances du 20/01/2016 au 30/01/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=647' alt='Voir les s&eacute;ances de ce spectacle'>Nestor, Max et le Big Bang Club</a></td><td class='caSean'>6 s&eacute;ances du 26/01/2016 au 30/01/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=646' alt='Voir les s&eacute;ances de ce spectacle'>Le Procès de Socrate</a></td><td class='caSean'>3 s&eacute;ances du 26/01/2016 au 30/01/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=644' alt='Voir les s&eacute;ances de ce spectacle'>Le Cantique des oiseaux</a></td><td class='caSean'>4 s&eacute;ances du 26/01/2016 au 30/01/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=645' alt='Voir les s&eacute;ances de ce spectacle'>Master</a></td><td class='caSean'>3 s&eacute;ances du 27/01/2016 au 30/01/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=648' alt='Voir les s&eacute;ances de ce spectacle'>Réparer les vivants</a></td><td class='caSean'>12 s&eacute;ances du 04/02/2016 au 19/02/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=649' alt='Voir les s&eacute;ances de ce spectacle'>Pixel</a></td><td class='caSean'>une s&eacute;ance le 12/02/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=650' alt='Voir les s&eacute;ances de ce spectacle'>Soeurs</a></td><td class='caSean'>2 s&eacute;ances du 16/02/2016 au 17/02/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=651' alt='Voir les s&eacute;ances de ce spectacle'>Tailleur pour dames</a></td><td class='caSean'>2 s&eacute;ances du 10/03/2016 au 11/03/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=652' alt='Voir les s&eacute;ances de ce spectacle'>Hold on</a></td><td class='caSean'>une s&eacute;ance le 11/03/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=653' alt='Voir les s&eacute;ances de ce spectacle'>Nombrer les étoiles</a></td><td class='caSean'>une s&eacute;ance le 11/03/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=654' alt='Voir les s&eacute;ances de ce spectacle'>Qui-vive</a></td><td class='caSean'>4 s&eacute;ances du 15/03/2016 au 18/03/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=655' alt='Voir les s&eacute;ances de ce spectacle'>Dominique A</a></td><td class='caSean'>une s&eacute;ance le 22/03/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=656' alt='Voir les s&eacute;ances de ce spectacle'>Même les chevaliers tombent dans l'oubli</a></td><td class='caSean'>2 s&eacute;ances du 24/03/2016 au 25/03/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=657' alt='Voir les s&eacute;ances de ce spectacle'>Un fou noir au pays des blancs</a></td><td class='caSean'>2 s&eacute;ances du 31/03/2016 au 01/04/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=658' alt='Voir les s&eacute;ances de ce spectacle'>Profils</a></td><td class='caSean'>3 s&eacute;ances du 05/04/2016 au 07/04/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=659' alt='Voir les s&eacute;ances de ce spectacle'>Paolo Fresu</a></td><td class='caSean'>une s&eacute;ance le 08/04/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=660' alt='Voir les s&eacute;ances de ce spectacle'>Dansékinou</a></td><td class='caSean'>une s&eacute;ance le 09/04/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=661' alt='Voir les s&eacute;ances de ce spectacle'>My Dinner With André</a></td><td class='caSean'>3 s&eacute;ances du 13/04/2016 au 15/04/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=662' alt='Voir les s&eacute;ances de ce spectacle'>Amphitryon</a></td><td class='caSean'>3 s&eacute;ances du 10/05/2016 au 12/05/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=663' alt='Voir les s&eacute;ances de ce spectacle'>Effet Bekkrell</a></td><td class='caSean'>une s&eacute;ance le 18/05/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=664' alt='Voir les s&eacute;ances de ce spectacle'>Dhafer Youssef</a></td><td class='caSean'>une s&eacute;ance le 20/05/2016</td><td class='caDispo'>&nbsp;</td></tr>
+ <tr><td class='caTitre'><a href='_spectacle.phtml?inst=21048&lg=FR&kld=1&idv=f6660d&amp;spec=665' alt='Voir les s&eacute;ances de ce spectacle'>Journal d'un corps</a></td><td class='caSean'>5 s&eacute;ances du 24/05/2016 au 28/05/2016</td><td class='caDispo'>&nbsp;</td></tr>
+  </table>
+ </div>
+ <span class='diComm'>Vous pouvez cliquer sur le spectacle de votre choix dans la liste ci-dessus.<br/>L&acute;&eacute;tape suivante va vous permettre de s&eacute;lectionner une s&eacute;ance.</span>
+</div>
+</body>
+</html>

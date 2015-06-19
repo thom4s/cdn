@@ -1,0 +1,313 @@
+html {
+	margin: 0px;
+	padding: 0px;
+	font-size: 100%;
+}
+body {
+	color: #000;
+	background-color: #FFFFFF;
+	margin: auto;
+	background-position: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	font-family: Arial, Helvetica, "sans-serif";
+	font-size: 0.8em;
+	min-width: 800px;
+	max-width: 940px;
+}
+div {
+	margin: 0px;
+	padding: 0px
+}
+a {
+	font-weight: normal;
+	text-decoration: underline;
+	color: #000000;
+}
+a:hover {color: red}
+img {
+	border: 0;
+}
+ul, li {
+    color : black;
+	margin: 0px;
+	padding: 0px;
+}
+
+#Entete {
+	background-image: url(http://www.forumsirius.fr/orion/21048/images/header2015.png);
+	height: 140px;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#Entete span {
+	display: none;
+}
+
+#Menu {
+	margin-top: 0px;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	/*text-transform: uppercase;*/
+	width: 100%;
+	margin: auto;
+	clear: both;
+	min-height: 2em;
+	background-color: #000000
+}
+#Menu a {
+	width: 100%;
+	/*background-color: #000000;*/
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#Menu a:hover {
+	color: #ccc;
+	text-decoration: none;
+}
+
+#Menu .mnSpec {
+	clear: both;
+	padding-top: 5px;
+}
+#Menu .mnAbandon {
+	padding-bottom: 5px;
+}
+#Menu ul {
+	background-color: #333333;
+	margin-top: 0px;
+	/*margin-right: 44px;*/
+	margin-bottom: 0px;
+	/*margin-left: 40px;*/
+	padding: 0px;
+	list-style-type: none;
+}
+#Menu  li {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	padding: 0 8px 0 8px;
+}
+
+/* menu horizotal */
+li.mnLien { 
+	float: left;
+}
+
+#Dialogue {
+	color: CC0000;
+	/*background-color: #E7E4D5;*/
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 15px;
+	width: 95%;
+	padding: 1.5em 2em;
+}
+
+#Menu li {
+	margin-left: 22px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+#Menu li a {
+	margin: 0px;
+	padding: 0px;
+}
+#Dialogue td {
+
+}
+#Dialogue table.caListe {
+	width: 90%;
+}
+#Dialogue table.caListe td {
+	border-bottom-width: 3px;
+	vertical-align: bottom;
+}
+
+td.spDate a{
+	color: black;
+	font-weight: normal;
+}
+
+td.paSupli a {
+	color: black;
+	font-weight: normal;
+}
+
+td.paPlaces {
+	color: black;
+}
+
+div.paCoord a, div.paAutre a {
+	color: black;
+}
+
+table.coCoord {
+	margin-top: 20px;
+}
+
+#Dialogue .caTitre {
+	width: 49%;
+	color: #CC0000;
+}
+#Dialogue .caSean {
+	width: 49%;
+}
+#Dialogue .caTitre a {
+	color: #CC0000;
+	font-size: 16px;
+	margin-top: 10px;
+	display: block;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+#Dialogue .caTitre a:hover {
+	color: #CC0000;
+	text-decoration: underline;
+}
+.diComm {
+	display: none;
+	height: 100px;
+	color: #333333;
+	margin-right: -40px;
+	margin-left: -44px;
+	margin-top: 25px;
+}
+#Dialogue td.caSean {
+	color: #333333;
+	text-align: right;
+}
+.defSpec .nomSpec {
+	display: block;
+	font-size: 12px;
+	color: #000000;
+	margin-bottom: -15px;	
+
+}
+.defSeance .nomSpec {
+	font-size: 18px;
+	margin-top: 10px;
+	display: block;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.defSeance .dateSC {
+	font-size: 15px;
+	margin-top: 10px;
+	display: block;
+	font-weight: bold;
+}
+.defSeance  .nomActiv{
+	color: #999999;
+}
+.scListe .scTarifs{
+	color: #999999;
+}
+.scListe .scPlaceNum{
+	color: #999999;
+}
+
+table.scAffPrix {
+	width: 100%;
+	margin-top: 10px;
+	padding: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+table.scAffPrix td {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	vertical-align: middle;
+	height: 40px;
+}
+table.scAffPrix td.scNbMax {
+	color: #999999;
+}
+table.scAffPrix td.scNbPla{
+	color: #333333;
+	background-color: #E7E4D5;
+	padding-left: 15px;
+	font-size: 12px;
+}
+table.scAffPrix td.scPrix{
+	background-color: #E7E4D5;
+	padding-right: 15px;
+	text-align: right;
+	font-size: 12px;
+}
+div.paListe table {
+	width: 100%;
+	margin-top: 10px;
+	padding: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+div.paListe table td{
+	border-bottom-width: 3px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CCCCCC;
+	vertical-align: bottom;
+	height: 40px;
+}
+div.paOkPaie div {
+	margin-top: 10px;
+}
+.paSeance {
+	background-color: #F6F6F6;
+	padding-left: 15px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.paTotal, .paPrixTot {
+	font-weight: bold;
+	font-size: 14px;
+
+}
+#Menu .mnPanier .mnVisuP {
+	float: right;
+	/*margin-top: -20px;*/
+	margin-right: 4px;
+	color: #FFF;
+	font-weight: normal;
+	font-size: 1.1em;
+}
+.paAutre {
+	float: left;
+	width: 200px;
+}
+.paCoord {
+	float: right;
+	width: 280px;
+}
+.paCoord span{
+	display: block;
+}
+.paCoImg {
+	display: block;
+}
+
+span.coCookie	{
+	display : none;
+}
+
+ 
+ span.okRetour a	{
+	color: black;
+}
+  div.abForm a	{
+	color: black;
+}
