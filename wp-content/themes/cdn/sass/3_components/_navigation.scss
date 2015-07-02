@@ -76,11 +76,12 @@
 		.main-navigation ul ul a {
 		  @include fontsize(18);		
 		}
-.main-navigation .current_page_item a,
-.main-navigation .current-menu-item a {
+.main-navigation .current-page-item a,
+.main-navigation .current-menu-item a,
+.main-navigation .current-page-ancestor .current-page-ancestor a {
 	color: $color_link_hover;
 }
-.current_page_ancestor,
+.current-page-ancestor,
 .current-menu-ancestor {
 	.sub-menu { display: block; }
 }

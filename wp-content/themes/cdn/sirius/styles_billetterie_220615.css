@@ -33,7 +33,7 @@ ul, li {
 #Entete {
   width: 25%;
   float: left;
-	background-image: url(header2015.png);
+	background-image: url(http://www.forumsirius.fr/orion/21048/images/header2015-new.png);
 	height: 300px;
 	background-repeat: no-repeat;
 	background-position: left top;
@@ -199,22 +199,43 @@ table.coCoord {
   color: #999999;
 }
 
+.okDetailSP {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 22px;
+  display: block;
+  text-transform: none;
+  font-weight: 100;
+}
+.okTable {
+  margin-bottom: 44px;
+  font-size: 14px;
+}
+
+.okErreur,
+.okRetour {
+  display: inline-block;
+  clear: both;
+  margin-bottom: 22px;
+}
+
+.okErreur {
+  color: #aa0000;
+}
+
 table.scAffPrix {
   width: 100%;
   margin-top: 10px;
-  padding: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
+  padding: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
 }
 table.scAffPrix td {
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
+  margin: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
   vertical-align: middle;
   height: 40px;
 }
@@ -284,6 +305,13 @@ div.paOkPaie div {
   display: block;
 }
 
+.paEntete {
+  font-size: 24px;
+  margin-top: 10px;
+  display: block;
+  text-transform: none;
+  font-weight: 100;
+}
 span.coCookie {
   display : none;
 }
