@@ -36,7 +36,7 @@
             $a_third = ceil($number_of_posts / 3);
 
             if($a_third % 2 != 0 ) {
-              $a_third = $a_third + 1;
+              // $a_third = $a_third + 1;
             }
 
             foreach($linkedposts as $linkedpost):

@@ -40,7 +40,7 @@
       );
       $next_event = get_posts( $next_event_args );
       if($next_event) {
-        $next_event_url = $next_event[0]->guid;
+        $next_event_url = get_permalink($next_event[0]->ID);
       }
       
     endif;
