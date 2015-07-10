@@ -33,7 +33,7 @@
           <?php
             $y = 0;
             $number_of_posts = count($linkedposts);
-            $a_third = ceil($number_of_posts / 3);
+            $a_third = ceil($number_of_posts / 2);
 
             if($a_third % 2 != 0 ) {
               // $a_third = $a_third + 1;
@@ -65,7 +65,6 @@
                 }
               }
  
-
               $linked_post_id = $linkedpost['defaults_meta_linkedpost-id'];
               $linked_post_bg = $linkedpost['defaults_meta_bloc_bg'];
 
