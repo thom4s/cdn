@@ -1,13 +1,19 @@
 <?php 
-  if( $pro ) { 
-    $url = esc_url( add_query_arg( 'pro', 'yes', get_permalink() ) );
+
+  if( 'spectacle' == $event_cat[0]->slug ) {
+    if( $pro ) { 
+      $url = esc_url( add_query_arg( 'pro', 'yes', get_permalink() ) );
+    } else {
+      $url = get_permalink();
+    }
   } else {
-    $url = get_permalink();
+    $url = '';
   }
+
 
 ?>
   <article class="grid-item item-event bloc-outer">
-    <a href="<?php echo $url; ?>">
+    <?php if($url != '') { ?><a href="<?php echo $url; ?>"><?php } ?>
       
       <div class="bloc-img">
         <?php the_post_thumbnail( 'bloc-thumb', '' ); ?>
@@ -17,7 +23,7 @@
         <div class="meta entry-datas">
           <?php
             $i = 0;
-            if( is_array($event_type) ){
+            if( is_array($event_type) && !empty($event_type) ){
               foreach ($event_type as $type) {
                 if($i > 0) {
                   echo ' - ';
@@ -26,7 +32,7 @@
                 $i++;
               }
               echo '<br>';
-            } else {
+            } elseif ( !is_array($event_type) ) {
               echo $event_type;
               echo '<br>';
             }
@@ -47,7 +53,7 @@
         
         <h3 class="item-event-title"><?php the_title(); ?></h3>
 
-        <?php if( !empty($authors) ) : ?>
+        <?php if( !empty($authors) && $authors[0]['name'] != '' ) : ?>
           <div class="meta entry-authors">
             <?php 
                 foreach ( $authors as $author ) { 
@@ -59,5 +65,5 @@
         <div><?php echo $post_excerpt; ?></div>
       </div>
 
-    </a>
+    <?php if($url != '') { ?></a><?php } ?>
   </article><!-- end article-->

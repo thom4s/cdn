@@ -41,6 +41,7 @@ if ( $saison_events->have_posts() ) :
     $saison_events->the_post();
     $firstdate = rwmb_meta(  $prefix_event . 'firstdate', array(), $post->ID );
     $event_type = rwmb_meta(  $prefix_event . 'event_type', 'type=taxonomy&taxonomy=event_type', $post->ID );
+    $event_cat = rwmb_meta(  $prefix_event . 'event_cat', 'type=taxonomy&taxonomy=event_cat', $post->ID );
     $post_excerpt = rwmb_meta(  $prefix_event . 'intro', array(), $post->ID );
     // $dates = rwmb_meta(  $prefix_event . 'event_date', array(), $post->ID );
     $dates_array = rwmb_meta( $prefix_event . 'the_dates', array(), $post->ID );
@@ -53,6 +54,7 @@ if ( $saison_events->have_posts() ) :
     $week_year = date('o', $firstdate);
     $week_array = getStartAndEndDate($week,$week_year);
     
+
     if ( $previous_week != $week ): 
       if ($i > 0) { echo '</div><!-- #grid --> '; }
       echo do_shortcode( '[une_partie titre="Du '. $week_array['week_start'] . ' au '. $week_array['week_end'] .'"]' );
