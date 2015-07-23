@@ -124,6 +124,14 @@ jQuery(function($) {
     }
 
 
+    $('#filter-month').on('change', function () {
+        document.location.href = $(this).val();
+    });
+
+  
+
+
+
   });
 });
 

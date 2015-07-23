@@ -19,7 +19,7 @@
     $args = array(
       'post_type'       => 'event',
       'post__not_in'    => $exclude,
-      'posts_per_page'  => 16,
+      'posts_per_page'  => 24,
       'status'          => 'published',
       'orderby'         => 'meta_value_num',
       'meta_key'        => 'event_meta_firstdate',
@@ -75,6 +75,24 @@
       $args['meta_date_after'] = date('Y-m-d');
     endif;
 
+    // Get query Month if existed
+    if ( get_query_var('m') ):
+      if ( preg_match("#\d+\-\d+?#", get_query_var('m') ) ):
+        $date = strtotime( get_query_var('m') );
+        $args['meta_date_after_key'] = 'end_date';
+        $args['meta_date_after'] = date('Y-m-d', strtotime(get_query_var('m')));
+        $args['meta_date_before_key'] = 'start_date';
+        $args['meta_date_before'] = date('Y-m-t', strtotime(get_query_var('m')));
+      else:
+        $args['meta_date_after_key'] = 'end_date';
+        $args['meta_date_after'] = date('Y-m-d', strtotime(get_query_var('m').'-01-01'));
+        $args['meta_date_before_key'] = 'start_date';
+        $args['meta_date_before'] = date('Y-m-d', strtotime(get_query_var('m').'-12-31'));
+      endif;
+
+      $args['m'] = get_query_var('m');
+    endif;
+
     $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
 get_header(); ?>
@@ -86,11 +104,15 @@ get_header(); ?>
         <div class="entry-header-inner">
           <?php the_title( '<h1 class="entry-title l-12col l-first l-1col-push">', '</h1>' ); ?>
           <div class="post-excerpt l-12col l-first l-1col-push"><?php echo $introduction; ?></div>
-          <div class="calendar-filter-all l-first l-15col l-1col-push clearfix">
+          <!-- <div class="calendar-filter-all l-first l-15col l-1col-push clearfix">
             <?php get_template_part('part', 'filter-type'); ?>
             <?php get_template_part('part', 'filter-cat'); ?>
             <?php get_template_part('part', 'filter-age'); ?>
-          </div>
+            <?php get_template_part('part', 'filter-month'); ?>
+          </div> -->
+          <ul class="calendar-filter-minimal l-15col l-first l-1col-push clearfix">
+            <?php get_template_part('part', 'filter-minimal'); ?>
+          </ul>
         </div><!-- .entry-header-inner -->
       </header><!-- .entry-header -->
 
