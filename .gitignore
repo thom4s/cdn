@@ -1,5 +1,5 @@
 cdn.sublime-project
-cdn.sublime-worspace
+cdn.sublime-workspace
 wp-content/themes/cdn/sass/main.min.css
 wp-content/themes/cdn/js/all.min.js
 wp-content/themes/cdn/js/all.js
@@ -10,3 +10,4 @@ wp-content/cache/
 wp-content/db.php
 wp-content/object-cache.php
 wp-content/w3tc-config/
+wiki/
