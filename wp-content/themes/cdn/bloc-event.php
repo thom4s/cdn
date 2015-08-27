@@ -1,14 +1,17 @@
 <?php 
 
-  if( 'spectacle' == $event_cat[0]->slug ) {
-    if( $pro ) { 
-      $url = esc_url( add_query_arg( 'pro', 'yes', get_permalink() ) );
-    } else {
-      $url = get_permalink();
-    }
-  } else {
-    $url = '';
+  
+  $url = '';
+
+  if( isset($event_cat) && 'spectacle' == $event_cat[0]->slug ) {
+    $url = get_permalink();
+  } 
+
+  if( $pro ) { 
+    $url = esc_url( add_query_arg( 'pro', 'yes', get_permalink() ) );
   }
+
+
 
 
 ?>
