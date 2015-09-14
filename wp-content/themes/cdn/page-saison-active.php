@@ -52,15 +52,15 @@
         );
     endif;
 
-    // Get query AGE if existed
+    // Get query vars if existed
     if ( get_query_var('a') ):
-      $args['meta_query'][] = array(
-          'key'       =>  'event_age',
+      $args['tax_query'][] = array(
+          'taxonomy'  =>  'event_age',
           'field'   =>  'slug',
           'terms'   =>  preg_split("#,#", get_query_var('a'))
         );
     endif;
-
+    
     // Get query SALLE if existed
     if ( get_query_var('s') ):
       $args['meta_query'][] = array(
