@@ -11,6 +11,8 @@
   	</div><!-- #content -->
   </div><!-- .main-col -->
 
+
+
 	<footer id="colophon" class="site-footer plain" role="contentinfo">
 
 		<div class="footer-contacts">
@@ -43,6 +45,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
 
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,900italic,900,700italic,700,400italic|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
 

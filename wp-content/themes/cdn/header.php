@@ -20,16 +20,16 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<div class="wrap row">
-		
-		<?php
-		if ( is_front_page() ) {
-		    // This is the blog posts index
-		    get_template_part( 'header', 'home' );
-		} else {
-		    // This is not the blog posts index
-		    get_template_part( 'header', 'else' ); 
-		}
-		?>
+		<div class="wrap row">
+			
+			<?php
+			if ( is_front_page() ) {
+			    // This is the blog posts index
+			    get_template_part( 'header', 'home' );
+			} else {
+			    // This is not the blog posts index
+			    get_template_part( 'header', 'else' ); 
+			}
+			?>
 
-		<div id="content" class="site-content l-12col l-last m-12col m-last">
+			<div id="content" class="site-content l-12col l-last m-12col m-last">

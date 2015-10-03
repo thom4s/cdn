@@ -4,6 +4,7 @@ jQuery(function($) {
   $(document).ready(function() {
 
 
+
     // Walker Menu Navigation
     var $itemsWithChildren = $('.menu-item-has-children > a');
     var $subMenu = $('.sub-menu');
