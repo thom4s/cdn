@@ -7,6 +7,12 @@
 
 ?>
 
+<?php
+  session_destroy();
+  unset($_SESSION);
+?>
+
+
     <article id="post-<?php the_ID(); ?>" class="quizz-home wrap row">
 
 

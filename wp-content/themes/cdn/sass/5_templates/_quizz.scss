@@ -1,4 +1,8 @@
 
+
+
+// GENERAL SETTINGS
+
 .is-relative {
   position: relative;
 }
@@ -7,23 +11,36 @@
   position: absolute;
 }
 
+.full {
+  height: 100%;
+  width: 100%;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
 
 .html-quizz,
 .body-quizz {
   height: 100%;
 }
 
-
 .body-quizz {
 
   .page {
     height: 100%;
-    padding: 0 50px;
     @include box-sizing;
   }
-
 }
 
+
+
+// QUIZZ HOMEPAGES
 
 .quizz-home  {
 
@@ -59,11 +76,138 @@
     }
 
 
-label {
-  display: block;
-  float: left;
-  clear: both;
+// QUESTIONS PAGES
+
+.quizz-question {
+
+  h2 {
+    font-size: 32px;
+    margin-top: 25px;
+    margin-bottom: 75px;
+  }
+}
   
+  .question-img {
+
+    img {
+      float: right;
+    }
+  }
+
+
+
+// Form
+
+.form-horizontal {
+
+
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .radio-item {
+    height: 54px;
+    margin-bottom: 10px;
+    background: transparent url("../img/picts/cdn_arrow_blue.png") no-repeat scroll 4px 4px;
+
+    &:hover {
+      background: transparent url("../img/picts/cdn_arrow_beige.png") no-repeat scroll 4px 4px;
+    }
+  }
+
+  .label_radio {
+    position: relative;
+    display: block;
+    padding-left: 54px;    
+    font-style: italic;
+    font-size: 18px;
+    color: $gray_dark;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -9999px;
+  }
+}
+
+
+
+// RESULTS
+
+
+  .quizzresult-header {
+    text-align: center;
+    padding-top: 50px;
+
+    h2 {
+      font-weight: 400;
+      font-size: 24px;
+    }
+    h3 {
+      font-weight: 700;
+      font-size: 32px;
+      text-transform: uppercase;
+      font-family: $roboto, $font_family_serif;
+      line-height: 40px;
+      color: $white;
+    }
+  }
+
+  .result-infos {
+    margin-bottom: 50px;
+  }
+    .result-text {
+      margin-top: 50px;
+    }
+
+    .result-event {
+      color: $gray;
+      background: transparent url("../img/picts/cdn_arrow_blue.png") no-repeat;
+      padding-left: 50px;
+      margin-left: -50px;
+      min-height: 75px;
+      padding-top: 15px;
+
+      span {
+        font-size: 20px;
+        text-transform: uppercase;
+        font-family: $roboto, $font_family_serif;
+      }
+      p {
+        color: inherit;
+      }
+    }
+
+  .result-infos {
+    
+  }
+
+
+// BUTTONS
+
+.btn-cdn-logo {
+  margin: auto;
+  height: 75px;
+  width: 75px;
+  background: transparent url("../img/picts/cdn_logo_blue.png") no-repeat;
+}
+
+.btn-cdn-question {
+  margin: auto;
+  height: 75px;
+  width: 75px;
+  background: transparent url("../img/picts/cdn_logo_blue.png") no-repeat;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 
@@ -73,6 +217,8 @@ label {
   height: 100px;
   text-align: center;
   display: table;
+  font-size: 14px;
+  padding: 10px;
 
   a {
     display: table-cell;
@@ -93,6 +239,8 @@ label {
     background-color: $gray_dark;
   }
 }
+
+
 
 
 

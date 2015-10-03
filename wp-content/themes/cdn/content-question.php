@@ -7,16 +7,57 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="quizz-question full">
+  <div class="row full">
 
-	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+    <div class="m-9col question-img full table" style="background-color: <?php the_field('couleur_de_la_page'); ?>">
+      <div class="table-cell">
+        <?php the_post_thumbnail( ); ?> 
+      </div>
+    </div>
+
+    <div class="m-7col full table">
+      <div class="table-cell">
+        <div class="btn-cdn-question table">
+          <div class="table-cell">
+            <?php the_field('numero'); ?>
+          </div> 
+        </div>
+
+         <h2><?php the_title(); ?></h2>
+
+            <div class="form-outer">
+              <form id="quizzform" class="form-horizontal" accept-charset="utf-8" action="<?php the_field('next_question'); ?>" method="post">
+
+                <div style="display: none;"><input name="questionnum" type="hidden" value="1" /></div>
+
+                <fieldset class="radios hidden-sm hidden-xs">
+
+                  <?php if( have_rows('questions') ): ?>
+                    <?php $i = 1 ?>
+                    <?php while ( have_rows('questions') ) : the_row(); ?>
+
+                        <div class="table radio-item">
+                          <div class="table-cell">
+                            <label class="label_radio" for="radio-0<?php echo $i; ?>">
+                            <input id="radio-0<?php echo $i; ?>" name="reponseradio" type="radio" value="<?php the_sub_field('item-linked'); ?>" />
+                              <?php the_sub_field('texte'); ?>
+                            </label>
+                          </div>
+                        </div>
+                        <?php $i++ ?>
+                      <?php endwhile; ?>
+
+                  <?php endif; ?>
+
+                </fieldset>
+              
+              </form>
+            </div><!-- .form-outer -->
 
 
-	<?php the_post_thumbnail( ); ?> 
 
-
-	<?php the_content(); ?>
-
-
-
+      </div>
+    </div><!-- .m-6col -->
+  </div><!-- .row -->
 </article><!-- #post-## -->
