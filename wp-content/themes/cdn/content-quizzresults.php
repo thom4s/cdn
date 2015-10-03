@@ -72,7 +72,6 @@ $texte_evenement = $reponse_data['texte_evenement'];
 
         <div class="row result-actions">
           <div class="btn-rounded white is-absolute"><a href="<?php echo $e_url; ?>">En savoir + sur le spectacle</a></div>
-
           
           <div class="m8col m-last">
             <ul>
@@ -81,9 +80,14 @@ $texte_evenement = $reponse_data['texte_evenement'];
               <li>Nous envoyer un mail</li>
             </ul>
           </div>
-
         </div>
          
+         <div>
+
+        <div class="btn-rounded white"><a href="<?php the_field('accueil_quizz'); ?>">Recommencer le Quizz</a></div>
+         </div>
+
+
       </div>
     </div><!-- .m-6col -->
   </div><!-- .row -->
