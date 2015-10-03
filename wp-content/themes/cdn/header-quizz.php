@@ -3,7 +3,7 @@ define("DOMAIN", "http://" . $_SERVER['HTTP_HOST']);
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="html-quizz">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,5 @@ define("DOMAIN", "http://" . $_SERVER['HTTP_HOST']);
 
 </head>
 
-<body>
+<body class="body-quizz">
 
-  <div class="page wrap">
-
-    <nav><a href="<?php echo DOMAIN; ?>">Home</a> | <a href="<?php echo DOMAIN; ?>/questions/1">Rejouer</a></nav>
