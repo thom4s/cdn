@@ -190,6 +190,18 @@
     
   }
 
+  .result-links {
+    margin: 0;
+    list-style: none;
+    text-align: right;
+  }
+    .result-link-item {
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+
+
 
 // BUTTONS
 
@@ -240,6 +252,18 @@
   }
 }
 
+.btn-rounded-inline {
+  @include border-radius(50%);
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  background-color: $black;
+  color: $white;
+  padding: 10px;
+  margin-left: 10px;
+  line-height: 10px;
+}
 
 
 

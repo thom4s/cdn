@@ -74,19 +74,20 @@ $texte_evenement = $reponse_data['texte_evenement'];
           <div class="btn-rounded white is-absolute"><a href="<?php echo $e_url; ?>">En savoir + sur le spectacle</a></div>
           
           <div class="m8col m-last">
-            <ul>
-              <li>Inscription à la newsletter</li>
-              <li>Partagez sur Facebook</li>
-              <li>Nous envoyer un mail</li>
+            <ul class="result-links">
+
+              <li class="result-link-item"><a href="<?php bloginfo('url'); ?>#colophon">Inscription à la newsletter <span class="btn-rounded-inline">N</span></a></li>
+              
+              <li class="result-link-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>&t=<?php the_title(); ?>%20<?php echo $titre; ?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Facebook">Partagez sur Facebook <span class="btn-rounded-inline">f</span></a></li>
+              
+              <li class="result-link-item"><a href="<?php bloginfo('url'); ?>">Voir le site du Théâtre <span class="btn-rounded-inline">w</span></a></li>
+
+              <li class="result-link-item"><a href="<?php bloginfo('url'); ?>/infos-pratiques/contact/">Nous envoyer un mail <span class="btn-rounded-inline">@</span></a></li>
+
+              <li class="result-link-item"><a href="<?php the_field('accueil_quizz'); ?>">Recommencer le Quizz <span class="btn-rounded-inline">Q</span></a></li>
             </ul>
           </div>
         </div>
-         
-         <div>
-
-        <div class="btn-rounded white"><a href="<?php the_field('accueil_quizz'); ?>">Recommencer le Quizz</a></div>
-         </div>
-
 
       </div>
     </div><!-- .m-6col -->
