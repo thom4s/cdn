@@ -46,6 +46,8 @@
 
   .site-title {
     color: $white;
+    font-size: 28px;
+    line-height: 2.8rem;
   }
 }
 
@@ -81,16 +83,19 @@
 .quizz-question {
 
   h2 {
-    font-size: 32px;
+    font-size: 25px;
+    font-weight: 400;
     margin-top: 25px;
     margin-bottom: 75px;
   }
 }
   
   .question-img {
-
+    margin-right: 30px;
+ 
     img {
       float: right;
+      width: 100%;
     }
   }
 
@@ -122,7 +127,7 @@
     display: block;
     padding-left: 54px;    
     font-style: italic;
-    font-size: 18px;
+    font-size: 20px;
     color: $gray_dark;
     
     &:hover {
@@ -147,18 +152,28 @@
     text-align: center;
     padding-top: 50px;
 
-    h2 {
-      font-weight: 400;
-      font-size: 24px;
+    .site-title {
+      float: left;
+      margin-top: 0;
+      margin-left: 20px;
+      font-size: 25px;
+      color: $gray;
     }
-    h3 {
-      font-weight: 700;
-      font-size: 32px;
-      text-transform: uppercase;
-      font-family: $roboto, $font_family_serif;
-      line-height: 40px;
-      color: $white;
+
+    .result-titles {
     }
+      h2 {
+        font-weight: 400;
+        font-size: 24px;
+      }
+      h3 {
+        font-weight: 700;
+        font-size: 32px;
+        text-transform: uppercase;
+        font-family: $roboto, $font_family_serif;
+        line-height: 40px;
+        color: $white;
+      }
   }
 
   .result-infos {
@@ -169,8 +184,8 @@
     }
 
     .result-event {
-      color: $gray;
-      background: transparent url("../img/picts/cdn_arrow_blue.png") no-repeat;
+      color: #e73d30;
+      background: transparent url("../img/picts/cdn_arrow_red.png") no-repeat;
       padding-left: 50px;
       margin-left: -50px;
       min-height: 75px;
@@ -201,6 +216,15 @@
     }
 
 
+    .result-buttons {
+      position: absolute;
+      left: -300px;
+
+      .btn-rounded {
+        float: left;
+        margin-right: 100px;
+      }
+    }
 
 
 // BUTTONS
@@ -242,8 +266,16 @@
   }
 
   &.white {
-    color: $black;
+    color: $color_1;
     background-color: $gray_lighter;
+
+    &:hover {
+      background-color: $color_1;
+      a {
+        color: $white;
+      }
+    }
+
   }
 
   &.black {

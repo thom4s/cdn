@@ -10,10 +10,15 @@
 <article id="post-<?php the_ID(); ?>" class="quizz-question full">
   <div class="row full">
 
-    <div class="m-9col question-img full table" style="background-color: <?php the_field('couleur_de_la_page'); ?>">
-      <div class="table-cell">
-        <?php the_post_thumbnail( ); ?> 
+    <div class="m-8col question-img full" style="background-color: <?php the_field('couleur_de_la_page'); ?>">
+      <div class="table">
+        <div class="table-cell">
+          <div>
+            <?php the_post_thumbnail( ); ?> 
+          </div>
+        </div>
       </div>
+
     </div>
 
     <div class="m-7col full table">

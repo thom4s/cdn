@@ -53,11 +53,22 @@ $texte_evenement = $reponse_data['texte_evenement'];
 <article id="post-<?php the_ID(); ?>" class="quizz-result full">
   <div class="row full">
 
-    <header class="m-8col question-img full table quizzresult-header" style="background-color: <?php the_field('couleur_de_la_page'); ?>">
-      <div class="table-cell">
-        <h2><?php the_title(); ?></h2>
-        <h3><?php echo $titre; ?></h3>
-        <img src="<?php echo $visuel; ?>">
+    <header class="m-8col question-img full quizzresult-header" style="background-color: <?php the_field('couleur_de_la_page'); ?>">
+
+      <div class="table">
+        <div class="table-cell">
+
+            <h1 class="site-title">
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+            </h1>
+
+            <div class="result-titles">
+              <h2><?php the_title(); ?></h2>
+              <h3><?php echo $titre; ?></h3>
+            </div>
+
+          <img src="<?php echo $visuel; ?>">
+        </div>
       </div>
     </header>
 
@@ -71,7 +82,13 @@ $texte_evenement = $reponse_data['texte_evenement'];
         </div>
 
         <div class="row result-actions">
-          <div class="btn-rounded white is-absolute"><a href="<?php echo $e_url; ?>">En savoir + sur le spectacle</a></div>
+          
+          <div class="result-buttons">
+            <div class="btn-rounded white"><a href="<?php the_field('accueil_quizz'); ?>">Recommencer le Quizz</a></div>
+
+            <div class="btn-rounded black"><a href="<?php echo $e_url; ?>">En savoir + sur le spectacle</a></div>
+          
+          </div>
           
           <div class="m8col m-last">
             <ul class="result-links">
@@ -83,8 +100,6 @@ $texte_evenement = $reponse_data['texte_evenement'];
               <li class="result-link-item"><a href="<?php bloginfo('url'); ?>">Voir le site du Théâtre <span class="btn-rounded-inline">w</span></a></li>
 
               <li class="result-link-item"><a href="<?php bloginfo('url'); ?>/infos-pratiques/contact/">Nous envoyer un mail <span class="btn-rounded-inline">@</span></a></li>
-
-              <li class="result-link-item"><a href="<?php the_field('accueil_quizz'); ?>">Recommencer le Quizz <span class="btn-rounded-inline">Q</span></a></li>
             </ul>
           </div>
         </div>
