@@ -72,7 +72,7 @@
     .quizzhome-img {
 
       .btn-rounded {
-        top: 0;
+        top: 25%;
         right: 0;
       }
     }
@@ -94,8 +94,10 @@
     margin-right: 30px;
  
     img {
-      float: right;
-      width: 100%;
+      display: block;
+      margin: auto;
+      float: none;
+      max-width: 100%;
     }
   }
 
@@ -115,10 +117,10 @@
   .radio-item {
     height: 54px;
     margin-bottom: 10px;
-    background: transparent url("../img/picts/cdn_arrow_blue.png") no-repeat scroll 4px 4px;
+    background: transparent url("../img/picts/cdn_arrow_blue.png") no-repeat;
 
     &:hover {
-      background: transparent url("../img/picts/cdn_arrow_beige.png") no-repeat scroll 4px 4px;
+      background: transparent url("../img/picts/cdn_arrow_beige.png") no-repeat;
     }
   }
 
@@ -149,19 +151,20 @@
 
 
   .quizzresult-header {
+    position: relative;
     text-align: center;
-    padding-top: 50px;
 
     .site-title {
-      float: left;
-      margin-top: 0;
-      margin-left: 20px;
+      position: absolute;
+      top: 10px;
+      left: 20px;
       font-size: 25px;
       color: $gray;
       line-height: 2.7rem;
     }
 
     .result-titles {
+      margin-bottom: 40px;
     }
       h2 {
         font-weight: 400;
@@ -175,6 +178,11 @@
         line-height: 40px;
         color: $white;
       }
+    .btn-rounded {
+      position: absolute;
+      right: 50px;
+      bottom: 50px;
+    }
   }
 
   .result-infos {
@@ -221,7 +229,6 @@
 
     .result-buttons {
       position: absolute;
-      left: -300px;
 
       .btn-rounded {
         float: left;
@@ -258,7 +265,8 @@
   display: table;
   font-size: 14px;
   padding: 10px;
-
+  font-weight: bold;
+  
   a {
     display: table-cell;
     height: 100%;
@@ -298,6 +306,7 @@
   padding: 10px;
   margin-left: 10px;
   line-height: 10px;
+  font-weight: bold;
 }
 
 
